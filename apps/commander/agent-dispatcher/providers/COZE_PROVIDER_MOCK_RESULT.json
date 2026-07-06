@@ -1,0 +1,85 @@
+{
+  "provider_name": "coze",
+  "execution_mode": "mock_only",
+  "status": "completed",
+  "summary": "Mock-only Coze Provider Adapter V1 produced a safe integration design without contacting Coze.",
+  "capabilities": [
+    "Treat Coze Bot / Workflow as an external agent provider.",
+    "Convert M8A Agent Task input into a provider request shape.",
+    "Return structured provider result for artifact intake.",
+    "Mark approval points before any future external provider call.",
+    "Expose timeout, auth failure, blocked result, and exception routing requirements."
+  ],
+  "limitations": [
+    "No real Coze connection in V1.",
+    "No credential handling in V1.",
+    "No workflow execution in V1.",
+    "Candidate endpoint names must be verified in a separate approved staging task."
+  ],
+  "risks": [
+    "Coze output schema may vary by bot or workflow.",
+    "Future credential handling must never log sensitive values.",
+    "Future provider timeouts and auth failures must enter Exception Framework.",
+    "Coze must not become Commander or Mission Control."
+  ],
+  "next_steps": [
+    "Run staging credential presence check after CEO approval.",
+    "Run real API read-only test after separate approval.",
+    "Run one workflow execution test in staging mode after QA approval.",
+    "Send successful provider results into Result Intake and QA review."
+  ],
+  "requires_approval": true,
+  "external_api_called": false,
+  "network_accessed": false,
+  "env_read": false,
+  "forbidden_actions_executed": false,
+  "design": {
+    "coze_positioning": {
+      "role": "external agent provider",
+      "not_commander": true,
+      "not_mission_control": true
+    },
+    "input_schema": {
+      "mission_id": "string",
+      "task_id": "string",
+      "agent_name": "string",
+      "objective": "string",
+      "input_json": "object",
+      "expected_output_schema": "object"
+    },
+    "output_schema": {
+      "provider_name": "coze",
+      "execution_mode": "mock_only",
+      "status": "completed | failed | blocked",
+      "summary": "string",
+      "capabilities": "array",
+      "limitations": "array",
+      "risks": "array",
+      "next_steps": "array",
+      "requires_approval": true
+    },
+    "timeout": {
+      "default_seconds": 30,
+      "on_timeout": "return failed and route to Exception Framework"
+    },
+    "auth_failure": {
+      "v1_behavior": "not applicable in mock-only mode",
+      "future_behavior": "return blocked and route to Exception Framework"
+    },
+    "blocked_result": {
+      "causes": [
+        "missing required fields",
+        "sensitive-looking input",
+        "forbidden action request"
+      ],
+      "external_action": false
+    },
+    "exception_routing": "All failed future real-provider actions must call Exception Framework.",
+    "safety_boundary": {
+      "no_publish": true,
+      "no_sensitive_logging": true,
+      "approval_required": true,
+      "exception_on_failure": true
+    }
+  }
+}
