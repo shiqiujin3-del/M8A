@@ -1,0 +1,55 @@
+{
+  "qa_status": "passed",
+  "summary": "QA Agent reviewed COTAS/Codex result with local rules. No real AI provider was called.",
+  "checks": [
+    {
+      "name": "format_complete",
+      "passed": true,
+      "notes": "COTAS result artifact and summary are present."
+    },
+    {
+      "name": "files_declared",
+      "passed": true,
+      "notes": "modified_files or new_files are declared."
+    },
+    {
+      "name": "test_results_present",
+      "passed": true,
+      "notes": "test_results are present."
+    },
+    {
+      "name": "risks_present",
+      "passed": true,
+      "notes": "risks are explicit."
+    },
+    {
+      "name": "next_steps_present",
+      "passed": true,
+      "notes": "next_steps are explicit."
+    },
+    {
+      "name": "no_forbidden_action",
+      "passed": true,
+      "notes": "No publish, deploy, or production modification is reported."
+    },
+    {
+      "name": "no_secret_leak",
+      "passed": true,
+      "notes": "No secret-like values appear in result."
+    },
+    {
+      "name": "no_external_platform_modified",
+      "passed": true,
+      "notes": "No real external platform change is reported."
+    },
+    {
+      "name": "no_external_connection_declared",
+      "passed": true,
+      "notes": "Result explicitly declares mock/no external connection."
+    }
+  ],
+  "risks": [],
+  "recommendation": "Proceed to CEO approval for next controlled step.",
+  "requires_ceo_approval": true
+}
+

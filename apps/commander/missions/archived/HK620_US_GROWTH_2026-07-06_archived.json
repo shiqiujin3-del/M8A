@@ -1,0 +1,85 @@
+{
+  "mission_id": "mission_2026_07_06_hk620_us_growth",
+  "mission_name": "HK620_US_GROWTH",
+  "priority": "P0",
+  "status": "archived",
+  "started_time": "2026-07-06T05:39:20Z",
+  "finished_time": "2026-07-06T05:39:20Z",
+  "result": "Runtime lifecycle complete. Mission completed and archived.",
+  "input": {
+    "product": "HK620",
+    "target_market": "USA",
+    "knowledge_record": "gkr_hk620_v3_approved_internal",
+    "language": [
+      "English",
+      "Chinese"
+    ]
+  },
+  "output": {
+    "expected": [
+      "knowledge_gap_review",
+      "website_article_review",
+      "wordpress_draft_prepare",
+      "seo_gap_summary",
+      "daily_priority_summary"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "Task001",
+      "target_employee": "Knowledge Manager",
+      "action": "knowledge_check",
+      "input": "Check HK620 approved_internal knowledge and remaining review_pending gaps.",
+      "output": "Knowledge gap summary",
+      "status": "completed",
+      "started_time": "2026-07-06T05:39:20Z",
+      "finished_time": "2026-07-06T05:39:20Z",
+      "result": "PASS. Runtime checked local HK620 knowledge: 1 approved_internal record, 5 approved_internal chunks, 2 review_pending chunks."
+    },
+    {
+      "task_id": "Task002",
+      "target_employee": "Content Operator",
+      "action": "content_review_prepare",
+      "input": "Prepare HK620 content drafts currently in needs_human_review.",
+      "output": "Content review packet",
+      "status": "completed",
+      "started_time": "2026-07-06T05:39:20Z",
+      "finished_time": "2026-07-06T05:39:20Z",
+      "result": "PASS. Runtime checked local Draft Queue: 9 HK620 drafts remain in needs_human_review."
+    },
+    {
+      "task_id": "Task003",
+      "target_employee": "Website Operator",
+      "action": "wordpress_draft_prepare",
+      "input": "After human approval, prepare one HK620 article for WordPress Draft.",
+      "output": "WordPress draft preparation checklist",
+      "status": "completed",
+      "started_time": "2026-07-06T05:39:20Z",
+      "finished_time": "2026-07-06T05:39:20Z",
+      "result": "PASS. Runtime prepared local WordPress draft checklist only. No WordPress connection was used."
+    },
+    {
+      "task_id": "Task004",
+      "target_employee": "Business Analyst",
+      "action": "analytics_summary",
+      "input": "Summarize missing Search Console and GA4 data needed for HK620 growth.",
+      "output": "Analytics connector readiness summary",
+      "status": "completed",
+      "started_time": "2026-07-06T05:39:20Z",
+      "finished_time": "2026-07-06T05:39:20Z",
+      "result": "PASS. Runtime summarized local analytics readiness: Search Console and GA4 remain TODO."
+    },
+    {
+      "task_id": "Task005",
+      "target_employee": "Distribution Operator",
+      "action": "social_distribution_prepare",
+      "input": "Prepare distribution checklist for LinkedIn and Facebook drafts after approval.",
+      "output": "Distribution checklist",
+      "status": "completed",
+      "started_time": "2026-07-06T05:39:20Z",
+      "finished_time": "2026-07-06T05:39:20Z",
+      "result": "PASS. Runtime prepared local distribution checklist only. No Facebook, LinkedIn, or external API was used."
+    }
+  ],
+  "archived_time": "2026-07-06T05:39:20Z"
+}

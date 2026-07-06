@@ -1,0 +1,4 @@
+# Production Compose profile placeholder.
+# Do not use until security review, backup plan, and deployment checklist are complete.
+
+services: {}

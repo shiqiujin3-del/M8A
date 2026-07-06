@@ -1,0 +1,4 @@
+# Development Compose profile.
+# Use only local test credentials and disposable data.
+
+services: {}

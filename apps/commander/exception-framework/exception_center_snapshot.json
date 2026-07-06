@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "today_count": 1,
+    "investigating": 0,
+    "waiting_ceo": 0,
+    "resolved": 0,
+    "avg_recovery_minutes": 0
+  },
+  "exceptions": [
+    {
+      "exception_id": "exception_1783329300640939000",
+      "exception_mission_id": "mission_exception_1783329300640943000",
+      "source_mission_id": null,
+      "source_task_id": null,
+      "source_system": "WordPress",
+      "exception_type": "cloudflare_access_denied",
+      "error_code": "HTTP_403_CLOUDFLARE_1010",
+      "error_message": "WordPress draft creation failed with HTTP 403: Cloudflare Error 1010 Access denied.",
+      "severity": "high",
+      "risk_level": "high",
+      "status": "archived",
+      "assigned_worker_id": "worker_infrastructure_operator",
+      "assigned_worker_name": "Infrastructure Operator",
+      "requires_ceo_approval": true,
+      "recovery_plan": {
+        "summary": "Cloudflare blocked the platform/API request before the action could reach WordPress.",
+        "needs_ceo": true,
+        "risk_level": "high",
+        "impact_scope": [
+          "Website Capability",
+          "WordPress Draft Creation",
+          "Publishing Center MVP"
+        ],
+        "possible_causes": [
+          "Cloudflare WAF or bot rule blocked the local API request.",
+          "REST API authenticated request pattern is not allowlisted.",
+          "Source IP, user agent, or security score triggered Error 1010."
+        ],
+        "recommended_actions": [
+          "Review Cloudflare Security Events for the blocked request.",
+          "Create a narrow allow rule for trusted M8A source and WordPress REST draft endpoint.",
+          "Avoid disabling global security rules.",
+          "Retry draft-only verification after allowlist is confirmed."
+        ],
+        "ceo_decision_required": "Approve Cloudflare/WAF allowlist or staging bypass for controlled M8A draft creation."
+      },
+      "impact_scope": [
+        "Website Capability",
+        "WordPress Draft Creation",
+        "Publishing Center MVP"
+      ],
+      "root_cause_hypothesis": [
+        "Cloudflare WAF or bot rule blocked the local API request.",
+        "REST API authenticated request pattern is not allowlisted.",
+        "Source IP, user agent, or security score triggered Error 1010."
+      ],
+      "resolution_note": null,
+      "created_at": "2026-07-06T09:15:00.899197+00:00",
+      "updated_at": "2026-07-06T09:15:01.238749+00:00",
+      "resolved_at": null,
+      "archived_at": "2026-07-06T09:15:01.238749+00:00",
+      "exception_mission_name": "EXCEPTION_MISSION",
+      "source_task_title": null,
+      "approval_id": "approval_exception_1783329300804097000",
+      "approval_status": "pending"
+    }
+  ]
+}

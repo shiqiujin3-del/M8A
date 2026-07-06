@@ -1,0 +1,243 @@
+{
+  "mission_id": "mission_integration_1783339935312770000",
+  "task_id": "mission_integration_1783339935312770000_task_001",
+  "agent_name": "COTAS Integration Agent",
+  "status": "completed",
+  "summary": "Completed read-only Coze-to-M8A connector research package using existing local M8A artifacts only. No files were modified or created. Recommendation: GO for a mock-first Coze provider adapter design behind Mission Control, Approval, Worker Runner, and Exception Framework; NO-GO for live Coze API calls, credential use, deployment, or production execution until CEO approval is granted.",
+  "modified_files": [],
+  "new_files": [],
+  "test_results": [
+    {
+      "name": "read_only_workspace_review",
+      "status": "passed",
+      "notes": "Reviewed local COTAS and Coze integration artifacts already present in the M8A workspace. No file edits, creates, deletes, moves, commits, deploys, or external calls were performed."
+    },
+    {
+      "name": "external_platform_safety_check",
+      "status": "passed",
+      "notes": "No Coze API, external API, external platform, web, or network access was called during this research-mode execution."
+    },
+    {
+      "name": "m8a_boundary_validation",
+      "status": "passed",
+      "notes": "Coze must be treated only as an Agent Provider or Workflow Provider. It must not become Commander, Mission Control, Approval authority, direct publisher, or direct database writer."
+    },
+    {
+      "name": "mock_first_adapter_feasibility",
+      "status": "passed",
+      "notes": "A mock-first adapter can be designed without credentials or external API access, with future live execution gated by CEO approval."
+    }
+  ],
+  "risks": [
+    "No external API/platform was called in this execution; endpoint details remain research-plan candidates and must be re-verified against current official Coze documentation before live implementation.",
+    "Coze authentication, workspace permissions, bot/workflow publish state, rate limits, timeout behavior, and response schemas must be confirmed before staging use.",
+    "Real credentials must never be written to source code, logs, prompts, reports, artifacts, or test fixtures.",
+    "Workflow outputs may vary by Coze workflow design; M8A must validate every response before saving artifacts or creating approvals.",
+    "Coze-generated content or tool results must not bypass Mission Control, CEO Approval, or Exception Framework.",
+    "Any authentication failure, timeout, schema mismatch, provider error, or blocked state must route to Exception Framework."
+  ],
+  "next_steps": [
+    "QA Agent reviews this COTAS result as a research artifact.",
+    "CEO approves or rejects proceeding to a separate implementation mission.",
+    "If approved, create a mock-only Coze Provider Adapter V1 implementation mission.",
+    "Implement adapter contract, schema validation, mock response handling, failure routing, and tests without real credentials.",
+    "After mock tests pass, request separate CEO approval for controlled staging credential configuration and one limited Coze API verification call."
+  ],
+  "requires_approval": true,
+  "approval_reason": "CEO approval is required before any implementation, credential handling, external API call, Coze platform connection, deployment, or production workflow execution.",
+  "artifacts": [
+    {
+      "artifact_type": "cotas_execution_package",
+      "title": "Coze API to M8A Connector and Adapter Plan",
+      "content": {
+        "agent": "COTAS Integration Agent",
+        "status": "completed",
+        "integration_plan": {
+          "positioning": "Coze should be integrated as a controlled Agent Provider or Workflow Provider behind M8A Agent Dispatcher.",
+          "go_no_go_recommendation": "GO for mock-first adapter design; NO-GO for live API execution until CEO approval.",
+          "capability_summary": [
+            "Run an approved Coze workflow from structured M8A task input.",
+            "Receive structured workflow output as JSON.",
+            "Convert accepted workflow output into an M8A artifact.",
+            "Create approval records for customer-facing, public, publishing, or external-action outputs.",
+            "Route provider failures through Exception Framework."
+          ],
+          "not_allowed_in_v1": [
+            "Direct publishing.",
+            "Direct customer replies.",
+            "Direct production workflow execution.",
+            "Direct database mutation outside Mission Control.",
+            "Credential use without approval."
+          ]
+        },
+        "required_credentials": [
+          {
+            "name": "COZE_API_BASE_URL",
+            "value": "MASKED_NOT_PROVIDED",
+            "purpose": "Base URL for future approved Coze API calls."
+          },
+          {
+            "name": "COZE_API_TOKEN",
+            "value": "MASKED_NOT_PROVIDED",
+            "purpose": "Server-side bearer token or personal access token for controlled staging only after approval."
+          },
+          {
+            "name": "COZE_WORKFLOW_ID",
+            "value": "MASKED_NOT_PROVIDED",
+            "purpose": "Identifier for the approved Coze workflow to run."
+          },
+          {
+            "name": "COZE_WORKSPACE_ID",
+            "value": "MASKED_NOT_PROVIDED",
+            "purpose": "Workspace or project scope if required by the chosen Coze API mode."
+          },
+          {
+            "name": "COZE_WEBHOOK_SECRET",
+            "value": "MASKED_NOT_PROVIDED",
+            "purpose": "Optional secret for webhook verification if webhook mode is approved later."
+          }
+        ],
+        "api_endpoints": [
+          {
+            "method": "POST",
+            "endpoint": "/v1/workflow/run",
+            "purpose": "Candidate endpoint for running a Coze workflow with structured input. Must be verified before live use."
+          },
+          {
+            "method": "POST",
+            "endpoint": "/v1/workflow/stream_run",
+            "purpose": "Candidate endpoint for streaming workflow execution if streaming is needed. Must be verified before live use."
+          },
+          {
+            "method": "GET",
+            "endpoint": "/v1/workflow/run_histories/{execute_id}",
+            "purpose": "Candidate endpoint for retrieving workflow execution status or history. Must be verified before live use."
+          }
+        ],
+        "adapter_design": {
+          "mode": "mock_first",
+          "candidate_files_needed": [
+            "apps/commander/agent-dispatcher/providers/coze_provider_adapter_v1.py",
+            "apps/commander/agent-dispatcher/providers/coze_provider_contract.md",
+            "apps/commander/agent-dispatcher/providers/tests/test_coze_provider_adapter_v1.py"
+          ],
+          "input_contract": {
+            "mission_id": "string",
+            "task_id": "string",
+            "agent_name": "string",
+            "workflow_name": "string",
+            "workflow_id": "string",
+            "input_json": "object",
+            "approval_context": "object"
+          },
+          "output_contract": {
+            "provider": "coze",
+            "mode": "mock | staging | production",
+            "status": "completed | failed | blocked",
+            "result_json": "object",
+            "artifact_type": "json",
+            "requires_approval": true,
+            "exception": "object|null"
+          },
+          "runtime_flow": [
+            "Mission Control creates the mission and task.",
+            "Agent Dispatcher selects Coze Provider Adapter only for approved integration tasks.",
+            "Worker Runner invokes adapter in mock mode first.",
+            "Adapter validates input schema and approval context.",
+            "Adapter returns mock result or approved provider result.",
+            "Adapter saves result as M8A artifact through controlled intake.",
+            "Adapter creates approval when output can affect public/customer/external state.",
+            "Adapter routes failures to Exception Framework."
+          ],
+          "security_rules": [
+            "Use environment variables or secure credential storage only.",
+            "Mask all secrets.",
+            "Never log credential values.",
+            "Never write credential values to code, prompts, reports, tests, or artifacts.",
+            "Use mock mode unless CEO approves real integration.",
+            "Treat all external write actions as approval-gated."
+          ]
+        },
+        "test_plan": [
+          {
+            "name": "schema_validation_success",
+            "type": "unit",
+            "expected": "Valid M8A task input produces a normalized adapter request."
+          },
+          {
+            "name": "schema_validation_failure",
+            "type": "unit",
+            "expected": "Missing mission_id, task_id, workflow_id, or input_json returns failed/blocked status and routes to Exception Framework."
+          },
+          {
+            "name": "mock_workflow_success",
+            "type": "unit",
+            "expected": "Mock Coze response is converted into a valid M8A artifact payload without external API calls."
+          },
+          {
+            "name": "credential_absent_in_mock_mode",
+            "type": "unit",
+            "expected": "Mock mode does not require or read real Coze credentials."
+          },
+          {
+            "name": "credential_required_in_staging_mode",
+            "type": "unit",
+            "expected": "Staging mode blocks execution if approved credential references are missing."
+          },
+          {
+            "name": "timeout_failure_routing",
+            "type": "unit",
+            "expected": "Provider timeout is converted to failed status and routed to Exception Framework."
+          },
+          {
+            "name": "approval_gate",
+            "type": "integration_mock",
+            "expected": "Customer-facing or publishing-related results create an approval instead of direct external action."
+          }
+        ],
+        "test_report_format": {
+          "fields": [
+            "test_name",
+            "status",
+            "mode",
+            "external_api_called",
+            "credentials_used",
+            "artifact_created",
+            "approval_created",
+            "exception_created",
+            "notes"
+          ],
+          "required_assertions": [
+            "external_api_called must be false for mock tests.",
+            "credentials_used must be false for mock tests.",
+            "No secret value may appear in test output.",
+            "Failures must verify Exception Framework routing."
+          ]
+        },
+        "risk_points": [
+          "Endpoint paths and authentication behavior must be verified against official Coze documentation in an approved research or staging sprint.",
+          "Workflow output schemas are workflow-specific and require strict validation.",
+          "External write or publish behavior must remain blocked until explicit approval.",
+          "Credential leakage risk requires environment-only secret handling and masked logs.",
+          "Retries must be idempotent to avoid duplicate artifacts or actions."
+        ],
+        "approval_points": [
+          "CEO approval before implementation files are created or modified.",
+          "CEO approval before configuring any real Coze credential.",
+          "CEO approval before any network call to Coze.",
+          "CEO approval before enabling staging mode.",
+          "CEO approval before any production workflow execution.",
+          "CEO approval before any public, customer-facing, publishing, or external write action."
+        ],
+        "next_steps": [
+          "Approve QA review of this research package.",
+          "Open a separate implementation mission for mock adapter only.",
+          "Add adapter contract and tests in mock mode.",
+          "Run local tests proving no external API call occurs.",
+          "Request CEO approval for staging verification only after mock mode passes."
+        ],
+        "exception": null
+      }
+    }
+  ]
+}

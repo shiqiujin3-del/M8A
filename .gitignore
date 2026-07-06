@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*token*
+*password*
+*secret*
+*credential*
+*credentials*
+
+# Local runtime / caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+node_modules/
+.next/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Database / backup artifacts
+backups/
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+*.tar
+*.tar.gz
+*.gz
+*.zip
+
+# Local Docker and generated state
+docker-data/
+data/
+volumes/
+
+# Temporary output
+tmp/
+temp/
+*.tmp
+
+# Codex / local tool output
+CODEX_LAST_MESSAGE.txt

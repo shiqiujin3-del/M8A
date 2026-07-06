@@ -1,0 +1,60 @@
+{
+  "mission_id": "mission_integration_example",
+  "task_id": "mission_integration_example_task_001",
+  "agent_name": "COTAS Integration Agent",
+  "status": "completed",
+  "summary": "COTAS/Codex reviewed how Coze API could be connected to M8A. This is a mock research and adapter plan only. No real Coze API was called.",
+  "modified_files": [],
+  "new_files": [
+    "apps/commander/capabilities/coze/coze_adapter_plan.py",
+    "apps/commander/capabilities/coze/tests/test_coze_adapter_plan.py"
+  ],
+  "test_results": [
+    {
+      "name": "schema_validation",
+      "status": "planned",
+      "notes": "Validate Coze request and response schemas before any live call."
+    },
+    {
+      "name": "mock_connection",
+      "status": "planned",
+      "notes": "Use mock Coze response first; no external API call."
+    }
+  ],
+  "risks": [
+    "Coze credential handling must be defined before real integration.",
+    "Webhook retries must be idempotent.",
+    "External write actions require CEO approval."
+  ],
+  "next_steps": [
+    "QA Agent reviews this result.",
+    "CEO approves or rejects the COTAS result.",
+    "If approved, create a separate implementation Mission."
+  ],
+  "requires_approval": true,
+  "approval_reason": "CEO approval required before moving from COTAS/Codex planning result to implementation.",
+  "artifacts": [
+    {
+      "artifact_type": "integration_plan",
+      "title": "Coze API to M8A Adapter Plan",
+      "content": {
+        "required_credentials": [
+          "COZE_API_BASE_URL",
+          "COZE_API_TOKEN",
+          "COZE_WEBHOOK_SECRET"
+        ],
+        "api_endpoints": [
+          "GET /health",
+          "POST /workflow/run",
+          "GET /workflow/runs/{id}"
+        ],
+        "adapter_design": {
+          "mode": "mock_first",
+          "approval_required": true,
+          "exception_policy": "create_exception_from_failure"
+        }
+      }
+    }
+  ]
+}
+

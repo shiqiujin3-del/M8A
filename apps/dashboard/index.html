@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>赛宇今日经营简报</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">M8A DOS V1</p>
+        <h1>M8A Commander Console</h1>
+      </div>
+      <div class="status-pill">2026-07-06 · CEO Control Center</div>
+    </header>
+
+    <section class="commander-brief">
+      <div class="brief-main">
+        <p class="eyebrow">Commander Brief</p>
+        <h2>今日建议：HK620 美国市场</h2>
+        <p class="brief-lead">建议先推进 HK620 美国市场，因为产品知识资产已经形成，内容和分发资产仍不足，当前系统已有可审批草稿。</p>
+        <ol class="reason-list">
+          <li>HK620 产品知识准备已完成内部版本。</li>
+          <li>美国市场内容资产不足，需要形成 Topic Cluster。</li>
+          <li>当前已有待审批草稿，可直接推动下一步。</li>
+          <li>完成本 Mission 后，可沉淀网站、社媒、销售回复基础包。</li>
+        </ol>
+        <div class="brief-actions">
+          <button type="button" class="primary-button" onclick="createMissionFromConsole()">接受建议</button>
+          <button type="button" onclick="focusMissionInput()">修改 Mission</button>
+          <button type="button" onclick="clearMissionInput()">自己创建 Mission</button>
+        </div>
+      </div>
+      <div class="brief-side">
+        <div><span>预计收益</span><strong>★★★★★</strong></div>
+        <div><span>预计耗时</span><strong id="brief-estimated-time">约 20 分钟</strong></div>
+        <div><span>风险等级</span><strong id="brief-risk-level">Medium</strong></div>
+        <div><span>系统状态</span><strong id="console-api-status">等待连接</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Boss Daily View</h2>
+      <div class="metric-strip">
+        <article><span>今日待处理</span><strong id="daily-top-count">0</strong></article>
+        <article><span>等待审批</span><strong id="daily-pending-approvals">0</strong></article>
+        <article><span>Active Missions</span><strong id="overview-active-missions">0</strong></article>
+        <article><span>失败任务</span><strong id="daily-failed-tasks">0</strong></article>
+        <article><span>今日新增 Mission</span><strong id="daily-new-missions">0</strong></article>
+        <article><span>今日完成 Mission</span><strong id="daily-completed-missions">0</strong></article>
+        <article><span>今日生成产出</span><strong id="daily-artifacts">0</strong></article>
+        <article><span>可发布内容</span><strong id="daily-publishable">0</strong></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Company Health</h2>
+      <div class="health-grid">
+        <article><div><span>Knowledge</span><strong>72%</strong></div><progress value="72" max="100"></progress><p>HK620 已形成内部知识资产，公开版本仍需审核。</p></article>
+        <article><div><span>Content</span><strong>68%</strong></div><progress value="68" max="100"></progress><p>内容结构和草稿能力已建立，仍需审批闭环。</p></article>
+        <article><div><span>Website</span><strong>40%</strong></div><progress value="40" max="100"></progress><p>已能准备草稿 Payload，尚未接真实发布。</p></article>
+        <article><div><span>Distribution</span><strong>18%</strong></div><progress value="18" max="100"></progress><p>内容已经准备完成，但尚未开始真实分发。</p></article>
+        <article><div><span>Sales</span><strong>22%</strong></div><progress value="22" max="100"></progress><p>询盘回复草稿可生成，真实客户入口未接入。</p></article>
+        <article><div><span>After Sales</span><strong>8%</strong></div><progress value="8" max="100"></progress><p>售后知识仍不足，需补充故障和服务 FAQ。</p></article>
+        <article><div><span>Growth</span><strong>34%</strong></div><progress value="34" max="100"></progress><p>基础操作系统已形成，增长数据源仍需接入。</p></article>
+      </div>
+    </section>
+
+    <section class="section console-hero slim-command">
+      <div>
+        <p class="eyebrow">Mission Command</p>
+        <h2>创建或调整 Mission</h2>
+        <div class="command-box">
+          <input id="ceo-command-input" type="text" value="今天重点做 HK620，美国市场。" aria-label="CEO command">
+          <button type="button" class="primary-button" onclick="createMissionFromConsole()">创建 Mission</button>
+        </div>
+        <p class="helper-text" id="mission-create-result">输入老板命令后，系统会创建 Mission 并进入队列。</p>
+      </div>
+      <div class="console-token">
+        <label for="commander-token-console">本地访问令牌</label>
+        <div class="command-box compact-box">
+          <input id="commander-token-console" type="password" placeholder="M8A_COMMANDER_API_TOKEN">
+          <button type="button" onclick="saveCommanderTokenFromConsole()">保存</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Waiting For CEO</h2>
+      <div class="decision-grid">
+        <div>
+          <h3>等待审批</h3>
+          <div class="card-list" id="console-approval-inbox">
+            <article class="business-card"><strong>等待读取真实数据</strong><p>审批事项会显示在这里。</p></article>
+          </div>
+        </div>
+        <div>
+          <h3>卡住事项</h3>
+          <div class="card-list" id="console-failed-tasks">
+            <article class="business-card"><strong>等待读取真实数据</strong><p>失败任务会显示在这里。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Active Missions</h2>
+      <div class="filter-bar">
+        <input id="mission-search" type="search" placeholder="搜索 Mission / 产品 / 市场 / 命令" oninput="renderConsoleFromState()">
+        <select id="mission-status-filter" onchange="renderConsoleFromState()">
+          <option value="all">全部状态</option>
+          <option value="active">active</option>
+          <option value="queued">queued</option>
+          <option value="running">running</option>
+          <option value="waiting_approval">waiting_approval</option>
+          <option value="completed">completed</option>
+          <option value="failed">failed</option>
+          <option value="archived">archived</option>
+        </select>
+        <select id="mission-product-filter" onchange="renderConsoleFromState()">
+          <option value="all">全部产品</option>
+          <option value="HK620">HK620</option>
+          <option value="Edge Banding">Edge Banding</option>
+          <option value="CNC">CNC</option>
+          <option value="Six-sided Drilling">Six-sided Drilling</option>
+        </select>
+        <select id="mission-market-filter" onchange="renderConsoleFromState()">
+          <option value="all">全部市场</option>
+          <option value="美国">美国</option>
+          <option value="国内">国内</option>
+          <option value="欧洲">欧洲</option>
+          <option value="东南亚">东南亚</option>
+          <option value="全球">全球</option>
+        </select>
+      </div>
+      <div class="mission-card-grid" id="active-mission-board">
+        <article class="business-card"><strong>等待读取真实数据</strong><p>Mission 会显示在这里。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Today Company Created</h2>
+      <div class="created-list" id="console-artifacts">
+        <article class="business-card"><strong>等待读取真实数据</strong><p>今天 AI 公司创造的成果会显示在这里。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mission 详情</h2>
+      <div class="detail-toolbar">
+        <strong id="console-selected-mission">未选择 Mission</strong>
+        <div>
+          <select id="runner-interval">
+            <option value="5">5 秒</option>
+            <option value="10">10 秒</option>
+            <option value="30">30 秒</option>
+          </select>
+          <button type="button" class="primary-button" onclick="startRunner()">Start Runner</button>
+          <button type="button" onclick="pauseRunner()">Pause Runner</button>
+          <button type="button" onclick="resumeRunner()">Resume Runner</button>
+          <button type="button" class="reject-button" onclick="stopRunner()">Stop Runner</button>
+          <button type="button" onclick="runNextTask()">Run Once</button>
+          <button type="button" onclick="runSelectedMission()">Run This Mission</button>
+          <button type="button" onclick="loadRunnerStatus()">Runner 状态</button>
+          <button type="button" onclick="refreshSelectedMission()">刷新详情</button>
+          <button type="button" class="reject-button" onclick="archiveSelectedMission()">归档 Mission</button>
+        </div>
+      </div>
+      <p class="helper-text" id="runner-status-line">Runner 暂未运行。所有外部动作只会生成草稿和审批，不会发布。</p>
+      <div class="mission-detail-shell">
+        <div class="tab-row">
+          <button type="button" class="tab-button active" onclick="showMissionTab('overview', this)">总览</button>
+          <button type="button" class="tab-button" onclick="showMissionTab('progress', this)">进度</button>
+          <button type="button" class="tab-button" onclick="showMissionTab('approval', this)">审批</button>
+          <button type="button" class="tab-button" onclick="showMissionTab('output', this)">产出</button>
+          <button type="button" class="tab-button" onclick="showMissionTab('risk', this)">风险</button>
+          <button type="button" class="tab-button" onclick="showMissionTab('log', this)">日志</button>
+        </div>
+        <div class="tab-panel active" id="tab-overview"><div id="console-mission-detail" class="detail-cards"></div></div>
+        <div class="tab-panel" id="tab-progress"><div id="console-detail-tasks" class="progress-list"></div></div>
+        <div class="tab-panel" id="tab-approval"><div id="console-detail-approvals" class="card-list"></div></div>
+        <div class="tab-panel" id="tab-output"><div id="console-detail-artifacts" class="created-list"></div></div>
+        <div class="tab-panel" id="tab-risk"><div id="console-detail-summary" class="risk-list"></div></div>
+        <div class="tab-panel" id="tab-log"><details class="raw-data-box"><summary>查看技术日志</summary><div id="console-detail-events"></div></details></div>
+      </div>
+    </section>
+
+    <div class="modal-backdrop" id="approval-modal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="approval-modal-title">
+        <div class="modal-header">
+          <h2 id="approval-modal-title">审批详情</h2>
+          <button type="button" onclick="closeApprovalModal()">关闭</button>
+        </div>
+        <div class="table modal-table" id="approval-modal-info">
+          <div><span>Approval</span><strong>未选择</strong></div>
+        </div>
+        <label class="modal-label" for="approval-modal-reason">审批原因</label>
+        <input id="approval-modal-reason" type="text" placeholder="请填写审批原因">
+        <details class="raw-data-box">
+          <summary>查看原始数据</summary>
+          <pre id="approval-modal-payload">{}</pre>
+        </details>
+        <div class="modal-actions">
+          <button type="button" class="approve-button" onclick="decideModalApproval('approved')">审批通过</button>
+          <button type="button" class="reject-button" onclick="decideModalApproval('rejected')">审批拒绝</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="legacy-hidden brief-hero" aria-label="Growth score and priorities">
+      <div class="score-card">
+        <p class="eyebrow">Growth Score</p>
+        <strong>38 / 100</strong>
+        <span>今日评分</span>
+      </div>
+      <div class="score-detail">
+        <div class="score-row">
+          <span>昨日评分</span><strong>31 / 100</strong>
+        </div>
+        <div class="score-row">
+          <span>分数变化</span><strong>+7</strong>
+        </div>
+        <div class="score-columns">
+          <div>
+            <h2>主要扣分原因</h2>
+            <ol class="priority-list compact">
+              <li><strong>Search Console / GA4 / 客户数据未接入</strong><span>GEO、Website、Customer、Analytics 仍缺真实数据源。</span></li>
+              <li><strong>HK620 技术参数与媒体资料缺失</strong><span>Technical Specs、Images、Videos、Service FAQ 仍未 approved。</span></li>
+              <li><strong>今日无发布任务</strong><span>Content Operator 已产出 9 份草稿，但仍需人工审核。</span></li>
+            </ol>
+          </div>
+          <div>
+            <h2>今日前三优先事项</h2>
+            <ol class="priority-list compact">
+              <li><strong>准备 Search Console 接入权限</strong><span>先拿到 verified property 与只读 API 权限。</span></li>
+              <li><strong>补 HK620 技术参数和产品媒体</strong><span>Power、Voltage、Speed、工件范围、图片、视频优先。</span></li>
+              <li><strong>审核 Content Operator 今日草稿</strong><span>9 份 HK620 内容已进入 needs_human_review。</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Growth Score Breakdown</h2>
+      <div class="score-grid">
+        <article class="panel"><span>Knowledge Score</span><strong>13 / 20</strong><small>8 cards approved internal</small></article>
+        <article class="panel"><span>GEO / SEO Score</span><strong>2 / 20</strong><small>TODO：Search Console / AI Search</small></article>
+        <article class="panel"><span>Content Score</span><strong>14 / 20</strong><small>Content Operator produced 9 drafts</small></article>
+        <article class="panel"><span>Website Score</span><strong>2 / 15</strong><small>TODO：Sitemap / Index / CWV</small></article>
+        <article class="panel"><span>Publishing Score</span><strong>3 / 10</strong><small>WordPress target ready，0 jobs</small></article>
+        <article class="panel"><span>Customer Score</span><strong>1 / 10</strong><small>TODO：询盘 / CRM</small></article>
+        <article class="panel"><span>Analytics Score</span><strong>3 / 5</strong><small>Daily report exists，GA4/SC TODO</small></article>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Business Automation Readiness</h2>
+      <div class="score-grid">
+        <article class="panel"><span>网站文章</span><strong>90%</strong><small>内容生产接近可用，仍需人工审核发布</small></article>
+        <article class="panel"><span>视频脚本</span><strong>100%</strong><small>脚本生成能力已成熟</small></article>
+        <article class="panel"><span>WordPress</span><strong>40%</strong><small>下一阶段主攻：Draft → Review → Publish</small></article>
+        <article class="panel"><span>Facebook</span><strong>0%</strong><small>待账号、权限、审核流程确认</small></article>
+        <article class="panel"><span>TikTok</span><strong>0%</strong><small>先评估官方 API 与半自动发布</small></article>
+        <article class="panel"><span>客户回复</span><strong>5%</strong><small>仅预留，尚未接入真实询盘</small></article>
+        <article class="panel"><span>售后</span><strong>0%</strong><small>需先补服务 FAQ 与故障知识</small></article>
+        <article class="panel"><span>综合成熟度</span><strong>34%</strong><small>当前业务自动化基线</small></article>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Content Operator Today</h2>
+      <div class="score-grid">
+        <article class="panel"><span>Website Article</span><strong>1</strong><small>HK620 English article draft</small></article>
+        <article class="panel"><span>Chinese GEO Article</span><strong>1</strong><small>HK620 Chinese GEO draft</small></article>
+        <article class="panel"><span>FAQ</span><strong>10</strong><small>FAQ draft generated</small></article>
+        <article class="panel"><span>Video Scripts</span><strong>2</strong><small>CN + EN short video scripts</small></article>
+        <article class="panel"><span>LinkedIn Draft</span><strong>1</strong><small>Pending human review</small></article>
+        <article class="panel"><span>Facebook Draft</span><strong>1</strong><small>Pending human review</small></article>
+        <article class="panel"><span>Meta Assets</span><strong>2</strong><small>Meta title + description</small></article>
+        <article class="panel"><span>Pending Review</span><strong>9</strong><small>Draft Queue: needs_human_review</small></article>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Commander 旧版状态区</h2>
+      <div class="table">
+        <div>
+          <span>Local API Token</span>
+          <strong>
+            <input id="commander-token" type="password" placeholder="M8A_COMMANDER_API_TOKEN" style="width: 100%; max-width: 260px;">
+            <button type="button" onclick="saveCommanderToken()">保存</button>
+          </strong>
+        </div>
+      </div>
+      <div class="score-grid">
+        <article class="panel"><span>Current Mission</span><strong id="commander-mission">Loading</strong><small>Mission Control V1 API</small></article>
+        <article class="panel"><span>Mission Status</span><strong id="commander-status">Loading</strong><small id="commander-api-status">Connecting to localhost:8787</small></article>
+        <article class="panel"><span>Running Tasks</span><strong id="commander-running">0</strong><small>PostgreSQL queue</small></article>
+        <article class="panel"><span>Completed Tasks</span><strong id="commander-completed">0</strong><small>PostgreSQL queue</small></article>
+        <article class="panel"><span>Failed Tasks</span><strong id="commander-failed">0</strong><small>PostgreSQL queue</small></article>
+        <article class="panel"><span>Today's Mission</span><strong id="commander-priority">P0</strong><small id="commander-total">Tasks: 0</small></article>
+        <article class="panel"><span>Artifacts</span><strong id="commander-artifacts">0</strong><small>Generated locally</small></article>
+        <article class="panel"><span>Approvals</span><strong id="commander-approvals">0</strong><small>CEO 石总 only</small></article>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Mission Detail</h2>
+      <div class="table" id="mission-detail">
+        <div><span>Status</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Mission List</h2>
+      <div class="table" id="mission-list">
+        <div><span>Missions</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Task List</h2>
+      <div class="table" id="mission-tasks">
+        <div><span>Tasks</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Task Events</h2>
+      <div class="table" id="mission-events">
+        <div><span>Events</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Artifacts</h2>
+      <div class="table" id="mission-artifacts">
+        <div><span>Artifacts</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>CEO Approval Inbox</h2>
+      <div class="table" id="approval-inbox">
+        <div><span>Pending Approvals</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Failed Tasks</h2>
+      <div class="table" id="failed-tasks">
+        <div><span>Failed Tasks</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Approval Audit</h2>
+      <div class="table" id="approval-audit">
+        <div><span>Approvals</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>WordPress Draft Simulator</h2>
+      <div class="table" id="wordpress-drafts">
+        <div><span>Drafts</span><strong>Waiting for Mission Control API</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden status-grid" aria-label="Daily operation modules">
+      <article class="panel"><span>Today's Content</span><strong>9</strong><small>Content Operator produced</small></article>
+      <article class="panel"><span>Today's GEO</span><strong>待接入</strong><small>关键词机会 / AI Search 暂无数据源</small></article>
+      <article class="panel"><span>Today's Website</span><strong>待接入</strong><small>Sitemap / Index / 404 / CWV</small></article>
+      <article class="panel"><span>Today's Customers</span><strong>预留</strong><small>询盘 / 待回复 / CRM</small></article>
+      <article class="panel"><span>Today's Publishing</span><strong>0</strong><small>WordPress publish jobs</small></article>
+      <article class="panel"><span>Today's Knowledge</span><strong>1</strong><small>HK620 approved_internal</small></article>
+      <article class="panel"><span>Today's KPI</span><strong>低基线</strong><small>生产系统刚进入 DOS</small></article>
+      <article class="panel"><span>Boss Decision</span><strong>先审核</strong><small>没有 approved knowledge 不发布</small></article>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Website Situation</h2>
+      <div class="table">
+        <div><span>新增文章</span><strong>0</strong></div>
+        <div><span>待审核文章</span><strong>2 · English / Chinese GEO draft</strong></div>
+        <div><span>已发布文章</span><strong>0</strong></div>
+        <div><span>Sitemap 状态</span><strong>待接入 Search Console</strong></div>
+        <div><span>Index 状态</span><strong>待接入 Search Console</strong></div>
+        <div><span>404 / Core Web Vitals</span><strong>待接入</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>GEO / SEO</h2>
+      <div class="table">
+        <div><span>今日新增关键词机会</span><strong>待接入</strong></div>
+        <div><span>Topic Cluster 建议</span><strong>HK620 骨骼门线条 / 封边开槽切断</strong></div>
+        <div><span>Content Gap</span><strong>HK620 技术参数、工艺细节、客户案例</strong></div>
+        <div><span>Search Console 变化</span><strong>待接入</strong></div>
+        <div><span>GEO 覆盖率</span><strong>草稿已生成，未审核</strong></div>
+        <div><span>AI Search 引用变化</span><strong>待接入</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Content Center</h2>
+      <div class="table">
+        <div><span>Today Content Produced</span><strong>9</strong></div>
+        <div><span>Today Pending Review</span><strong>9</strong></div>
+        <div><span>Today Approved</span><strong>0</strong></div>
+        <div><span>Today Published</span><strong>0</strong></div>
+        <div><span>Today Video Scripts</span><strong>2</strong></div>
+        <div><span>Draft Queue Status</span><strong>needs_human_review</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Product Knowledge</h2>
+      <div class="table">
+        <div><span>HK620 覆盖率</span><strong>55% internal / 0% public</strong></div>
+        <div><span>Approved</span><strong>1 internal record / 8 cards</strong></div>
+        <div><span>Review Pending</span><strong>7 cards / specs / media</strong></div>
+        <div><span>Inbox</span><strong>0</strong></div>
+        <div><span>Queue</span><strong>0</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Publishing</h2>
+      <div class="table">
+        <div><span>Draft</span><strong>0 WordPress jobs</strong></div>
+        <div><span>Pending</span><strong>0</strong></div>
+        <div><span>Approved</span><strong>0</strong></div>
+        <div><span>Published</span><strong>0</strong></div>
+        <div><span>Failed</span><strong>0</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Customer</h2>
+      <div class="table">
+        <div><span>今日询盘</span><strong>预留</strong></div>
+        <div><span>待回复</span><strong>预留</strong></div>
+        <div><span>CRM</span><strong>未接入</strong></div>
+      </div>
+    </section>
+
+    <section class="legacy-hidden section">
+      <h2>Growth KPI</h2>
+      <div class="kpi-grid">
+        <article class="panel"><span>Knowledge Coverage</span><strong>55%</strong><small>approved internal only</small></article>
+        <article class="panel"><span>Content Produced</span><strong>9</strong><small>Content Operator today</small></article>
+        <article class="panel"><span>Published</span><strong>0</strong><small>no approved article</small></article>
+        <article class="panel"><span>Google Indexed</span><strong>待接入</strong><small>Search Console</small></article>
+        <article class="panel"><span>AI Search Mentions</span><strong>待接入</strong><small>GEO monitor</small></article>
+        <article class="panel"><span>Website Visits</span><strong>待接入</strong><small>GA4</small></article>
+        <article class="panel"><span>Leads</span><strong>预留</strong><small>CRM</small></article>
+        <article class="panel"><span>Customer Replies</span><strong>预留</strong><small>Email / WhatsApp / WeChat</small></article>
+      </div>
+    </section>
+
+    <section class="section end-day">
+      <h2>End Of Day</h2>
+      <div class="end-day-grid">
+        <article><span>今天完成 Mission</span><strong id="end-missions">0</strong></article>
+        <article><span>今天处理审批</span><strong id="end-approvals">0</strong></article>
+        <article><span>新增知识</span><strong id="end-knowledge">0</strong></article>
+        <article><span>新增内容</span><strong id="end-content">0</strong></article>
+        <article><span>失败任务</span><strong id="end-failed">0</strong></article>
+      </div>
+      <div class="tomorrow-card">
+        <span>明天继续</span>
+        <strong id="end-tomorrow">继续推进 HK620 美国市场内容与审批闭环。</strong>
+        <small id="end-first-priority">预计第一优先：处理待审批草稿 · 预计耗时：约 20 分钟</small>
+      </div>
+    </section>
+  </main>
+  <script>
+    const apiBase = "http://localhost:8787";
+    const commanderTokenInput = document.getElementById("commander-token");
+    const commanderTokenConsoleInput = document.getElementById("commander-token-console");
+    let selectedMissionId = localStorage.getItem("m8aSelectedMissionId") || "";
+    let selectedApprovalId = "";
+    let consoleState = { missions: [], tasks: [], approvals: [], artifacts: [] };
+    commanderTokenInput.value = localStorage.getItem("m8aCommanderApiToken") || "";
+    commanderTokenConsoleInput.value = localStorage.getItem("m8aCommanderApiToken") || "";
+
+    function saveCommanderToken() {
+      localStorage.setItem("m8aCommanderApiToken", commanderTokenInput.value.trim());
+      commanderTokenConsoleInput.value = commanderTokenInput.value.trim();
+      loadCommander();
+      loadConsole();
+    }
+
+    function saveCommanderTokenFromConsole() {
+      localStorage.setItem("m8aCommanderApiToken", commanderTokenConsoleInput.value.trim());
+      commanderTokenInput.value = commanderTokenConsoleInput.value.trim();
+      loadCommander();
+      loadConsole();
+    }
+
+    function authHeaders() {
+      const token = localStorage.getItem("m8aCommanderApiToken") || "";
+      return token ? { Authorization: `Bearer ${token}` } : {};
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function previewJson(value) {
+      if (!value) return "";
+      const text = JSON.stringify(value, null, 2);
+      return escapeHtml(text.length > 260 ? `${text.slice(0, 260)}...` : text);
+    }
+
+    function prettyJson(value) {
+      return JSON.stringify(value || {}, null, 2);
+    }
+
+    function setRows(id, rows) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.innerHTML = rows.map(([label, value]) => `<div><span>${escapeHtml(label)}</span><strong>${value}</strong></div>`).join("");
+    }
+
+    async function apiFetch(path, options = {}) {
+      const response = await fetch(`${apiBase}${path}`, {
+        cache: "no-store",
+        ...options,
+        headers: {
+          ...(options.headers || {}),
+          ...authHeaders()
+        }
+      });
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`HTTP ${response.status} ${text}`);
+      }
+      return response.json();
+    }
+
+    async function apiPost(path, payload) {
+      return apiFetch(path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload || {})
+      });
+    }
+
+    function setTextValue(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function contentSummary(value) {
+      if (!value) return "-";
+      if (typeof value === "string") return escapeHtml(value.slice(0, 220));
+      if (value.platform === "wordpress" && value.configured === false) return escapeHtml(value.message || "WordPress 未配置，当前仅生成本地 Draft Payload。");
+      if (value.platform === "wordpress" && value.wp_post_id) return escapeHtml(`${value.title || "WordPress Draft"} · status=${value.wp_status || "draft"} · post=${value.wp_post_id}`);
+      if (value.title) return escapeHtml(value.title);
+      if (Array.isArray(value.selected_agents)) return escapeHtml(`Selected Agents: ${value.selected_agents.join(" → ")}`);
+      if (value.summary) return escapeHtml(value.summary);
+      if (value.content_preview) return escapeHtml(value.content_preview);
+      if (value.draft_reply) return escapeHtml(value.draft_reply);
+      if (Array.isArray(value.sections)) return escapeHtml(value.sections.join(" / "));
+      if (Array.isArray(value.directions)) return escapeHtml(value.directions.join(" / "));
+      return previewJson(value);
+    }
+
+    function missionTaskStats(tasks, approvals, missionId) {
+      const missionTasks = tasks.filter((task) => task.mission_id === missionId);
+      const total = missionTasks.length;
+      const completed = missionTasks.filter((task) => task.status === "completed").length;
+      const failed = missionTasks.filter((task) => task.status === "failed").length;
+      const waiting = approvals.filter((approval) => approval.mission_id === missionId && approval.status === "pending").length;
+      return {
+        total,
+        completed,
+        failed,
+        waiting,
+        progress: total ? `${completed}/${total}` : "0/0"
+      };
+    }
+
+    function marketLabel(value) {
+      const raw = String(value || "");
+      if (raw === "USA" || raw.toLowerCase() === "us" || raw.includes("美国")) return "美国";
+      if (raw.includes("中国") || raw.includes("国内")) return "国内";
+      if (raw.toLowerCase().includes("europe") || raw.includes("欧洲")) return "欧洲";
+      if (raw.toLowerCase().includes("southeast") || raw.includes("东南亚")) return "东南亚";
+      if (raw.toLowerCase().includes("global") || raw.includes("全球")) return "全球";
+      return raw || "-";
+    }
+
+    function missionMatchesProduct(mission, filter) {
+      if (filter === "all") return true;
+      const haystack = `${mission.product || ""} ${mission.mission_name || ""} ${mission.command_text || ""}`.toLowerCase();
+      return haystack.includes(filter.toLowerCase());
+    }
+
+    function missionMatchesMarket(mission, filter) {
+      if (filter === "all") return true;
+      return marketLabel(mission.market || mission.input?.market || mission.command_text).includes(filter);
+    }
+
+    function missionMatchesStatus(mission, filter, tasks, approvals) {
+      if (filter === "all") return true;
+      if (filter === "active") return ["queued", "claimed", "running", "waiting_approval"].includes(mission.status);
+      if (filter === "failed") return mission.status === "failed" || tasks.some((task) => task.mission_id === mission.mission_id && task.status === "failed");
+      if (filter === "waiting_approval") return mission.status === "waiting_approval" || approvals.some((approval) => approval.mission_id === mission.mission_id && approval.status === "pending");
+      return mission.status === filter;
+    }
+
+    function missionMatchesSearch(mission, search) {
+      if (!search) return true;
+      const haystack = `${mission.mission_id || ""} ${mission.mission_name || ""} ${mission.product || ""} ${mission.market || ""} ${mission.command_text || ""} ${mission.objective || ""}`.toLowerCase();
+      return haystack.includes(search.toLowerCase());
+    }
+
+    function dailyActions(missions, tasks, approvals) {
+      const actions = [];
+      const pending = approvals.filter((approval) => approval.status === "pending");
+      const failed = tasks.filter((task) => task.status === "failed");
+      const queued = tasks.filter((task) => task.status === "queued");
+      if (pending.length) actions.push(`审批 ${pending.length} 个待确认事项`);
+      if (failed.length) actions.push(`处理 ${failed.length} 个失败任务`);
+      if (queued.length) actions.push(`检查 ${queued.length} 个排队任务是否需要执行`);
+      if (!actions.length && missions.some((mission) => mission.status !== "archived")) actions.push("查看 active Mission 进度");
+      if (actions.length < 3) actions.push("补充 HK620 缺失资料");
+      if (actions.length < 3) actions.push("审核今日内容产物");
+      return actions.slice(0, 3);
+    }
+
+    function payloadTitle(payload) {
+      if (!payload) return "-";
+      const data = payload.payload || payload;
+      if (data.title) return data.title;
+      if (Array.isArray(data.selected_agents)) return `Agent Plan：${data.selected_agents.join(" → ")}`;
+      if (data.platforms) return `平台草稿：${data.platforms.join(" / ")}`;
+      if (data.channel) return `${data.channel} 回复草稿`;
+      if (payload.reason) return payload.reason;
+      return "本地审批 payload";
+    }
+
+    function actionLabel(action) {
+      const labels = {
+        read_hk620_product_knowledge: "读取 HK620 产品知识",
+        generate_us_market_direction: "美国市场分析",
+        generate_english_landing_page_structure: "Landing Page Draft",
+        simulate_wordpress_draft: "WordPress Draft Payload",
+        generate_social_distribution_drafts: "社媒分发草稿",
+        generate_whatsapp_inquiry_reply: "WhatsApp Reply",
+        generate_mission_summary: "Mission Summary",
+        approve_agent_plan: "Agent Plan 审批"
+      };
+      return labels[action] || action || "Mission 工作项";
+    }
+
+    function artifactLabel(artifact) {
+      const payload = artifact.content_json || {};
+      if (artifact.artifact_type === "agent_plan" || Array.isArray(payload.selected_agents)) return "Agent Dispatcher Plan";
+      if (artifact.artifact_type === "wordpress_draft" || payload.wp_post_id) return "WordPress Draft";
+      if (payload.platform === "wordpress" && payload.configured === false) return "WordPress 未配置";
+      if (payload.platform === "wordpress") return "WordPress Draft Payload";
+      if (payload.platforms) return "社媒分发草稿";
+      if (payload.channel === "WhatsApp") return "WhatsApp Reply";
+      if (Array.isArray(payload.sections)) return "Landing Page Draft";
+      if (Array.isArray(payload.directions)) return "美国市场分析";
+      if (payload.summary) return "Mission Summary";
+      return artifact.title || artifact.artifact_type || "业务产出";
+    }
+
+    function focusMissionInput() {
+      document.getElementById("ceo-command-input")?.focus();
+    }
+
+    function clearMissionInput() {
+      const input = document.getElementById("ceo-command-input");
+      if (!input) return;
+      input.value = "";
+      input.focus();
+      setTextValue("mission-create-result", "请输入新的老板命令。");
+    }
+
+    function showMissionTab(tabName, button) {
+      document.querySelectorAll(".tab-panel").forEach((panel) => panel.classList.remove("active"));
+      document.querySelectorAll(".tab-button").forEach((tab) => tab.classList.remove("active"));
+      document.getElementById(`tab-${tabName}`)?.classList.add("active");
+      button?.classList.add("active");
+    }
+
+    async function createMissionFromConsole() {
+      const command = document.getElementById("ceo-command-input").value.trim();
+      if (!command) {
+        setTextValue("mission-create-result", "请输入老板命令。");
+        return;
+      }
+      try {
+        const data = await apiPost("/api/missions", { command_text: command });
+        const mission = data.mission || {};
+        selectedMissionId = mission.mission_id || "";
+        localStorage.setItem("m8aSelectedMissionId", selectedMissionId);
+        setTextValue("mission-create-result", `已创建：${mission.mission_id} · 状态：${mission.status}`);
+        await loadConsole();
+        if (selectedMissionId) await loadMissionDetail(selectedMissionId);
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("mission-create-result", `创建失败：${error.message}`);
+      }
+    }
+
+    async function selectMission(missionId) {
+      selectedMissionId = missionId;
+      localStorage.setItem("m8aSelectedMissionId", missionId);
+      await loadMissionDetail(missionId);
+    }
+
+    async function refreshSelectedMission() {
+      if (!selectedMissionId) return;
+      await loadMissionDetail(selectedMissionId);
+    }
+
+    async function archiveSelectedMission() {
+      if (!selectedMissionId) {
+        alert("请先选择一个 Mission。");
+        return;
+      }
+      if (!confirm("确认归档这个 Mission？归档后不会出现在 Active Mission Board，但仍可通过 archived 筛选找到。")) return;
+      try {
+        await apiPost(`/api/missions/${selectedMissionId}/archive`, {});
+        await loadConsole();
+        await loadMissionDetail(selectedMissionId);
+      } catch (error) {
+        alert(`归档失败：${error.message}`);
+      }
+    }
+
+    async function loadRunnerStatus() {
+      try {
+        const data = await apiFetch("/api/runner/status");
+        const runner = data.runner || {};
+        setTextValue(
+          "runner-status-line",
+          `模式：${runner.mode || "manual"} · 运行中：${runner.is_running ? "是" : "否"} · 暂停：${runner.is_paused ? "是" : "否"} · 当前任务：${runner.current_task_id || "-"} · 最近任务：${runner.last_task_id || "-"} · 今日执行：${runner.total_tasks_run_today || 0} · 最近错误：${runner.last_error || "无"}`
+        );
+      } catch (error) {
+        setTextValue("runner-status-line", `Runner 状态读取失败：${error.message}`);
+      }
+    }
+
+    async function startRunner() {
+      try {
+        const interval = Number(document.getElementById("runner-interval")?.value || 5);
+        const data = await apiPost("/api/runner/start", { interval_seconds: interval, mission_id: selectedMissionId || null });
+        setTextValue("runner-status-line", `Runner 已启动：${data.runner?.mode || "loop"} · 间隔 ${data.runner?.interval_seconds || interval} 秒`);
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `Runner 启动失败：${error.message}`);
+      }
+    }
+
+    async function pauseRunner() {
+      try {
+        await apiPost("/api/runner/pause", {});
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `Runner 暂停失败：${error.message}`);
+      }
+    }
+
+    async function resumeRunner() {
+      try {
+        await apiPost("/api/runner/resume", {});
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `Runner 恢复失败：${error.message}`);
+      }
+    }
+
+    async function stopRunner() {
+      try {
+        await apiPost("/api/runner/stop", {});
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `Runner 停止失败：${error.message}`);
+      }
+    }
+
+    async function runNextTask() {
+      try {
+        const result = await apiPost("/api/runner/run-once", {});
+        if (result.ran) {
+          setTextValue("runner-status-line", `已运行 1 个任务：${actionLabel(result.task?.action)} · 状态 ${result.task?.status || "-"}`);
+          selectedMissionId = result.task?.mission_id || selectedMissionId;
+        } else {
+          setTextValue("runner-status-line", "当前没有 queued task 可运行。");
+        }
+        await loadConsole();
+        if (selectedMissionId) await loadMissionDetail(selectedMissionId);
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `运行失败：${error.message}`);
+      }
+    }
+
+    async function runSelectedMission() {
+      if (!selectedMissionId) {
+        alert("请先选择一个 Mission。");
+        return;
+      }
+      try {
+        const result = await apiPost(`/api/runner/run-mission/${selectedMissionId}`, {});
+        setTextValue("runner-status-line", `本 Mission 已本地执行 ${result.executed_count || 0} 个 queued task。`);
+        await loadConsole();
+        await loadMissionDetail(selectedMissionId);
+        await loadRunnerStatus();
+      } catch (error) {
+        setTextValue("runner-status-line", `运行 Mission 失败：${error.message}`);
+      }
+    }
+
+    function openApprovalModal(approvalId) {
+      const approval = consoleState.approvals.find((item) => item.approval_id === approvalId);
+      if (!approval) return;
+      selectedApprovalId = approvalId;
+      setRows("approval-modal-info", [
+        ["Mission", escapeHtml(approval.mission_name || approval.mission_id || "")],
+        ["Task", escapeHtml(approval.task_title || approval.task_id || "")],
+        ["Platform", escapeHtml(approval.platform || "Internal")],
+        ["Action Type", escapeHtml(approval.action_type || approval.approval_type || "")],
+        ["Risk Level", escapeHtml(approval.risk_level || "high")],
+        ["当前状态", escapeHtml(approval.status || "pending")],
+        ["Payload 摘要", escapeHtml(payloadTitle(approval.payload_snapshot || approval.request_payload))]
+      ]);
+      document.getElementById("approval-modal-reason").value = approval.decision_reason || "";
+      document.getElementById("approval-modal-payload").textContent = prettyJson(approval.payload_snapshot || approval.request_payload);
+      document.getElementById("approval-modal").classList.add("open");
+      document.getElementById("approval-modal").setAttribute("aria-hidden", "false");
+    }
+
+    function closeApprovalModal() {
+      selectedApprovalId = "";
+      document.getElementById("approval-modal").classList.remove("open");
+      document.getElementById("approval-modal").setAttribute("aria-hidden", "true");
+    }
+
+    async function decideModalApproval(decision) {
+      if (!selectedApprovalId) return;
+      const reason = document.getElementById("approval-modal-reason").value.trim() || `${decision} by CEO from Approval Detail; no external action executed.`;
+      try {
+        await apiPost(`/api/approvals/${selectedApprovalId}/decision`, {
+          decision,
+          decision_reason: reason,
+          decided_by: "石总"
+        });
+        closeApprovalModal();
+        await loadConsole();
+        if (selectedMissionId) await loadMissionDetail(selectedMissionId);
+      } catch (error) {
+        alert(`审批失败：${error.message}`);
+      }
+    }
+
+    async function consoleDecideApproval(approvalId, decision) {
+      const reasonInput = document.getElementById(`reason-${approvalId}`);
+      const reason = reasonInput?.value?.trim() || `${decision} by CEO from Commander Console; no external action executed.`;
+      try {
+        await apiPost(`/api/approvals/${approvalId}/decision`, {
+          decision,
+          decision_reason: reason,
+          decided_by: "石总"
+        });
+        await loadConsole();
+        if (selectedMissionId) await loadMissionDetail(selectedMissionId);
+      } catch (error) {
+        alert(`审批失败：${error.message}`);
+      }
+    }
+
+    async function loadMissionDetail(missionId) {
+      try {
+        const data = await apiFetch(`/api/missions/${missionId}`);
+        const mission = data.mission || {};
+        const tasks = mission.tasks || [];
+        const events = mission.events || [];
+        const artifacts = mission.artifacts || [];
+        const approvals = mission.approvals || [];
+        setTextValue("console-selected-mission", mission.mission_name || mission.mission_id || "Mission Detail");
+        const completed = tasks.filter((task) => task.status === "completed").length;
+        const pending = approvals.filter((approval) => approval.status === "pending").length;
+        const failed = tasks.filter((task) => task.status === "failed").length;
+        document.getElementById("console-mission-detail").innerHTML = `
+          <article class="overview-card">
+            <span>业务目标</span>
+            <strong>${escapeHtml(mission.objective || mission.command_text || "暂无目标")}</strong>
+            <p>产品：${escapeHtml(mission.product || "-")} · 市场：${escapeHtml(marketLabel(mission.market || mission.input?.market))} · 状态：${escapeHtml(mission.status || "-")}</p>
+          </article>
+          <article class="overview-card">
+            <span>当前建议</span>
+            <strong>${pending ? `先处理 ${pending} 个审批` : failed ? `先处理 ${failed} 个失败任务` : "继续查看产出并归档已完成事项"}</strong>
+            <p>进度：${completed}/${tasks.length || 0} · 风险等级：${failed ? "High" : pending ? "Medium" : "Low"}</p>
+          </article>`;
+        document.getElementById("console-detail-tasks").innerHTML = tasks.map((task) => `
+          <article class="progress-item ${escapeHtml(task.status)}">
+            <span>${escapeHtml(task.worker_name)}</span>
+            <strong>${escapeHtml(actionLabel(task.action))}</strong>
+            <p>状态：${escapeHtml(task.status)} · 审批：${task.requires_approval ? "需要" : "不需要"} · 重试：${escapeHtml(task.retry_count || 0)}</p>
+          </article>
+        `).join("") || `<article class="business-card"><strong>暂无进度</strong><p>Mission 尚未生成任务。</p></article>`;
+        document.getElementById("console-detail-events").innerHTML = events.slice(-30).reverse().map((event) => `
+          <div class="log-line"><strong>${escapeHtml(event.event_type)}</strong><span>${escapeHtml(event.event_message || "")}</span></div>
+        `).join("") || `<div class="log-line"><strong>暂无日志</strong><span>技术日志会在这里折叠显示。</span></div>`;
+        document.getElementById("console-detail-artifacts").innerHTML = artifacts.map((artifact) => `
+          <article class="business-card">
+            <span>${escapeHtml(artifact.artifact_type)}</span>
+            <strong>${escapeHtml(artifactLabel(artifact))}</strong>
+            <p>${contentSummary(artifact.content_json)}</p>
+            ${artifact.content_json?.platform === "wordpress" ? `<p>Slug：${escapeHtml(artifact.content_json.slug || "-")} · Draft：${escapeHtml(artifact.content_json.wp_status || artifact.content_json.status || "draft")} · Link：${escapeHtml(artifact.content_json.wp_edit_url || artifact.content_json.wp_link || "未配置")}</p>` : ""}
+          </article>
+        `).join("") || `<article class="business-card"><strong>暂无产出</strong><p>Mission 产出会显示在这里。</p></article>`;
+        document.getElementById("console-detail-approvals").innerHTML = approvals.map((approval) => `
+          <article class="business-card">
+            <span>${escapeHtml(approval.platform || "Internal")}</span>
+            <strong>${escapeHtml(payloadTitle(approval.payload_snapshot || approval.request_payload))}</strong>
+            <p>状态：${escapeHtml(approval.status)} · 风险：${escapeHtml(approval.risk_level || "high")}</p>
+            ${approval.status === "pending" ? `<button type="button" class="primary-button" onclick="openApprovalModal('${escapeHtml(approval.approval_id)}')">查看审批详情</button>` : ""}
+          </article>
+        `).join("") || `<article class="business-card"><strong>暂无审批</strong><p>当前 Mission 没有等待审批事项。</p></article>`;
+        const summary = artifacts.find((artifact) => artifact.title?.includes("Mission Summary")) || artifacts.find((artifact) => artifact.content_json?.summary);
+        document.getElementById("console-detail-summary").innerHTML = `
+          <article class="business-card">
+            <strong>${failed ? "存在失败任务，需要处理" : pending ? "存在待审批事项，需要石总确认" : "风险可控"}</strong>
+            <p>${summary ? contentSummary(summary.content_json) : "暂无 Mission Summary。外部发布、客户回复、社媒分发仍需人工审批，不会自动执行。"}</p>
+          </article>`;
+      } catch (error) {
+        setRows("console-mission-detail", [["Mission Detail", "读取失败，请检查本地访问令牌或系统连接。"]]);
+      }
+    }
+
+    async function loadConsole() {
+      try {
+        const [missionData, taskData, approvalData, artifactData] = await Promise.all([
+          apiFetch("/api/missions"),
+          apiFetch("/api/tasks"),
+          apiFetch("/api/approvals"),
+          apiFetch("/api/artifacts")
+        ]);
+        const missions = missionData.missions || [];
+        const tasks = taskData.tasks || [];
+        const approvals = approvalData.approvals || [];
+        const artifacts = artifactData.artifacts || [];
+        consoleState = { missions, tasks, approvals, artifacts };
+        renderConsoleFromState();
+        if (!selectedMissionId && missions[0]) {
+          selectedMissionId = missions[0].mission_id;
+          localStorage.setItem("m8aSelectedMissionId", selectedMissionId);
+        }
+        if (selectedMissionId) await loadMissionDetail(selectedMissionId);
+      } catch (error) {
+        setTextValue("console-api-status", `API 未连接或 token 错误：${error.message}`);
+        setRows("active-mission-board", [["Active Missions", "API 未连接或 token 错误"]]);
+        setRows("console-approval-inbox", [["Pending Approvals", "API 未连接或 token 错误"]]);
+        setRows("console-failed-tasks", [["Failed Tasks", "API 未连接或 token 错误"]]);
+        setRows("console-artifacts", [["Artifacts", "API 未连接或 token 错误"]]);
+      }
+    }
+
+    function renderConsoleFromState() {
+      const { missions, tasks, approvals, artifacts } = consoleState;
+      try {
+        const activeStatuses = new Set(["queued", "claimed", "running", "waiting_approval"]);
+        const today = new Date().toISOString().slice(0, 10);
+        const activeMissions = missions.filter((mission) => activeStatuses.has(mission.status));
+        const waitingMissionIds = new Set(approvals.filter((approval) => approval.status === "pending").map((approval) => approval.mission_id));
+        const failedMissionIds = new Set(tasks.filter((task) => task.status === "failed").map((task) => task.mission_id));
+        const todayMissions = missions.filter((mission) => String(mission.created_at || "").slice(0, 10) === today);
+        const todayCompletedMissions = missions.filter((mission) => mission.status === "completed" && String(mission.completed_at || mission.updated_at || "").slice(0, 10) === today);
+        const todayFailedTasks = tasks.filter((task) => task.status === "failed" && String(task.failed_at || task.updated_at || "").slice(0, 10) === today);
+        const todayArtifacts = artifacts.filter((artifact) => String(artifact.created_at || "").slice(0, 10) === today);
+        const topActions = dailyActions(missions, tasks, approvals);
+        const pendingApprovals = approvals.filter((approval) => approval.status === "pending");
+        const failedTasks = tasks.filter((task) => task.status === "failed");
+        const completedTodayApprovals = approvals.filter((approval) => approval.status !== "pending" && String(approval.decided_at || "").slice(0, 10) === today);
+
+        setTextValue("console-api-status", "已连接 M8A Commander。");
+        setTextValue("daily-top-count", topActions.length);
+        setTextValue("daily-new-missions", todayMissions.length);
+        setTextValue("daily-completed-missions", todayCompletedMissions.length);
+        setTextValue("daily-pending-approvals", pendingApprovals.length);
+        setTextValue("daily-failed-tasks", todayFailedTasks.length);
+        setTextValue("daily-artifacts", todayArtifacts.length);
+        setTextValue("daily-publishable", artifacts.filter((artifact) => artifact.simulation_status === "simulated_ready").length);
+        setTextValue("overview-active-missions", activeMissions.length);
+        setTextValue("end-missions", todayCompletedMissions.length);
+        setTextValue("end-approvals", completedTodayApprovals.length);
+        setTextValue("end-knowledge", "0");
+        setTextValue("end-content", todayArtifacts.length);
+        setTextValue("end-failed", todayFailedTasks.length);
+        setTextValue("end-tomorrow", topActions[0] || "继续推进 HK620 美国市场内容与审批闭环。");
+        setTextValue("end-first-priority", `预计第一优先：${topActions[0] || "审核待处理事项"} · 预计耗时：约 20 分钟`);
+        const estimatedMinutes = Math.max(15, pendingApprovals.length * 8 + failedTasks.length * 10 + 12);
+        setTextValue("brief-estimated-time", `约 ${estimatedMinutes} 分钟`);
+        setTextValue("brief-risk-level", failedTasks.length ? "High" : pendingApprovals.length ? "Medium" : "Low");
+
+        const search = document.getElementById("mission-search")?.value?.trim() || "";
+        const statusFilter = document.getElementById("mission-status-filter")?.value || "active";
+        const productFilter = document.getElementById("mission-product-filter")?.value || "all";
+        const marketFilter = document.getElementById("mission-market-filter")?.value || "all";
+        const boardMissions = missions.filter((mission) =>
+          missionMatchesStatus(mission, statusFilter, tasks, approvals)
+          && missionMatchesProduct(mission, productFilter)
+          && missionMatchesMarket(mission, marketFilter)
+          && missionMatchesSearch(mission, search)
+        );
+
+        if (boardMissions.length === 0) {
+          document.getElementById("active-mission-board").innerHTML = `<article class="business-card"><strong>暂无 Mission</strong><p>当前筛选条件下没有 Mission。</p></article>`;
+        } else {
+          const board = document.getElementById("active-mission-board");
+          board.innerHTML = boardMissions.map((mission) => {
+            const stats = missionTaskStats(tasks, approvals, mission.mission_id);
+            return `<article class="mission-card">
+              <span>${escapeHtml(marketLabel(mission.market || mission.input?.market))}</span>
+              <strong>${escapeHtml(mission.mission_name || "Mission")}</strong>
+              <p>产品：${escapeHtml(mission.product || "-")} · 状态：${escapeHtml(mission.status)} · 进度：${stats.progress}</p>
+              <small>待审批：${stats.waiting} · 失败：${stats.failed}</small>
+              <div>
+                <button type="button" onclick="selectMission('${escapeHtml(mission.mission_id)}')">查看详情</button>
+              </div>
+            </article>`;
+          }).join("");
+        }
+
+        if (pendingApprovals.length === 0) {
+          document.getElementById("console-approval-inbox").innerHTML = `<article class="business-card"><strong>暂无待审批</strong><p>当前没有需要石总拍板的事项。</p></article>`;
+        } else {
+          const inbox = document.getElementById("console-approval-inbox");
+          inbox.innerHTML = pendingApprovals.map((approval) => `
+            <article class="business-card urgent">
+              <span>${escapeHtml(approval.platform || "Internal")}</span>
+              <strong>${escapeHtml(payloadTitle(approval.payload_snapshot || approval.request_payload))}</strong>
+              <p>${escapeHtml(approval.mission_name || "Mission")} · 风险：${escapeHtml(approval.risk_level || "high")} · 不会自动发布</p>
+              <button type="button" class="primary-button" onclick="openApprovalModal('${escapeHtml(approval.approval_id)}')">查看审批详情</button>
+            </article>
+          `).join("");
+        }
+
+        const queuedTasks = tasks.filter((task) => task.status === "queued");
+        const runningTasks = tasks.filter((task) => task.status === "claimed" || task.status === "running");
+        const completedTasks = tasks.filter((task) => task.status === "completed");
+        if (failedTasks.length === 0) {
+          document.getElementById("console-failed-tasks").innerHTML = `<article class="business-card"><strong>暂无失败任务</strong><p>当前没有卡住的任务。</p></article>`;
+        } else {
+          const failedEl = document.getElementById("console-failed-tasks");
+          failedEl.innerHTML = failedTasks.map((task) => `<article class="business-card warning">
+            <span>${escapeHtml(task.worker_name)}</span>
+            <strong>${escapeHtml(actionLabel(task.action))}</strong>
+            <p>${escapeHtml(task.error_message || "任务失败")} · 重试次数：${escapeHtml(task.retry_count || 0)}</p>
+            <button type="button" onclick="retryTask('${escapeHtml(task.task_id)}')">重试任务</button>
+          </article>`).join("");
+        }
+
+        if (artifacts.length === 0) {
+          document.getElementById("console-artifacts").innerHTML = `<article class="business-card"><strong>暂无产出</strong><p>AI 公司今天还没有形成新成果。</p></article>`;
+        } else {
+          document.getElementById("console-artifacts").innerHTML = artifacts.slice(0, 8).map((artifact) => `
+            <article class="business-card">
+              <span>✓ ${escapeHtml(artifact.mission_name || "Mission")}</span>
+              <strong>${escapeHtml(artifactLabel(artifact))}</strong>
+              <p>${contentSummary(artifact.content_json)}</p>
+            </article>
+          `).join("");
+        }
+      } catch (error) {
+        setTextValue("console-api-status", "系统未连接或访问令牌错误。");
+        setRows("active-mission-board", [["Active Missions", "系统未连接或访问令牌错误"]]);
+        setRows("console-approval-inbox", [["Pending Approvals", "系统未连接或访问令牌错误"]]);
+        setRows("console-failed-tasks", [["Failed Tasks", "系统未连接或访问令牌错误"]]);
+        setRows("console-artifacts", [["Artifacts", "系统未连接或访问令牌错误"]]);
+      }
+    }
+
+    async function decideApproval(approvalId, decision) {
+      const response = await fetch(`${apiBase}/api/approvals/${approvalId}/decision`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({
+          decision,
+          decision_reason: `${decision} from CEO Approval Inbox; no external action executed.`,
+          decided_by: "石总"
+        })
+      });
+      if (!response.ok) {
+        alert(`Approval failed: HTTP ${response.status}`);
+        return;
+      }
+      loadCommander();
+      loadConsole();
+    }
+
+    async function retryTask(taskId) {
+      const response = await fetch(`${apiBase}/api/tasks/${taskId}/retry`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...authHeaders() },
+        body: JSON.stringify({ actor: "dashboard" })
+      });
+      if (!response.ok) {
+        const text = await response.text();
+        alert(`Retry failed: HTTP ${response.status} ${text}`);
+        return;
+      }
+      loadCommander();
+      loadConsole();
+    }
+
+    function renderCommanderData(data) {
+      const mission = data.current_mission || {};
+      const tasks = data.tasks || [];
+      const artifacts = data.artifacts || [];
+      const approvals = data.approvals || [];
+      const pendingApprovals = data.pending_approvals || approvals.filter((item) => item.status === "pending");
+      const events = data.events || [];
+      const failedTasks = data.failed_task_items || [];
+      const wordpressDrafts = data.wordpress_drafts || artifacts.filter((item) => item.artifact_type === "draft_payload" && item.content_json?.platform === "wordpress");
+
+      setRows("mission-detail", [
+        ["Title", escapeHtml(mission.title || mission.mission_name || "")],
+        ["Objective", escapeHtml(mission.objective || mission.command_text || "")],
+        ["Product", escapeHtml(mission.product || mission.input?.product || "")],
+        ["Market", escapeHtml(mission.market || mission.input?.market || "")],
+        ["Status", escapeHtml(mission.status || "")],
+        ["Priority", escapeHtml(mission.priority || "")],
+        ["Risk Level", escapeHtml(mission.risk_level || "medium")],
+        ["Created At", escapeHtml(mission.created_at || "")],
+        ["Updated At", escapeHtml(mission.updated_at || "")]
+      ]);
+
+      setRows("mission-tasks", tasks.map((task) => [
+        `${task.task_order}. ${task.title}`,
+        `${escapeHtml(task.worker_name)} · ${escapeHtml(task.status)} · risk=${escapeHtml(task.risk_level || "medium")} · approval=${task.requires_approval ? "yes" : "no"} · started=${escapeHtml(task.started_at || "-")} · completed=${escapeHtml(task.completed_at || "-")} · failed=${escapeHtml(task.failed_at || "-")}`
+      ]));
+
+      setRows("mission-events", events.slice(0, 20).map((event) => [
+        `${event.event_type} · ${event.task_id || "mission"}`,
+        `${escapeHtml(event.created_at)} · ${previewJson(event.metadata || event.event_message)}`
+      ]));
+
+      setRows("mission-artifacts", artifacts.map((artifact) => [
+        `${artifact.artifact_type} · ${artifact.title}`,
+        `quality=${escapeHtml(artifact.quality_score || "-")} · uri=${escapeHtml(artifact.content_uri || "-")} · ${previewJson(artifact.content_json)}`
+      ]));
+
+      if (pendingApprovals.length === 0) {
+        setRows("approval-inbox", [["Pending Approvals", "0"]]);
+      } else {
+        const inbox = document.getElementById("approval-inbox");
+        inbox.innerHTML = pendingApprovals.map((approval) => {
+          const task = tasks.find((item) => item.task_id === approval.task_id) || {};
+          const payload = previewJson(approval.request_payload);
+          return `<div>
+            <span>${escapeHtml(mission.mission_name || "")} · ${escapeHtml(task.title || approval.task_id)}</span>
+            <strong>
+              ${escapeHtml(approval.platform || "Internal")} · ${escapeHtml(approval.action_type || approval.approval_type)} · risk=${escapeHtml(approval.risk_level || "high")} · ${payload}
+              <button type="button" onclick="decideApproval('${escapeHtml(approval.approval_id)}','approved')">审批通过</button>
+              <button type="button" onclick="decideApproval('${escapeHtml(approval.approval_id)}','rejected')">审批拒绝</button>
+            </strong>
+          </div>`;
+        }).join("");
+      }
+
+      if (failedTasks.length === 0) {
+        setRows("failed-tasks", [["Failed Tasks", "0"]]);
+      } else {
+        const failedEl = document.getElementById("failed-tasks");
+        failedEl.innerHTML = failedTasks.map((task) => `<div>
+          <span>${escapeHtml(task.title)} · ${escapeHtml(task.worker_name)}</span>
+          <strong>
+            error=${escapeHtml(task.error_message || "-")} · retry_count=${escapeHtml(task.retry_count || 0)}
+            <button type="button" onclick="retryTask('${escapeHtml(task.task_id)}')">Retry</button>
+          </strong>
+        </div>`).join("");
+      }
+
+      setRows("approval-audit", approvals.map((approval) => {
+        const task = tasks.find((item) => item.task_id === approval.task_id) || {};
+        return [
+          `${approval.approval_id} · ${escapeHtml(task.title || approval.task_id)}`,
+          `${escapeHtml(approval.platform || "Internal")} · ${escapeHtml(approval.action_type || approval.approval_type)} · risk=${escapeHtml(approval.risk_level || "high")} · status=${escapeHtml(approval.status)} · reason=${escapeHtml(approval.decision_reason || approval.decision_note || "-")} · by=${escapeHtml(approval.decided_by || "-")} · decided=${escapeHtml(approval.decided_at || "-")} · ${previewJson(approval.payload_snapshot || approval.request_payload)}`
+        ];
+      }));
+
+      setRows("wordpress-drafts", wordpressDrafts.map((artifact) => {
+        const payload = artifact.content_json || {};
+        const approval = approvals.find((item) => item.artifact_id === artifact.artifact_id) || {};
+        return [
+          payload.title || artifact.title,
+          `slug=${escapeHtml(payload.slug || "-")} · meta=${escapeHtml(payload.meta_title || "-")} · description=${escapeHtml(payload.meta_description || "-")} · status=${escapeHtml(artifact.simulation_status || "-")} · approval=${escapeHtml(approval.status || "-")} · preview=${escapeHtml(payload.content_preview || "")}`
+        ];
+      }));
+    }
+
+    async function loadMissionList() {
+      try {
+        const response = await fetch(`${apiBase}/api/missions`, { cache: "no-store", headers: authHeaders() });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const missions = data.missions || [];
+        setRows("mission-list", missions.slice(0, 10).map((mission) => [
+          mission.mission_name || mission.mission_id,
+          `${escapeHtml(mission.status)} · ${escapeHtml(mission.priority)} · ${escapeHtml(mission.product || mission.input?.product || "")} · ${escapeHtml(mission.market || mission.input?.market || "")} · ${escapeHtml(mission.created_at || "")}`
+        ]));
+      } catch (error) {
+        setRows("mission-list", [["Missions", "API unavailable or token rejected"]]);
+      }
+    }
+
+    async function loadCommander() {
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      };
+
+      try {
+        const response = await fetch(`${apiBase}/api/dashboard/commander`, { cache: "no-store", headers: authHeaders() });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const mission = data.current_mission || {};
+        const tasks = data.tasks || [];
+        const artifacts = data.artifacts || [];
+        const approvals = data.approvals || [];
+
+        setText("commander-mission", mission.mission_name || "No Mission");
+        setText("commander-status", mission.status || "none");
+        setText("commander-running", String(data.running_tasks || 0));
+        setText("commander-completed", String(data.completed_tasks || 0));
+        setText("commander-failed", String(data.failed_tasks || 0));
+        setText("commander-priority", mission.priority || "-");
+        setText("commander-total", `Tasks: ${data.total_tasks || tasks.length || 0}`);
+        setText("commander-artifacts", String(artifacts.length));
+        setText("commander-approvals", String(approvals.length));
+        setText("commander-api-status", "Live from Mission Control API");
+        renderCommanderData(data);
+        loadMissionList();
+      } catch (error) {
+        setText("commander-mission", "API Offline");
+        setText("commander-status", "not_connected");
+        setText("commander-api-status", "Start API and set local token");
+        setRows("mission-detail", [["Status", "Mission Control API unavailable or token rejected"]]);
+        setRows("mission-list", [["Missions", "API unavailable or token rejected"]]);
+        setRows("approval-inbox", [["Pending Approvals", "API unavailable or token rejected"]]);
+        setRows("failed-tasks", [["Failed Tasks", "API unavailable or token rejected"]]);
+        setRows("approval-audit", [["Approvals", "API unavailable or token rejected"]]);
+        setRows("wordpress-drafts", [["Drafts", "API unavailable or token rejected"]]);
+      }
+    }
+
+    loadConsole();
+    loadCommander();
+    setInterval(loadConsole, 10000);
+    setInterval(loadCommander, 10000);
+  </script>
+</body>
+</html>

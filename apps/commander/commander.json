@@ -1,0 +1,63 @@
+{
+  "commander_gateway": {
+    "version": "V1",
+    "status": "initialized",
+    "date": "2026-07-06",
+    "single_command_entry": true,
+    "database_changes": false,
+    "new_agent_framework": false,
+    "platform_connection": false
+  },
+  "protocol": {
+    "mission_fields": [
+      "mission_id",
+      "mission_name",
+      "priority",
+      "target_employee",
+      "action",
+      "input",
+      "output",
+      "status",
+      "started_time",
+      "finished_time",
+      "result"
+    ],
+    "allowed_status": [
+      "planned",
+      "queued",
+      "running",
+      "needs_human_review",
+      "completed",
+      "archived",
+      "failed",
+      "paused",
+      "cancelled"
+    ],
+    "allowed_priorities": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ]
+  },
+  "dispatcher": {
+    "employees": [
+      "Content Operator",
+      "Knowledge Manager",
+      "Website Operator",
+      "Distribution Operator",
+      "Sales Assistant",
+      "Business Analyst"
+    ],
+    "rule": "Read commander mission, split tasks, dispatch to existing employees and queues, write result logs."
+  },
+  "current_mission": {
+    "mission_id": "mission_2026_07_06_hk620_us_growth",
+    "mission_name": "HK620_US_GROWTH",
+    "priority": "P0",
+    "status": "archived",
+    "running_tasks": 0,
+    "completed_tasks": 5,
+    "failed_tasks": 0
+  }
+}

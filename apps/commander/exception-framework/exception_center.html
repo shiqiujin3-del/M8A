@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M8A Exception Center</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7f9; color: #1f2937; }
+    main { max-width: 1180px; margin: 0 auto; padding: 32px; }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    .muted { color: #6b7280; }
+    .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05); }
+    .card strong { display: block; font-size: 30px; margin-top: 8px; }
+    .queue { display: grid; gap: 14px; }
+    .exception { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+    .tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-size: 13px; margin-right: 8px; }
+    pre { white-space: pre-wrap; background: #111827; color: #e5e7eb; border-radius: 10px; padding: 14px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="muted">M8A Commander · Unified Runtime Exception Framework</p>
+    <h1>Exception Center</h1>
+    <p class="muted">此页面读取 Mission Control Exception API，不修改 Commander 首页，不连接外部平台。</p>
+    <p class="muted">如需授权，请先在 Commander Console 保存本地访问令牌。</p>
+    <section class="grid" id="summary"></section>
+    <section class="queue" id="queue"></section>
+  </main>
+  <script>
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+    }
+
+    function planText(plan) {
+      if (!plan) return "-";
+      return [
+        `原因分析: ${plan.summary || "-"}`,
+        `可能原因: ${(plan.possible_causes || []).join(" / ") || "-"}`,
+        `建议处理: ${(plan.recommended_actions || []).join(" / ") || "-"}`,
+        `影响范围: ${(plan.impact_scope || []).join(" / ") || "-"}`,
+        `风险等级: ${plan.risk_level || "-"}`,
+        `需要 CEO: ${plan.needs_ceo ? "YES" : "NO"}`
+      ].join("\n");
+    }
+
+    const apiBase = "http://localhost:8787";
+
+    function authHeaders() {
+      const token = localStorage.getItem("m8aCommanderApiToken") || "";
+      return token ? { Authorization: `Bearer ${token}` } : {};
+    }
+
+    async function apiFetch(path) {
+      const response = await fetch(`${apiBase}${path}`, { cache: "no-store", headers: authHeaders() });
+      if (!response.ok) throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+      return response.json();
+    }
+
+    Promise.all([
+      apiFetch("/api/exceptions/summary"),
+      apiFetch("/api/exceptions")
+    ])
+      .then(([summaryPayload, exceptionsPayload]) => {
+        const summary = summaryPayload.summary || {};
+        document.getElementById("summary").innerHTML = [
+          ["今天异常", summary.today_count || 0],
+          ["处理中", summary.investigating || 0],
+          ["等待 CEO", summary.waiting_ceo || 0],
+          ["已恢复", summary.resolved || 0],
+          ["平均恢复时间", `${summary.avg_recovery_minutes || 0} 分钟`]
+        ].map(([label, value]) => `<article class="card"><span>${esc(label)}</span><strong>${esc(value)}</strong></article>`).join("");
+
+        const exceptions = exceptionsPayload.exceptions || [];
+        document.getElementById("queue").innerHTML = exceptions.length ? exceptions.map((item) => `
+          <article class="exception">
+            <span class="tag">${esc(item.status)}</span>
+            <span class="tag">${esc(item.assigned_worker_name)}</span>
+            <h2>${esc(item.error_code || item.exception_type)}</h2>
+            <p>${esc(item.error_message)}</p>
+            <pre>${esc(planText(item.recovery_plan))}</pre>
+          </article>
+        `).join("") : `<article class="exception"><h2>暂无异常</h2><p class="muted">Exception Queue 为空。</p></article>`;
+      })
+      .catch((error) => {
+        document.getElementById("queue").innerHTML = `<article class="exception"><h2>无法读取 Mission Control Exception API</h2><p>${esc(error.message)}</p></article>`;
+      });
+  </script>
+</body>
+</html>

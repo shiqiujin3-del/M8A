@@ -1,0 +1,92 @@
+name: m8a-bootstrap
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: m8a-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: m8a
+      POSTGRES_PASSWORD: m8a_bootstrap_password
+      POSTGRES_DB: m8a
+    volumes:
+      - m8a_postgres_data:/var/lib/postgresql/data
+    networks:
+      - m8a_bootstrap
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U m8a -d m8a"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: m8a-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - m8a_redis_data:/data
+    networks:
+      - m8a_bootstrap
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: m8a-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - m8a_qdrant_data:/qdrant/storage
+    networks:
+      - m8a_bootstrap
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c '</dev/tcp/127.0.0.1/6333'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: m8a-n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: m8a
+      DB_POSTGRESDB_USER: m8a
+      DB_POSTGRESDB_PASSWORD: m8a_bootstrap_password
+      N8N_ENCRYPTION_KEY: m8a_bootstrap_local_encryption_key_32
+      N8N_HOST: localhost
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: http://localhost:5678/
+      GENERIC_TIMEZONE: Asia/Shanghai
+      TZ: Asia/Shanghai
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - m8a_n8n_data:/home/node/.n8n
+    networks:
+      - m8a_bootstrap
+
+networks:
+  m8a_bootstrap:
+    driver: bridge
+
+volumes:
+  m8a_postgres_data:
+  m8a_redis_data:
+  m8a_n8n_data:
+  m8a_qdrant_data:
