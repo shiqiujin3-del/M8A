@@ -298,5 +298,26 @@ Current Git safety status:
 - `.gitignore` exists: YES
 - current branch: `main`
 - remote configured: NO
-- initial commit exists: NO
-- Codex workspace-write recommendation: still NO until initial safe commit is reviewed and created.
+- initial commit exists: YES
+- initial baseline commit: `5a8047f chore: establish M8A safety baseline`
+- Codex workspace-write recommendation: YES, with Git diff review before and after every task.
+
+## 14. Final Baseline Confirmation
+
+Final status after initial baseline commit:
+
+- Git repository initialized: YES
+- Branch: `main`
+- Remote configured: NO
+- Working tree clean after baseline commit: YES
+- `.env` tracked: NO
+- `.env` ignored: YES
+- Initial rollback point exists: YES
+
+Workspace-write can now be enabled for controlled M8A development tasks.
+
+Required operating rule:
+
+Before every workspace-write task, run `git status`.
+
+After every workspace-write task, review `git diff` and commit only after human approval.
