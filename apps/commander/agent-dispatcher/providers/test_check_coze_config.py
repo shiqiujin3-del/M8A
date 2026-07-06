@@ -21,7 +21,7 @@ class CheckCozeConfigTest(unittest.TestCase):
     def test_ready_when_required_values_exist_without_printing_values(self):
         env = {
             "M8A_COZE_BASE_URL": "https://example.invalid",
-            "M8A_COZE_API_TOKEN": "not_printed_test_token",
+            "M8A_COZE_API_TOKEN": "redacted_value",
             "M8A_COZE_WORKFLOW_ID": "workflow_mock",
         }
         result = check_env(env)
@@ -29,14 +29,14 @@ class CheckCozeConfigTest(unittest.TestCase):
         self.assertTrue(result["ready"])
         self.assertEqual(result["status"], "ready")
         serialized = str(result)
-        self.assertNotIn("not_printed_test_token", serialized)
+        self.assertNotIn("redacted_value", serialized)
         self.assertFalse(result["api_called"])
         self.assertFalse(result["safe_to_call_api"])
 
     def test_optional_workspace_does_not_block_readiness(self):
         env = {
             "M8A_COZE_BASE_URL": "https://example.invalid",
-            "M8A_COZE_API_TOKEN": "not_printed_test_token",
+            "M8A_COZE_API_TOKEN": "redacted_value",
             "M8A_COZE_WORKFLOW_ID": "workflow_mock",
         }
         result = check_env(env)

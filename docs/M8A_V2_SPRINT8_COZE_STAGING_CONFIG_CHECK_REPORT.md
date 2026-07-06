@@ -20,7 +20,7 @@ This sprint does not print token values.
 
 - `/Users/shiqiujing/Documents/M8A/apps/commander/agent-dispatcher/providers/check_coze_config.py`
 - `/Users/shiqiujing/Documents/M8A/apps/commander/agent-dispatcher/providers/test_check_coze_config.py`
-- `/Users/shiqiujing/Documents/M8A/docs/M8A_V2_SPRINT8_COZE_STAGING_CREDENTIAL_CHECK_REPORT.md`
+- `/Users/shiqiujing/Documents/M8A/docs/M8A_V2_SPRINT8_COZE_STAGING_CONFIG_CHECK_REPORT.md`
 
 ## Modified Files
 
