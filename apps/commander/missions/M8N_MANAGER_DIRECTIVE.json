@@ -1,0 +1,46 @@
+{
+  "directive_id": "m8n_manager_directive_2026_07_07_001",
+  "issued_at": "2026-07-07T02:03:22Z",
+  "issued_by": "M8N General Manager",
+  "target_worker": "M8N progress Codex / Commander Reporting Agent",
+  "priority": "P0",
+  "status": "assigned",
+  "mission": {
+    "mission_id": "report_index_add_runtime_v2_001",
+    "mission_name": "Add Commander Runtime V2 and Today Control Surfaces to Unified Report Index",
+    "objective": "Update the M8A unified report index with Commander Runtime V2, Commander Console runtime data connection, AI Employee Workbench V1, Platform Connector Console V1, AI Employee Registry V2, CEO Review List V1, and Today General Manager Report.",
+    "required_actions": [
+      "Read docs/M8A_REPORT_INDEX.json and docs/M8A_REPORT_INDEX.md",
+      "Confirm whether today completion records are already present",
+      "If missing, add records for Runtime V2, Employee Workbench, Platform Connector Console, Registry V2, CEO Review List, and Today General Manager Report",
+      "Validate JSON with python3 -m json.tool docs/M8A_REPORT_INDEX.json",
+      "Write a completion report or update docs/M8A_REPORT_INDEX_V1_REPORT.md with the handoff result",
+      "Do not merge, push, connect external APIs, or expose secrets"
+    ],
+    "inputs": [
+      "docs/M8A_REPORT_INDEX.json",
+      "docs/M8A_REPORT_INDEX.md",
+      "docs/M8A_COMMANDER_RUNTIME_V2_REPORT.md",
+      "docs/M8N_AI_EMPLOYEE_WORKBENCH_V1_REPORT.md",
+      "docs/M8N_PLATFORM_CONNECTOR_CONSOLE_V1_REPORT.md",
+      "docs/M8N_AI_EMPLOYEE_REGISTRY_V2_REPORT.md",
+      "docs/M8N_CEO_REVIEW_LIST_V1.md",
+      "docs/M8N_TODAY_GENERAL_MANAGER_REPORT.md"
+    ],
+    "expected_outputs": [
+      "Updated docs/M8A_REPORT_INDEX.json if needed",
+      "Updated docs/M8A_REPORT_INDEX.md if needed",
+      "A short report confirming completion and any gaps",
+      "Final status returned to CEO Review queue"
+    ]
+  },
+  "safety_rules": {
+    "external_api_connected": false,
+    "git_push_allowed": false,
+    "git_merge_allowed": false,
+    "secret_values_allowed": false,
+    "public_platform_action_allowed": false
+  },
+  "acknowledgement_required": true,
+  "next_status_expected": "worker_started_or_completed"
+}
