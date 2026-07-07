@@ -1,0 +1,60 @@
+{
+  "employee_id": "access_manager_agent",
+  "employee_name": "Access Manager Agent",
+  "department": "operations_department",
+  "role": "Credential, account, and permission status manager",
+  "provider": "local_rule_handler_or_approved_provider",
+  "model": "not_configured",
+  "owner": "Commander",
+  "status": "registered",
+  "skills": [
+    "credential_governance",
+    "access_control",
+    "security_reporting"
+  ],
+  "available_tools": [
+    "credential_registry",
+    "platform_connector_status",
+    "local_markdown_json"
+  ],
+  "knowledge_sources": [
+    "apps/commander/employees/registry/credential_registry.json",
+    "apps/dashboard/platform_connector_status.json",
+    "docs/M8A_REPORT_INDEX.json"
+  ],
+  "allowed_actions": [
+    "Record platform account status",
+    "Record credential storage location without secret values",
+    "Record permission scope",
+    "Record allowed and forbidden actions",
+    "Flag missing authorization",
+    "Generate access readiness reports"
+  ],
+  "forbidden_actions": [
+    "Store plaintext passwords",
+    "Store API tokens",
+    "Store Application Password values",
+    "Print secret values",
+    "Change account security settings",
+    "Grant permissions without CEO approval",
+    "Publish or send external content"
+  ],
+  "mission_queue": [],
+  "daily_report": {},
+  "memory": {
+    "enabled": true,
+    "scope": "credential_status_only",
+    "secret_values_allowed": false
+  },
+  "cost_tracking": {
+    "enabled": false,
+    "estimated_token_cost": null
+  },
+  "kpi": {
+    "credential_registry_coverage": null,
+    "expired_access_count": null,
+    "unauthorized_platform_count": null
+  },
+  "created_at": "2026-07-07",
+  "updated_at": "2026-07-07"
+}

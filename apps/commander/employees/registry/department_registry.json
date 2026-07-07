@@ -1,0 +1,92 @@
+{
+  "registry_id": "m8a_ai_employee_department_registry_v1_0",
+  "status": "active_under_organization_architecture_v1_0",
+  "generated_at": "2026-07-07T05:33:25Z",
+  "departments": [
+    {
+      "department_id": "website_department",
+      "department_name": "网站部门",
+      "responsibilities": [
+        "网站建设",
+        "WordPress",
+        "SEO",
+        "GEO",
+        "网站 QA"
+      ],
+      "employees": [
+        "website_agent",
+        "seo_agent",
+        "geo_agent",
+        "qa_agent"
+      ]
+    },
+    {
+      "department_id": "knowledge_department",
+      "department_name": "知识部门",
+      "responsibilities": [
+        "产品知识",
+        "行业研究",
+        "RAG",
+        "知识库",
+        "FAQ"
+      ],
+      "employees": [
+        "research_agent",
+        "knowledge_agent"
+      ]
+    },
+    {
+      "department_id": "marketing_department",
+      "department_name": "营销部门",
+      "responsibilities": [
+        "内容发布",
+        "社交媒体",
+        "邮件营销"
+      ],
+      "employees": [
+        "publishing_agent"
+      ],
+      "future_employees": [
+        "email_agent",
+        "social_media_agent"
+      ]
+    },
+    {
+      "department_id": "video_department_planned",
+      "department_name": "视频部门（规划）",
+      "responsibilities": [
+        "视频脚本",
+        "视频生成",
+        "视频剪辑",
+        "视频审核"
+      ],
+      "employees": [],
+      "future_employees": [
+        "script_agent",
+        "video_generation_agent",
+        "video_editing_agent",
+        "thumbnail_agent"
+      ]
+    },
+    {
+      "department_id": "operations_department",
+      "department_name": "运营部门",
+      "responsibilities": [
+        "自动化",
+        "日报",
+        "周报",
+        "系统运行"
+      ],
+      "employees": [
+        "automation_agent",
+        "commander_reporting_agent"
+      ]
+    }
+  ],
+  "rules": {
+    "employees_must_belong_to_department": true,
+    "new_department_requires_ceo_approval": true,
+    "new_same_level_center_requires_ceo_approval": true,
+    "execution_tools_are_not_departments": true
+  }
+}
