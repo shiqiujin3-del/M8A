@@ -1,0 +1,9 @@
+{
+  "inquiry_id": "inquiry_hk620_john_smith_20260710T051651Z",
+  "customer": "John Smith",
+  "country": "USA",
+  "interested_machine": "HK620 Edge Banding Machine",
+  "question": "Please send me machine specifications, price range, delivery time and available options.",
+  "received_at": "2026-07-10T05:16:51Z",
+  "source": "local_test_json"
+}

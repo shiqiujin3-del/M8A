@@ -1,0 +1,24 @@
+{
+  "version": "runtime_persistence_architecture_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "storage_boundaries": {
+    "missions": "Mission 主记录、状态、owner/support/reviewer/approver、依赖、runtime。",
+    "events": "append-only event store，所有事件只追加不覆盖。",
+    "employee_queues": "每位员工当前任务、待办、平均耗时、失败、QA、blocked。",
+    "timeline": "Mission/Event 的时间记录视图。",
+    "history": "永久保存任务、事件、QA、审批、错误和结果。"
+  },
+  "runtime_store": "SQLite local V1",
+  "future_store": "PostgreSQL / event-store",
+  "json_compatibility": true,
+  "safety": {
+    "external_api": false,
+    "n8n": false,
+    "wordpress": false,
+    "gmail": false,
+    "youtube": false,
+    "publish": false,
+    "delete": false,
+    "production_modify": false
+  }
+}

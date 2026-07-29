@@ -1,0 +1,110 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Provider Interface V1",
+  "purpose": "统一所有外部平台 Provider 的最小接口，禁止 Provider 越权操作 Commander、Dashboard、Audit。",
+  "interface": {
+    "Execute": {
+      "input": [
+        "runtime_object",
+        "execution_payload",
+        "idempotency_key"
+      ],
+      "output": "execution_contract",
+      "allowed_side_effects": [
+        "call_approved_provider_action",
+        "return_execution_result"
+      ],
+      "forbidden_side_effects": [
+        "modify_dashboard",
+        "modify_mission_directly",
+        "write_audit_directly_without_runtime",
+        "bypass_approval",
+        "call_unapproved_external_action"
+      ]
+    },
+    "Cancel": {
+      "input": [
+        "execution_id",
+        "reason"
+      ],
+      "output": "execution_contract",
+      "allowed_side_effects": [
+        "cancel_provider_operation_if_supported",
+        "return_cancel_result"
+      ]
+    },
+    "Query": {
+      "input": [
+        "execution_id",
+        "provider_resource_id"
+      ],
+      "output": "execution_contract",
+      "allowed_side_effects": [
+        "read_provider_status"
+      ]
+    },
+    "Resume": {
+      "input": [
+        "execution_id",
+        "resume_token",
+        "last_known_progress"
+      ],
+      "output": "execution_contract",
+      "allowed_side_effects": [
+        "resume_provider_operation_if_supported"
+      ]
+    }
+  },
+  "provider_contract_rules": [
+    "Provider 只负责 Execute、Cancel、Query、Resume。",
+    "Provider 必须返回统一 Execution Contract。",
+    "Provider 不允许直接操作 Dashboard。",
+    "Provider 不允许直接改 Mission 状态。",
+    "Provider 不允许绕过 Approval Center 或 Production Safety Gate。",
+    "Provider 不允许返回只有私有字段、没有 resource_id/resource_url/status 的结果。",
+    "新增平台只需要实现 Provider Interface，不得修改 Commander、Dashboard、Audit。"
+  ],
+  "current_provider_mapping": [
+    {
+      "provider": "wordpress",
+      "resource_type": "wordpress_draft",
+      "required_methods": [
+        "Execute",
+        "Query"
+      ]
+    },
+    {
+      "provider": "youtube",
+      "resource_type": "youtube_video",
+      "required_methods": [
+        "Execute",
+        "Cancel",
+        "Query",
+        "Resume"
+      ]
+    },
+    {
+      "provider": "gmail",
+      "resource_type": "gmail_draft",
+      "required_methods": [
+        "Execute",
+        "Query"
+      ]
+    },
+    {
+      "provider": "google_search_console",
+      "resource_type": "search_console_report",
+      "required_methods": [
+        "Execute"
+      ]
+    },
+    {
+      "provider": "ga4",
+      "resource_type": "analytics_report",
+      "required_methods": [
+        "Execute"
+      ]
+    }
+  ]
+}
+

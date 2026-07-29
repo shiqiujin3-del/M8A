@@ -1,0 +1,19 @@
+{
+  "version": "event_retry_engine_v1",
+  "retry_reasons": [
+    "Timeout",
+    "Missing Dependency",
+    "Validation Failed",
+    "Internal Error",
+    "Network Reserved"
+  ],
+  "max_retry_by_reason": {
+    "Timeout": 2,
+    "Missing Dependency": 0,
+    "Validation Failed": 1,
+    "Internal Error": 1,
+    "Network Reserved": 0
+  },
+  "backoff": "local_static_no_timer",
+  "network_reserved_note": "Network Reserved 为未来预留；当前不连接任何外部网络或 API。"
+}

@@ -1,0 +1,81 @@
+{
+  "version": "mission_state_machine_approval_integration_v1",
+  "generated_at": "2026-07-10T04:08:45Z",
+  "source_approval_center": "apps/commander/governance/approval_center_v1",
+  "lifecycle": [
+    "Created",
+    "Queued",
+    "Pending Approval",
+    "Approved",
+    "Running",
+    "Completed",
+    "Failed",
+    "Retry",
+    "Cancelled"
+  ],
+  "simulations": [
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "mission_type": "create_wordpress_draft_only",
+      "approval_required": false,
+      "approval_driver": "Approval Center rule: Draft can auto-execute after Safety Gate",
+      "external_call": false,
+      "final_status": "Completed",
+      "timeline": [
+        "Created",
+        "Queued",
+        "Running",
+        "Completed"
+      ]
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "mission_type": "publish",
+      "approval_required": true,
+      "approval_driver": "CEO Approve changes mission from Pending Approval to Approved, then Running",
+      "external_call": false,
+      "final_status": "Completed",
+      "timeline": [
+        "Created",
+        "Queued",
+        "Pending Approval",
+        "Approved",
+        "Running",
+        "Completed"
+      ]
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "mission_type": "delete",
+      "approval_required": true,
+      "approval_driver": "CEO Reject changes mission from Pending Approval to Rejected/Stopped, represented as Cancelled in unified lifecycle",
+      "external_call": false,
+      "final_status": "Cancelled",
+      "timeline": [
+        "Created",
+        "Queued",
+        "Pending Approval",
+        "Rejected",
+        "Stopped",
+        "Cancelled"
+      ],
+      "re_approve_validation": [
+        "Rejected",
+        "Pending Approval",
+        "Approved",
+        "Running",
+        "Cancelled"
+      ],
+      "re_approve_note_cn": "Re-Approve 能驱动 Mission 回到 Pending Approval -> Approved -> Running；本 Sprint 不执行 Delete，Running 后由安全边界取消。"
+    }
+  ],
+  "acceptance": {
+    "draft_mission_flow_verified": true,
+    "publish_mission_approval_drives_running": true,
+    "delete_mission_reject_drives_stopped": true,
+    "re_approve_drives_pending_approved_running": true,
+    "runtime_schema_changed": false,
+    "new_queue_created": false,
+    "external_call_executed": false
+  }
+}

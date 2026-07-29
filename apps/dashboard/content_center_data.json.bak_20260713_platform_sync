@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-07-12T03:40:41Z",
+  "dashboard": "Content Center V1",
+  "language": "zh-CN",
+  "status": "HK620 发布前确认版 V3 已完成；等待 CEO Review / WordPress Draft-only 授权",
+  "summary": {
+    "active_packages": 1,
+    "qa_passed": 1,
+    "waiting_ceo_review": 1,
+    "ready_to_publish": 0,
+    "external_actions_today": 0,
+    "knowledge_gap_pack_ready": 1
+  },
+  "current_focus": "HK620 美国市场客户可读英文内容包",
+  "agents": {
+    "content_owner": "Website Agent",
+    "knowledge_owner": "Knowledge Agent",
+    "research_support": "Research Agent",
+    "geo_support": "GEO Agent",
+    "seo_support": "SEO Agent",
+    "publishing_support": "Publishing Agent",
+    "video_support": "Video Agent",
+    "qa_reviewer": "QA Agent",
+    "dashboard_owner": "Commander Reporting Agent"
+  },
+  "package": {
+    "content_package_id": "content_pkg_hk620_us_v1",
+    "mission_id": "mission_content_center_hk620_us_package_v1",
+    "product": "HK620",
+    "target_market": "美国",
+    "language": "English for customer content, Chinese for internal QA",
+    "buyer_persona": [
+      "美国门厂",
+      "家具厂",
+      "装饰线条加工客户",
+      "木工车间采购经理"
+    ],
+    "status": "pre_publish_confirmation_v3_completed_waiting_ceo_review",
+    "owner_agents": {
+      "content_owner": "Website Agent",
+      "knowledge_owner": "Knowledge Agent",
+      "research_support": "Research Agent",
+      "geo_support": "GEO Agent",
+      "seo_support": "SEO Agent",
+      "publishing_support": "Publishing Agent",
+      "video_support": "Video Agent",
+      "qa_reviewer": "QA Agent",
+      "dashboard_owner": "Commander Reporting Agent"
+    },
+    "knowledge": {
+      "source_status": "CEO_input_integrated_public_evidence_still_needed",
+      "approved_claims": [
+        "HK620 是骨骼线条专用封边机，面向线条、装饰条等工件。",
+        "已确认 PUR 胶、380V、20kW、0.6 气压、台达控制、7.5 米、3 吨、30 天交付周期。",
+        "已具备 3 个月研发 + 3 个月测试验证经历，并已批量生产。"
+      ],
+      "open_gaps": [
+        "参数单位最终确认",
+        "图片/视频素材",
+        "客户案例公开授权",
+        "网站内链与询盘入口",
+        "最终英文术语与 CTA"
+      ]
+    },
+    "content_assets": {
+      "website_article_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+      "article_goal": "生成客户可读英文文章草稿，先用于 CEO Review，不自动发布。",
+      "core_sections": [
+        "Customer problem",
+        "Suitable production scenarios",
+        "What buyers should verify",
+        "Draft-only safety note",
+        "Request information checklist",
+        "FAQ"
+      ],
+      "cta": "Contact SYUTECH to confirm your profile strip samples and production requirements.",
+      "latest_article": "hk620_us_customer_article_v3_pre_publish.md"
+    },
+    "platform_variants": {
+      "wordpress": {
+        "status": "draft_ready_after_ceo_approval",
+        "output": "long_form_article"
+      },
+      "medium": {
+        "status": "planned",
+        "output": "thought_leadership_article"
+      },
+      "linkedin": {
+        "status": "planned",
+        "output": "short_b2b_post"
+      },
+      "quora": {
+        "status": "planned",
+        "output": "buyer_question_answer"
+      },
+      "substack": {
+        "status": "planned",
+        "output": "newsletter_draft"
+      },
+      "gmail": {
+        "status": "planned",
+        "output": "sales_reply_draft"
+      },
+      "youtube": {
+        "status": "planned",
+        "output": "title_description_script_outline"
+      }
+    },
+    "qa_result": {
+      "qa_score": 94,
+      "gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+      "notes": [
+        "70 的单位",
+        "18 米速度单位",
+        "0.6 气压单位",
+        "包装尺寸 7.8 的完整长宽高",
+        "客户案例公开授权",
+        "产品图片/视频",
+        "产品页/询盘链接"
+      ]
+    },
+    "approval_status": "waiting_ceo_content_review",
+    "publish_status": "not_published",
+    "timeline": [
+      {
+        "status": "intake",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Commander"
+      },
+      {
+        "status": "knowledge_ready",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Knowledge Agent"
+      },
+      {
+        "status": "qa_passed",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "QA Agent"
+      }
+    ],
+    "safety": {
+      "draft_only": true,
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false
+    },
+    "latest_outputs": {
+      "website_article_markdown": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v1.md",
+      "website_article_json": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v1.json",
+      "qa_json": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_qa_v1.json",
+      "website_article_markdown_v2": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v2.md",
+      "website_article_json_v2": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v2.json",
+      "qa_json_v2": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_qa_v2.json",
+      "knowledge_from_ceo_input": "apps/commander/content_center_v1/outputs/hk620_us_knowledge_from_ceo_input_v1.json",
+      "website_article_markdown_v3": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v3_pre_publish.md",
+      "website_article_json_v3": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v3_pre_publish.json",
+      "seo_json_v3": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_seo_v3.json",
+      "qa_json_v3": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_qa_v3.json"
+    },
+    "knowledge_gap_pack_v1": {
+      "status": "ready_for_knowledge_collection",
+      "total_gaps": 5,
+      "p0_gaps": 3,
+      "p1_gaps": 2,
+      "owner_agent": "Knowledge Agent",
+      "blocks_public_publish": true,
+      "blocks_wordpress_draft_only": false,
+      "file": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_knowledge_gap_pack_v1.json"
+    },
+    "latest_version": "v3_pre_publish"
+  },
+  "next_action": "CEO Review HK620 V3 发布前确认版；如通过，可授权进入 WordPress Draft-only。",
+  "safety_notice": "本次只做本地发布前确认版，不调用 n8n / WordPress / Gmail / YouTube，不发布、不删除、不修改线上内容。"
+}

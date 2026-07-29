@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M8A Website Agent V1 Standard JSON Output",
+  "type": "object",
+  "required": [
+    "mission",
+    "content",
+    "seo",
+    "media",
+    "schema",
+    "faq",
+    "publish_info",
+    "qa_result"
+  ],
+  "properties": {
+    "mission": {
+      "type": "object"
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "title",
+        "language",
+        "body_markdown"
+      ]
+    },
+    "seo": {
+      "type": "object",
+      "required": [
+        "meta_title",
+        "meta_description",
+        "slug",
+        "h1",
+        "headings"
+      ]
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "image_requirements": {
+          "type": "array"
+        },
+        "alt_text": {
+          "type": "array"
+        }
+      }
+    },
+    "schema": {
+      "type": "object"
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "answer"
+        ]
+      }
+    },
+    "publish_info": {
+      "type": "object",
+      "required": [
+        "target_platform",
+        "publish_status",
+        "approval_required"
+      ]
+    },
+    "qa_result": {
+      "type": "object",
+      "required": [
+        "qa_score",
+        "qa_status",
+        "blocking_issues"
+      ]
+    }
+  }
+}

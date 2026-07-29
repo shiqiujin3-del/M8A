@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-07-29T14:13:00+01:00",
+  "title": "M8A/M8N 总控台大局进度快照 — 发布链路正式打通",
+  "overall_progress_percent": 82,
+  "manager_status": "阿锟（WorkBuddy 本地实例）于 2026-07-29 全面接管总经理职责",
+  "employees": {
+    "registered": 11,
+    "active": 0,
+    "note": "所有 AI 员工处于空闲状态。Website Employee Sprint 2 于 07-25 被 Blocker 卡住。"
+  },
+  "completed": [
+    "Commander / Mission 输入 / CEO 审批链路",
+    "Website Agent V1 + QA + Knowledge Binding",
+    "Global Employee Mission Center V1",
+    "Global AI Event Center V1",
+    "AI Employee Auto Runner V1",
+    "Production Safety Gate V1",
+    "External Executor V1",
+    "WordPress 正式发布闭环 ✅ HK620 https://woodmachinerynetwork.com/hk620-skeleton-door-strip-edge-banding-machine/",
+    "Execution Response Contract V1",
+    "Gmail Draft 真实执行",
+    "YouTube 私密上传验证（video_id: I2m1MealZBA）",
+    "GSC 读取与 Search Analytics 执行记录",
+    "GA4 只读验收",
+    "新任总经理接管（阿锟，2026-07-29）"
+  ],
+  "milestone": {
+    "date": "2026-07-29",
+    "event": "发布链路正式打通",
+    "detail": "从 7月6日 Bootstrap 到今天 7月29日，第一条完整生产闭环跑通：Mission → Research → Draft → QA → CEO Approval → WordPress Publish。HK620 英文技术文章已上线 woodmachinerynetwork.com。",
+    "significance": "M8A 不再是架构和测试，而是能产出真实业务结果的操作系统。"
+  },
+  "blocked": [
+    "Website Employee Sprint 2 Day 1: qa_results=0, employee_queues=0, 日报未生成（07-25 Blocker）",
+    "Google OAuth Client Secret 轮换未执行（P0，21天未处理）",
+    "PR #3 等待 CEO Review 22天（agent/ai-employee-access-manager-v1 → main, MERGEABLE）"
+  ],
+  "open_issues": [
+    "Dashboard 数据口径不同步（旧 execution #33 vs 新 #82）",
+    "AI 员工已登记但 0 人在运行",
+    "重复测试 Mission/Draft 需要归档",
+    "总经理通道已断 21 天 — 今日恢复",
+    "n8n 工作流存在但无统一编排"
+  ],
+  "todays_actions": [
+    "新任总经理日报写入 docs/",
+    "Dashboard 校准数据更新",
+    "PR #3 状态确认（MERGEABLE，0 reviews）",
+    "恢复路线图制定（3 阶段 14 天）"
+  ],
+  "next_action": "阶段一止血：今日完成 PR #3 审核建议 → 推动 Dashboard 校准 → 准备 OAuth 轮换方案",
+  "safety": "本快照只写本地总控数据；不调用外部 API；不发布、不删除、不修改外部内容。"
+}

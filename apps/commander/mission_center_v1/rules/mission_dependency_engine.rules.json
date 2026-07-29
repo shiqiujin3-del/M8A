@@ -1,0 +1,32 @@
+{
+  "version": "mission_dependency_engine_v1",
+  "principle": "依赖由 Mission 字段和状态自动识别，禁止人工手写依赖关系作为唯一依据。",
+  "auto_detection_rules": [
+    {
+      "dependency": "Knowledge 未完成",
+      "detect_when": "knowledge_status != approved 或 source_gap_id 对应资料缺口仍为 queued / blocked",
+      "blocks_status": "Blocked 或 Waiting"
+    },
+    {
+      "dependency": "QA 未完成",
+      "detect_when": "qa_status in [not_started, pending] 或 mission status = qa_pending",
+      "blocks_status": "Waiting QA"
+    },
+    {
+      "dependency": "CEO 未批准",
+      "detect_when": "approval_status in [pending, required] 或 status 包含 waiting_ceo",
+      "blocks_status": "Waiting CEO"
+    },
+    {
+      "dependency": "公开发布阻断",
+      "detect_when": "blocks_public_publish = true 且 publish_status != not_allowed_for_now",
+      "blocks_status": "Blocked"
+    },
+    {
+      "dependency": "外部动作未授权",
+      "detect_when": "target_platform 涉及 n8n / WordPress 且 approval_status != approved",
+      "blocks_status": "Waiting CEO"
+    }
+  ],
+  "manual_dependency_policy": "可以记录 depends_on 作为解释，但 Dashboard 判定以自动规则为准。"
+}

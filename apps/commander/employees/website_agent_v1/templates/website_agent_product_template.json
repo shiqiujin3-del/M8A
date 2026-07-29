@@ -1,0 +1,28 @@
+{
+  "version": "website_agent_product_template_v1",
+  "usage": "未来 HK690、HK680、六面钻、CNC、Factory Solution、Blog、Knowledge 只替换 product_profile，不重做流程。",
+  "product_profile": {
+    "product": "{{product_name}}",
+    "language": "{{language}}",
+    "target_market": "{{target_market}}",
+    "target_customer": "{{target_customer}}",
+    "core_use_cases": [],
+    "approved_facts": [],
+    "forbidden_claims": []
+  },
+  "content_type": "product_page / blog / factory_solution / knowledge",
+  "workflow": [
+    "mission_validate",
+    "draft",
+    "qa_v2",
+    "ceo_approval",
+    "draft_only_handoff"
+  ],
+  "safety": {
+    "publish": false,
+    "update_published_post": false,
+    "delete_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "mission_id": "M8A_GSC_GA4_AUTHORIZATION_V1",
+  "mission_name": "Google Search Console 与 GA4 接入授权 V1",
+  "issued_by": "M8N General Manager / Codex",
+  "assigned_to": "当前 Codex / SEO Agent / Data Agent / Access Manager Agent",
+  "date": "2026-07-07",
+  "priority": "highest_after_wordpress",
+  "objective": "完成 GSC 与 GA4 的 n8n 只读接入准备、授权入口打开、连接验收和状态登记。",
+  "platforms": {
+    "Google Search Console": {
+      "purpose": "读取网站收录、索引状态、搜索表现、关键词和页面表现。",
+      "permission_scope": "read-only",
+      "allowed_actions": [
+        "准备 Google OAuth2 凭证",
+        "打开授权入口让 CEO 授权",
+        "读取站点列表",
+        "读取 HK620 页面索引/表现数据",
+        "生成 SEO 验收报告"
+      ],
+      "forbidden_actions": [
+        "修改站点所有权",
+        "删除站点",
+        "修改 GSC 设置",
+        "保存 OAuth Secret 明文"
+      ]
+    },
+    "GA4": {
+      "purpose": "读取网站访问量、来源、页面表现和转化基础数据。",
+      "permission_scope": "read-only",
+      "allowed_actions": [
+        "准备 Google Analytics OAuth2 凭证",
+        "打开授权入口让 CEO 授权",
+        "读取 Property 列表",
+        "读取 HK620 页面访问数据",
+        "生成流量验收报告"
+      ],
+      "forbidden_actions": [
+        "修改 GA4 Property 设置",
+        "删除数据流",
+        "修改转化设置",
+        "保存 OAuth Secret 明文"
+      ]
+    }
+  },
+  "expected_outputs": [
+    "M8A_GSC_AUTHORIZATION_V1_REPORT.md",
+    "M8A_GA4_AUTHORIZATION_V1_REPORT.md",
+    "M8A_HK620_SEARCH_AND_ANALYTICS_BASELINE_V1.md",
+    "更新 credential_registry.json 中 GSC/GA4 状态"
+  ],
+  "known_blocker": "如 Google OAuth Client ID/Secret 未配置或 OAuth App 未允许 localhost redirect，会阻塞授权；只报告根因，不让 CEO 盲填。",
+  "stop_condition": "完成只读验收，或定位 OAuth 配置阻塞后停止并报告。"
+}

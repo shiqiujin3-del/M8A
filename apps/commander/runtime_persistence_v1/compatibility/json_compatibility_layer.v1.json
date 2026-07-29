@@ -1,0 +1,13 @@
+{
+  "version": "json_compatibility_layer_v1",
+  "principle": "现有 JSON 继续可读，Dashboard 不被破坏。",
+  "json_sources": {
+    "global_mission_queue": "apps/commander/mission_center_v1/runtime/global_mission_queue.v1.json",
+    "global_event_history": "apps/commander/event_center_v1/history/event_history.v1.json",
+    "employee_work_queue": "apps/commander/mission_center_v1/runtime/employee_work_queue.v1.json",
+    "dashboard_event_data": "apps/dashboard/global_event_center_data.json",
+    "dashboard_mission_data": "apps/dashboard/global_mission_center_data.json"
+  },
+  "import_strategy": "只读 JSON -> upsert SQLite runtime tables；JSON 配置继续保留。",
+  "dashboard_strategy": "当前 Dashboard 继续读 JSON，同时新增 runtime status JSON；未来可切换 SQLite view。"
+}

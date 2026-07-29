@@ -1,0 +1,149 @@
+{
+  "package_id": "hk620_us_customer_article_knowledge_gap_pack_v1",
+  "mission_id": "mission_hk620_us_customer_article_knowledge_gap_v1",
+  "created_at": "2026-07-12T02:23:49Z",
+  "class": "A_BUILD",
+  "status": "ready_for_knowledge_collection",
+  "product": "HK620",
+  "market": "US",
+  "owner_agent": "Knowledge Agent",
+  "reviewer_agent": "QA Agent",
+  "content_owner": "Website Agent",
+  "purpose": "补齐 HK620 美国市场客户可读文章公开发布前的必要资料，避免文章空泛或使用未确认信息。",
+  "source_article": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v1.md",
+  "source_qa": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_qa_v1.json",
+  "publish_gate": {
+    "current_qa_score": 91,
+    "current_gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+    "public_publish_allowed": false,
+    "wordpress_draft_allowed_after_ceo_review": true,
+    "reason": "内容方向可审，但正式公开发布前仍缺真实参数、媒体素材、案例证据、内链和询盘入口。"
+  },
+  "gap_tasks": [
+    {
+      "gap_id": "hk620_us_gap_001_confirmed_specs",
+      "title": "真实技术参数表",
+      "priority": "P0",
+      "owner_agent": "Knowledge Agent",
+      "supporting_agent": "Website Agent",
+      "blocks_public_publish": true,
+      "blocks_draft_only": false,
+      "needed_fields": [
+        "适用工件范围",
+        "封边材料范围",
+        "胶水/工艺口径",
+        "速度口径",
+        "电压/功率",
+        "机器尺寸",
+        "重量",
+        "气压",
+        "可选配置"
+      ],
+      "source_required": "产品手册、技术规格表或工程负责人确认",
+      "acceptance_criteria": "形成可公开使用参数表；每项参数标记来源和 public_use_allowed；未确认字段不得写入文章。",
+      "current_status": "missing"
+    },
+    {
+      "gap_id": "hk620_us_gap_002_product_media",
+      "title": "产品图片与视频素材",
+      "priority": "P0",
+      "owner_agent": "Knowledge Agent",
+      "supporting_agent": "Video Agent",
+      "blocks_public_publish": true,
+      "blocks_draft_only": false,
+      "needed_fields": [
+        "主图",
+        "细节图",
+        "工件应用图",
+        "工厂测试视频",
+        "可公开使用边界",
+        "图片 alt 建议"
+      ],
+      "source_required": "产品图库、工厂拍摄、销售素材或已批准视频素材",
+      "acceptance_criteria": "至少 1 张主图、2 张细节图、1 张应用图、1 条视频或短视频素材；确认不含敏感客户信息。",
+      "current_status": "missing"
+    },
+    {
+      "gap_id": "hk620_us_gap_003_case_or_sample_evidence",
+      "title": "客户案例或样品测试证据",
+      "priority": "P0",
+      "owner_agent": "Knowledge Agent",
+      "supporting_agent": "Research Agent",
+      "blocks_public_publish": true,
+      "blocks_draft_only": false,
+      "needed_fields": [
+        "可公开案例",
+        "匿名案例",
+        "样品测试说明",
+        "批量验证口径",
+        "禁止公开的客户信息"
+      ],
+      "source_required": "销售反馈、客户现场记录、样品测试记录、CEO/销售负责人确认",
+      "acceptance_criteria": "至少提供 1 条可公开或可匿名使用的证据；不得编造客户名、产量、ROI 或验收结果。",
+      "current_status": "missing"
+    },
+    {
+      "gap_id": "hk620_us_gap_004_internal_links_and_site_route",
+      "title": "网站内链与询盘路径",
+      "priority": "P1",
+      "owner_agent": "Website Agent",
+      "supporting_agent": "SEO Agent",
+      "blocks_public_publish": true,
+      "blocks_draft_only": false,
+      "needed_fields": [
+        "HK620 产品页",
+        "edge banding 分类页",
+        "contact/quote 页面",
+        "相关案例页",
+        "FAQ 页"
+      ],
+      "source_required": "现有网站 URL 或待建页面清单",
+      "acceptance_criteria": "文章至少有产品页、分类页、询盘页 3 类内链；不存在的链接标记为待建，不得使用假链接。",
+      "current_status": "missing"
+    },
+    {
+      "gap_id": "hk620_us_gap_005_brand_terms_and_cta",
+      "title": "英文品牌术语与最终 CTA",
+      "priority": "P1",
+      "owner_agent": "Knowledge Agent",
+      "supporting_agent": "Publishing Agent",
+      "blocks_public_publish": true,
+      "blocks_draft_only": false,
+      "needed_fields": [
+        "SYUTECH 英文品牌口径",
+        "HK620 英文产品名",
+        "skeleton line/profile strip 术语边界",
+        "询盘 CTA",
+        "禁止声明"
+      ],
+      "source_required": "品牌词表、销售话术、CEO/市场负责人确认",
+      "acceptance_criteria": "形成统一术语表；文章、邮件、YouTube、LinkedIn、Medium 等平台共用；禁止夸大和未验证承诺。",
+      "current_status": "missing"
+    }
+  ],
+  "assignment": {
+    "Knowledge Agent": [
+      "hk620_us_gap_001_confirmed_specs",
+      "hk620_us_gap_002_product_media",
+      "hk620_us_gap_003_case_or_sample_evidence",
+      "hk620_us_gap_005_brand_terms_and_cta"
+    ],
+    "Website Agent": [
+      "hk620_us_gap_004_internal_links_and_site_route"
+    ],
+    "QA Agent": [
+      "review_all_gap_outputs_before_public_publish"
+    ]
+  },
+  "next_decision": "先让 Knowledge Agent 收集/整理缺口；CEO 暂时只需要在资料齐后确认是否允许公开使用。",
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "external_api": false
+  }
+}

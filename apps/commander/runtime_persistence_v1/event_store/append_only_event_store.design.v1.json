@@ -1,0 +1,13 @@
+{
+  "version": "append_only_event_store_design_v1",
+  "principle": "所有事件先 append，不直接覆盖。",
+  "write_model": "INSERT mission_events + event_history；禁止 UPDATE 历史事件正文。",
+  "query_patterns": [
+    "mission_id",
+    "agent_id/source_agent/target_agent",
+    "event_type",
+    "date"
+  ],
+  "audit": "通过 event_hash、timestamp、payload_json 保留审计线索。",
+  "immutability_policy": "修正事件时追加 correction event，不修改原事件。"
+}

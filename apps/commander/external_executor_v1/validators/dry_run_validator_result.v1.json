@@ -1,0 +1,47 @@
+{
+  "version": "dry_run_validator_result_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "mission_id": "mission_hk620_gap_005_external_references",
+  "executor_id": "executor_n8n_wordpress_draft_only_v1",
+  "workflow_path": "m8a-hk620-draft-only",
+  "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+  "payload_summary": {
+    "product": "HK620",
+    "market": "美国",
+    "language": "English",
+    "qa_score": 92,
+    "action": "create_wordpress_draft_only",
+    "dry_run": true
+  },
+  "validation_checks": [
+    {
+      "check": "payload_fields_complete",
+      "passed": true
+    },
+    {
+      "check": "forbidden_flags_false",
+      "passed": true
+    },
+    {
+      "check": "qa_score_at_least_90",
+      "passed": true
+    },
+    {
+      "check": "authorization_status_valid_for_dry_run",
+      "passed": true
+    },
+    {
+      "check": "action_is_draft_only",
+      "passed": true
+    },
+    {
+      "check": "no_external_network_call",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "status": "dry_run_passed",
+  "next_state": "ready_for_real_execution",
+  "external_call_performed": false,
+  "safety_note_cn": "本次只做本地 Dry-run 校验，没有真实调用 n8n / WordPress。"
+}

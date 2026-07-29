@@ -1,0 +1,40 @@
+{
+  "version": "runner_assignment_rules_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "priority_order": [
+    "P0",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "rules": [
+    {
+      "rule": "按 Priority 排序",
+      "description": "P0 > P1 > P2 > P3。"
+    },
+    {
+      "rule": "Dependency Status",
+      "description": "存在 Knowledge 未完成、QA 未完成、CEO 未批准时进入等待或阻断，不自动越权。"
+    },
+    {
+      "rule": "Agent Capability",
+      "description": "Website Agent 只处理 website/content/draft；Knowledge Agent 处理 knowledge/gap；QA Agent 处理 qa/review。"
+    },
+    {
+      "rule": "Mission Type",
+      "description": "只领取 A 类 Build 或 local simulation；外部动作 Mission 必须等待 CEO。"
+    },
+    {
+      "rule": "Knowledge 未完成",
+      "description": "Website Agent 不启动。"
+    },
+    {
+      "rule": "QA 未完成",
+      "description": "Publishing 不启动。"
+    },
+    {
+      "rule": "CEO 未批准",
+      "description": "禁止进入外部执行。"
+    }
+  ]
+}

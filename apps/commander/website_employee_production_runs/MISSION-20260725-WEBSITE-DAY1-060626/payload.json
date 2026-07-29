@@ -1,0 +1,107 @@
+{
+  "mission_id": "MISSION-20260725-WEBSITE-DAY1-060626",
+  "trace_id": "TRACE-20260725-WEBSITE-DAY1-060626",
+  "employee": "website_agent",
+  "priority": "P0",
+  "retry_count": 0,
+  "action_type": "create_wordpress_draft_only",
+  "product": "HK620",
+  "market": "US",
+  "language": "en",
+  "title": "HK620 Skeleton Door Profile Edge Banding Machine for Stable Line Production",
+  "slug": "hk620-skeleton-door-profile-edge-banding-machine-stable-line-production",
+  "excerpt": "A practical buyer guide for door, furniture, and decorative profile manufacturers evaluating edge banding for skeleton door profiles and shaped mouldings.",
+  "content": "<h1>HK620 Skeleton Door Profile Edge Banding Machine for Stable Line Production</h1>\n<p>For door factories, furniture manufacturers, and decorative profile producers, edge banding quality is not only about the machine model. It is about whether the machine can keep a stable result across real profile shapes, repeated batches, and daily production pressure.</p>\n<h2>Why skeleton door profiles need a dedicated edge banding solution</h2>\n<p>Skeleton door profiles and decorative mouldings are different from simple straight narrow panels. The workpieces may include shaped sections, visible decorative surfaces, different edge directions, and a higher requirement for stable positioning. A machine used for this type of production must support consistent feeding, controlled gluing, accurate trimming, and repeatable finishing.</p>\n<h2>What buyers should check before choosing a machine</h2>\n<ul>\n<li>Confirm the actual profile drawings and finished dimensions.</li>\n<li>Check whether the visible face must remain clean after edge banding.</li>\n<li>Review the expected daily output and batch stability requirements.</li>\n<li>Ask whether the supplier has real installation and production evidence.</li>\n<li>Confirm how the machine handles profile positioning, trimming, and final surface quality.</li>\n</ul>\n<h2>Where HK620 fits</h2>\n<p>HK620 is positioned for factories that need a practical solution for skeleton door profiles, decorative strips, door casing lines, and furniture moulding applications. The goal is to reduce trial-and-error work, improve edge consistency, and support more stable batch production.</p>\n<h2>Best-fit production scenarios</h2>\n<p>HK620 is suitable for manufacturers that already process wood profiles or composite decorative strips and want a more consistent edge banding process. It is especially useful when production managers need a repeatable result instead of relying only on manual adjustment.</p>\n<h2>Questions to ask before requesting a quotation</h2>\n<p>Before choosing a configuration, prepare representative samples, target materials, edge banding requirements, adhesive preference, and expected output. These details help determine whether the machine should be configured for your current workflow or for a future production upgrade.</p>\n<p><strong>Buyer note:</strong> If your factory produces skeleton door profiles or decorative mouldings and wants to evaluate edge banding consistency, prepare sample drawings and production requirements before comparing equipment.</p>",
+  "article_draft": "<h1>HK620 Skeleton Door Profile Edge Banding Machine for Stable Line Production</h1>\n<p>For door factories, furniture manufacturers, and decorative profile producers, edge banding quality is not only about the machine model. It is about whether the machine can keep a stable result across real profile shapes, repeated batches, and daily production pressure.</p>\n<h2>Why skeleton door profiles need a dedicated edge banding solution</h2>\n<p>Skeleton door profiles and decorative mouldings are different from simple straight narrow panels. The workpieces may include shaped sections, visible decorative surfaces, different edge directions, and a higher requirement for stable positioning. A machine used for this type of production must support consistent feeding, controlled gluing, accurate trimming, and repeatable finishing.</p>\n<h2>What buyers should check before choosing a machine</h2>\n<ul>\n<li>Confirm the actual profile drawings and finished dimensions.</li>\n<li>Check whether the visible face must remain clean after edge banding.</li>\n<li>Review the expected daily output and batch stability requirements.</li>\n<li>Ask whether the supplier has real installation and production evidence.</li>\n<li>Confirm how the machine handles profile positioning, trimming, and final surface quality.</li>\n</ul>\n<h2>Where HK620 fits</h2>\n<p>HK620 is positioned for factories that need a practical solution for skeleton door profiles, decorative strips, door casing lines, and furniture moulding applications. The goal is to reduce trial-and-error work, improve edge consistency, and support more stable batch production.</p>\n<h2>Best-fit production scenarios</h2>\n<p>HK620 is suitable for manufacturers that already process wood profiles or composite decorative strips and want a more consistent edge banding process. It is especially useful when production managers need a repeatable result instead of relying only on manual adjustment.</p>\n<h2>Questions to ask before requesting a quotation</h2>\n<p>Before choosing a configuration, prepare representative samples, target materials, edge banding requirements, adhesive preference, and expected output. These details help determine whether the machine should be configured for your current workflow or for a future production upgrade.</p>\n<p><strong>Buyer note:</strong> If your factory produces skeleton door profiles or decorative mouldings and wants to evaluate edge banding consistency, prepare sample drawings and production requirements before comparing equipment.</p>",
+  "qa_report": {
+    "qa_id": "QA-20260725060626",
+    "mission_id": "MISSION-20260725-WEBSITE-DAY1-060626",
+    "created_at": "2026-07-25T06:06:26.129173+00:00",
+    "status": "passed",
+    "qa_score": 92,
+    "threshold": 90,
+    "checks": [
+      {
+        "item": "Title",
+        "status": "pass",
+        "note": "English buyer-facing title present."
+      },
+      {
+        "item": "Meta Description",
+        "status": "pass",
+        "note": "Excerpt is present and buyer-facing."
+      },
+      {
+        "item": "Slug",
+        "status": "pass",
+        "note": "hk620-skeleton-door-profile-edge-banding-machine-stable-line-production"
+      },
+      {
+        "item": "H1",
+        "status": "pass",
+        "note": "One H1 present."
+      },
+      {
+        "item": "Heading Structure",
+        "status": "pass",
+        "note": "H2 sections cover buyer problem, fit, scenarios, and next steps."
+      },
+      {
+        "item": "Internal Links",
+        "status": "pending",
+        "note": "No internal link inserted in Draft-only Day 1 run."
+      },
+      {
+        "item": "External Links",
+        "status": "pass",
+        "note": "No external links required for this draft."
+      },
+      {
+        "item": "Image Alt",
+        "status": "pending",
+        "note": "No image upload in this Day 1 draft run."
+      },
+      {
+        "item": "FAQ",
+        "status": "pass",
+        "note": "Buyer questions section included."
+      },
+      {
+        "item": "Schema",
+        "status": "pending",
+        "note": "WordPress draft creation only; schema not injected."
+      },
+      {
+        "item": "CTA",
+        "status": "pass",
+        "note": "Buyer note asks for sample drawings and production requirements."
+      },
+      {
+        "item": "Grammar",
+        "status": "pass",
+        "note": "English draft checked locally."
+      },
+      {
+        "item": "Length",
+        "status": "pass",
+        "note": "329 words."
+      },
+      {
+        "item": "Brand Consistency",
+        "status": "pass",
+        "note": "Uses HK620 as practical production solution, no unsupported claims."
+      }
+    ],
+    "qa_results_count": 14
+  },
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "old_workflow_called": false,
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+  }
+}

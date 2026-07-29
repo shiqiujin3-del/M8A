@@ -1,0 +1,13 @@
+{
+  "research_id": "RESEARCH-20260725060626",
+  "mission_id": "MISSION-20260725-WEBSITE-DAY1-060626",
+  "started_at": "2026-07-25T06:06:26.129173+00:00",
+  "finished_at": "2026-07-25T06:06:26.129173+00:00",
+  "status": "completed",
+  "findings": [
+    "Target buyer: door factories, furniture manufacturers, decorative profile producers.",
+    "Core buyer problem: stable profile edge banding for skeleton door and shaped moulding production.",
+    "Content angle: practical evaluation guide focused on production fit, samples, and buyer questions.",
+    "Risk boundary: no public publish; create WordPress draft only."
+  ]
+}

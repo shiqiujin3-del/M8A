@@ -1,0 +1,52 @@
+{
+  "center_id": "content_center_v1",
+  "name": "M8A Content Center V1",
+  "中文名称": "M8A 内容中心 V1",
+  "version": "1.0",
+  "generated_at": "2026-07-12T01:17:54Z",
+  "positioning": "统一内容生产中枢，承接 Knowledge、Website、SEO、GEO、Publishing、Video、QA 的内容包协同。",
+  "not_a_replacement_for": [
+    "Commander",
+    "Knowledge Center",
+    "Publishing Center",
+    "n8n"
+  ],
+  "mission_class": "A 类 Build，本地建设，无需 CEO 外部授权",
+  "external_actions": {
+    "n8n": false,
+    "wordpress": false,
+    "gmail": false,
+    "youtube": false,
+    "google_api": false,
+    "publish": false,
+    "delete": false
+  },
+  "supported_employees": [
+    "Research Agent",
+    "Knowledge Agent",
+    "GEO Agent",
+    "SEO Agent",
+    "Website Agent",
+    "Publishing Agent",
+    "Video Agent",
+    "QA Agent",
+    "Automation Agent",
+    "Commander Reporting Agent"
+  ],
+  "standard_pipeline": [
+    "Mission Intake",
+    "Knowledge Pack",
+    "Topic Map",
+    "SEO Plan",
+    "Customer Draft",
+    "Platform Variants",
+    "QA Gate",
+    "CEO Approval",
+    "Draft-only Execution Handoff",
+    "Archive"
+  ],
+  "quality_gate": {
+    "qa_score_required": 90,
+    "below_90_action": "禁止进入发布或外部执行流程，退回对应员工补充资料或重写。"
+  }
+}

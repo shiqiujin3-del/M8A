@@ -1,0 +1,86 @@
+{
+  "version": "approval_queue_v1",
+  "generated_at": "2026-07-10T04:14:08Z",
+  "items": [
+    {
+      "approval_id": "approval_publish_guard_example_pending_v1",
+      "mission_id": "mission_publish_guard_example_v1",
+      "action_type": "publish",
+      "platform": "WordPress",
+      "requested_by": "External Executor V1",
+      "approver": "CEO",
+      "approval_status": "pending",
+      "risk_level": "high",
+      "payload_summary": "示例：发布动作必须等待 CEO 审批；当前未执行。",
+      "created_at": "2026-07-10T04:05:40Z",
+      "updated_at": "2026-07-10T04:05:40Z",
+      "expires_at": "2026-07-11T04:05:40Z",
+      "auto_execution_allowed": false
+    },
+    {
+      "approval_id": "approval_delete_guard_example_pending_v1",
+      "mission_id": "mission_delete_guard_example_v1",
+      "action_type": "delete",
+      "platform": "WordPress",
+      "requested_by": "External Executor V1",
+      "approver": "CEO",
+      "approval_status": "pending",
+      "risk_level": "prohibited_until_approved",
+      "payload_summary": "示例：删除动作必须等待 CEO 审批；当前未执行。",
+      "created_at": "2026-07-10T04:05:40Z",
+      "updated_at": "2026-07-10T04:05:40Z",
+      "expires_at": "2026-07-11T04:05:40Z",
+      "auto_execution_allowed": false
+    },
+    {
+      "approval_id": "approval_draft_auto_execution_record_v1",
+      "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+      "action_type": "create_wordpress_draft_only",
+      "platform": "WordPress via n8n",
+      "requested_by": "External Executor V1",
+      "approver": "Approval Center Policy",
+      "approval_status": "approved",
+      "risk_level": "medium",
+      "payload_summary": "Draft-only 动作允许在 Safety Gate 通过后自动执行；已保留审批中心记录。",
+      "created_at": "2026-07-10T04:05:40Z",
+      "updated_at": "2026-07-10T04:05:40Z",
+      "expires_at": "2026-07-11T04:05:40Z",
+      "auto_execution_allowed": true
+    },
+    {
+      "approval_id": "approval_m2_sprint3_publish_queue_live_1783656848",
+      "mission_id": "m2_sprint3_publish_queue_live_1783656848",
+      "action_type": "publish",
+      "platform": "WordPress",
+      "requested_by": "Mission Queue",
+      "approver": "CEO",
+      "approval_status": "pending",
+      "risk_level": "high",
+      "payload_summary": "真实 Publish Mission 已进入 Queue，仅等待审批，不执行发布。",
+      "created_at": "2026-07-10T04:14:08Z",
+      "updated_at": "2026-07-10T04:14:08Z",
+      "expires_at": null,
+      "auto_execution_allowed": false
+    },
+    {
+      "approval_id": "approval_m2_sprint3_delete_queue_live_1783656848",
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "action_type": "delete",
+      "platform": "WordPress",
+      "requested_by": "Mission Queue",
+      "approver": "CEO",
+      "approval_status": "rejected",
+      "risk_level": "prohibited_until_approved",
+      "payload_summary": "真实 Delete Mission 已进入 Queue，CEO Reject，Mission 停止。",
+      "created_at": "2026-07-10T04:14:08Z",
+      "updated_at": "2026-07-10T04:14:08Z",
+      "expires_at": null,
+      "auto_execution_allowed": false
+    }
+  ],
+  "summary": {
+    "pending": 3,
+    "approved": 1,
+    "rejected": 1
+  }
+}

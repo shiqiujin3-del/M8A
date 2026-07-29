@@ -1,0 +1,52 @@
+{
+  "version": "employee_mission_queue_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "employee": {
+    "employee_id": "website_agent",
+    "employee_name": "Website Agent",
+    "queue_count": 2,
+    "queued_count": 2,
+    "qa_pending_count": 0,
+    "blocked_public_publish_count": 0,
+    "current_task": "完成 HK620 缺口任务：外部参考链接。确认 HK620 官方产品页、公开资料页或可引用外部链接。",
+    "queue_items": [
+      {
+        "queue_item_id": "queue_website_agent_hk620_gap_005_external_references",
+        "mission_id": "mission_hk620_gap_005_external_references",
+        "source_gap_id": "hk620_gap_005_external_references",
+        "assigned_agent": "Website Agent",
+        "priority": "P2",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：外部参考链接。确认 HK620 官方产品页、公开资料页或可引用外部链接。",
+        "acceptance_criteria": "至少 1 个官方或可信外部链接；URL 可访问状态由人工或后续授权工具确认；不得引用未审核页面。",
+        "depends_on": [],
+        "blocks_public_publish": false,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_website_agent_hk620_gap_006_internal_links",
+        "mission_id": "mission_hk620_gap_006_internal_links",
+        "source_gap_id": "hk620_gap_006_internal_links",
+        "assigned_agent": "Website Agent",
+        "priority": "P2",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：内部链接。建立 HK620 相关内部链接目标，例如产品页、骨骼门知识页、封边机分类页、Factory Solution 页面。",
+        "acceptance_criteria": "至少 3 个内部链接目标；每个目标有标题、路径、锚文本建议；QA Agent 检查不重复、不误导。",
+        "depends_on": [],
+        "blocks_public_publish": false,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      }
+    ]
+  },
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

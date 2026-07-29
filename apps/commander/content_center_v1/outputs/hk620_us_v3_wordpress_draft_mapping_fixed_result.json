@@ -1,0 +1,66 @@
+{
+  "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+  "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+  "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+  "http_status": 200,
+  "ok": true,
+  "started_at": "2026-07-12T04:07:00Z",
+  "finished_at": "2026-07-12T04:07:03Z",
+  "sent_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+  "sent_slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+  "sent_content_chars": 6393,
+  "response": {
+    "success": true,
+    "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+    "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+    "execution_id": "212",
+    "executor": "n8n",
+    "workflow_id": "aTVbw0a7MId3NCBH",
+    "workflow_name": "m8a_hk620_draft_20260708",
+    "action_type": "create_wordpress_draft_only",
+    "status": "completed",
+    "started_at": null,
+    "finished_at": "2026-07-12T04:07:03.247Z",
+    "duration_ms": null,
+    "retry_count": 0,
+    "result": {
+      "type": "wordpress_draft",
+      "post_id": 451,
+      "post_status": "draft",
+      "draft_url": "https://woodmachinerynetwork.com/?p=451",
+      "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=451&action=edit",
+      "title": "HK620 Draft Test from M8A",
+      "slug": "hk620-draft-test-from-m8a",
+      "external_id": 451,
+      "external_url": "https://woodmachinerynetwork.com/?p=451",
+      "platform_status": "draft"
+    },
+    "error": null,
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    },
+    "compatibility": {
+      "contract_version": "execution_response_contract_v1",
+      "legacy_webhook_response": null,
+      "requires_execution_lookup": false,
+      "normalization_source": "direct_webhook_response"
+    }
+  },
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "old_workflow_called": false,
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+  }
+}

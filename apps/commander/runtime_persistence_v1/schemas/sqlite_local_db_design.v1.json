@@ -1,0 +1,24 @@
+{
+  "version": "sqlite_local_db_design_v1",
+  "database": "apps/commander/runtime_persistence_v1/db/m8a_runtime_v1.sqlite",
+  "tables": [
+    "missions",
+    "mission_events",
+    "event_history",
+    "employee_queues",
+    "employee_status",
+    "mission_timeline",
+    "approvals",
+    "qa_results",
+    "runtime_logs",
+    "retry_records"
+  ],
+  "sqlite_role": "本地 V1 运行数据库，先作为 JSON 兼容层和样例 store，不强制替换 JSON。",
+  "postgres_upgrade_path": [
+    "保留表名和字段语义",
+    "event_history 迁移为 append-only partition table",
+    "payload_json 改为 JSONB",
+    "增加 row lock / advisory lock",
+    "Dashboard 改读只读视图"
+  ]
+}

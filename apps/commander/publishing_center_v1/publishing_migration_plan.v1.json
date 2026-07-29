@@ -1,0 +1,58 @@
+{
+  "version": "publishing_center_v1",
+  "name": "Publishing Center Migration Plan V1",
+  "principle": "不推翻已有 WordPress Draft、YouTube Upload、Runtime Core、External Executor；先把发布任务入口统一到 Publishing Center。",
+  "phase_1": {
+    "name": "Publishing Center V1 标准冻结",
+    "actions": [
+      "定义 Publishing Mission",
+      "定义 Publishing Queue",
+      "定义 Publishing Dispatcher",
+      "定义 Publishing Result",
+      "定义 Publishing Dashboard Model"
+    ],
+    "status": "completed_by_this_mission"
+  },
+  "phase_2": {
+    "name": "Commander 接入",
+    "actions": [
+      "Commander 创建发布任务时写入 Publishing Mission",
+      "Commander 不再直接选择 WordPress 或 YouTube Provider",
+      "Publishing Center 返回 dispatcher_result 给 Runtime Core"
+    ],
+    "status": "future_implementation"
+  },
+  "phase_3": {
+    "name": "已验证 Provider 接入",
+    "actions": [
+      "WordPress Draft Provider 作为 publish_article 的默认 Provider",
+      "YouTube Provider 作为 publish_video 的默认 Provider，但需要先完成可靠上传层"
+    ],
+    "status": "future_implementation"
+  },
+  "phase_4": {
+    "name": "新平台扩展",
+    "actions": [
+      "Facebook 只新增 Provider 与 dispatch rule",
+      "LinkedIn 只新增 Provider 与 dispatch rule",
+      "TikTok 只新增 Provider 与 dispatch rule"
+    ],
+    "status": "future_implementation"
+  },
+  "do_not_do_now": [
+    "不修改 Runtime Core",
+    "不修改 Commander",
+    "不继续上传 HK680",
+    "不修改 WordPress Provider",
+    "不修改 YouTube Provider",
+    "不开发 Facebook、LinkedIn、TikTok",
+    "不连接任何生产平台"
+  ],
+  "success_criteria": [
+    "Commander 原则上可以把发布任务交给 Publishing Center",
+    "Publishing Center 可以根据任务类型选择 Provider",
+    "新增平台原则上只需新增 Provider 和 dispatch rule",
+    "Publishing Result 完全兼容 Runtime Core Execution Contract"
+  ]
+}
+

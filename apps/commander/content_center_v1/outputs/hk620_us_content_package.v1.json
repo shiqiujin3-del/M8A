@@ -1,0 +1,305 @@
+{
+  "content_package_id": "content_pkg_hk620_us_v1",
+  "mission_id": "mission_hk620_us_customer_article_v1",
+  "updated_at": "2026-07-12T02:23:49Z",
+  "status": "customer_article_draft_completed_knowledge_gaps_identified",
+  "website_article": {
+    "mission_id": "mission_hk620_us_customer_article_v1",
+    "content_package_id": "content_pkg_hk620_us_v1",
+    "agent": "Website Agent",
+    "created_at": "2026-07-12T03:12:00Z",
+    "language": "en-US",
+    "product": "HK620",
+    "target_market": "US",
+    "target_reader": [
+      "door manufacturers",
+      "furniture factories",
+      "decorative moulding processors",
+      "woodworking shop buyers"
+    ],
+    "title": "HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers",
+    "slug": "hk620-skeleton-line-edge-banding-machine-us-door-furniture-manufacturers",
+    "status": "local_customer_article_draft_completed",
+    "publish_status": "not_published",
+    "wordpress_status": "not_sent_to_wordpress",
+    "draft_markdown": "# HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers\n\n## Customer-Facing Draft\n\nFor door manufacturers, furniture factories, and decorative moulding producers, edge banding is no longer only a straight-panel process. More workshops are handling narrow profile strips, skeleton-door components, decorative lines, and non-standard linear workpieces that require stable edge treatment before final assembly or finishing.\n\nThe HK620 is positioned for this production problem: helping factories process skeleton-line and profile-strip edge banding work in a more organized, repeatable way. This draft is written for buyers who need to understand whether a dedicated line-style edge banding solution may fit their production needs.\n\n## What Problem Does HK620 Address?\n\nMany factories already have panel edge banding equipment. The challenge appears when the workpiece is not a simple flat panel. Skeleton-door lines, decorative profiles, and furniture trim pieces can create handling, alignment, glue control, finishing, and repeatability issues if the process is forced through equipment that was not designed around profile-strip production.\n\nFor US buyers, the real question is not only machine speed. The real question is whether the equipment can help reduce daily production risk:\n\n- Can the machine handle the type of strip or line used in your door or furniture production?\n- Can the process stay repeatable across batch work?\n- Can your operators set up the line without turning every job into a manual adjustment project?\n- Can sample testing confirm the final edge quality before you commit to a purchase?\n\nHK620 content should answer those questions with real samples, confirmed workpiece ranges, and production evidence.\n\n## Suitable Production Scenarios\n\nHK620 is most relevant for manufacturers that work with linear components rather than only standard cabinet panels. Typical buyer scenarios include:\n\n- Skeleton door line production\n- Decorative moulding edge treatment\n- Furniture trim and profile-strip processing\n- Door component preparation before assembly\n- Workshops that need a dedicated process for repeatable line-style edge banding\n\nIf your factory only processes standard rectangular boards, a conventional panel edge bander may still be the first machine to evaluate. If your factory handles profile strips, decorative lines, or skeleton-door components, a dedicated HK620 discussion is more relevant.\n\n## What Buyers Should Verify Before Requesting a Quote\n\nBefore choosing a machine, the buyer should prepare real sample information. This helps avoid a common problem: buying based on a general product name instead of confirming the actual workpiece.\n\nRecommended confirmation list:\n\n1. Workpiece type: skeleton-door line, decorative moulding, furniture trim, or another profile strip.\n2. Material type: board, profile, surface material, and edge banding material.\n3. Required finished edge quality and acceptable tolerance.\n4. Production volume per shift or per day.\n5. Operator skill level and expected setup frequency.\n6. Glue process preference and final bonding requirements.\n7. Available workshop space and upstream/downstream process layout.\n8. Sample photos, drawings, or short videos of the actual workpiece.\n\nSYUTECH should confirm these items before giving a final configuration recommendation.\n\n## Why This Should Be Tested With Real Samples\n\nLine-style edge banding is not a generic catalog purchase. Two factories may both say they process “door lines,” but the actual profile, material, edge tape, glue requirement, and finishing standard can be different.\n\nThat is why the responsible buying process should include sample review and, when possible, production-style testing. A useful HK620 sales process should show:\n\n- What type of workpiece was tested\n- What result was accepted\n- What machine configuration was used\n- What conditions still need confirmation\n\nThis is more credible than only listing machine features.\n\n## Practical Buying Guidance\n\nA factory considering HK620 should not ask only, “What is the price?” The better question is:\n\n“Can this machine solve my specific profile-strip edge banding problem with stable quality and acceptable setup effort?”\n\nIf the answer is yes, the machine can become part of a more stable production process. If the workpiece is outside the suitable range, the buyer should know that before purchase.\n\n## FAQ\n\n### Is HK620 a normal panel edge banding machine?\n\nNo. HK620 should be positioned around skeleton lines, decorative profiles, door lines, and profile-strip edge banding needs. It should not be described as a generic replacement for every panel edge banding machine.\n\n### Can HK620 be recommended without seeing the buyer's sample?\n\nOnly at a preliminary level. For a serious recommendation, the buyer should provide workpiece photos, dimensions, materials, edge banding requirements, and production expectations.\n\n### Is this article ready to publish?\n\nNot yet. This is a customer-facing draft for internal review. Before public release, SYUTECH should add confirmed specifications, approved product images, real sample evidence, and the final quotation/contact route.\n\n## Next Step\n\nIf your factory processes skeleton-door lines, decorative mouldings, or furniture profile strips, send SYUTECH your workpiece photos, basic dimensions, material information, and production requirement. The team can then confirm whether HK620 is a suitable fit and what configuration should be reviewed.\n",
+    "seo": {
+      "meta_title": "HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers",
+      "meta_description": "Learn how HK620 supports skeleton-line, decorative moulding, and profile-strip edge banding needs for US door and furniture manufacturers.",
+      "primary_keyword": "skeleton line edge banding machine",
+      "secondary_keywords": [
+        "door line edge banding",
+        "profile strip edge banding",
+        "decorative moulding edge banding",
+        "HK620 edge banding machine"
+      ]
+    },
+    "safety": {
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false
+    },
+    "open_gaps_before_publish": [
+      "confirmed specification table",
+      "approved product images",
+      "public customer case or sample evidence",
+      "final quotation/contact route"
+    ]
+  },
+  "qa_result": {
+    "mission_id": "mission_hk620_us_customer_article_v1",
+    "agent": "QA Agent",
+    "checked_at": "2026-07-12T03:12:00Z",
+    "language": "zh-CN",
+    "qa_score": 91,
+    "gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+    "checks": {
+      "title": {
+        "score": 9,
+        "status": "pass",
+        "note": "标题清楚，客户能理解用途。"
+      },
+      "meta_description": {
+        "score": 8,
+        "status": "pass",
+        "note": "可用于 SEO 初稿，后续可加入品牌词。"
+      },
+      "slug": {
+        "score": 9,
+        "status": "pass",
+        "note": "英文 slug 清晰。"
+      },
+      "h1": {
+        "score": 9,
+        "status": "pass",
+        "note": "H1 与主题一致。"
+      },
+      "heading_structure": {
+        "score": 9,
+        "status": "pass",
+        "note": "结构适合客户阅读，从问题到场景再到采购确认。"
+      },
+      "internal_links": {
+        "score": 6,
+        "status": "needs_input",
+        "note": "需要网站现有 HK620 / edge banding / contact 页面链接。"
+      },
+      "external_links": {
+        "score": 7,
+        "status": "optional",
+        "note": "当前未加入外链，避免引用未核实资料。"
+      },
+      "image_alt": {
+        "score": 6,
+        "status": "needs_input",
+        "note": "需要正式产品图后补 alt。"
+      },
+      "faq": {
+        "score": 9,
+        "status": "pass",
+        "note": "FAQ 能解释是否普通封边机、是否需要样品确认。"
+      },
+      "schema": {
+        "score": 7,
+        "status": "needs_later",
+        "note": "发布前再生成 Article/FAQ schema。"
+      },
+      "cta": {
+        "score": 8,
+        "status": "pass",
+        "note": "CTA 方向正确，需补最终询盘入口。"
+      },
+      "grammar": {
+        "score": 9,
+        "status": "pass",
+        "note": "英文表达清楚。"
+      },
+      "length": {
+        "score": 9,
+        "status": "pass",
+        "note": "长度适合网站初稿。"
+      },
+      "brand_consistency": {
+        "score": 8,
+        "status": "pass",
+        "note": "避免夸大，符合 SYUTECH 稳健口径。"
+      }
+    },
+    "decision": "可以进入 CEO 内容审阅；不建议直接公开发布。",
+    "required_before_public_publish": [
+      "补真实参数",
+      "补产品图片/视频",
+      "补客户案例或样品证据",
+      "补网站内部链接",
+      "补最终询盘入口"
+    ],
+    "safety": {
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false
+    }
+  },
+  "next_action": "CEO 审阅真实客户可读英文文章草稿；通过后再决定是否进入 WordPress Draft-only 或多平台内容改写。",
+  "knowledge_gap_pack_v1": {
+    "package_id": "hk620_us_customer_article_knowledge_gap_pack_v1",
+    "mission_id": "mission_hk620_us_customer_article_knowledge_gap_v1",
+    "created_at": "2026-07-12T02:23:49Z",
+    "class": "A_BUILD",
+    "status": "ready_for_knowledge_collection",
+    "product": "HK620",
+    "market": "US",
+    "owner_agent": "Knowledge Agent",
+    "reviewer_agent": "QA Agent",
+    "content_owner": "Website Agent",
+    "purpose": "补齐 HK620 美国市场客户可读文章公开发布前的必要资料，避免文章空泛或使用未确认信息。",
+    "source_article": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_v1.md",
+    "source_qa": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_qa_v1.json",
+    "publish_gate": {
+      "current_qa_score": 91,
+      "current_gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+      "public_publish_allowed": false,
+      "wordpress_draft_allowed_after_ceo_review": true,
+      "reason": "内容方向可审，但正式公开发布前仍缺真实参数、媒体素材、案例证据、内链和询盘入口。"
+    },
+    "gap_tasks": [
+      {
+        "gap_id": "hk620_us_gap_001_confirmed_specs",
+        "title": "真实技术参数表",
+        "priority": "P0",
+        "owner_agent": "Knowledge Agent",
+        "supporting_agent": "Website Agent",
+        "blocks_public_publish": true,
+        "blocks_draft_only": false,
+        "needed_fields": [
+          "适用工件范围",
+          "封边材料范围",
+          "胶水/工艺口径",
+          "速度口径",
+          "电压/功率",
+          "机器尺寸",
+          "重量",
+          "气压",
+          "可选配置"
+        ],
+        "source_required": "产品手册、技术规格表或工程负责人确认",
+        "acceptance_criteria": "形成可公开使用参数表；每项参数标记来源和 public_use_allowed；未确认字段不得写入文章。",
+        "current_status": "missing"
+      },
+      {
+        "gap_id": "hk620_us_gap_002_product_media",
+        "title": "产品图片与视频素材",
+        "priority": "P0",
+        "owner_agent": "Knowledge Agent",
+        "supporting_agent": "Video Agent",
+        "blocks_public_publish": true,
+        "blocks_draft_only": false,
+        "needed_fields": [
+          "主图",
+          "细节图",
+          "工件应用图",
+          "工厂测试视频",
+          "可公开使用边界",
+          "图片 alt 建议"
+        ],
+        "source_required": "产品图库、工厂拍摄、销售素材或已批准视频素材",
+        "acceptance_criteria": "至少 1 张主图、2 张细节图、1 张应用图、1 条视频或短视频素材；确认不含敏感客户信息。",
+        "current_status": "missing"
+      },
+      {
+        "gap_id": "hk620_us_gap_003_case_or_sample_evidence",
+        "title": "客户案例或样品测试证据",
+        "priority": "P0",
+        "owner_agent": "Knowledge Agent",
+        "supporting_agent": "Research Agent",
+        "blocks_public_publish": true,
+        "blocks_draft_only": false,
+        "needed_fields": [
+          "可公开案例",
+          "匿名案例",
+          "样品测试说明",
+          "批量验证口径",
+          "禁止公开的客户信息"
+        ],
+        "source_required": "销售反馈、客户现场记录、样品测试记录、CEO/销售负责人确认",
+        "acceptance_criteria": "至少提供 1 条可公开或可匿名使用的证据；不得编造客户名、产量、ROI 或验收结果。",
+        "current_status": "missing"
+      },
+      {
+        "gap_id": "hk620_us_gap_004_internal_links_and_site_route",
+        "title": "网站内链与询盘路径",
+        "priority": "P1",
+        "owner_agent": "Website Agent",
+        "supporting_agent": "SEO Agent",
+        "blocks_public_publish": true,
+        "blocks_draft_only": false,
+        "needed_fields": [
+          "HK620 产品页",
+          "edge banding 分类页",
+          "contact/quote 页面",
+          "相关案例页",
+          "FAQ 页"
+        ],
+        "source_required": "现有网站 URL 或待建页面清单",
+        "acceptance_criteria": "文章至少有产品页、分类页、询盘页 3 类内链；不存在的链接标记为待建，不得使用假链接。",
+        "current_status": "missing"
+      },
+      {
+        "gap_id": "hk620_us_gap_005_brand_terms_and_cta",
+        "title": "英文品牌术语与最终 CTA",
+        "priority": "P1",
+        "owner_agent": "Knowledge Agent",
+        "supporting_agent": "Publishing Agent",
+        "blocks_public_publish": true,
+        "blocks_draft_only": false,
+        "needed_fields": [
+          "SYUTECH 英文品牌口径",
+          "HK620 英文产品名",
+          "skeleton line/profile strip 术语边界",
+          "询盘 CTA",
+          "禁止声明"
+        ],
+        "source_required": "品牌词表、销售话术、CEO/市场负责人确认",
+        "acceptance_criteria": "形成统一术语表；文章、邮件、YouTube、LinkedIn、Medium 等平台共用；禁止夸大和未验证承诺。",
+        "current_status": "missing"
+      }
+    ],
+    "assignment": {
+      "Knowledge Agent": [
+        "hk620_us_gap_001_confirmed_specs",
+        "hk620_us_gap_002_product_media",
+        "hk620_us_gap_003_case_or_sample_evidence",
+        "hk620_us_gap_005_brand_terms_and_cta"
+      ],
+      "Website Agent": [
+        "hk620_us_gap_004_internal_links_and_site_route"
+      ],
+      "QA Agent": [
+        "review_all_gap_outputs_before_public_publish"
+      ]
+    },
+    "next_decision": "先让 Knowledge Agent 收集/整理缺口；CEO 暂时只需要在资料齐后确认是否允许公开使用。",
+    "safety": {
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "external_api": false
+    }
+  },
+  "approval_status": "waiting_knowledge_gap_completion_before_public_publish",
+  "latest_outputs": {
+    "knowledge_gap_pack": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_knowledge_gap_pack_v1.json",
+    "knowledge_gap_report": "docs/M8A_HK620_US_KNOWLEDGE_GAP_PACK_V1_REPORT.md"
+  }
+}

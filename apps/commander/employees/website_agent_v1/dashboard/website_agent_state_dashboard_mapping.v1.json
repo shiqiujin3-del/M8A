@@ -1,0 +1,76 @@
+{
+  "version": "website_agent_dashboard_state_mapping_v1",
+  "purpose": "定义 Website Agent V1 每个状态在总控台和员工工作台的显示方式。",
+  "mappings": {
+    "idle": {
+      "commander_label": "空闲，等待 Mission",
+      "workbench_label": "可接任务",
+      "primary_action": "创建 Mission",
+      "severity": "neutral"
+    },
+    "intake_received": {
+      "commander_label": "已收到 Mission",
+      "workbench_label": "Mission Intake 已完成",
+      "primary_action": "自动读取知识",
+      "severity": "info"
+    },
+    "knowledge_loaded": {
+      "commander_label": "资料已加载",
+      "workbench_label": "Knowledge Fetch 已完成",
+      "primary_action": "自动生成草稿",
+      "severity": "info"
+    },
+    "draft_generated": {
+      "commander_label": "草稿已生成",
+      "workbench_label": "等待 QA V2",
+      "primary_action": "自动执行 QA V2",
+      "severity": "info"
+    },
+    "qa_completed": {
+      "commander_label": "QA 已完成",
+      "workbench_label": "QA Score 已生成",
+      "primary_action": "提交发布前审批",
+      "severity": "warning"
+    },
+    "waiting_approval": {
+      "commander_label": "等待 CEO 审批",
+      "workbench_label": "Approval Gate",
+      "primary_action": "查看 / 审批",
+      "severity": "urgent"
+    },
+    "approved_for_draft": {
+      "commander_label": "已批准进入 Draft-only",
+      "workbench_label": "等待 Draft-only 交接授权",
+      "primary_action": "执行前检查",
+      "severity": "warning"
+    },
+    "handed_off_to_n8n": {
+      "commander_label": "已完成 Draft-only 交接",
+      "workbench_label": "等待执行器结果或日志回写",
+      "primary_action": "查看交接记录",
+      "severity": "info"
+    },
+    "completed": {
+      "commander_label": "已完成",
+      "workbench_label": "Mission Log 已写回",
+      "primary_action": "查看历史",
+      "severity": "success"
+    },
+    "failed": {
+      "commander_label": "失败 / 阻断",
+      "workbench_label": "查看错误与重试建议",
+      "primary_action": "查看错误",
+      "severity": "danger"
+    }
+  },
+  "dashboard_cards": [
+    "当前状态",
+    "当前主按钮",
+    "QA Score Gate",
+    "Draft Count",
+    "Waiting Approval",
+    "Mission Log / History",
+    "可复用模板"
+  ],
+  "safety_text": "未到 CEO 授权状态前，不调用 n8n / WordPress，不发布，不删除，不修改外部平台。"
+}

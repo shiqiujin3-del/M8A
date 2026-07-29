@@ -1,0 +1,94 @@
+{
+  "success": true,
+  "executor": "gmail",
+  "workflow": "quotation_preparation",
+  "status": "completed",
+  "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+  "trace_id": "trace_m2_sprint8_quotation_preparation_20260710T052427Z",
+  "execution_id": "46",
+  "result": {
+    "customer": "John Smith",
+    "machine": "HK620",
+    "missing_information": [
+      "Voltage",
+      "Board Thickness",
+      "Glue Type",
+      "Working Size",
+      "Automation Level",
+      "Optional Units",
+      "Packing Requirement",
+      "Delivery Port",
+      "Payment Terms"
+    ],
+    "checklist": [
+      {
+        "item": "Voltage",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Country",
+        "required": true,
+        "known": true,
+        "value": "USA"
+      },
+      {
+        "item": "Board Thickness",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Glue Type",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Working Size",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Automation Level",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Optional Units",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Packing Requirement",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Delivery Port",
+        "required": true,
+        "known": false
+      },
+      {
+        "item": "Payment Terms",
+        "required": true,
+        "known": false
+      }
+    ],
+    "gmail_draft_id": "r-41102193991796805",
+    "thread_id": "19f4a7c05f487011",
+    "subject": "Quotation Preparation for HK620 Edge Banding Machine"
+  },
+  "error": null,
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "requires_execution_lookup": false,
+    "normalization_source": "gmail_draft_executor_direct_response"
+  },
+  "safety": {
+    "generate_price": false,
+    "generate_proforma_invoice": false,
+    "send_email": false,
+    "modify_wordpress": false,
+    "create_gmail_draft": true
+  },
+  "duration_ms": 2166
+}

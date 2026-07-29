@@ -1,0 +1,8 @@
+{
+  "inquiry_id": "inquiry_hk620_quotation_john_smith_20260710T052427Z",
+  "customer": "John Smith",
+  "country": "USA",
+  "interested_machine": "HK620 Edge Banding Machine",
+  "received_at": "2026-07-10T05:24:27Z",
+  "source": "local_test_json"
+}

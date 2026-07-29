@@ -1,0 +1,81 @@
+{
+  "version": "agent_subscription_v1",
+  "model": {
+    "Subscribe": "agent 增加 listening_events",
+    "Unsubscribe": "agent 移除 listening_events",
+    "Listening Events": "当前监听事件",
+    "Supported Events": "该员工可处理事件"
+  },
+  "extension_rule": "新增 AI 员工只需要新增一个 subscription 记录，不需要修改 Event Center 核心。",
+  "agents": {
+    "knowledge_agent": {
+      "agent_name": "Knowledge Agent",
+      "listening_events": [
+        "Mission Assigned",
+        "Knowledge Updated"
+      ],
+      "supported_events": [
+        "Knowledge Updated",
+        "Knowledge Approved",
+        "Mission Completed",
+        "Mission Failed"
+      ],
+      "status": "subscribed"
+    },
+    "website_agent": {
+      "agent_name": "Website Agent",
+      "listening_events": [
+        "Knowledge Approved",
+        "Mission Assigned",
+        "Draft Ready"
+      ],
+      "supported_events": [
+        "Mission Started",
+        "Draft Ready",
+        "Mission Completed",
+        "Mission Failed"
+      ],
+      "status": "subscribed"
+    },
+    "qa_agent": {
+      "agent_name": "QA Agent",
+      "listening_events": [
+        "Draft Ready",
+        "QA Started"
+      ],
+      "supported_events": [
+        "QA Started",
+        "QA Passed",
+        "QA Failed",
+        "Mission Completed"
+      ],
+      "status": "subscribed"
+    },
+    "commander": {
+      "agent_name": "Commander",
+      "listening_events": [
+        "QA Passed",
+        "CEO Approval Requested",
+        "Ready To Publish"
+      ],
+      "supported_events": [
+        "CEO Approval Requested",
+        "CEO Approved",
+        "Ready To Publish"
+      ],
+      "status": "subscribed"
+    },
+    "publishing_agent": {
+      "agent_name": "Publishing Agent",
+      "listening_events": [
+        "Ready To Publish",
+        "CEO Approved"
+      ],
+      "supported_events": [
+        "Ready To Publish",
+        "Published"
+      ],
+      "status": "reserved_no_external_execution"
+    }
+  }
+}

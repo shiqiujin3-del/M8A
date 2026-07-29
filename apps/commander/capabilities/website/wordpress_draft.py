@@ -168,6 +168,13 @@ def local_payload_result(payload: dict, missing: list[str]) -> WebsiteCapability
 
 
 def create_wordpress_post_draft(base_url: str, username: str, app_password: str, payload: dict) -> dict:
+    """Create a WordPress draft via REST API.
+
+    🚨 YOAST SEO PITFALL: Publishing via REST API silently drops Yoast SEO metadata.
+    _yoast_wpseo_title and _yoast_wpseo_metadesc are registered as protected meta
+    and are NOT writable through REST API. After publishing, use SSH + PHP
+    update_post_meta() to set them. See apps/commander/capabilities/website/yoast-fix/.
+    """
     endpoint = urljoin(base_url.rstrip("/") + "/", "wp-json/wp/v2/posts")
     auth = base64.b64encode(f"{username}:{app_password}".encode("utf-8")).decode("ascii")
     body = {
@@ -189,6 +196,14 @@ def create_wordpress_post_draft(base_url: str, username: str, app_password: str,
             "Authorization": f"Basic {auth}",
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+            "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cache-Control": "no-cache",
+            "Referer": f"{base_url.rstrip('/')}/wp-admin/",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Site": "same-origin",
         },
     )
     with urllib.request.urlopen(request, timeout=30) as response:

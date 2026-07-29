@@ -1,0 +1,17 @@
+{
+  "version": "qa_agent_auto_check_result_v1",
+  "mission_id": "mission_hk620_gap_005_external_references",
+  "agent": "QA Agent",
+  "qa_standard": "Website Agent QA V2",
+  "qa_score": 92,
+  "qa_status": "passed",
+  "publish_allowed": false,
+  "reason": "本地 QA 通过但仍不允许发布；任何外部动作需要 CEO 单独授权。",
+  "checks": {
+    "title": true,
+    "meta_description": true,
+    "safe_claims": true,
+    "external_action_blocked": true,
+    "brand_consistency": true
+  }
+}

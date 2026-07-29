@@ -1,0 +1,45 @@
+{
+  "version": "website_agent_retry_engine_v1",
+  "principles": [
+    "所有失败必须写 Mission Log",
+    "只重试失败阶段",
+    "重试不得绕过 CEO 审批",
+    "外部动作不得自动重试到发布"
+  ],
+  "failure_types": {
+    "webhook_failure": {
+      "retryable": true,
+      "max_retry": 2,
+      "log_required": true
+    },
+    "wordpress_failure": {
+      "retryable": true,
+      "max_retry": 1,
+      "log_required": true
+    },
+    "timeout": {
+      "retryable": true,
+      "max_retry": 2,
+      "log_required": true
+    },
+    "validation_error": {
+      "retryable": false,
+      "max_retry": 0,
+      "log_required": true
+    },
+    "network_error": {
+      "retryable": true,
+      "max_retry": 2,
+      "log_required": true
+    }
+  },
+  "retry_record_fields": [
+    "mission_id",
+    "failed_stage",
+    "error_code",
+    "error_message",
+    "retry_count",
+    "next_retry_at",
+    "human_review_required"
+  ]
+}

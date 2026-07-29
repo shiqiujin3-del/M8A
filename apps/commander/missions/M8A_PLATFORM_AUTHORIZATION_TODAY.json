@@ -1,0 +1,50 @@
+{
+  "mission_id": "m8a_platform_authorization_today_v1",
+  "mission_name": "今日外部平台授权收尾",
+  "issued_by": "CEO",
+  "recorded_by": "M8N 总经理",
+  "issued_at": "2026-07-07T05:42:34Z",
+  "language": "中文",
+  "objective": "今天把所有需要 M8A 内部批准的平台授权项推进到下一阶段，并在需要真实账号时由 CEO 完成浏览器授权。",
+  "internal_authorization": "全部已批准",
+  "assigned_employee": "automation_agent",
+  "supporting_employees": [
+    "commander_reporting_agent",
+    "qa_agent"
+  ],
+  "platforms": [
+    "WordPress",
+    "Coze",
+    "Google Search Console",
+    "GA4",
+    "Gmail",
+    "YouTube",
+    "LinkedIn",
+    "Facebook",
+    "WhatsApp",
+    "TikTok",
+    "微信公众号",
+    "视频号",
+    "CRM",
+    "n8n"
+  ],
+  "allowed_now": [
+    "进入 n8n 凭证页面",
+    "创建或检查凭证占位",
+    "读取连接状态",
+    "生成中文授权报告",
+    "回写 M8A / M8N 总控状态"
+  ],
+  "still_requires_ceo_confirmation": [
+    "输入账号密码",
+    "授权 Google / YouTube / Gmail 权限",
+    "保存真实 API token",
+    "发送邮件",
+    "公开发布文章或视频",
+    "删除数据或修改账号设置"
+  ],
+  "external_action_allowed": false,
+  "public_publish_allowed": false,
+  "email_send_allowed": false,
+  "delete_allowed": false
+}

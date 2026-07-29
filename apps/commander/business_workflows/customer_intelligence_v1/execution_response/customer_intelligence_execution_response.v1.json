@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+  "trace_id": "trace_m2_sprint9_customer_intelligence_20260710T120000Z",
+  "execution_id": "local_customer_intelligence_20260710T120000Z",
+  "executor": "customer_intelligence_center",
+  "workflow": "Customer Intelligence Center V1",
+  "action": "upsert_customer_card_by_email",
+  "status": "completed",
+  "started_at": "2026-07-10T12:00:00Z",
+  "finished_at": "2026-07-10T12:00:00Z",
+  "duration_ms": 0,
+  "result": {
+    "customer_id": "customer_john_smith_john_smith_email_unknown_v1",
+    "customer_name": "John Smith",
+    "email": "john.smith@example.com",
+    "interested_product": "HK620 Edge Banding Machine",
+    "lead_score": 78,
+    "matched_existing_customer": true,
+    "duplicate_customer_created": false,
+    "inquiry_history_count": 2,
+    "draft_history_count": 2,
+    "quotation_preparation_history_count": 2,
+    "mission_history_count": 3,
+    "next_action": "由销售负责人确认 HK620 报价前缺失信息；如需邮件跟进，继续复用 Quotation Preparation Workflow 创建 Draft，禁止自动发送。",
+    "quotation_history_count": 2
+  },
+  "error": null,
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "requires_execution_lookup": false,
+    "normalization_source": "local_customer_intelligence_runtime"
+  },
+  "safety": {
+    "no_wordpress_change": true,
+    "no_contact_form_change": true,
+    "no_website_plugin_change": true,
+    "no_gmail_send": true,
+    "no_external_call": true,
+    "no_new_dashboard": true,
+    "no_new_schema": true,
+    "no_new_contract": true,
+    "no_new_executor_framework": true
+  }
+}

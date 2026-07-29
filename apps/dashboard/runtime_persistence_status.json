@@ -1,0 +1,25 @@
+{
+  "version": "dashboard_runtime_status_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "storage_mode": "SQLite local runtime store + JSON compatibility layer",
+  "database_path": "apps/commander/runtime_persistence_v1/db/m8a_runtime_v1.sqlite",
+  "mission_count": 39,
+  "event_count": 11,
+  "recent_event": {
+    "event_type": "Ready To Publish",
+    "timestamp": "2026-07-09T11:16:00+01:00"
+  },
+  "health_status": "healthy",
+  "migration_status": "compatibility_layer_ready_json_import_sample_done",
+  "dashboard_note": "现有 Dashboard 继续可读；本卡片显示本地运行数据层状态。",
+  "safety": {
+    "external_api": false,
+    "n8n": false,
+    "wordpress": false,
+    "gmail": false,
+    "youtube": false,
+    "publish": false,
+    "delete": false,
+    "production_modify": false
+  }
+}

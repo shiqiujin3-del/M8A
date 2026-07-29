@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M8A Website Agent V1 Mission Protocol",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mission_id",
+    "priority",
+    "product",
+    "language",
+    "target_market",
+    "target_platform",
+    "expected_output",
+    "qa_status",
+    "approval_status",
+    "publish_status",
+    "retry_count",
+    "mission_log",
+    "mission_class",
+    "ceo_approval_required",
+    "external_action_required"
+  ],
+  "properties": {
+    "mission_id": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "product": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "target_market": {
+      "type": "string"
+    },
+    "target_platform": {
+      "type": "string",
+      "enum": [
+        "wordpress_draft",
+        "website_page_draft",
+        "blog_draft",
+        "knowledge_page_draft",
+        "local_only"
+      ]
+    },
+    "expected_output": {
+      "type": "string"
+    },
+    "qa_status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "checking",
+        "passed",
+        "failed",
+        "blocked"
+      ]
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": [
+        "not_required",
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "publish_status": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "draft_only",
+        "waiting_ceo_approval",
+        "authorized_for_draft_only",
+        "blocked",
+        "published"
+      ]
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mission_log": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "mission_class": {
+      "type": "string",
+      "enum": [
+        "build",
+        "external_platform_action"
+      ],
+      "description": "Mission 分类规则 V1：A 类 Build 为本地建设任务，可自动推进；外部平台动作必须 CEO 审批。"
+    },
+    "ceo_approval_required": {
+      "type": "boolean",
+      "description": "A 类 Build 默认 false；n8n、WordPress、发布、删除、修改外部平台等动作必须 true。"
+    },
+    "external_action_required": {
+      "type": "boolean",
+      "description": "是否会触发 n8n、WordPress、Gmail、YouTube 或其他外部平台动作。"
+    }
+  },
+  "mission_classification_rules_v1": {
+    "A_build": {
+      "label": "A 类：Build（建设）",
+      "ceo_approval_required": false,
+      "allowed_auto_progress": [
+        "写代码",
+        "建 Dashboard",
+        "建 Agent",
+        "建模板",
+        "建文档",
+        "建知识库",
+        "写测试",
+        "本地验证"
+      ],
+      "scope": "只限本地建设和本地验证，可自动完成。"
+    },
+    "external_platform_action": {
+      "label": "外部平台动作",
+      "ceo_approval_required": true,
+      "must_not_auto_execute": [
+        "n8n",
+        "WordPress",
+        "publish",
+        "update_published_post",
+        "delete_post",
+        "send_gmail",
+        "upload_youtube"
+      ],
+      "scope": "任何外部平台动作仍需 CEO 明确审批和单独授权。"
+    }
+  }
+}

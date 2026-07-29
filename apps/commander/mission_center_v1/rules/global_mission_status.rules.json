@@ -1,0 +1,76 @@
+{
+  "version": "global_mission_status_v2_with_approval_integration",
+  "statuses": [
+    "Waiting",
+    "Running",
+    "Blocked",
+    "Waiting QA",
+    "Waiting CEO",
+    "Completed",
+    "Failed",
+    "Archived"
+  ],
+  "status_mapping": {
+    "queued": "Queued",
+    "in_progress": "Running",
+    "blocked": "Blocked",
+    "qa_pending": "Waiting QA",
+    "waiting_qa": "Waiting QA",
+    "waiting_ceo": "Waiting CEO",
+    "waiting_ceo_browser_authorization": "Waiting CEO",
+    "completed": "Completed",
+    "failed": "Failed",
+    "archived": "Archived",
+    "created": "Created",
+    "pending_approval": "Pending Approval",
+    "approved": "Approved",
+    "running": "Running",
+    "retry": "Retry",
+    "cancelled": "Cancelled",
+    "rejected": "Cancelled",
+    "stopped": "Cancelled"
+  },
+  "dashboard_cn": {
+    "Waiting": "等待执行",
+    "Running": "执行中",
+    "Blocked": "已阻断",
+    "Waiting QA": "等待 QA",
+    "Waiting CEO": "等待 CEO",
+    "Completed": "已完成",
+    "Failed": "失败",
+    "Archived": "已归档",
+    "Created": "已创建",
+    "Queued": "已排队",
+    "Pending Approval": "等待审批",
+    "Approved": "已审批",
+    "Cancelled": "已取消",
+    "Retry": "重试中"
+  },
+  "m2_sprint2_lifecycle": [
+    "Created",
+    "Queued",
+    "Pending Approval",
+    "Approved",
+    "Running",
+    "Completed",
+    "Failed",
+    "Retry",
+    "Cancelled"
+  ],
+  "m2_sprint2_approval_driven_transitions": {
+    "draft_auto_execution": "Created -> Queued -> Running -> Completed",
+    "publish_approve": "Created -> Queued -> Pending Approval -> Approved -> Running -> Completed",
+    "publish_reject": "Created -> Queued -> Pending Approval -> Rejected -> Cancelled",
+    "delete_reject": "Created -> Queued -> Pending Approval -> Rejected -> Cancelled",
+    "re_approve": "Rejected -> Pending Approval -> Approved -> Running"
+  },
+  "approval_center_v1_integration": {
+    "source": "apps/commander/governance/approval_center_v1/rules/approval_policy.v1.json",
+    "draft_action": "create_wordpress_draft_only auto-runs after safety gate",
+    "publish_action": "requires Approval Center approved before Running",
+    "delete_action": "requires Approval Center approved before Running; rejected means Cancelled/Stopped",
+    "runtime_schema_change": false,
+    "new_queue_created": false,
+    "external_call_in_sprint": false
+  }
+}

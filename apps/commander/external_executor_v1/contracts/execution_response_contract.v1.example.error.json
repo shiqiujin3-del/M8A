@@ -1,0 +1,41 @@
+{
+  "success": false,
+  "mission_id": "mission_example_failed",
+  "trace_id": "trace_example_failed",
+  "execution_id": null,
+  "executor": "n8n",
+  "workflow_id": "aTVbw0a7MId3NCBH",
+  "workflow_name": "m8a_hk620_draft_20260708",
+  "action_type": "create_wordpress_draft_only",
+  "status": "failed",
+  "started_at": "2026-07-10T00:00:00Z",
+  "finished_at": "2026-07-10T00:00:02Z",
+  "duration_ms": 2000,
+  "retry_count": 1,
+  "result": null,
+  "error": {
+    "error_code": "N8N_WEBHOOK_EXECUTION_FAILED",
+    "error_message": "n8n workflow did not return a WordPress Draft result.",
+    "retryable": true,
+    "retry_count": 1,
+    "http_status": 502,
+    "failed_node": null,
+    "details": null
+  },
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "old_workflow_called": false,
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+  },
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "legacy_webhook_response": null,
+    "requires_execution_lookup": false,
+    "normalization_source": "direct_webhook_response"
+  }
+}

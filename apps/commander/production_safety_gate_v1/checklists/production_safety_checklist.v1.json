@@ -1,0 +1,51 @@
+{
+  "version": "production_safety_checklist_v1",
+  "checks": [
+    {
+      "key": "draft_only",
+      "label": "是否 Draft-only",
+      "required": true
+    },
+    {
+      "key": "publish_forbidden",
+      "label": "是否禁止 Publish",
+      "required": true
+    },
+    {
+      "key": "delete_forbidden",
+      "label": "是否禁止 Delete",
+      "required": true
+    },
+    {
+      "key": "update_published_content_forbidden",
+      "label": "是否禁止修改已发布内容",
+      "required": true
+    },
+    {
+      "key": "send_email_upload_video_forbidden",
+      "label": "是否禁止 Send Email / Upload Video",
+      "required": true
+    },
+    {
+      "key": "qa_score_exists",
+      "label": "是否已有 QA Score",
+      "required": true
+    },
+    {
+      "key": "qa_score_gte_90",
+      "label": "QA Score 是否 >= 90",
+      "required": true
+    },
+    {
+      "key": "rollback_plan_exists",
+      "label": "是否有 Rollback Plan",
+      "required": true
+    },
+    {
+      "key": "mission_log_exists",
+      "label": "是否有 Mission Log",
+      "required": true
+    }
+  ],
+  "pass_condition": "全部 required 检查为 true 才能进入 dry_run_passed；仍不代表可以真实执行。"
+}

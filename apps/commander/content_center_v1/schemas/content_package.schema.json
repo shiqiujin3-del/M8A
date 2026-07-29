@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "m8a.content_package.v1",
+  "title": "M8A Content Package V1",
+  "type": "object",
+  "required": [
+    "content_package_id",
+    "mission_id",
+    "product",
+    "target_market",
+    "language",
+    "status",
+    "owner_agents",
+    "knowledge",
+    "content_assets",
+    "platform_variants",
+    "qa_result",
+    "approval_status",
+    "publish_status",
+    "safety"
+  ],
+  "properties": {
+    "content_package_id": {
+      "type": "string"
+    },
+    "mission_id": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "target_market": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "buyer_persona": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "intake",
+        "knowledge_ready",
+        "drafting",
+        "qa_pending",
+        "qa_passed",
+        "waiting_ceo_approval",
+        "ready_for_draft_only_execution",
+        "archived"
+      ]
+    },
+    "owner_agents": {
+      "type": "object"
+    },
+    "knowledge": {
+      "type": "object"
+    },
+    "content_assets": {
+      "type": "object"
+    },
+    "platform_variants": {
+      "type": "object"
+    },
+    "qa_result": {
+      "type": "object"
+    },
+    "approval_status": {
+      "type": "string"
+    },
+    "publish_status": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "array"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}

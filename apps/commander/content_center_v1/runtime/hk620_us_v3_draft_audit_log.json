@@ -1,0 +1,208 @@
+[
+  {
+    "version": "m8a_audit_log",
+    "events": [
+      {
+        "audit_log_id": "audit_mission_hk620_us_v3_wordpress_draft_1783828093444",
+        "timestamp": "2026-07-12T03:48:16.371819Z",
+        "event": "hk620_us_v3_wordpress_draft_only_failed",
+        "result": {
+          "mission_id": "mission_hk620_us_v3_wordpress_draft_1783828093444",
+          "trace_id": "trace_hk620_us_v3_wordpress_draft_1783828093444",
+          "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+          "workflow_id": "aTVbw0a7MId3NCBH",
+          "workflow_name": "m8a_hk620_draft_20260708",
+          "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+          "http_status": 502,
+          "success": false,
+          "execution_id": "",
+          "post_id": null,
+          "draft_url": null,
+          "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+          "slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+          "status": null,
+          "started_at": "2026-07-12T03:48:13.444377Z",
+          "finished_at": "2026-07-12T03:48:16.371819Z",
+          "retry_count": 0,
+          "error": "HTTP Error 502: Bad Gateway",
+          "response": {
+            "raw": ""
+          },
+          "safety": {
+            "draft_only": true,
+            "publish": false,
+            "delete_post": false,
+            "update_published_post": false,
+            "send_gmail": false,
+            "upload_youtube": false,
+            "old_workflow_called": false,
+            "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+          },
+          "content_source": "/Users/shiqiujing/Documents/M8A/apps/commander/content_center_v1/outputs/hk620_us_customer_article_v3_pre_publish.json"
+        }
+      }
+    ],
+    "updated_at": "2026-07-12T03:48:16.371819Z"
+  },
+  {
+    "mission_id": "mission_hk620_us_v3_wordpress_draft_20260712045610",
+    "trace_id": "trace_hk620_us_v3_wordpress_draft_20260712045610",
+    "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+    "http_status": 200,
+    "ok": true,
+    "started_at": "2026-07-12T03:56:10Z",
+    "finished_at": "2026-07-12T03:56:13Z",
+    "response": {
+      "success": true,
+      "mission_id": "mission_hk620_us_v3_wordpress_draft_20260712045610",
+      "trace_id": "trace_hk620_us_v3_wordpress_draft_20260712045610",
+      "execution_id": "211",
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "completed",
+      "started_at": null,
+      "finished_at": "2026-07-12T03:56:13.347Z",
+      "duration_ms": null,
+      "retry_count": 0,
+      "result": {
+        "type": "wordpress_draft",
+        "post_id": 450,
+        "post_status": "draft",
+        "draft_url": "https://woodmachinerynetwork.com/?p=450",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=450&action=edit",
+        "title": "HK620 Draft Test from M8A",
+        "slug": "hk620-draft-test-from-m8a",
+        "external_id": 450,
+        "external_url": "https://woodmachinerynetwork.com/?p=450",
+        "platform_status": "draft"
+      },
+      "error": null,
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": null,
+        "requires_execution_lookup": false,
+        "normalization_source": "direct_webhook_response"
+      }
+    },
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    }
+  },
+  {
+    "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+    "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+    "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+    "http_status": 200,
+    "ok": true,
+    "started_at": "2026-07-12T04:07:00Z",
+    "finished_at": "2026-07-12T04:07:03Z",
+    "sent_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+    "sent_slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+    "sent_content_chars": 6393,
+    "response": {
+      "success": true,
+      "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+      "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+      "execution_id": "212",
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "completed",
+      "started_at": null,
+      "finished_at": "2026-07-12T04:07:03.247Z",
+      "duration_ms": null,
+      "retry_count": 0,
+      "result": {
+        "type": "wordpress_draft",
+        "post_id": 451,
+        "post_status": "draft",
+        "draft_url": "https://woodmachinerynetwork.com/?p=451",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=451&action=edit",
+        "title": "HK620 Draft Test from M8A",
+        "slug": "hk620-draft-test-from-m8a",
+        "external_id": 451,
+        "external_url": "https://woodmachinerynetwork.com/?p=451",
+        "platform_status": "draft"
+      },
+      "error": null,
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": null,
+        "requires_execution_lookup": false,
+        "normalization_source": "direct_webhook_response"
+      }
+    },
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    }
+  },
+  {
+    "audit_log_id": "audit_mission_hk620_us_v3_active_version_fixed_20260712041912",
+    "event": "hk620_us_v3_wordpress_draft_only_active_version_mapping_passed",
+    "created_at": "2026-07-12T04:22:12Z",
+    "mission_id": "mission_hk620_us_v3_active_version_fixed_20260712041912",
+    "trace_id": "trace_hk620_us_v3_active_version_fixed_31ad26e03d",
+    "http_status": 200,
+    "execution_id": "213",
+    "wordpress_draft_id": 452,
+    "draft_url": "https://woodmachinerynetwork.com/?p=452",
+    "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+    "expected_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+    "title_mapping_passed": true,
+    "status": "completed",
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    },
+    "contract": {
+      "contract_version": "execution_response_contract_v1",
+      "legacy_webhook_response": null,
+      "requires_execution_lookup": false,
+      "normalization_source": "direct_webhook_response"
+    },
+    "notes": "n8n active workflow_history version mapping was synced; WordPress Draft title/content now comes from formal HK620 V3 article payload."
+  }
+]

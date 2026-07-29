@@ -1,0 +1,44 @@
+{
+  "mission_id": "mission_hk620_us_customer_article_v2",
+  "content_package_id": "content_pkg_hk620_us_v2",
+  "agent": "Website Agent",
+  "created_at": "2026-07-12T03:04:53Z",
+  "language": "en-US",
+  "product": "HK620",
+  "target_market": "US",
+  "title": "HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers",
+  "slug": "hk620-skeleton-line-edge-banding-machine-us-door-furniture-manufacturers",
+  "status": "local_customer_article_draft_v2_completed",
+  "source_knowledge_package": "knowledge_pkg_hk620_us_ceo_input_v1",
+  "publish_status": "not_published",
+  "wordpress_status": "not_sent_to_wordpress",
+  "draft_markdown": "# HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers\n\n## Customer-Facing Draft V2\n\nThe HK620 is a dedicated skeleton-line and decorative-strip edge banding machine for manufacturers that process line-shaped workpieces rather than only standard flat panels. For US door manufacturers, furniture factories, renovation suppliers, and decorative moulding processors, this matters because profile strips and skeleton-door lines often need a more stable process than manual handling or a conventional panel-only edge banding setup.\n\nSYUTECH positions the HK620 for factories that need repeatable edge banding on various line and decorative-strip workpieces. The current confirmed configuration information includes PUR glue edge banding, 380V power, 20kW power rating, 0.6 air pressure requirement, Delta control system, approximately 7.5 m machine length, about 3 tons machine weight, and a typical 30-day delivery cycle. Some detailed parameters still need final technical confirmation before public release, so this article keeps the specification wording careful.\n\n## What Production Problem Does HK620 Solve?\n\nMany workshops can process ordinary boards, but skeleton-door lines, decorative strips, furniture trim pieces, and angled profile components create a different problem. The workpiece is long and narrow, the shape may not be a simple flat board, and the edge banding process must stay stable across batch production.\n\nHK620 is designed for this production scene: moving profile-style edge banding from heavy manual operation toward a more organized automatic process. According to the current internal product knowledge, the machine is suitable for straight-edge line work and multiple angled profile shapes. For buyers with unusual profiles, sample confirmation is still recommended before final configuration.\n\n## Suitable Customers\n\nHK620 is most relevant for:\n\n- Door factories processing skeleton-door line components\n- Furniture factories handling decorative strips or trim parts\n- Decoration and renovation suppliers producing profile lines\n- Workshops that need a dedicated process for long line-shaped workpieces\n- Manufacturers that want to reduce manual operation in line edge banding\n\nIt should not be presented as a generic machine for every edge banding requirement. If the buyer only processes standard flat rectangular panels, a conventional panel edge bander may still be the first option. If the buyer works with line-shaped, decorative, or skeleton-door components, HK620 becomes a more relevant discussion.\n\n## Confirmed Product Direction\n\nBased on the latest CEO-supplied product information, HK620 has been developed and tested through a longer validation cycle: about three months of development and about three months of testing. It has already entered batch production. This is important for buyers because a line-style edge banding machine should not be judged only by a feature list; it must also prove that the process can run repeatedly in real production conditions.\n\nCurrent internal customer evidence includes usage or testing references from a Dongguan door factory, a Yunnan furniture factory, and a Guangxi decorative-line factory. Before public publishing, SYUTECH should confirm exactly which names can be disclosed and whether any photos, videos, or case descriptions need masking or anonymization.\n\n## Preliminary Specification Notes\n\nThe following information can be used as a preliminary buyer reference, subject to final technical confirmation:\n\n| Item | Current Internal Information | Public Note |\n|---|---|---|\n| Product model | HK620 | Confirmed |\n| Product type | Skeleton-line / decorative-strip edge banding machine | Confirmed direction |\n| Glue process | PUR glue | Confirmed by CEO input |\n| Suitable workpieces | Various line and decorative-strip workpieces | Sample confirmation recommended |\n| Minimum workpiece value | 70 | Unit needs confirmation |\n| Maximum workpiece value | No fixed maximum stated | Public wording should be cautious |\n| Speed | 18 m, likely m/min | Unit needs final confirmation |\n| Voltage | 380V | Confirmed |\n| Power | 20kW | Confirmed |\n| Air pressure | 0.6 | Unit needs confirmation |\n| Control system | Delta control system | Confirmed |\n| Machine length | About 7.5 m | Confirmed |\n| Weight | About 3 tons | Confirmed |\n| Delivery cycle | About 30 days | Confirmed |\n\n## What Buyers Should Send Before Quotation\n\nTo avoid recommending the wrong configuration, US buyers should send real workpiece information before requesting a final quotation:\n\n1. Photos or short videos of the line, trim, or decorative strip\n2. Workpiece dimensions and profile shape\n3. Base material and edge banding material\n4. Required finished edge quality\n5. Current manual or semi-automatic process\n6. Daily or monthly production volume\n7. Workshop voltage and available space\n8. Whether the workpiece includes angled or irregular shapes\n\nThis information allows SYUTECH to decide whether HK620 fits the application and whether sample testing is needed.\n\n## Why Validation Matters\n\nFor this product category, competitors can copy visible configurations quickly, but a stable production process takes longer to prove. HK620 should therefore be explained through validation, not only through machine features. The stronger sales message is that the machine has gone through development, testing, and batch-production preparation rather than being only a short demonstration machine.\n\n## FAQ\n\n### Is HK620 a normal panel edge banding machine?\n\nNo. HK620 should be positioned for skeleton lines, decorative strips, door-line components, and profile-style edge banding. It is not a generic replacement for every panel edge banding machine.\n\n### Can SYUTECH recommend HK620 without seeing a sample?\n\nOnly at a preliminary level. For serious buying decisions, the buyer should provide photos, dimensions, material information, and production expectations.\n\n### Is customer evidence available?\n\nInternal references currently include a Dongguan door factory, a Yunnan furniture factory, and a Guangxi decorative-line factory. Public use of names, images, or video evidence should be confirmed before publishing.\n\n### Is this article ready for public publishing?\n\nNot yet. The article is stronger than the first draft because it now includes real internal product information, but public publishing still needs final parameter units, approved images or video, customer evidence permission, and final inquiry links.\n\n## Next Step\n\nIf your factory processes skeleton-door lines, decorative mouldings, or furniture trim profiles, send SYUTECH your workpiece photos, dimensions, materials, and production requirements. SYUTECH can then confirm whether HK620 is suitable and whether a sample review is required before quotation.\n",
+  "seo": {
+    "meta_title": "HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers",
+    "meta_description": "HK620 is a PUR glue skeleton-line and decorative-strip edge banding machine for US door, furniture, and moulding manufacturers.",
+    "primary_keyword": "skeleton line edge banding machine",
+    "secondary_keywords": [
+      "decorative strip edge banding machine",
+      "door line edge banding",
+      "PUR edge banding machine",
+      "HK620 edge banding machine"
+    ]
+  },
+  "qa_gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+  "open_gaps_before_publish": [
+    "final parameter units",
+    "approved product images and video",
+    "customer case disclosure permission",
+    "website product page and contact links",
+    "final English product name and CTA"
+  ],
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

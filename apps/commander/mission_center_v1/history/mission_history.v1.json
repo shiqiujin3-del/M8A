@@ -1,0 +1,755 @@
+{
+  "version": "mission_history_v1",
+  "generated_at": "2026-07-10T04:14:10Z",
+  "missions": [
+    {
+      "mission_id": "mission_hk620_gap_001_public_technical_specs",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：公开技术规格。补齐可公开使用的 HK620 技术规格，包括 power、voltage、machine_size、weight、processing_speed、edge_band_thickness、workpiece_size_range、control_system、glue_system、cutting_system、grooving_system、air_pressure、packing_size。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_009_public_approval_record",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：公开使用审批记录。建立 HK620 从 approved_internal 到 future public approved 的审批记录。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_010_public_claim_boundary",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：公开宣传边界。把 HK620 禁止声明整理成 Website Agent 可执行的 public claim boundary。"
+        }
+      ]
+    },
+    {
+      "mission_id": "external_platform_authorization_phase_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:29:51Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "在 CEO 在场时启动外部平台授权准备；只检查连接，不执行外部动作。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_commander_entry_1783488651135",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-08T05:30:51Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "Website Agent generated HK620 customer article and n8n created WordPress Draft Post ID 437, status draft. QA completed; waiting CEO review."
+        }
+      ]
+    },
+    {
+      "mission_id": "n8n_workflow_inventory_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:48:10Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "读取当前 n8n 工作流清单，判断哪些可接 M8N，哪些需要 CEO 再授权。"
+        }
+      ]
+    },
+    {
+      "mission_id": "qa_agent_hk620_wordpress_draft_review_v1",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T08:30:00Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "QA Agent 已完成 Draft 阶段检查，结论 passed_for_draft / needs_ceo_review。"
+        }
+      ]
+    },
+    {
+      "mission_id": "website_agent_hk620_first_business_draft_v1",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T08:30:00Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "Website Agent 已通过 n8n 创建 HK620 真实业务 WordPress 草稿，Post ID 434，状态 draft，未发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "wordpress_draft_creation_test_v1",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T07:15:00Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "n8n 已执行 WordPress Create Post 草稿动作，但 WordPress 返回授权失败；未发布任何内容。"
+        }
+      ]
+    },
+    {
+      "mission_id": "worker_runner_local_integration_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:20:28Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "Validate local employee queue claim, completion, dashboard writeback, and report generation without external APIs."
+        }
+      ]
+    },
+    {
+      "mission_id": "m8a_platform_authorization_today_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting CEO",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T05:42:34Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：公开技术规格，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_002_product_images",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：产品图片。补齐 HK620 产品主图、细节图、应用图，并确认可用于网站草稿和公开页面。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_003_product_videos",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_004_customer_cases",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：客户案例。补齐可公开或可匿名使用的客户案例、应用场景或验收故事。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_007_service_faq",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：服务 FAQ。补齐 HK620 安装、维护、常见问题、故障排除和使用边界。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_008_delivery_warranty_price_policy",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Blocked",
+      "errors": [],
+      "qa": "required",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：交付/保修/价格政策。明确 HK620 交付周期、保修范围、报价表达边界和价格政策。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_002_product_images",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：产品图片，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_003_product_videos",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_004_customer_cases",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：客户案例，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_007_service_faq",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：服务 FAQ，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_008_delivery_warranty_price_policy",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "required",
+      "publish": "blocked",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：交付/保修/价格政策，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "ai_employee_registry_v2",
+      "owner": "Knowledge Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "补齐 Automation Agent 和 Commander Reporting Agent。"
+        }
+      ]
+    },
+    {
+      "mission_id": "ai_employee_workbench_v1",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "新增员工工作台页面，显示员工、队列、健康与活动。"
+        }
+      ]
+    },
+    {
+      "mission_id": "ceo_review_list_v1",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "生成今日 CEO Review 清单。"
+        }
+      ]
+    },
+    {
+      "mission_id": "commander_runtime_v2_bridge_001",
+      "owner": "Research Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T01:21:12Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "Commander Runtime V2 Local Scheduling Bridge"
+        }
+      ]
+    },
+    {
+      "mission_id": "external_api_connection_readiness_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:54:18Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "外部平台接入链路已准备完成；Gmail、YouTube、WordPress 等真实账号仍需 CEO 在 n8n 凭证页授权。"
+        }
+      ]
+    },
+    {
+      "mission_id": "m8n_commander_console_runtime_data_v1",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "总控自动读取本地 Runtime dashboard data。"
+        }
+      ]
+    },
+    {
+      "mission_id": "m8n_daily_manager_brief_v1",
+      "owner": "Research Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "生成今日总经理日报。"
+        }
+      ]
+    },
+    {
+      "mission_id": "machine_readable_task_queue_v1",
+      "owner": "Research Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "今日任务全部落入 employee_queue.json，不再只是口头指令。"
+        }
+      ]
+    },
+    {
+      "mission_id": "n8n_local_connection_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:41:53Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "已检测到本机 n8n 正在运行，并已打开 n8n 工作流页面。"
+        }
+      ]
+    },
+    {
+      "mission_id": "n8n_workflow_binding_v1",
+      "owner": "Automation Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T03:54:18Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "7 个 n8n 工作流已绑定到对应 AI 员工。"
+        }
+      ]
+    },
+    {
+      "mission_id": "platform_connector_console_v1",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "新增平台/API 连接控制台，只读显示连接状态与下一步。"
+        }
+      ]
+    },
+    {
+      "mission_id": "report_index_runtime_v2_update_v1",
+      "owner": "Commander Reporting Agent",
+      "duration": "local_static_execution",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-07T02:02:48Z",
+          "event": "Mission imported into Global Mission Center",
+          "message": "报告索引补录 Runtime V2、员工工作台、平台连接控制台等记录。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：外部参考链接。确认 HK620 官方产品页、公开资料页或可引用外部链接。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_hk620_gap_006_internal_links",
+      "owner": "Website Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "完成 HK620 缺口任务：内部链接。建立 HK620 相关内部链接目标，例如产品页、骨骼门知识页、封边机分类页、Factory Solution 页面。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_005_external_references",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：外部参考链接，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_006_internal_links",
+      "owner": "QA Agent",
+      "duration": "local_static_execution",
+      "result": "Waiting QA",
+      "errors": [],
+      "qa": "pending",
+      "approval": "not_required",
+      "publish": "not_applicable",
+      "log": [
+        {
+          "at": "2026-07-09T00:00:00+01:00",
+          "event": "Mission imported into Global Mission Center",
+          "message": "验收 HK620 缺口任务：内部链接，确认 QA Score、公开边界和是否仍阻断发布。"
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "owner": "Mission Center V1",
+      "duration": "local_simulation_only",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "not_required",
+      "publish": "not_executed",
+      "log": [
+        {
+          "at": "2026-07-10T04:08:45Z",
+          "event": "M2 Sprint 2 state flow verified",
+          "message": "Created -> Queued -> Running -> Completed"
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "owner": "Mission Center V1",
+      "duration": "local_simulation_only",
+      "result": "Completed",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "required",
+      "publish": "not_executed",
+      "log": [
+        {
+          "at": "2026-07-10T04:08:45Z",
+          "event": "M2 Sprint 2 state flow verified",
+          "message": "Created -> Queued -> Pending Approval -> Approved -> Running -> Completed"
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "owner": "Mission Center V1",
+      "duration": "local_simulation_only",
+      "result": "Cancelled",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "required",
+      "publish": "not_executed",
+      "log": [
+        {
+          "at": "2026-07-10T04:08:45Z",
+          "event": "M2 Sprint 2 state flow verified",
+          "message": "Created -> Queued -> Pending Approval -> Rejected -> Stopped -> Cancelled"
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint3_draft_queue_live_1783656848",
+      "owner": "Mission Queue",
+      "duration": "live_queue_validation",
+      "result": "Completed",
+      "errors": [],
+      "qa": "passed",
+      "approval": "not_required",
+      "publish": "draft_created",
+      "log": [
+        {
+          "at": "2026-07-10T04:14:10Z",
+          "event": "M2 Sprint 3 live queue validation",
+          "message": "Real Mission Queue item processed; external call only for Draft Mission."
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint3_publish_queue_live_1783656848",
+      "owner": "Mission Queue",
+      "duration": "live_queue_validation",
+      "result": "Pending Approval",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "pending",
+      "publish": "blocked_waiting_approval",
+      "log": [
+        {
+          "at": "2026-07-10T04:14:10Z",
+          "event": "M2 Sprint 3 live queue validation",
+          "message": "Real Mission Queue item processed; external call only for Draft Mission."
+        }
+      ]
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "owner": "Mission Queue",
+      "duration": "live_queue_validation",
+      "result": "Cancelled",
+      "errors": [],
+      "qa": "not_required",
+      "approval": "rejected",
+      "publish": "not_executed",
+      "log": [
+        {
+          "at": "2026-07-10T04:14:10Z",
+          "event": "M2 Sprint 3 live queue validation",
+          "message": "Real Mission Queue item processed; external call only for Draft Mission."
+        }
+      ]
+    }
+  ],
+  "retention": "permanent_local_json_until_database_migration"
+}

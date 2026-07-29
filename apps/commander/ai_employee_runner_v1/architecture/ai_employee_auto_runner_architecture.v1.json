@@ -1,0 +1,29 @@
+{
+  "version": "ai_employee_auto_runner_architecture_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "purpose": "让 M8A AI 员工自动领取本地 A 类 Build 任务并产出本地结果。",
+  "runner_scope": [
+    "Website Agent",
+    "Knowledge Agent",
+    "QA Agent"
+  ],
+  "future_agents": [
+    "GEO Agent",
+    "Publishing Agent",
+    "Video Agent",
+    "Sales Agent",
+    "Customer Service Agent"
+  ],
+  "input_sources": [
+    "Global Mission Queue",
+    "Runtime Persistence V1",
+    "Global AI Event Center V1"
+  ],
+  "output_targets": [
+    "local draft output",
+    "local QA result",
+    "runtime_logs",
+    "event_history"
+  ],
+  "safety": "只执行 A 类 Build；B 类 External Action 必须 CEO 单独审批；n8n / WordPress / 发布 / 删除 / Gmail / YouTube 禁止自动执行。"
+}

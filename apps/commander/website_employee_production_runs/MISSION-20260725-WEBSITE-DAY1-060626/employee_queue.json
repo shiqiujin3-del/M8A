@@ -1,0 +1,22 @@
+{
+  "mission_id": "MISSION-20260725-WEBSITE-DAY1-060626",
+  "employee": "Website Employee",
+  "states": [
+    {
+      "state": "Waiting",
+      "timestamp": "2026-07-25T06:06:26.129173+00:00",
+      "note": "Mission created and queued."
+    },
+    {
+      "state": "Running",
+      "timestamp": "2026-07-25T06:06:26.129173+00:00",
+      "note": "Research, draft, and QA generated."
+    },
+    {
+      "state": "Completed",
+      "timestamp": "2026-07-25T06:07:51.911801+00:00",
+      "note": "WordPress Draft response received and evidence recorded."
+    }
+  ],
+  "current_state": "Completed"
+}

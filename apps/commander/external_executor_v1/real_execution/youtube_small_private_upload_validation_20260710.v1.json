@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "mission_id": "m2_youtube_small_private_upload_validation_20260710",
+  "trace_id": "trace_youtube_small_private_upload_20260710T134115Z",
+  "execution_id": "87",
+  "executor": "youtube",
+  "workflow_id": "yt_private_upload_v1",
+  "workflow_name": "M8A_YOUTUBE_PRIVATE_UPLOAD_EXECUTOR_V1",
+  "action": "private_upload",
+  "status": "completed",
+  "started_at": "2026-07-10T13:41:15.384Z",
+  "finished_at": "2026-07-10T13:41:21.296Z",
+  "duration_ms": 5912,
+  "retry_count": 0,
+  "result": {
+    "type": "youtube_private_video",
+    "video_id": "I2m1MealZBA",
+    "title": "M8A YouTube Private Upload Test",
+    "privacy_status": "private",
+    "video_url": "https://www.youtube.com/watch?v=I2m1MealZBA",
+    "generated_video_bytes": 86680
+  },
+  "error": null,
+  "requires_execution_lookup": false,
+  "safety": {
+    "private_upload": true,
+    "public_upload": false,
+    "unlisted_upload": false,
+    "delete_video": false,
+    "modify_channel": false,
+    "modify_playlist": false,
+    "notify_subscribers": false
+  },
+  "notes": [
+    "Small generated AVI test video uploaded successfully.",
+    "This validates YouTube OAuth, n8n YouTube upload node, and Execution Response Contract for small private uploads.",
+    "This does not resolve the known HK680 large public upload ECONNRESET issue."
+  ]
+}
+

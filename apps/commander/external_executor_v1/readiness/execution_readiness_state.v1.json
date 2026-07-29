@@ -1,0 +1,47 @@
+{
+  "version": "execution_readiness_state_v1",
+  "states": [
+    {
+      "state": "waiting_safety_gate",
+      "cn": "等待生产安全闸门",
+      "can_auto_advance": false
+    },
+    {
+      "state": "waiting_ceo_authorization",
+      "cn": "等待 CEO 单独授权",
+      "can_auto_advance": false
+    },
+    {
+      "state": "ready_for_dry_run",
+      "cn": "可执行 Dry-run",
+      "can_auto_advance": true
+    },
+    {
+      "state": "dry_run_passed",
+      "cn": "Dry-run 已通过",
+      "can_auto_advance": false
+    },
+    {
+      "state": "ready_for_real_execution",
+      "cn": "等待真实执行授权",
+      "can_auto_advance": false
+    },
+    {
+      "state": "executed_draft_only",
+      "cn": "Draft-only 已执行",
+      "can_auto_advance": false
+    },
+    {
+      "state": "execution_failed",
+      "cn": "执行失败",
+      "can_auto_advance": false
+    },
+    {
+      "state": "blocked",
+      "cn": "已阻断",
+      "can_auto_advance": false
+    }
+  ],
+  "current_simulation_state": "ready_for_real_execution",
+  "external_call_performed": false
+}

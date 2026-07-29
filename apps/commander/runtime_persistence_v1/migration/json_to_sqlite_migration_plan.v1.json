@@ -1,0 +1,66 @@
+{
+  "version": "runtime_migration_plan_v1",
+  "steps": [
+    {
+      "step": 1,
+      "name": "导入 Global Mission Center JSON",
+      "source": "apps/commander/mission_center_v1/runtime/global_mission_queue.v1.json",
+      "target_tables": [
+        "missions",
+        "mission_timeline"
+      ]
+    },
+    {
+      "step": 2,
+      "name": "导入 Global AI Event Center JSON",
+      "source": "apps/commander/event_center_v1/history/event_history.v1.json",
+      "target_tables": [
+        "mission_events",
+        "event_history"
+      ]
+    },
+    {
+      "step": 3,
+      "name": "导入 Employee Work Queue JSON",
+      "source": "apps/commander/mission_center_v1/runtime/employee_work_queue.v1.json",
+      "target_tables": [
+        "employee_status",
+        "employee_queues"
+      ]
+    },
+    {
+      "step": 4,
+      "name": "保留配置文件",
+      "files": [
+        "schemas/*.json",
+        "rules/*.json",
+        "subscriptions/*.json",
+        "triggers/*.json"
+      ]
+    },
+    {
+      "step": 5,
+      "name": "Dashboard 双读过渡",
+      "description": "Dashboard 当前读 JSON，runtime status 展示 SQLite 健康。"
+    }
+  ],
+  "keep_as_config": [
+    "schemas",
+    "rules",
+    "subscriptions",
+    "triggers",
+    "retry policy"
+  ],
+  "move_to_runtime_store": [
+    "missions",
+    "mission_events",
+    "event_history",
+    "employee_queues",
+    "employee_status",
+    "mission_timeline",
+    "approvals",
+    "qa_results",
+    "runtime_logs",
+    "retry_records"
+  ]
+}

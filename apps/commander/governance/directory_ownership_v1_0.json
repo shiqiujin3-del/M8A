@@ -1,0 +1,77 @@
+{
+  "ownership_id": "m8a_directory_ownership_v1_0",
+  "generated_at": "2026-07-07T05:33:25Z",
+  "source_architecture": "organization_architecture_v1_0",
+  "directory_map": [
+    {
+      "path": "apps/commander",
+      "owner": "总指挥中心（Commander）",
+      "status": "符合"
+    },
+    {
+      "path": "apps/commander/missions",
+      "owner": "任务中心",
+      "status": "符合"
+    },
+    {
+      "path": "apps/commander/mission-control",
+      "owner": "任务中心",
+      "status": "命名需统一为任务中心子模块"
+    },
+    {
+      "path": "apps/commander/employees",
+      "owner": "AI 员工中心",
+      "status": "符合"
+    },
+    {
+      "path": "apps/commander/dispatcher",
+      "owner": "调度中心",
+      "status": "符合"
+    },
+    {
+      "path": "apps/commander/agent-dispatcher",
+      "owner": "调度中心",
+      "status": "与 dispatcher 存在命名重叠，需后续统一"
+    },
+    {
+      "path": "apps/commander/integrations",
+      "owner": "执行工具接入管理",
+      "status": "符合，注意不是组织中心"
+    },
+    {
+      "path": "apps/dashboard",
+      "owner": "Commander Dashboard 展示层",
+      "status": "符合，需避免被理解为独立中心"
+    },
+    {
+      "path": "knowledge",
+      "owner": "知识中心",
+      "status": "符合"
+    },
+    {
+      "path": "services",
+      "owner": "数据中心 / 基础设施",
+      "status": "符合"
+    },
+    {
+      "path": "workflows",
+      "owner": "执行工具层工作流定义",
+      "status": "符合，需按业务分类重命名"
+    },
+    {
+      "path": "apps/n8n",
+      "owner": "执行工具层",
+      "status": "符合，n8n 不是总控"
+    },
+    {
+      "path": "apps/publishing-center",
+      "owner": "营销部门发布能力",
+      "status": "需降级命名，不再作为同级中心"
+    },
+    {
+      "path": "docs/M8A_ENTERPRISE_ARCHITECTURE_V1.md",
+      "owner": "历史架构参考",
+      "status": "需标记为历史参考，不再作为最高标准"
+    }
+  ]
+}

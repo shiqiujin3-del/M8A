@@ -1,0 +1,21 @@
+{
+  "mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z",
+  "inquiry_id": "inquiry_hk620_john_smith_20260710T051651Z",
+  "customer": "John Smith",
+  "machine": "HK620",
+  "subject": "Re: HK620 Edge Banding Machine Specifications and Quotation Request",
+  "body": "Dear John Smith,\n\nThank you for your inquiry about the HK620 Edge Banding Machine for the USA market.\n\nHK620 is an HK-series Saiyu machine concept associated with skeleton door strip processing. Based on our current product knowledge, its main process route is designed around a continuous sequence: edge banding first, grooving second, and cutting last. This process direction is intended for customers who are studying skeleton door strips or similar narrow/profile strip processing where feeding stability and continuous processing are important.\n\nFor machine specifications, the verified public specification sheet is still being prepared. The currently confirmed discussion points are the process route, the target application around skeleton door strip processing, and the need to review your material, strip profile, size range, glue system requirements, cutting/grooving requirements, voltage, and factory layout before confirming a configuration.\n\nRegarding price, we should not give a fixed price before confirming the final machine configuration and options. A formal quotation can be prepared after we understand your production requirements, required options, and delivery destination.\n\nRegarding delivery time, our current knowledge base does not contain an approved standard delivery schedule for HK620, so I do not want to invent a timeline. We can confirm the estimated delivery period together with the final configuration and production schedule.\n\nAvailable options may depend on your strip design, material, edge banding requirements, grooving/cutting needs, and local electrical requirements. If you can share drawings, sample photos, strip dimensions, target capacity, and your preferred voltage, our team can review the most suitable configuration for you.\n\nWould you be open to sending us:\n1. Product drawings or photos of the skeleton door strip\n2. Strip dimensions and material\n3. Required edge banding material and thickness\n4. Target production capacity\n5. Factory voltage and destination port/city\n\nAfter receiving these details, we can prepare a more accurate technical proposal and quotation for your review.\n\nBest regards,\nM8A Sales Assistant\nSaiyu / Wood Machinery Network\n\nInternal note: This draft avoids unapproved price, delivery, ROI, customer identity, and absolute performance claims. Source files: docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md, knowledge/products/HK620/bindings/website_agent_hk620.knowledge_binding.v1.json, knowledge/products/HK620/02_Technical_Specifications/INDEX.md, knowledge/products/HK620/06_Sales_FAQ/INDEX.md\n",
+  "knowledge_sources": [
+    "docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md",
+    "knowledge/products/HK620/bindings/website_agent_hk620.knowledge_binding.v1.json",
+    "knowledge/products/HK620/02_Technical_Specifications/INDEX.md",
+    "knowledge/products/HK620/06_Sales_FAQ/INDEX.md"
+  ],
+  "safety": {
+    "no_specific_price_claim": true,
+    "no_unapproved_delivery_claim": true,
+    "no_send_email": true,
+    "draft_only": true
+  },
+  "generated_at": "2026-07-10T05:16:51Z"
+}

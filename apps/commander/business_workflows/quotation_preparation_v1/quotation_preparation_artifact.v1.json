@@ -1,0 +1,141 @@
+{
+  "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+  "workflow": "quotation_preparation",
+  "customer": "John Smith",
+  "machine": "HK620",
+  "inquiry": {
+    "inquiry_id": "inquiry_hk620_quotation_john_smith_20260710T052427Z",
+    "customer": "John Smith",
+    "country": "USA",
+    "interested_machine": "HK620 Edge Banding Machine",
+    "received_at": "2026-07-10T05:24:27Z",
+    "source": "local_test_json"
+  },
+  "knowledge_sources": [
+    "docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md",
+    "knowledge/products/HK620/bindings/website_agent_hk620.knowledge_binding.v1.json",
+    "knowledge/products/HK620/02_Technical_Specifications/INDEX.md",
+    "knowledge/products/HK620/06_Sales_FAQ/INDEX.md"
+  ],
+  "machine_summary": {
+    "machine": "HK620 Edge Banding Machine",
+    "features": [
+      "HK-series Saiyu machine concept associated with skeleton door strip processing.",
+      "Process route based on current approved internal knowledge: edge banding first, grooving second, cutting last.",
+      "Designed around continuous processing logic for skeleton door strips or similar narrow/profile strips."
+    ],
+    "suitable_customers": [
+      "Door factories studying skeleton door strip production.",
+      "Furniture or decorative strip manufacturers evaluating continuous edge banding, grooving, and cutting workflows.",
+      "Factories that need a configuration review based on material, strip profile, size range, and production target."
+    ],
+    "main_configuration_topics": [
+      "Edge banding process section",
+      "Grooving process section",
+      "Cutting process section",
+      "Glue system requirement",
+      "Electrical/voltage requirement",
+      "Factory layout and packing requirement"
+    ],
+    "optional_configuration_topics": [
+      "Automation level",
+      "Optional processing units based on profile design",
+      "Voltage adaptation",
+      "Packing and delivery requirement"
+    ],
+    "standard_configuration_status": "Not publicly confirmed in the current knowledge base; must be confirmed before formal quotation.",
+    "safety_boundary": [
+      "No price is generated.",
+      "No proforma invoice is generated.",
+      "Delivery time is not invented because approved delivery data is missing.",
+      "Technical parameters are treated as quotation-preparation questions unless approved source files exist."
+    ]
+  },
+  "checklist": [
+    {
+      "item": "Voltage",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Country",
+      "required": true,
+      "known": true,
+      "value": "USA"
+    },
+    {
+      "item": "Board Thickness",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Glue Type",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Working Size",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Automation Level",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Optional Units",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Packing Requirement",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Delivery Port",
+      "required": true,
+      "known": false
+    },
+    {
+      "item": "Payment Terms",
+      "required": true,
+      "known": false
+    }
+  ],
+  "missing_information": [
+    "Voltage",
+    "Board Thickness",
+    "Glue Type",
+    "Working Size",
+    "Automation Level",
+    "Optional Units",
+    "Packing Requirement",
+    "Delivery Port",
+    "Payment Terms"
+  ],
+  "information_request": [
+    "Factory voltage and phase requirement",
+    "Board or strip material and thickness",
+    "Strip/profile drawings or photos",
+    "Glue type or edge banding material requirement",
+    "Working size range",
+    "Expected automation level",
+    "Required optional units",
+    "Packing requirement",
+    "Destination port or city",
+    "Preferred payment terms",
+    "Any special production or layout requirements"
+  ],
+  "email_subject": "Quotation Preparation for HK620 Edge Banding Machine",
+  "email_body": "Dear John Smith,\n\nThank you for your inquiry about the HK620 Edge Banding Machine.\n\nWe are preparing the information needed for a formal quotation. Before we issue an accurate proposal, we need to confirm several technical and commercial details so that the machine configuration can match your production requirements.\n\nBased on our current HK620 product knowledge, HK620 is associated with skeleton door strip processing and follows a continuous process route: edge banding first, grooving second, and cutting last. The final configuration should be confirmed according to your material, strip/profile design, working size, glue requirement, automation level, and factory conditions.\n\nCould you please help confirm the following information?\n\n1. Factory voltage and phase requirement\n2. Board or strip material and thickness\n3. Working size range or product drawings\n4. Glue type and edge banding material\n5. Required automation level\n6. Optional units or special processing needs\n7. Packing requirement\n8. Destination port or delivery city\n9. Preferred payment terms\n10. Any other special production requirements\n\nPlease note that we are not providing a fixed price at this stage. The final quotation should be prepared only after the machine configuration and delivery requirements are confirmed.\n\nOnce we receive your reply, we will review the configuration and prepare the formal quotation as soon as possible.\n\nBest regards,\nM8A Sales Assistant\nSaiyu / Wood Machinery Network\n",
+  "safety": {
+    "generate_price": false,
+    "generate_proforma_invoice": false,
+    "send_email": false,
+    "modify_wordpress": false,
+    "create_gmail_draft": true
+  },
+  "generated_at": "2026-07-10T05:24:27Z"
+}

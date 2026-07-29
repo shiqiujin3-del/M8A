@@ -1,0 +1,43 @@
+{
+  "version": "ai_employee_center_v2",
+  "name": "Employee Lifecycle V2",
+  "states": [
+    "created",
+    "enabled",
+    "paused",
+    "upgrading",
+    "disabled",
+    "reassigned",
+    "recovering_from_failure"
+  ],
+  "transitions": [
+    {"from": "created", "to": "enabled", "trigger": "commander_approves_onboarding"},
+    {"from": "enabled", "to": "paused", "trigger": "ceo_or_commander_pause"},
+    {"from": "paused", "to": "enabled", "trigger": "commander_resume"},
+    {"from": "enabled", "to": "upgrading", "trigger": "capability_upgrade_started"},
+    {"from": "upgrading", "to": "enabled", "trigger": "upgrade_accepted"},
+    {"from": "enabled", "to": "disabled", "trigger": "role_retired_or_security_issue"},
+    {"from": "enabled", "to": "reassigned", "trigger": "mission_reassignment"},
+    {"from": "reassigned", "to": "enabled", "trigger": "new_owner_confirmed"},
+    {"from": "enabled", "to": "recovering_from_failure", "trigger": "mission_failed_or_tool_failed"},
+    {"from": "recovering_from_failure", "to": "enabled", "trigger": "recovery_passed"},
+    {"from": "recovering_from_failure", "to": "paused", "trigger": "recovery_blocked"}
+  ],
+  "rules": [
+    "所有员工必须由 Commander 创建、启用、暂停、升级、停用。",
+    "员工不能自行接新 Mission；只能由 Commander 分配。",
+    "失败恢复必须写入 Mission Log、Runtime、Audit。",
+    "外部动作失败不得自动升级为更高风险动作。",
+    "员工升级必须说明新增能力、风险和回滚方式。"
+  ],
+  "state_requirements": {
+    "created": ["role_spec", "responsibility", "input_output_contract"],
+    "enabled": ["capability_matrix", "mission_queue_binding", "owner"],
+    "paused": ["pause_reason", "resume_condition"],
+    "upgrading": ["upgrade_plan", "test_scope", "rollback_plan"],
+    "disabled": ["disable_reason", "archive_location"],
+    "reassigned": ["old_owner", "new_owner", "handoff_notes"],
+    "recovering_from_failure": ["failure_reason", "recovery_plan", "next_check"]
+  }
+}
+

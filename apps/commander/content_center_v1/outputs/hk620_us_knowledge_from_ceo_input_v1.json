@@ -1,0 +1,89 @@
+{
+  "knowledge_package_id": "knowledge_pkg_hk620_us_ceo_input_v1",
+  "created_at": "2026-07-12T03:04:53Z",
+  "source_file": "docs/HK620_US_资料填写模板_V1.md",
+  "owner_agent": "Knowledge Agent",
+  "product": "HK620",
+  "target_market": "US",
+  "source_type": "CEO supplied product knowledge",
+  "confirmed_fields": {
+    "chinese_product_name": "骨骼线条专用封边机",
+    "applications": [
+      "各种线条",
+      "装饰条"
+    ],
+    "main_industries": [
+      "家居厂",
+      "装修公司"
+    ],
+    "minimum_workpiece_size": "70，单位待确认",
+    "maximum_workpiece_size": "不限最大，需销售/技术最终确认公开口径",
+    "suitable_line_types": [
+      "直边",
+      "各种角形状"
+    ],
+    "glue_process": "PUR 胶",
+    "edge_banding_material_scope": "不限基材，需技术复核公开口径",
+    "speed": "18 米，需确认单位为 m/min",
+    "voltage": "380V",
+    "power": "20kW",
+    "air_pressure": "0.6，需确认单位 MPa",
+    "control_system": "台达控制系统",
+    "machine_length": "7.5 米",
+    "weight": "3 吨",
+    "packing_size": "7.8，需补全单位和长宽高",
+    "delivery_cycle": "30 天",
+    "customer_evidence": [
+      "东莞顾态门厂",
+      "云南家具厂",
+      "广西装饰线条厂"
+    ],
+    "testing_cycle": "3 个月研发 + 3 个月测试",
+    "production_status": "已批量生产"
+  },
+  "public_use_status": {
+    "safe_to_use_in_customer_article": [
+      "中文产品定位",
+      "适用行业",
+      "PUR 胶",
+      "380V",
+      "20kW",
+      "0.6 气压口径",
+      "台达控制系统",
+      "7.5 米机器长度",
+      "3 吨重量",
+      "30 天交付周期",
+      "3+3 个月验证周期",
+      "已批量生产"
+    ],
+    "use_with_care": [
+      "最小工件尺寸 70",
+      "不限最大",
+      "不限基材",
+      "速度 18 米",
+      "客户名称公开"
+    ],
+    "missing_before_public_publish": [
+      "英文产品名最终口径",
+      "公开技术参数表单位",
+      "图片/视频素材",
+      "公开案例授权",
+      "产品页和询盘链接",
+      "最终 CTA"
+    ]
+  },
+  "handoff": {
+    "website_agent": "可基于已确认资料改写客户文章，但要保留参数需确认的谨慎措辞。",
+    "qa_agent": "可进行中文 QA；发布前仍需补图片、链接和公开授权。",
+    "publishing_agent": "暂不可公开发布；可准备多平台草稿。"
+  },
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

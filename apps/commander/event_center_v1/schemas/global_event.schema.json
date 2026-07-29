@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M8A Global Event Schema V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "mission_id",
+    "source_agent",
+    "target_agent",
+    "priority",
+    "timestamp",
+    "payload",
+    "status",
+    "retry_count",
+    "log"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "mission_id": {
+      "type": "string"
+    },
+    "source_agent": {
+      "type": "string"
+    },
+    "target_agent": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Created",
+        "Received",
+        "Started",
+        "Finished",
+        "Failed",
+        "Blocked",
+        "Retry",
+        "Waiting"
+      ]
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "log": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

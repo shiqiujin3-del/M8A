@@ -1,0 +1,83 @@
+{
+  "mission": {
+    "mission_id": "mission_website_contact_1783670663858",
+    "mission_name": "WEBSITE_CONTACT_SALES_INQUIRY",
+    "mission_key": "CONTACT_WEBHOOK_BRIDGE_V1",
+    "title": "Website Contact Form 销售询盘 - Bridge Clean Probe",
+    "objective": "Create sales_inquiry Mission from Website Contact Form submission. Do not auto reply, quote, or call Gmail Draft.",
+    "command_text": "clean probe only",
+    "mission_type": "sales_inquiry",
+    "task_type": "sales_inquiry",
+    "source": "website_contact",
+    "product": "",
+    "market": "",
+    "priority": "normal",
+    "risk_level": "low",
+    "status": "created",
+    "created_at": "2026-07-10T08:04:23Z",
+    "updated_at": "2026-07-10T08:04:23Z",
+    "planner_version": "contact_webhook_bridge_v1_existing_commander_api",
+    "input": {
+      "inquiry_id": "WMN-INQ-bridge_clean_probe",
+      "submission_id": "bridge_clean_probe",
+      "submitted_time": "2026-07-10T08:04:23.848Z",
+      "name": "Bridge Clean Probe",
+      "company": "",
+      "country": "",
+      "email": "bridge.clean@example.com",
+      "whatsapp": "",
+      "interested_machine": "",
+      "message": "clean probe only",
+      "source": "website_contact",
+      "external_actions_executed": false,
+      "auto_reply_executed": false,
+      "quotation_generated": false,
+      "gmail_draft_created": false
+    }
+  },
+  "tasks": [],
+  "approvals": [],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_contact_payload_1783670663858",
+      "mission_id": "mission_website_contact_1783670663858",
+      "task_id": null,
+      "artifact_type": "website_contact_payload",
+      "title": "Website Contact Form Payload",
+      "content_json": {
+        "inquiry_id": "WMN-INQ-bridge_clean_probe",
+        "submission_id": "bridge_clean_probe",
+        "submitted_time": "2026-07-10T08:04:23.848Z",
+        "name": "Bridge Clean Probe",
+        "company": "",
+        "country": "",
+        "email": "bridge.clean@example.com",
+        "whatsapp": "",
+        "interested_machine": "",
+        "message": "clean probe only",
+        "source": "Website Contact Form"
+      },
+      "quality_score": 1.0,
+      "simulation_status": "real_contact_submission_received",
+      "created_at": "2026-07-10T08:04:23Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1783670663858",
+      "mission_id": "mission_website_contact_1783670663858",
+      "task_id": null,
+      "event_type": "mission_created_from_website_contact",
+      "event_message": "Website Contact Form submission created sales_inquiry Mission. No downstream workflow executed.",
+      "created_at": "2026-07-10T08:04:23Z",
+      "metadata": {
+        "inquiry_id": "WMN-INQ-bridge_clean_probe",
+        "submission_id": "bridge_clean_probe",
+        "source": "website_contact",
+        "auto_reply_executed": false,
+        "gmail_draft_created": false
+      }
+    }
+  ],
+  "updated_at": "2026-07-10T08:04:23Z"
+}

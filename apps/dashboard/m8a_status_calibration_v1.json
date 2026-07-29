@@ -1,0 +1,107 @@
+{
+  "version": "m8a_status_calibration_v1",
+  "generated_at": "2026-07-12T00:00:00+01:00",
+  "language": "zh-CN",
+  "manager_mode": "总经理收尾模式",
+  "overall_progress": {
+    "percent": 78,
+    "status": "进入收尾与数据校准阶段",
+    "summary": "核心架构、员工中心、Mission/Event Center、安全门、外部执行器、WordPress Draft-only、Gmail Draft、YouTube 私密上传、GSC 读取均已有本地证据。当前主要问题是总控数据口径不同步。"
+  },
+  "ai_employees": {
+    "registered": 11,
+    "workflow_bindings": 6,
+    "ready_status": "已登记并接入工作台；多数处于可接任务/空闲，尚未进入全天候连续自动生产。",
+    "website_agent": "V1 已上线，具备 Knowledge Binding、Draft Generation、QA Gate、Mission Queue。"
+  },
+  "centers": {
+    "commander": "已建立",
+    "website_agent_v1": "已上线 / 具备可复用执行链 + Knowledge Binding",
+    "global_mission_center_v1": "Global Employee Mission Center V1 已建立",
+    "global_event_center_v1": "completed_local_build",
+    "auto_runner_v1": "completed_local_build",
+    "production_safety_gate_v1": "completed_local_build",
+    "external_executor_v1": "Real execution completed"
+  },
+  "real_execution": {
+    "wordpress_draft_only": {
+      "status": "已真实跑通",
+      "dashboard_record": {
+        "execution_id": "33",
+        "post_id": 443,
+        "draft_url": "https://woodmachinerynetwork.com/?p=443",
+        "post_status": "draft"
+      },
+      "new_employee_report_record": {
+        "execution_id": "82",
+        "post_id": 448,
+        "draft_url": "https://woodmachinerynetwork.com/?p=448",
+        "note": "来自新员工验收报告；需要写入统一 Runtime/Audit/Dashboard 口径。"
+      }
+    },
+    "youtube_private_upload": {
+      "status": "私密上传验证通过",
+      "execution_id": "87",
+      "video_id": "I2m1MealZBA",
+      "video_url": "https://www.youtube.com/watch?v=I2m1MealZBA",
+      "privacy_status": "private",
+      "production_status": "仅验证私密小视频上传；公开视频/大文件上传仍未开放。"
+    },
+    "gmail_draft": {
+      "status": "草稿创建通过，未发送",
+      "execution_id": "44",
+      "draft_id": "r-8341857569389463338",
+      "subject": "M8A Gmail Draft Test"
+    },
+    "gsc": {
+      "status": "读取与 Search Analytics 已完成",
+      "sites_list_execution_id": "37",
+      "search_analytics_execution_id": "38"
+    }
+  },
+  "sync_issues": [
+    "External Executor Dashboard 记录 execution #33 / Draft #443，但新员工验收报告记录 execution #82 / Draft #448。",
+    "Employee Workbench 的部分统计字段仍是旧口径或嵌套字段，页面容易显示不一致。",
+    "YouTube 已有私密上传验证，但总控未清晰区分“私密验证通过”和“公开视频发布未开放”。",
+    "多处 Mission/测试 Draft 历史记录未归档，导致用户看到重复任务。"
+  ],
+  "next_actions": [
+    {
+      "priority": "P0",
+      "title": "总控数据统一",
+      "owner": "Commander Reporting Agent",
+      "type": "A类 Build",
+      "approval_required": false
+    },
+    {
+      "priority": "P0",
+      "title": "External Executor 最新执行写回统一状态",
+      "owner": "Automation Agent",
+      "type": "A类 Build",
+      "approval_required": false
+    },
+    {
+      "priority": "P1",
+      "title": "YouTube 正式发布前安全方案",
+      "owner": "Publishing Agent + QA Agent",
+      "type": "A类 Build 方案",
+      "approval_required": false
+    },
+    {
+      "priority": "P1",
+      "title": "清理重复测试记录方案",
+      "owner": "QA Agent",
+      "type": "B类外部动作前准备",
+      "approval_required": true
+    }
+  ],
+  "safety": {
+    "external_calls_performed_now": false,
+    "wordpress_publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "note": "本次校准只写本地状态和总控显示。"
+  }
+}

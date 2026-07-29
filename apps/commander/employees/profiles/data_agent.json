@@ -1,0 +1,61 @@
+{
+  "employee_id": "data_agent",
+  "employee_name": "Data Agent",
+  "department": "Data",
+  "role": "运行数据整理与报表数据准备员工",
+  "owner": "Commander",
+  "status": "active",
+  "work_mode": "local_build_and_read_only",
+  "current_task": "整理 Runtime、Audit、Execution、Mission 数据供 Commander 决策",
+  "responsibilities": [
+    "读取 Runtime Core、Event Store、Audit Log 和 Mission History",
+    "整理每日运行指标、平台执行结果和异常记录",
+    "为 Operation Report、CEO Review、员工 KPI 提供结构化数据",
+    "发现数据缺口并交给 Commander 分配修复任务"
+  ],
+  "mission_types": [
+    "runtime_data_summary",
+    "audit_summary",
+    "execution_metrics",
+    "employee_kpi_snapshot",
+    "daily_data_pack"
+  ],
+  "input": [
+    "runtime_records",
+    "audit_records",
+    "mission_history",
+    "execution_response_contract",
+    "employee_status"
+  ],
+  "output": [
+    "data_summary",
+    "metric_snapshot",
+    "risk_signal",
+    "report_input"
+  ],
+  "available_tools": [
+    "runtime_core_v1",
+    "event_store",
+    "audit_log",
+    "mission_center",
+    "local_json_reader"
+  ],
+  "approved_providers": [],
+  "safety_rules": [
+    "只读分析本地数据",
+    "不得调用外部 API",
+    "不得修改生产平台",
+    "不得删除 Runtime 或 Audit 原始记录"
+  ],
+  "automation_policy": {
+    "build_tasks": "can_auto_execute",
+    "external_actions": "not_allowed"
+  },
+  "kpi": {
+    "daily_report_ready": false,
+    "data_quality_score": null,
+    "missing_record_count": null
+  },
+  "created_at": "2026-07-10",
+  "updated_at": "2026-07-10"
+}

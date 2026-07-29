@@ -1,0 +1,81 @@
+{
+  "version": "production_safety_gate_audit_log_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "events": [
+    {
+      "audit_id": "audit_ext_action_registered_001",
+      "at": "2026-07-09T00:00:00+01:00",
+      "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+      "event": "external_action_registered",
+      "actor": "AI Employee Auto Runner V1",
+      "result": "ready_for_dry_run",
+      "payload": {
+        "external_call": false
+      }
+    },
+    {
+      "audit_id": "audit_safety_check_001",
+      "at": "2026-07-09T00:00:00+01:00",
+      "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+      "event": "safety_checklist_passed",
+      "actor": "Production Safety Gate V1",
+      "result": "passed",
+      "payload": {
+        "draft_only": true,
+        "publish_forbidden": true,
+        "delete_forbidden": true,
+        "update_published_content_forbidden": true,
+        "send_email_upload_video_forbidden": true,
+        "qa_score_exists": true,
+        "qa_score_gte_90": true,
+        "rollback_plan_exists": true,
+        "mission_log_exists": true
+      }
+    },
+    {
+      "audit_id": "audit_dry_run_001",
+      "at": "2026-07-09T00:00:00+01:00",
+      "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+      "event": "dry_run_passed",
+      "actor": "Production Safety Gate V1",
+      "result": "dry_run_passed",
+      "payload": {
+        "mission_id": "mission_hk620_gap_safe_draft_preview",
+        "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+        "platform": "WordPress via n8n",
+        "action_type": "create_wordpress_draft_only",
+        "payload_preview": {
+          "title": "HK620 Draft-only Preview",
+          "content_source": "local_draft_output",
+          "draft_url": null,
+          "post_id": null,
+          "publish": false,
+          "delete": false,
+          "update_published_content": false,
+          "send_email": false,
+          "upload_video": false
+        },
+        "validation": {
+          "payload_fields_valid": true,
+          "target_platform_valid": true,
+          "forbidden_actions_absent": true,
+          "safety_boundary_valid": true
+        },
+        "external_call_executed": false,
+        "result": "dry_run_passed"
+      }
+    },
+    {
+      "audit_id": "audit_execution_blocked_001",
+      "at": "2026-07-09T00:00:00+01:00",
+      "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+      "event": "execution_not_allowed_without_ceo",
+      "actor": "Production Safety Gate V1",
+      "result": "blocked",
+      "payload": {
+        "reason": "CEO approval not issued; no external execution"
+      }
+    }
+  ],
+  "external_calls": false
+}

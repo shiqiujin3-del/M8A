@@ -1,0 +1,54 @@
+{
+  "mission_id": "M8N_GMAIL_YOUTUBE_AUTHORIZATION_V1",
+  "mission_name": "Gmail 与 YouTube 接入授权 V1",
+  "issued_by": "M8N General Manager / Codex",
+  "assigned_to": "流程 Codex / Access Manager Agent / Automation Agent",
+  "date": "2026-07-07",
+  "priority": "high",
+  "objective": "完成 Gmail 与 YouTube 两个平台的 n8n 授权准备、授权入口打开、凭证状态记录和只读/最小权限验收。",
+  "execution_route": "所有外部平台动作统一走 n8n；不得绕过 n8n 保存业务凭证。",
+  "scope": {
+    "gmail": {
+      "allowed": [
+        "verify existing n8n Gmail credential named Gmail account",
+        "do not create duplicate credential unless existing one fails",
+        "open authorization only if credential requires reconnect",
+        "record status"
+      ],
+      "forbidden": [
+        "群发邮件",
+        "读取无关私人邮件正文",
+        "发送外部邮件",
+        "删除邮件",
+        "保存明文 token/client secret"
+      ]
+    },
+    "youtube": {
+      "allowed": [
+        "准备 n8n YouTube Credential",
+        "打开 Google/YouTube 授权入口让 CEO 授权",
+        "验证 Credential Test",
+        "读取频道基本信息用于连接验收",
+        "记录授权状态"
+      ],
+      "forbidden": [
+        "上传视频",
+        "发布视频",
+        "删除视频",
+        "修改频道设置",
+        "保存明文 token/client secret"
+      ]
+    }
+  },
+  "required_outputs": [
+    "M8N_GMAIL_AUTHORIZATION_V1_REPORT.md",
+    "M8N_YOUTUBE_AUTHORIZATION_V1_REPORT.md",
+    "更新 credential_registry.json 中 Gmail/YouTube 状态",
+    "Gmail 先验收现有 credential，不重复创建"
+  ],
+  "stop_condition": "完成连接验收或遇到 OAuth Client/权限配置阻塞后立即停止并报告，不进行任何发送/发布/删除动作。",
+  "discovered_current_state": {
+    "gmail": "n8n already has credential named Gmail account, type gmailOAuth2, id phhmEVWx1Jh5Gssf. Worker must verify connection before creating anything new.",
+    "youtube": "No YouTube credential found in n8n credential list."
+  }
+}

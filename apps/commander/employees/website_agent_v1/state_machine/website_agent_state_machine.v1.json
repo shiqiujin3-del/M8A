@@ -1,0 +1,109 @@
+{
+  "version": "website_agent_state_machine_v1",
+  "states": [
+    "idle",
+    "intake_received",
+    "knowledge_loaded",
+    "draft_generated",
+    "qa_completed",
+    "waiting_approval",
+    "approved_for_draft",
+    "handed_off_to_n8n",
+    "completed",
+    "failed"
+  ],
+  "initial_state": "idle",
+  "terminal_states": [
+    "completed",
+    "failed"
+  ],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "intake_received",
+      "trigger": "mission_intake_validated",
+      "auto_progress": true,
+      "ceo_approval_required": false
+    },
+    {
+      "from": "intake_received",
+      "to": "knowledge_loaded",
+      "trigger": "approved_knowledge_loaded",
+      "auto_progress": true,
+      "ceo_approval_required": false
+    },
+    {
+      "from": "knowledge_loaded",
+      "to": "draft_generated",
+      "trigger": "draft_generated_locally",
+      "auto_progress": true,
+      "ceo_approval_required": false
+    },
+    {
+      "from": "draft_generated",
+      "to": "qa_completed",
+      "trigger": "qa_v2_scored",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "guard": "qa_score >= 90 才能进入审批；低于 90 留在修订或 failed。"
+    },
+    {
+      "from": "qa_completed",
+      "to": "waiting_approval",
+      "trigger": "submit_to_ceo_approval",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "note": "提交审批是本地状态推进，不执行外部动作。"
+    },
+    {
+      "from": "waiting_approval",
+      "to": "approved_for_draft",
+      "trigger": "ceo_approves_draft_only",
+      "auto_progress": false,
+      "ceo_approval_required": true
+    },
+    {
+      "from": "waiting_approval",
+      "to": "failed",
+      "trigger": "ceo_rejects_or_blocks",
+      "auto_progress": false,
+      "ceo_approval_required": true
+    },
+    {
+      "from": "approved_for_draft",
+      "to": "handed_off_to_n8n",
+      "trigger": "ceo_separate_authorization_for_draft_only_handoff",
+      "auto_progress": false,
+      "ceo_approval_required": true
+    },
+    {
+      "from": "handed_off_to_n8n",
+      "to": "completed",
+      "trigger": "mission_log_writeback_done",
+      "auto_progress": true,
+      "ceo_approval_required": false
+    },
+    {
+      "from": "*",
+      "to": "failed",
+      "trigger": "validation_error_or_runtime_error",
+      "auto_progress": true,
+      "ceo_approval_required": false
+    }
+  ],
+  "automatic_states": [
+    "idle",
+    "intake_received",
+    "knowledge_loaded",
+    "draft_generated",
+    "qa_completed",
+    "completed",
+    "failed"
+  ],
+  "ceo_gate_states": [
+    "waiting_approval",
+    "approved_for_draft",
+    "handed_off_to_n8n"
+  ],
+  "external_action_rule": "任何真实 n8n / WordPress / 发布 / 删除 / 修改已发布文章动作，都不由本状态机自动执行，必须另行 CEO 授权。"
+}

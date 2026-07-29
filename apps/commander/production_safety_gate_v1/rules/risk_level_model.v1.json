@@ -1,0 +1,22 @@
+{
+  "version": "risk_level_model_v1",
+  "levels": {
+    "low": {
+      "cn": "低",
+      "meaning": "本地或 Draft-only，且可人工检查。"
+    },
+    "medium": {
+      "cn": "中",
+      "meaning": "创建外部草稿或修改非公开对象，需要 CEO 授权。"
+    },
+    "high": {
+      "cn": "高",
+      "meaning": "可能影响公开内容、客户沟通或生产数据。"
+    },
+    "prohibited": {
+      "cn": "禁止",
+      "meaning": "自动发布、自动删除、自动修改已发布内容、自动发送邮件、自动上传视频。"
+    }
+  },
+  "dashboard_language": "中文显示风险等级。"
+}

@@ -1,0 +1,139 @@
+{
+  "version": "today_command_center_v1",
+  "generated_at": "2026-07-13T07:38:15Z",
+  "mode": "local_build_only",
+  "headline": "今日主线：HK620 英文图文发布包与多平台发布收口",
+  "summary": {
+    "done": [
+      "英文客户文章包",
+      "两张图片素材",
+      "平台状态校准",
+      "总控台数据同步"
+    ],
+    "next": [
+      "WordPress 英文图文 Draft",
+      "Medium/LinkedIn/Quora/Substack 发布或草稿",
+      "YouTube 视频素材确认"
+    ],
+    "blocked": [
+      "Google Business Profile",
+      "Facebook/Instagram 发帖权限",
+      "TikTok API"
+    ]
+  },
+  "mission_focus": {
+    "product": "HK620",
+    "market": "美国",
+    "current_stage": "英文图文发布包 ready；优先推进可用平台发布闭环",
+    "source_package": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713"
+  },
+  "decision_rule": {
+    "build_class": "A 类 Build：写代码、建 Dashboard、建 Agent、建模板、建文档、建知识库、写测试、本地验证，可自动推进。",
+    "external_class": "B 类外部动作：调用 n8n、WordPress、Gmail、YouTube、公开视频、公开发布、删除、修改线上内容，必须 CEO 单独审批。"
+  },
+  "employee_actions": [
+    {
+      "agent": "Website Agent",
+      "owner": "网站部门",
+      "status": "可工作",
+      "current_action": "生成 HK620 美国市场客户可读英文文章草稿",
+      "needs_ceo": false,
+      "next_output": "英文文章草稿 + SEO 基础字段"
+    },
+    {
+      "agent": "QA Agent",
+      "owner": "网站部门",
+      "status": "可工作",
+      "current_action": "按 QA V2 检查 Title、H1、Meta、FAQ、Schema、CTA、品牌一致性",
+      "needs_ceo": false,
+      "next_output": "中文 QA 检查报告，低于 90 分不得进入发布"
+    },
+    {
+      "agent": "Knowledge Agent",
+      "owner": "知识部门",
+      "status": "可工作",
+      "current_action": "补齐 HK620 参数、案例、图片、FAQ 和美国市场知识缺口",
+      "needs_ceo": false,
+      "next_output": "Knowledge Center 补充任务清单"
+    },
+    {
+      "agent": "Publishing Agent",
+      "owner": "营销部门",
+      "status": "待发布授权",
+      "current_action": "准备 LinkedIn / Medium / Quora / Substack 发布包",
+      "needs_ceo": true,
+      "next_output": "多平台文案包，等待发布审批"
+    },
+    {
+      "agent": "Video Agent",
+      "owner": "视频部门",
+      "status": "可准备素材",
+      "current_action": "准备 YouTube 视频标题、描述、封面和上传清单",
+      "needs_ceo": true,
+      "next_output": "YouTube 上传前资料包"
+    },
+    {
+      "agent": "Automation Agent",
+      "owner": "运营部门",
+      "status": "可工作",
+      "current_action": "维护 n8n、WordPress Draft-only、外部 API 连接状态",
+      "needs_ceo": false,
+      "next_output": "平台连接健康报告"
+    },
+    {
+      "agent": "Data Agent",
+      "owner": "数据部门",
+      "status": "可工作",
+      "current_action": "读取 GA4 / GSC 数据，为内容优先级提供依据",
+      "needs_ceo": false,
+      "next_output": "搜索与访问数据摘要"
+    },
+    {
+      "agent": "Commander Reporting Agent",
+      "owner": "运营部门",
+      "status": "可工作",
+      "current_action": "同步总控台、员工工作台、内容中心和事件中心状态",
+      "needs_ceo": false,
+      "next_output": "今日总控口径更新"
+    }
+  ],
+  "platform_lanes": {
+    "ready_or_connected": [
+      "WordPress Draft-only",
+      "LinkedIn 已有发布记录",
+      "Medium 已有发布记录",
+      "Quora 发帖链路已验证",
+      "Substack 可草稿",
+      "YouTube Private Upload 已验证",
+      "Google Search Console 读取",
+      "GA4 读取"
+    ],
+    "waiting_authorization": [
+      "Google Business Profile",
+      "Facebook",
+      "Instagram 发布",
+      "TikTok"
+    ],
+    "locked_actions": [
+      "删除",
+      "修改已发布文章",
+      "未确认公开视频",
+      "未确认邮件发送",
+      "调用旧 workflow CWbGujhdNKFpa5JZ"
+    ]
+  },
+  "today_next_steps": [
+    "使用 HK620 英文图文发布包创建 WordPress Draft。",
+    "Medium、LinkedIn、Quora、Substack 使用同一英文内容核心分发。",
+    "YouTube 等视频素材确认后再上传或公开。",
+    "补齐 Quora 精确链接和 Substack 发布确认。",
+    "把每个平台的最终链接写回长期记录。"
+  ],
+  "safety": {
+    "external_actions_in_this_sync": 0,
+    "publish_requires_confirmation": true,
+    "no_delete": true,
+    "no_update_published_post_without_approval": true,
+    "note": "本次只同步本地 Dashboard 数据。"
+  }
+}

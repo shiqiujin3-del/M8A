@@ -1,0 +1,70 @@
+{
+  "version": "approval_center_v1",
+  "generated_at": "2026-07-10T04:05:40Z",
+  "scope": "M8A M2 Sprint 1：统一审批中心。复用已有 Commander / Mission Queue / Runtime DB / Event Store / Dashboard / External Executor；不新增顶层模块。",
+  "approval_status_enum": [
+    "pending",
+    "approved",
+    "rejected",
+    "re_approved",
+    "cancelled",
+    "expired"
+  ],
+  "decision_actions": [
+    "approve",
+    "reject",
+    "set_pending",
+    "re_approve"
+  ],
+  "approval_rules": [
+    {
+      "action_type": "create_wordpress_draft_only",
+      "platform": "WordPress via n8n",
+      "requires_approval": false,
+      "auto_execution_allowed": true,
+      "rule_cn": "Draft 可自动执行；仍必须通过 Safety Gate 与 Execution Response Contract。"
+    },
+    {
+      "action_type": "publish",
+      "platform": "any_external_platform",
+      "requires_approval": true,
+      "auto_execution_allowed": false,
+      "rule_cn": "Publish 必须 CEO 审批。"
+    },
+    {
+      "action_type": "delete",
+      "platform": "any_external_platform",
+      "requires_approval": true,
+      "auto_execution_allowed": false,
+      "rule_cn": "Delete 必须 CEO 审批。"
+    },
+    {
+      "action_type": "update_published_post",
+      "platform": "WordPress",
+      "requires_approval": true,
+      "auto_execution_allowed": false,
+      "rule_cn": "修改已发布内容必须 CEO 审批。"
+    },
+    {
+      "action_type": "send_email",
+      "platform": "Gmail",
+      "requires_approval": true,
+      "auto_execution_allowed": false,
+      "rule_cn": "发送邮件必须 CEO 审批；Gmail Draft 不等于 Send。"
+    },
+    {
+      "action_type": "upload_or_publish_video",
+      "platform": "YouTube",
+      "requires_approval": true,
+      "auto_execution_allowed": false,
+      "rule_cn": "上传/发布视频必须 CEO 审批。"
+    }
+  ],
+  "compatibility": {
+    "runtime_db_schema_change": false,
+    "uses_existing_approvals_table": true,
+    "commander_change_required": false,
+    "dashboard_data_structure_change": false,
+    "existing_wordpress_draft_workflow_unchanged": true
+  }
+}

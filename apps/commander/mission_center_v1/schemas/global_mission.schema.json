@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M8A Global Mission Schema V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mission_id",
+    "mission_type",
+    "priority",
+    "owner",
+    "support",
+    "reviewer",
+    "approver",
+    "dependencies",
+    "knowledge_status",
+    "qa_status",
+    "approval_status",
+    "publish_status",
+    "runtime",
+    "retry_count",
+    "log"
+  ],
+  "properties": {
+    "mission_id": {
+      "type": "string"
+    },
+    "mission_type": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "owner": {
+      "type": "string"
+    },
+    "support": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "approver": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "knowledge_status": {
+      "type": "string"
+    },
+    "qa_status": {
+      "type": "string"
+    },
+    "approval_status": {
+      "type": "string"
+    },
+    "publish_status": {
+      "type": "string"
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "log": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

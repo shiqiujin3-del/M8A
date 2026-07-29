@@ -1,0 +1,78 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Unified Execution Contract V1",
+  "compatible_with": "external_executor_v1/contracts/execution_response_contract.v1.schema.json",
+  "required_fields": [
+    "execution_id",
+    "mission_id",
+    "provider",
+    "resource_id",
+    "resource_url",
+    "status",
+    "started_at",
+    "finished_at",
+    "retry_count",
+    "error"
+  ],
+  "contract": {
+    "success": "boolean",
+    "execution_id": "string",
+    "mission_id": "string",
+    "provider": "string",
+    "action": "string",
+    "resource_id": "string|null",
+    "resource_url": "string|null",
+    "status": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout",
+    "started_at": "iso_datetime|null",
+    "finished_at": "iso_datetime|null",
+    "duration_ms": "number|null",
+    "retry_count": "number",
+    "progress": {
+      "percent": "number",
+      "bytes_total": "number|null",
+      "bytes_done": "number|null",
+      "current_step": "string|null"
+    },
+    "result": {
+      "resource_type": "string|null",
+      "resource_id": "string|null",
+      "resource_url": "string|null",
+      "provider_status": "string|null",
+      "summary": "string|null"
+    },
+    "error": {
+      "error_code": "string|null",
+      "error_message": "string|null",
+      "retryable": "boolean",
+      "raw_error_ref": "string|null"
+    }
+  },
+  "rules": [
+    "所有 Provider 必须返回本 Contract 的主字段。",
+    "已有 WordPress Execution Response Contract 继续可用，本 Contract 是 Runtime Core 对其的统一运行层约束。",
+    "Dashboard 与 Audit 只读取 execution_id、mission_id、provider、resource_id、resource_url、status、started_at、finished_at、retry_count、error。",
+    "Provider 可以保留 raw_response_ref，但不得要求 Dashboard 解析 Provider 私有结构。",
+    "如果执行失败，resource_id 与 resource_url 可以为 null，但 error 必须完整。"
+  ],
+  "provider_examples": [
+    {
+      "provider": "wordpress",
+      "resource_id": "448",
+      "resource_url": "https://woodmachinerynetwork.com/?p=448",
+      "status": "completed"
+    },
+    {
+      "provider": "youtube",
+      "resource_id": "video_id",
+      "resource_url": "https://www.youtube.com/watch?v=video_id",
+      "status": "completed"
+    },
+    {
+      "provider": "gmail",
+      "resource_id": "draft_id",
+      "resource_url": null,
+      "status": "completed"
+    }
+  ]
+}
+

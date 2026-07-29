@@ -1,0 +1,51 @@
+{
+  "version": "ai_employee_runner_runtime_status_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "employees": {
+    "website_agent": {
+      "employee_id": "website_agent",
+      "status": "completed",
+      "current_task": "本地 Website Draft 已生成",
+      "today_completed": 1,
+      "failed_count": 0,
+      "blocked_count": 0,
+      "average_runtime": "local_static_execution",
+      "qa_average_score": 0,
+      "updated_at": "2026-07-09T00:00:00+01:00"
+    },
+    "qa_agent": {
+      "employee_id": "qa_agent",
+      "status": "completed",
+      "current_task": "本地 QA 检查已完成",
+      "today_completed": 1,
+      "failed_count": 0,
+      "blocked_count": 0,
+      "average_runtime": "local_static_execution",
+      "qa_average_score": 92,
+      "updated_at": "2026-07-09T00:00:00+01:00"
+    },
+    "knowledge_agent": {
+      "employee_id": "knowledge_agent",
+      "status": "waiting_dependency",
+      "current_task": "等待真实资料来源，不自动编造 HK620 规格/图片/案例",
+      "today_completed": 0,
+      "failed_count": 0,
+      "blocked_count": 1,
+      "average_runtime": "local_static_execution",
+      "qa_average_score": 0,
+      "updated_at": "2026-07-09T00:00:00+01:00"
+    }
+  },
+  "summary": {
+    "running": 0,
+    "completed_today": 2,
+    "failed_today": 0,
+    "blocked": 1,
+    "average_runtime": "local_static_execution",
+    "average_qa_score": 92,
+    "outputs": [
+      "apps/commander/ai_employee_runner_v1/outputs/website_agent_local_draft_output.v1.json",
+      "apps/commander/ai_employee_runner_v1/outputs/qa_agent_auto_check_result.v1.json"
+    ]
+  }
+}

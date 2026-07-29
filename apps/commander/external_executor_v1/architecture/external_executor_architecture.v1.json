@@ -1,0 +1,14 @@
+{
+  "version": "external_executor_architecture_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "layers": [
+    "AI Employee Auto Runner 输出本地 Draft / QA",
+    "Production Safety Gate 生成授权与 Dry-run 前置条件",
+    "External Executor V1 接受已批准 action",
+    "Dry-run Validator 校验 payload / QA / 禁止动作",
+    "Execution Readiness State 标记 ready_for_real_execution",
+    "真实执行器预留：CEO 单独授权后才可调用 n8n Draft-only"
+  ],
+  "mermaid": "flowchart TD\n  A[Website Agent Draft JSON] --> B[QA Agent QA Score >= 90]\n  B --> C[Production Safety Gate]\n  C --> D[External Executor V1]\n  D --> E[Dry-run Validator]\n  E --> F[Ready For Real Execution]\n  F --> G[CEO 单独授权后才可真实调用 n8n Draft-only]",
+  "safety_cn": "当前 Sprint 不执行 G，只完成到 F。"
+}

@@ -1,0 +1,241 @@
+{
+  "mission": {
+    "mission_id": "mission_standard_input_1785244080434",
+    "mission_name": "MISSION_STANDARD_INPUT_V1_CONTENT",
+    "mission_key": "MISSION_STANDARD_INPUT_WINDOW_V1",
+    "title": "给我做两个620的视频",
+    "objective": "给我做两个620的视频",
+    "command_text": "给我做两个620的视频",
+    "task_type": "content",
+    "target_employee": "Website Agent",
+    "assigned_employee": "Website Agent",
+    "input_materials": "",
+    "output_requirements": "",
+    "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+    "requires_ceo_approval": true,
+    "product": "",
+    "market": "",
+    "priority": "P1",
+    "risk_level": "medium",
+    "status": "ready",
+    "created_at": "2026-07-28T13:08:00Z",
+    "updated_at": "2026-07-28T13:08:00Z",
+    "planner_version": "mission_standard_input_window_v1_local_json",
+    "input": {
+      "source": "mission_standard_input_window_v1",
+      "task_type": "content",
+      "target_employee": "Website Agent",
+      "input_materials": "",
+      "output_requirements": "",
+      "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+      "requires_ceo_approval": true,
+      "external_api_calls_allowed": false,
+      "n8n_execution_allowed": false,
+      "wordpress_publish_allowed": false,
+      "wordpress_published_article_edit_allowed": false,
+      "gmail_send_allowed": false,
+      "youtube_upload_allowed": false
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "mission_standard_input_1785244080434_task_001",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_order": 1,
+      "worker_name": "Website Agent",
+      "title": "接收 Mission 标准输入",
+      "action": "accept_mission_standard_input",
+      "status": "queued",
+      "risk_level": "low",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:08:00Z",
+      "updated_at": "2026-07-28T13:08:00Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "content",
+        "target_employee": "Website Agent",
+        "input_materials": "",
+        "output_requirements": "",
+        "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_standard_input_1785244080434_task_002",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_order": 2,
+      "worker_name": "Website Agent",
+      "title": "准备员工执行计划",
+      "action": "prepare_employee_execution_plan",
+      "status": "queued",
+      "risk_level": "low",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:08:00Z",
+      "updated_at": "2026-07-28T13:08:00Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "content",
+        "target_employee": "Website Agent",
+        "input_materials": "",
+        "output_requirements": "",
+        "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_standard_input_1785244080434_task_003",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_order": 3,
+      "worker_name": "CEO",
+      "title": "等待 CEO 审批后再进入执行动作",
+      "action": "wait_for_ceo_execution_approval",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": true,
+      "approval_required": true,
+      "approval_reason": "CEO approval required before any execution action. No n8n, WordPress publish, or published article edit is allowed.",
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:08:00Z",
+      "updated_at": "2026-07-28T13:08:00Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "content",
+        "target_employee": "Website Agent",
+        "input_materials": "",
+        "output_requirements": "",
+        "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "approval_id": "approval_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": "mission_standard_input_1785244080434_task_003",
+      "artifact_id": null,
+      "approval_type": "mission_execution_approval",
+      "platform": "M8A Local Commander",
+      "action_type": "approve_mission_execution_scope",
+      "risk_level": "medium",
+      "status": "pending",
+      "approver_name": "石总",
+      "request_payload": {
+        "title": "给我做两个620的视频",
+        "task_type": "content",
+        "target_employee": "Website Agent",
+        "priority": "P1",
+        "input_materials": "",
+        "output_requirements": "",
+        "safety_boundaries": "不执行 n8n；不发布 WordPress；不修改已发布文章；不连接外部平台；如需外部动作必须先进入 CEO 审批。",
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false
+      },
+      "payload_snapshot": {
+        "reason": "CEO approval gate for Mission scope only. No external action is executed by this local queue write.",
+        "task_id": "mission_standard_input_1785244080434_task_003"
+      },
+      "created_at": "2026-07-28T13:08:00Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": null,
+      "artifact_type": "mission_standard_input",
+      "title": "Mission 标准输入已写入本地任务队列",
+      "content_json": {
+        "summary": "总控台 Mission 标准输入窗口 V1 已生成 Mission ID，并写入本地 Commander queue。",
+        "queue_path": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/commander_mission_queue.json",
+        "mission_file": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/mission_standard_input_1785244080434.json",
+        "n8n_executed": false,
+        "wordpress_published": false,
+        "published_article_modified": false
+      },
+      "quality_score": 1.0,
+      "simulation_status": "queued_local_only",
+      "created_at": "2026-07-28T13:08:00Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": null,
+      "event_type": "mission_status_changed",
+      "event_message": "Mission Standard Input Window V1 wrote mission to local JSON queue only.",
+      "created_at": "2026-07-28T13:08:00Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "ready",
+        "external_actions_executed": false
+      }
+    },
+    {
+      "event_id": "evt_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": "mission_standard_input_1785244080434_task_001",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:08:00Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "accept_mission_standard_input"
+      }
+    },
+    {
+      "event_id": "evt_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": "mission_standard_input_1785244080434_task_002",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:08:00Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "prepare_employee_execution_plan"
+      }
+    },
+    {
+      "event_id": "evt_1785244080434",
+      "mission_id": "mission_standard_input_1785244080434",
+      "task_id": "mission_standard_input_1785244080434_task_003",
+      "event_type": "task_status_changed",
+      "event_message": "CEO task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:08:00Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "wait_for_ceo_execution_approval"
+      }
+    }
+  ],
+  "updated_at": "2026-07-28T13:08:00Z"
+}

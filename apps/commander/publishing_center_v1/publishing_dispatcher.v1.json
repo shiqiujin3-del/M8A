@@ -1,0 +1,71 @@
+{
+  "version": "publishing_center_v1",
+  "name": "Publishing Dispatcher V1",
+  "purpose": "根据 Publishing Mission 类型选择 Provider，并把执行交给 Runtime Core。",
+  "dispatch_rules": [
+    {
+      "publishing_type": "publish_product",
+      "target_platform": "wordpress",
+      "provider": "wordpress_provider",
+      "resource_type": "wordpress_post_or_page",
+      "runtime_action": "create_or_update_wordpress_draft",
+      "v1_execution": "dispatch_design_only"
+    },
+    {
+      "publishing_type": "publish_article",
+      "target_platform": "wordpress",
+      "provider": "wordpress_provider",
+      "resource_type": "wordpress_article",
+      "runtime_action": "create_wordpress_draft_only",
+      "v1_execution": "dispatch_design_only"
+    },
+    {
+      "publishing_type": "publish_video",
+      "target_platform": "youtube",
+      "provider": "youtube_provider",
+      "resource_type": "youtube_video",
+      "runtime_action": "upload_video_after_approval",
+      "v1_execution": "dispatch_design_only"
+    },
+    {
+      "publishing_type": "publish_social_post",
+      "target_platform": "facebook",
+      "provider": "facebook_provider",
+      "resource_type": "social_post",
+      "runtime_action": "publish_social_post_after_approval",
+      "v1_execution": "future_provider"
+    },
+    {
+      "publishing_type": "publish_social_post",
+      "target_platform": "linkedin",
+      "provider": "linkedin_provider",
+      "resource_type": "social_post",
+      "runtime_action": "publish_social_post_after_approval",
+      "v1_execution": "future_provider"
+    },
+    {
+      "publishing_type": "publish_social_post",
+      "target_platform": "tiktok",
+      "provider": "tiktok_provider",
+      "resource_type": "short_video",
+      "runtime_action": "publish_video_after_approval",
+      "v1_execution": "future_provider"
+    }
+  ],
+  "dispatcher_result": {
+    "publishing_mission_id": "string",
+    "mission_id": "string",
+    "selected_provider": "string",
+    "runtime_action": "string",
+    "resource_type": "string",
+    "status": "queued|running|completed|failed",
+    "reason": "string|null"
+  },
+  "rules": [
+    "Dispatcher 只选择 Provider，不直接调用生产平台。",
+    "所有外部执行必须进入 Runtime Core。",
+    "新增平台时优先新增 dispatch_rules 与 Provider，不修改 Commander。",
+    "如果没有匹配 Provider，Publishing Mission 标记为 failed，并写入 error。"
+  ]
+}
+

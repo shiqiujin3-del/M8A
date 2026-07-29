@@ -1,0 +1,31 @@
+{
+  "version": "runner_safety_gate_v1",
+  "allowed_auto_execute": [
+    "A_build",
+    "local_validation",
+    "local_draft",
+    "local_qa",
+    "local_report"
+  ],
+  "requires_ceo_approval": [
+    "B_external_action",
+    "n8n",
+    "wordpress",
+    "publish",
+    "delete",
+    "update_published_post",
+    "send_gmail",
+    "upload_youtube",
+    "external_api"
+  ],
+  "hard_blocked_auto_actions": [
+    "n8n",
+    "WordPress",
+    "publish",
+    "delete_post",
+    "update_published_post",
+    "send_gmail",
+    "upload_youtube"
+  ],
+  "result": "external actions are blocked by default"
+}

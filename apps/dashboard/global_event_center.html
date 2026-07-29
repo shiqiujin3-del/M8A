@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <title>M8A Global AI Event Center</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div><p class="eyebrow">M8A 全局事件总线</p><h1>Global AI Event Center V1</h1></div><div class="status-pill" id="generated-at">读取中</div></header>
+    <nav class="link-row"><a href="./index.html">总控</a><a href="./global_mission_center.html">全局 Mission Center</a><a href="./employee_workbench.html">AI 员工工作台</a></nav>
+    <section class="section"><h2>事件概览</h2><div class="metric-strip" id="event-metrics"></div><p class="helper-text">本页只读取本地模拟事件，不调用 n8n、WordPress、Gmail、YouTube 或外部 API。</p></section>
+    <section class="section"><h2>Today Events</h2><div class="card-list" id="today-events"></div></section>
+    <section class="section"><h2>Running Events</h2><div class="card-list" id="running-events"></div></section>
+    <section class="section"><h2>Failed Events</h2><div class="card-list" id="failed-events"></div></section>
+    <section class="section"><h2>Blocked Events</h2><div class="card-list" id="blocked-events"></div></section>
+    <section class="section"><h2>Waiting Events</h2><div class="card-list" id="waiting-events"></div></section>
+    <section class="section"><h2>Event Timeline</h2><div class="card-list" id="event-timeline"></div></section>
+  </main>
+  <script>
+    const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const card = e => `<article class="business-card ${e.status === 'Blocked' ? 'warning' : ''}"><span>${esc(e.priority)} · ${esc(e.status)} · ${esc(e.timestamp)}</span><strong>${esc(e.event_type)}</strong><p>${esc(e.source_agent)} → ${esc(e.target_agent)} · Mission：${esc(e.mission_id)}</p><small>Retry：${esc(e.retry_count)}</small></article>`;
+    async function load(){
+      const data = await fetch('./global_event_center_data.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json());
+      document.getElementById('generated-at').textContent = data.generated_at || '-';
+      const s=data.summary||{};
+      document.getElementById('event-metrics').innerHTML = [['Today Events',s.today_events],['Running Events',s.running_events],['Failed Events',s.failed_events],['Blocked Events',s.blocked_events],['Waiting Events',s.waiting_events],['Top Active Agent',s.top_active_agent],['Average Processing Time',s.average_processing_time]].map(([k,v])=>`<article><span>${esc(k)}</span><strong>${esc(v)}</strong></article>`).join('');
+      const sec=data.sections||{};
+      document.getElementById('today-events').innerHTML = (sec.today_events||[]).map(card).join('');
+      document.getElementById('running-events').innerHTML = (sec.running_events||[]).map(card).join('') || '<article class="business-card"><strong>暂无运行中事件</strong></article>';
+      document.getElementById('failed-events').innerHTML = (sec.failed_events||[]).map(card).join('') || '<article class="business-card"><strong>暂无失败事件</strong></article>';
+      document.getElementById('blocked-events').innerHTML = (sec.blocked_events||[]).map(card).join('') || '<article class="business-card"><strong>暂无阻断事件</strong></article>';
+      document.getElementById('waiting-events').innerHTML = (sec.waiting_events||[]).map(card).join('') || '<article class="business-card"><strong>暂无等待事件</strong></article>';
+      document.getElementById('event-timeline').innerHTML = (sec.event_timeline||[]).map(e=>`<article class="business-card"><span>${esc(e.at)} · ${esc(e.status)}</span><strong>${esc(e.event_type)}</strong><p>${esc(e.source_agent)} → ${esc(e.target_agent)}</p><small>${esc(e.mission_id)}</small></article>`).join('');
+    }
+    load().catch(err => document.body.insertAdjacentHTML('beforeend', `<pre>${esc(err.message)}</pre>`));
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "version": "ai_employee_center_v2",
+  "name": "Future Sprint Roadmap By AI Employee",
+  "principle": "以后 Sprint 以 AI Employee 上岗为目标；每个 Sprint 必须新增一个真正可以工作的员工能力。",
+  "roadmap": [
+    {
+      "sprint": 1,
+      "employee": "Publishing Employee",
+      "goal": "把发布任务统一交给 Publishing Center，能接 WordPress Draft-only 和 YouTube private validation。",
+      "done_when": "Publishing Employee 能接收 publish_article/publish_video Mission，生成 Provider handoff 和结果记录。"
+    },
+    {
+      "sprint": 2,
+      "employee": "Content Employee",
+      "goal": "生成产品文章、销售回复、视频脚本的标准草稿。",
+      "done_when": "Content Employee 能基于 Knowledge Binding 产出可 QA 的英文内容。"
+    },
+    {
+      "sprint": 3,
+      "employee": "Knowledge Employee",
+      "goal": "统一产品资料、FAQ、案例、缺口任务。",
+      "done_when": "Knowledge Employee 能自动维护产品知识绑定和缺口状态。"
+    },
+    {
+      "sprint": 4,
+      "employee": "Sales Employee",
+      "goal": "处理询盘、生成回复草稿和报价前信息清单。",
+      "done_when": "Sales Employee 能从 Customer Card 和 Product Knowledge 生成 Gmail Draft。"
+    },
+    {
+      "sprint": 5,
+      "employee": "CRM Employee",
+      "goal": "客户卡片、二次询盘关联、Lead Score、下一步动作。",
+      "done_when": "同一 Email 的所有询盘自动归并到同一 Customer Card。"
+    },
+    {
+      "sprint": 6,
+      "employee": "Analytics Employee",
+      "goal": "每天读取 GA4/GSC，生成经营数据摘要。",
+      "done_when": "Analytics Employee 能自动生成 Morning/Evening 数据摘要。"
+    },
+    {
+      "sprint": 7,
+      "employee": "Video Employee",
+      "goal": "完成视频素材、标题描述、private upload 验证和大文件可靠性前置。",
+      "done_when": "Video Employee 能稳定处理小视频 private upload，并对大视频给出可靠上传路径。"
+    },
+    {
+      "sprint": 8,
+      "employee": "SEO Employee",
+      "goal": "页面 SEO 检查、内链、Meta、GSC 数据建议。",
+      "done_when": "SEO Employee 能给每个发布草稿输出 SEO QA。"
+    },
+    {
+      "sprint": 9,
+      "employee": "GEO Employee",
+      "goal": "AI 搜索可见性内容结构。",
+      "done_when": "GEO Employee 能生成买家问题矩阵和答案块。"
+    },
+    {
+      "sprint": 10,
+      "employee": "Security Employee",
+      "goal": "统一外部动作权限、安全门和 OAuth 审计。",
+      "done_when": "Security Employee 能对每个外部动作输出审批和风险结论。"
+    },
+    {
+      "sprint": 11,
+      "employee": "System Maintenance Employee",
+      "goal": "服务健康、日志、备份、故障恢复。",
+      "done_when": "能给 Commander 返回健康状态和恢复建议。"
+    },
+    {
+      "sprint": 12,
+      "employee": "Documentation Employee",
+      "goal": "自动中文报告、SOP、验收记录。",
+      "done_when": "每个 Sprint 自动生成 CEO Review 报告。"
+    }
+  ]
+}
+

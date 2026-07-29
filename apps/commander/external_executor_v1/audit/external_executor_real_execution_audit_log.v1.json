@@ -1,0 +1,1124 @@
+[
+  {
+    "version": "external_executor_real_execution_audit_log_v1",
+    "updated_at": "2026-07-12T03:48:16.371819Z",
+    "entries": [
+      {
+        "audit_log_id": "audit_mission_real_wp_draft_hk620_20260710_1783648705",
+        "timestamp": "2026-07-10T01:58:27Z",
+        "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+        "trace_id": "trace_real_wp_draft_20260710T015825",
+        "event": "real_n8n_draft_only_execution_finished",
+        "result": {
+          "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+          "trace_id": "trace_real_wp_draft_20260710T015825",
+          "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+          "workflow_path": "m8a-hk620-draft-only",
+          "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+          "http_status": 502,
+          "ok": false,
+          "execution_id": "trace_real_wp_draft_20260710T015825",
+          "post_id": null,
+          "draft_url": null,
+          "title": "HK620 Skeleton Door Strip Process Overview",
+          "status": "failed",
+          "execution_status": "execution_failed",
+          "started_at": "2026-07-10T01:58:25Z",
+          "finished_at": "2026-07-10T01:58:27Z",
+          "duration_ms": 2000,
+          "retry_count": 0,
+          "error": "HTTPError 502: ",
+          "raw_response": {
+            "error": "HTTPError 502: "
+          },
+          "safety_result": {
+            "publish": false,
+            "delete_post": false,
+            "update_published_post": false,
+            "send_gmail": false,
+            "upload_youtube": false,
+            "draft_only": false,
+            "old_workflow_called": false
+          }
+        }
+      },
+      {
+        "audit_log_id": "audit_mission_real_wp_draft_hk620_20260710_1783648705_retry_1",
+        "timestamp": "2026-07-10T02:57:21Z",
+        "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+        "event": "retry_n8n_draft_only_execution_finished",
+        "result": {
+          "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+          "trace_id": "trace_real_wp_draft_20260710T015825",
+          "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+          "workflow_path": "m8a-hk620-draft-only",
+          "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+          "http_status": 200,
+          "ok": true,
+          "execution_id": "trace_real_wp_draft_20260710T015825",
+          "post_id": null,
+          "draft_url": null,
+          "title": "HK620 Skeleton Door Strip Process Overview",
+          "status": "draft",
+          "execution_status": "execution_failed",
+          "started_at": "2026-07-10T02:57:20Z",
+          "finished_at": "2026-07-10T02:57:21Z",
+          "duration_ms": 1000,
+          "retry_count": 1,
+          "error": "n8n returned HTTP success but missing post_id or draft_url",
+          "raw_response": {
+            "message": "Workflow was started"
+          },
+          "safety_result": {
+            "publish": false,
+            "delete_post": false,
+            "update_published_post": false,
+            "send_gmail": false,
+            "upload_youtube": false,
+            "draft_only": true,
+            "old_workflow_called": false
+          }
+        }
+      },
+      {
+        "audit_log_id": "audit_mission_real_wp_draft_hk620_20260710_1783648705_draft_443_verified",
+        "timestamp": "2026-07-10T02:59:21Z",
+        "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+        "event": "wordpress_draft_result_verified_from_n8n_execution",
+        "result": {
+          "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+          "trace_id": "trace_real_wp_draft_20260710T015825",
+          "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+          "workflow_path": "m8a-hk620-draft-only",
+          "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+          "http_status": 200,
+          "ok": true,
+          "execution_id": "33",
+          "post_id": 443,
+          "draft_url": "https://woodmachinerynetwork.com/?p=443",
+          "title": "HK620 Draft Test from M8A",
+          "status": "draft",
+          "execution_status": "executed_draft_only",
+          "started_at": "2026-07-10T02:57:20Z",
+          "finished_at": "2026-07-10T02:59:21Z",
+          "duration_ms": 1000,
+          "retry_count": 1,
+          "error": null,
+          "raw_response": {
+            "webhook_response": {
+              "message": "Workflow was started"
+            },
+            "n8n_execution_id": 33,
+            "wordpress_result": {
+              "id": 443,
+              "link": "https://woodmachinerynetwork.com/?p=443",
+              "status": "draft",
+              "title": "HK620 Draft Test from M8A",
+              "rest_url": "https://woodmachinerynetwork.com/wp-json/wp/v2/posts/443"
+            }
+          },
+          "safety_result": {
+            "publish": false,
+            "delete_post": false,
+            "update_published_post": false,
+            "send_gmail": false,
+            "upload_youtube": false,
+            "draft_only": true,
+            "old_workflow_called": false,
+            "workflow_id": "aTVbw0a7MId3NCBH",
+            "old_workflow_id": "CWbGujhdNKFpa5JZ"
+          },
+          "n8n_execution_id": 33
+        }
+      },
+      {
+        "audit_log_id": "audit_m2_sprint4_gsc_sites_list_1783657404",
+        "timestamp": "2026-07-10T04:24:39Z",
+        "mission_id": "m2_sprint4_gsc_sites_list_1783657404",
+        "event": "gsc_sites_list_readonly_execution_completed",
+        "result": {
+          "success": true,
+          "mission_id": "m2_sprint4_gsc_sites_list_1783657404",
+          "trace_id": "trace_m2_sprint4_gsc_sites_list_1783657404",
+          "execution_id": "37",
+          "executor": "google_search_console",
+          "workflow_id": "M8A_GSC_READONLY_VALIDATION_V1",
+          "workflow_name": "M8A_GSC_READONLY_VALIDATION_V1",
+          "action_type": "gsc_sites_list_readonly",
+          "status": "completed",
+          "started_at": null,
+          "finished_at": "2026-07-10T04:23:29.045Z",
+          "duration_ms": null,
+          "retry_count": 0,
+          "result": {
+            "type": "google_api_result",
+            "capability": "gsc_sites_list",
+            "properties": [
+              {
+                "siteUrl": "https://woodmachinerynetwork.com/",
+                "permissionLevel": "siteOwner"
+              },
+              {
+                "siteUrl": "sc-domain:woodmachinerynetwork.com",
+                "permissionLevel": "siteOwner"
+              }
+            ],
+            "property_count": 2,
+            "woodmachinerynetwork_property": "https://woodmachinerynetwork.com/",
+            "woodmachinerynetwork_permission": "siteOwner"
+          },
+          "error": null,
+          "safety": {
+            "readonly": true,
+            "submit_sitemap": false,
+            "delete_property": false,
+            "modify_settings": false,
+            "modify_google_data": false
+          },
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "legacy_webhook_response": null,
+            "requires_execution_lookup": false,
+            "normalization_source": "direct_webhook_response"
+          }
+        }
+      },
+      {
+        "audit_log_id": "audit_m2_sprint5_gsc_search_analytics_20260710T043822Z",
+        "timestamp": "2026-07-10T04:40:33Z",
+        "mission_id": "m2_sprint5_gsc_search_analytics_20260710T043822Z",
+        "trace_id": "trace_m2_sprint5_gsc_search_analytics_20260710T043822Z",
+        "event": "gsc_search_analytics_readonly_execution_completed",
+        "result": {
+          "success": true,
+          "mission_id": "m2_sprint5_gsc_search_analytics_20260710T043822Z",
+          "trace_id": "trace_m2_sprint5_gsc_search_analytics_20260710T043822Z",
+          "execution_id": "38",
+          "executor": "google_search_console",
+          "workflow_id": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+          "workflow_name": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+          "action": "search_analytics",
+          "action_type": "search_analytics",
+          "status": "completed",
+          "started_at": null,
+          "finished_at": "2026-07-10T04:38:29.631Z",
+          "duration_ms": 7454,
+          "retry_count": 0,
+          "result": {
+            "type": "google_search_console_search_analytics",
+            "property": "https://woodmachinerynetwork.com/",
+            "date_range": "last_7_days",
+            "start_date": "2026-07-03",
+            "end_date": "2026-07-09",
+            "clicks": 1,
+            "impressions": 47,
+            "ctr": 0.02127659574468085,
+            "average_position": 40.680851063829785,
+            "top_queries": [
+              {
+                "query": "cnc nesting",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 68.5
+              },
+              {
+                "query": "edgebander maintenance",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 82
+              },
+              {
+                "query": "edgebander repair",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 81
+              },
+              {
+                "query": "glue line treated",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 53
+              },
+              {
+                "query": "glue pot rebuild",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 46
+              },
+              {
+                "query": "glue pot repair",
+                "clicks": 0,
+                "impressions": 3,
+                "ctr": 0,
+                "position": 50.666666666666664
+              },
+              {
+                "query": "gluepot repair",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 49
+              },
+              {
+                "query": "hub-banding",
+                "clicks": 0,
+                "impressions": 3,
+                "ctr": 0,
+                "position": 8.666666666666668
+              },
+              {
+                "query": "nested based manufacturing",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 59
+              },
+              {
+                "query": "nesting machining centres",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 70
+              },
+              {
+                "query": "pur edging",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 90.5
+              },
+              {
+                "query": "pur vs eva",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 26
+              },
+              {
+                "query": "sizing edge banders",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 68
+              }
+            ],
+            "top_pages": [
+              {
+                "page": "https://woodmachinerynetwork.com/edge-bander-feeding-instability-sensor-guide-clearance/",
+                "clicks": 1,
+                "impressions": 1,
+                "ctr": 1,
+                "position": 6
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/category/blog/edge-banding-knowledge/maintenance/",
+                "clicks": 0,
+                "impressions": 5,
+                "ctr": 0,
+                "position": 67.4
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/category/glue-technology/glue-line-quality/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 53
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/category/glue-technology/glue-pot/",
+                "clicks": 0,
+                "impressions": 7,
+                "ctr": 0,
+                "position": 37.285714285714285
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/clean-free-glue-pot-coating-edge-banding-maintenance/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/cnc-nesting-hub/",
+                "clicks": 0,
+                "impressions": 4,
+                "ctr": 0,
+                "position": 66.5
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/diagnose-corner-chipping-end-cutting-edge-banding-machine/",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/distributor-network/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 2
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/edge-banding-hub/",
+                "clicks": 0,
+                "impressions": 6,
+                "ctr": 0,
+                "position": 18.833333333333332
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/feed-guide-misalignment-corner-chipping/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 6
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/glue-roller-alignment-corner-damage-edge-banding/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 11
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/how-to-choose-a-softforming-edge-bander/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 68
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/panel-edge-chipping-after-pre-milling/",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/panel-squareness-before-edge-banding/",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/pressing-roller-pressure-corner-chipping/",
+                "clicks": 0,
+                "impressions": 3,
+                "ctr": 0,
+                "position": 14.666666666666666
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/pur-vs-eva-edge-banding-glue-system/",
+                "clicks": 0,
+                "impressions": 13,
+                "ctr": 0,
+                "position": 55.07692307692308
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/six-sided-drilling-hub/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 2
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/soft-osb-panels-edge-banding-quality-problems/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 2
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/softforming-handle-free-cabinet-doors/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 7
+              },
+              {
+                "page": "https://woodmachinerynetwork.com/woodworking-machines/",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 3
+              }
+            ],
+            "countries": [
+              {
+                "country": "nzl",
+                "clicks": 1,
+                "impressions": 2,
+                "ctr": 0.5,
+                "position": 9
+              },
+              {
+                "country": "are",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "country": "aus",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 68
+              },
+              {
+                "country": "bgd",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 6
+              },
+              {
+                "country": "bra",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 6
+              },
+              {
+                "country": "dza",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 53
+              },
+              {
+                "country": "gbr",
+                "clicks": 0,
+                "impressions": 3,
+                "ctr": 0,
+                "position": 55
+              },
+              {
+                "country": "ind",
+                "clicks": 0,
+                "impressions": 4,
+                "ctr": 0,
+                "position": 20.5
+              },
+              {
+                "country": "irn",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 9
+              },
+              {
+                "country": "mys",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 10
+              },
+              {
+                "country": "pak",
+                "clicks": 0,
+                "impressions": 2,
+                "ctr": 0,
+                "position": 8
+              },
+              {
+                "country": "per",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 14
+              },
+              {
+                "country": "usa",
+                "clicks": 0,
+                "impressions": 26,
+                "ctr": 0,
+                "position": 54.65384615384615
+              },
+              {
+                "country": "vnm",
+                "clicks": 0,
+                "impressions": 1,
+                "ctr": 0,
+                "position": 29
+              }
+            ],
+            "devices": [
+              {
+                "device": "MOBILE",
+                "clicks": 1,
+                "impressions": 4,
+                "ctr": 0.25,
+                "position": 6.5
+              },
+              {
+                "device": "DESKTOP",
+                "clicks": 0,
+                "impressions": 43,
+                "ctr": 0,
+                "position": 43.86046511627907
+              }
+            ]
+          },
+          "error": null,
+          "safety": {
+            "readonly": true,
+            "submit_sitemap": false,
+            "delete_property": false,
+            "modify_property": false,
+            "modify_settings": false,
+            "modify_google_data": false
+          },
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "legacy_webhook_response": null,
+            "requires_execution_lookup": false,
+            "normalization_source": "direct_webhook_response"
+          }
+        },
+        "safety_confirmation": {
+          "readonly": true,
+          "submit_sitemap": false,
+          "delete_property": false,
+          "modify_property": false,
+          "modify_settings": false,
+          "modify_google_data": false
+        }
+      },
+      {
+        "audit_log_id": "audit_m2_sprint6_gmail_draft_20260710T050654Z",
+        "timestamp": "2026-07-10T05:08:07Z",
+        "mission_id": "m2_sprint6_gmail_draft_20260710T050654Z",
+        "trace_id": "trace_m2_sprint6_gmail_draft_20260710T050654Z",
+        "event": "gmail_draft_create_execution_completed",
+        "result": {
+          "success": true,
+          "mission_id": "m2_sprint6_gmail_draft_20260710T050654Z",
+          "trace_id": "trace_m2_sprint6_gmail_draft_20260710T050654Z",
+          "execution_id": "44",
+          "executor": "gmail",
+          "workflow_id": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+          "workflow_name": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+          "action": "create_draft",
+          "action_type": "create_draft",
+          "status": "completed",
+          "started_at": null,
+          "finished_at": "2026-07-10T05:06:59.993Z",
+          "duration_ms": 5332,
+          "retry_count": 0,
+          "result": {
+            "type": "gmail_draft",
+            "draft_id": "r-8341857569389463338",
+            "thread_id": "19f4a6bff37cc648",
+            "message_id": "19f4a6bff37cc648",
+            "subject": "M8A Gmail Draft Test"
+          },
+          "error": null,
+          "safety": {
+            "create_draft": true,
+            "send_email": false,
+            "delete_email": false,
+            "modify_inbox": false,
+            "archive": false,
+            "trash": false,
+            "label": false,
+            "reply": false,
+            "forward": false
+          },
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "legacy_webhook_response": null,
+            "requires_execution_lookup": false,
+            "normalization_source": "direct_webhook_response"
+          }
+        },
+        "safety_confirmation": {
+          "create_draft": true,
+          "send_email": false,
+          "delete_email": false,
+          "modify_inbox": false,
+          "archive": false,
+          "trash": false,
+          "label": false,
+          "reply": false,
+          "forward": false
+        }
+      },
+      {
+        "audit_log_id": "audit_m2_sprint7_inquiry_reply_20260710T051651Z",
+        "timestamp": "2026-07-10T05:16:51Z",
+        "mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z",
+        "trace_id": "trace_m2_sprint7_inquiry_reply_20260710T051651Z",
+        "event": "inquiry_reply_gmail_draft_created",
+        "result": {
+          "success": true,
+          "mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z",
+          "trace_id": "trace_m2_sprint7_inquiry_reply_20260710T051651Z",
+          "execution_id": "45",
+          "executor": "gmail",
+          "workflow": "Inquiry Reply Workflow",
+          "workflow_id": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+          "workflow_name": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+          "action": "create_draft",
+          "action_type": "create_draft",
+          "status": "completed",
+          "started_at": null,
+          "finished_at": "2026-07-10T05:16:53.995Z",
+          "duration_ms": null,
+          "retry_count": 0,
+          "result": {
+            "type": "gmail_draft",
+            "draft_id": "r-4315455221144547087",
+            "thread_id": "19f4a750ee63f0c2",
+            "message_id": "19f4a750ee63f0c2",
+            "subject": "Re: HK620 Edge Banding Machine Specifications and Quotation Request",
+            "customer": "John Smith",
+            "machine": "HK620",
+            "inquiry_id": "inquiry_hk620_john_smith_20260710T051651Z"
+          },
+          "error": null,
+          "safety": {
+            "create_draft": true,
+            "send_email": false,
+            "delete_email": false,
+            "modify_inbox": false,
+            "archive": false,
+            "trash": false,
+            "label": false,
+            "reply": false,
+            "forward": false
+          },
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "legacy_webhook_response": null,
+            "requires_execution_lookup": false,
+            "normalization_source": "direct_webhook_response"
+          }
+        },
+        "customer": "John Smith",
+        "machine": "HK620",
+        "safety_confirmation": {
+          "send_email": false,
+          "reply": false,
+          "forward": false,
+          "delete_email": false,
+          "modify_inbox": false,
+          "wordpress_modified": false,
+          "youtube_called": false
+        }
+      },
+      {
+        "audit_log_id": "audit_m2_sprint8_quotation_preparation_20260710T052427Z",
+        "timestamp": "2026-07-10T05:24:27Z",
+        "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+        "trace_id": "trace_m2_sprint8_quotation_preparation_20260710T052427Z",
+        "event": "quotation_preparation_gmail_draft_created",
+        "result": {
+          "success": true,
+          "executor": "gmail",
+          "workflow": "quotation_preparation",
+          "status": "completed",
+          "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+          "trace_id": "trace_m2_sprint8_quotation_preparation_20260710T052427Z",
+          "execution_id": "46",
+          "result": {
+            "customer": "John Smith",
+            "machine": "HK620",
+            "missing_information": [
+              "Voltage",
+              "Board Thickness",
+              "Glue Type",
+              "Working Size",
+              "Automation Level",
+              "Optional Units",
+              "Packing Requirement",
+              "Delivery Port",
+              "Payment Terms"
+            ],
+            "checklist": [
+              {
+                "item": "Voltage",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Country",
+                "required": true,
+                "known": true,
+                "value": "USA"
+              },
+              {
+                "item": "Board Thickness",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Glue Type",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Working Size",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Automation Level",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Optional Units",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Packing Requirement",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Delivery Port",
+                "required": true,
+                "known": false
+              },
+              {
+                "item": "Payment Terms",
+                "required": true,
+                "known": false
+              }
+            ],
+            "gmail_draft_id": "r-41102193991796805",
+            "thread_id": "19f4a7c05f487011",
+            "subject": "Quotation Preparation for HK620 Edge Banding Machine"
+          },
+          "error": null,
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "requires_execution_lookup": false,
+            "normalization_source": "gmail_draft_executor_direct_response"
+          },
+          "safety": {
+            "generate_price": false,
+            "generate_proforma_invoice": false,
+            "send_email": false,
+            "modify_wordpress": false,
+            "create_gmail_draft": true
+          },
+          "duration_ms": 2166
+        },
+        "customer": "John Smith",
+        "machine": "HK620",
+        "safety_confirmation": {
+          "send_email": false,
+          "generate_price": false,
+          "generate_proforma_invoice": false,
+          "modify_wordpress": false,
+          "new_executor_framework": false
+        }
+      },
+      {
+        "audit_log_id": "audit_contact_bridge_1783670663865",
+        "timestamp": "2026-07-10T08:04:23Z",
+        "mission_id": "mission_website_contact_1783670663858",
+        "event": "website_contact_webhook_created_mission",
+        "result": {
+          "success": true,
+          "source": "website_contact",
+          "mission_id": "mission_website_contact_1783670663858",
+          "payload": {
+            "inquiry_id": "WMN-INQ-bridge_clean_probe",
+            "submission_id": "bridge_clean_probe",
+            "submitted_time": "2026-07-10T08:04:23.848Z",
+            "name": "Bridge Clean Probe",
+            "company": "",
+            "country": "",
+            "email": "bridge.clean@example.com",
+            "whatsapp": "",
+            "interested_machine": "",
+            "message": "clean probe only",
+            "source": "website_contact",
+            "external_actions_executed": false,
+            "auto_reply_executed": false,
+            "quotation_generated": false,
+            "gmail_draft_created": false
+          },
+          "safety": {
+            "auto_reply": false,
+            "quotation": false,
+            "gmail_draft": false,
+            "wordpress_change": false,
+            "m8a_downstream_workflow": false
+          }
+        }
+      },
+      {
+        "audit_log_id": "audit_contact_bridge_1783670767348",
+        "timestamp": "2026-07-10T08:06:07Z",
+        "mission_id": "mission_website_contact_1783670767345",
+        "event": "website_contact_webhook_created_mission",
+        "result": {
+          "success": true,
+          "source": "website_contact",
+          "mission_id": "mission_website_contact_1783670767345",
+          "payload": {
+            "inquiry_id": "WMN-INQ-3",
+            "submission_id": "3",
+            "submitted_time": "2026-07-10T08:06:07+00:00",
+            "name": "M8A Test Buyer",
+            "company": "M8A Test Company",
+            "country": "USA",
+            "email": "m8a.test@example.com",
+            "whatsapp": "+1 555 0100",
+            "interested_machine": "HK620 Edge Banding Machine",
+            "message": "Production Contact Form Gateway V1 real admin-ajax submission test. Please ignore.",
+            "source": "website_contact",
+            "external_actions_executed": false,
+            "auto_reply_executed": false,
+            "quotation_generated": false,
+            "gmail_draft_created": false
+          },
+          "safety": {
+            "auto_reply": false,
+            "quotation": false,
+            "gmail_draft": false,
+            "wordpress_change": false,
+            "m8a_downstream_workflow": false
+          }
+        }
+      },
+      {
+        "audit_log_id": "audit_youtube_private_upload_20260710T092615Z",
+        "timestamp": "2026-07-10T09:28:09Z",
+        "mission_id": "m2_sprint13_youtube_private_upload_20260710T090000Z",
+        "trace_id": "trace_m2_sprint13_youtube_private_upload_20260710T090000Z",
+        "event": "youtube_private_upload_execution_completed",
+        "result": {
+          "success": true,
+          "mission_id": "m2_sprint13_youtube_private_upload_20260710T090000Z",
+          "trace_id": "trace_m2_sprint13_youtube_private_upload_20260710T090000Z",
+          "execution_id": "78",
+          "executor": "youtube",
+          "workflow_id": "yt_private_upload_v1",
+          "workflow_name": "M8A_YOUTUBE_PRIVATE_UPLOAD_EXECUTOR_V1",
+          "action": "private_upload",
+          "status": "completed",
+          "started_at": "2026-07-10T09:26:05.755Z",
+          "finished_at": "2026-07-10T09:26:15.452Z",
+          "duration_ms": 9697,
+          "retry_count": 0,
+          "result": {
+            "type": "youtube_private_video",
+            "video_id": "xJOM_SlrfrE",
+            "title": "M8A YouTube Private Upload Test",
+            "privacy_status": "private",
+            "upload_status": "processed",
+            "channel_title": "SYUTECH Woodworking Machinery",
+            "category_id": "28",
+            "embeddable": false,
+            "public_stats_viewable": false,
+            "video_url": "https://www.youtube.com/watch?v=xJOM_SlrfrE"
+          },
+          "error": null,
+          "requires_execution_lookup": false,
+          "safety": {
+            "private_upload": true,
+            "public_upload": false,
+            "unlisted_upload": false,
+            "delete_video": false,
+            "modify_channel": false,
+            "modify_playlist": false,
+            "notify_subscribers": false
+          },
+          "verification": {
+            "verified_at": "2026-07-10T09:27:06.234Z",
+            "privacy_status": "private",
+            "upload_status": "processed",
+            "source": "YouTube Data API videos.get via n8n credential M8A YouTube Reserved"
+          },
+          "compatibility": {
+            "contract_version": "execution_response_contract_v1",
+            "requires_execution_lookup": false,
+            "normalization_source": "direct_n8n_cli_execution_response"
+          }
+        }
+      }
+    ],
+    "events": [
+      {
+        "audit_log_id": "audit_mission_hk620_us_v3_wordpress_draft_1783828093444",
+        "timestamp": "2026-07-12T03:48:16.371819Z",
+        "event": "hk620_us_v3_wordpress_draft_only_failed",
+        "result": {
+          "mission_id": "mission_hk620_us_v3_wordpress_draft_1783828093444",
+          "trace_id": "trace_hk620_us_v3_wordpress_draft_1783828093444",
+          "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+          "workflow_id": "aTVbw0a7MId3NCBH",
+          "workflow_name": "m8a_hk620_draft_20260708",
+          "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+          "http_status": 502,
+          "success": false,
+          "execution_id": "",
+          "post_id": null,
+          "draft_url": null,
+          "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+          "slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+          "status": null,
+          "started_at": "2026-07-12T03:48:13.444377Z",
+          "finished_at": "2026-07-12T03:48:16.371819Z",
+          "retry_count": 0,
+          "error": "HTTP Error 502: Bad Gateway",
+          "response": {
+            "raw": ""
+          },
+          "safety": {
+            "draft_only": true,
+            "publish": false,
+            "delete_post": false,
+            "update_published_post": false,
+            "send_gmail": false,
+            "upload_youtube": false,
+            "old_workflow_called": false,
+            "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+          },
+          "content_source": "/Users/shiqiujing/Documents/M8A/apps/commander/content_center_v1/outputs/hk620_us_customer_article_v3_pre_publish.json"
+        }
+      }
+    ]
+  },
+  {
+    "mission_id": "mission_hk620_us_v3_wordpress_draft_20260712045610",
+    "trace_id": "trace_hk620_us_v3_wordpress_draft_20260712045610",
+    "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+    "http_status": 200,
+    "ok": true,
+    "started_at": "2026-07-12T03:56:10Z",
+    "finished_at": "2026-07-12T03:56:13Z",
+    "response": {
+      "success": true,
+      "mission_id": "mission_hk620_us_v3_wordpress_draft_20260712045610",
+      "trace_id": "trace_hk620_us_v3_wordpress_draft_20260712045610",
+      "execution_id": "211",
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "completed",
+      "started_at": null,
+      "finished_at": "2026-07-12T03:56:13.347Z",
+      "duration_ms": null,
+      "retry_count": 0,
+      "result": {
+        "type": "wordpress_draft",
+        "post_id": 450,
+        "post_status": "draft",
+        "draft_url": "https://woodmachinerynetwork.com/?p=450",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=450&action=edit",
+        "title": "HK620 Draft Test from M8A",
+        "slug": "hk620-draft-test-from-m8a",
+        "external_id": 450,
+        "external_url": "https://woodmachinerynetwork.com/?p=450",
+        "platform_status": "draft"
+      },
+      "error": null,
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": null,
+        "requires_execution_lookup": false,
+        "normalization_source": "direct_webhook_response"
+      }
+    },
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    }
+  },
+  {
+    "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+    "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+    "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+    "http_status": 200,
+    "ok": true,
+    "started_at": "2026-07-12T04:07:00Z",
+    "finished_at": "2026-07-12T04:07:03Z",
+    "sent_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+    "sent_slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+    "sent_content_chars": 6393,
+    "response": {
+      "success": true,
+      "mission_id": "mission_hk620_us_v3_mapping_fixed_20260712050700",
+      "trace_id": "trace_hk620_us_v3_mapping_fixed_20260712050700",
+      "execution_id": "212",
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "completed",
+      "started_at": null,
+      "finished_at": "2026-07-12T04:07:03.247Z",
+      "duration_ms": null,
+      "retry_count": 0,
+      "result": {
+        "type": "wordpress_draft",
+        "post_id": 451,
+        "post_status": "draft",
+        "draft_url": "https://woodmachinerynetwork.com/?p=451",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=451&action=edit",
+        "title": "HK620 Draft Test from M8A",
+        "slug": "hk620-draft-test-from-m8a",
+        "external_id": 451,
+        "external_url": "https://woodmachinerynetwork.com/?p=451",
+        "platform_status": "draft"
+      },
+      "error": null,
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": null,
+        "requires_execution_lookup": false,
+        "normalization_source": "direct_webhook_response"
+      }
+    },
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    }
+  }
+]

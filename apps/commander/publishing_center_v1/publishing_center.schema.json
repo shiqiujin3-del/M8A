@@ -1,0 +1,52 @@
+{
+  "version": "publishing_center_v1",
+  "name": "M8A Publishing Center V1",
+  "purpose": "统一所有内容发布任务入口，避免 Commander 直接面对多个 Provider。",
+  "publishing_mission": {
+    "publishing_mission_id": "string",
+    "mission_id": "string",
+    "publishing_type": "publish_product|publish_article|publish_video|publish_social_post",
+    "priority": "P0|P1|P2|P3",
+    "target_platform": "wordpress|youtube|facebook|linkedin|tiktok|multi_platform",
+    "target_provider": "wordpress_provider|youtube_provider|facebook_provider|linkedin_provider|tiktok_provider|null",
+    "content_ref": "string",
+    "approval_status": "not_required|waiting_approval|approved|rejected",
+    "runtime_status": "queued|running|completed|failed",
+    "created_at": "iso_datetime",
+    "updated_at": "iso_datetime"
+  },
+  "supported_publishing_types": [
+    {
+      "type": "publish_product",
+      "description": "发布产品页或产品内容",
+      "default_provider": "wordpress_provider",
+      "requires_approval": true
+    },
+    {
+      "type": "publish_article",
+      "description": "发布文章或博客内容",
+      "default_provider": "wordpress_provider",
+      "requires_approval": true
+    },
+    {
+      "type": "publish_video",
+      "description": "发布视频内容",
+      "default_provider": "youtube_provider",
+      "requires_approval": true
+    },
+    {
+      "type": "publish_social_post",
+      "description": "发布社交媒体内容",
+      "default_provider": "social_provider",
+      "requires_approval": true
+    }
+  ],
+  "rules": [
+    "Commander 只创建 Publishing Mission，不直接调用 Provider。",
+    "Publishing Center 根据 publishing_type 与 target_platform 选择 Provider。",
+    "Publishing Center 不直接执行外部 API，实际执行必须进入 Runtime Core 与 External Executor。",
+    "Publishing Mission 的运行状态必须映射到 Runtime Core 状态。",
+    "Publish、Public Upload、Delete、Update Published Content 必须经过审批。"
+  ]
+}
+

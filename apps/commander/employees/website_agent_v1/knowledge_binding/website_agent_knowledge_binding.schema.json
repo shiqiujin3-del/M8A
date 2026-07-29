@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Website Agent Knowledge Binding V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "product_id",
+    "product_name",
+    "product_category",
+    "target_market",
+    "buyer_persona",
+    "features",
+    "specs",
+    "applications",
+    "pain_points",
+    "differentiators",
+    "FAQ",
+    "media_requirements",
+    "internal_links",
+    "external_references",
+    "source_files",
+    "freshness_status",
+    "missing_check_result"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_category": {
+      "type": "string"
+    },
+    "target_market": {
+      "type": "string"
+    },
+    "buyer_persona": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "specs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "pain_points": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "differentiators": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "FAQ": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "media_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "internal_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "external_references": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "freshness_status": {
+      "type": "object"
+    },
+    "public_use_boundary": {
+      "type": "object"
+    },
+    "missing_check_result": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}

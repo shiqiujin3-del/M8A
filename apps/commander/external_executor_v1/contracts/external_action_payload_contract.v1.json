@@ -1,0 +1,47 @@
+{
+  "version": "external_action_payload_contract_v1",
+  "required_fields": [
+    "mission_id",
+    "product",
+    "market",
+    "language",
+    "article_draft",
+    "qa_report",
+    "qa_score",
+    "action",
+    "dry_run",
+    "publish",
+    "update_published_post",
+    "delete_post",
+    "send_gmail",
+    "upload_youtube"
+  ],
+  "fixed_values": {
+    "action": "create_wordpress_draft_only",
+    "publish": false,
+    "update_published_post": false,
+    "delete_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  },
+  "qa_gate": {
+    "minimum_score": 90,
+    "below_90": "blocked"
+  },
+  "example_payload": {
+    "mission_id": "mission_hk620_gap_005_external_references",
+    "product": "HK620",
+    "market": "美国",
+    "language": "English",
+    "article_draft": "HK620 local Website Agent draft output, generated locally for Draft-only handoff simulation.",
+    "qa_report": "本地 QA 通过但仍不允许发布；任何外部动作需要 CEO 单独授权。",
+    "qa_score": 92,
+    "action": "create_wordpress_draft_only",
+    "dry_run": true,
+    "publish": false,
+    "update_published_post": false,
+    "delete_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

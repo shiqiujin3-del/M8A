@@ -1,0 +1,43 @@
+{
+  "version": "trigger_engine_v1",
+  "mode": "config_driven_no_hardcode",
+  "rules": [
+    {
+      "trigger_id": "trigger_knowledge_ready_to_website_agent",
+      "when_event_type": "Knowledge Approved",
+      "source_agent": "Knowledge Agent",
+      "target_agent": "Website Agent",
+      "emit_event": "Mission Started",
+      "condition": "payload.knowledge_status == approved_internal or approved_public",
+      "enabled": true
+    },
+    {
+      "trigger_id": "trigger_qa_passed_to_ceo_approval",
+      "when_event_type": "QA Passed",
+      "source_agent": "QA Agent",
+      "target_agent": "Commander",
+      "emit_event": "CEO Approval Requested",
+      "condition": "payload.qa_score >= 90",
+      "enabled": true
+    },
+    {
+      "trigger_id": "trigger_ceo_approved_to_ready_to_publish",
+      "when_event_type": "CEO Approved",
+      "source_agent": "Commander",
+      "target_agent": "Publishing Agent",
+      "emit_event": "Ready To Publish",
+      "condition": "payload.approval_status == approved",
+      "enabled": true
+    },
+    {
+      "trigger_id": "trigger_qa_failed_to_blocked",
+      "when_event_type": "QA Failed",
+      "source_agent": "QA Agent",
+      "target_agent": "Owner Agent",
+      "emit_event": "Mission Failed",
+      "condition": "payload.qa_score < 90",
+      "enabled": true
+    }
+  ],
+  "safety": "Trigger Engine 只产生本地事件，不调用外部平台。"
+}

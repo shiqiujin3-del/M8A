@@ -1,0 +1,30 @@
+{
+  "version": "approval_audit_v1",
+  "generated_at": "2026-07-10T04:05:40Z",
+  "audit_events": [
+    {
+      "audit_id": "audit_approval_center_created_v1",
+      "at": "2026-07-10T04:05:40Z",
+      "actor": "Codex",
+      "event": "approval_center_created",
+      "result": "completed",
+      "external_call": false
+    },
+    {
+      "audit_id": "audit_policy_draft_auto_publish_delete_guard_v1",
+      "at": "2026-07-10T04:05:40Z",
+      "actor": "Approval Center V1",
+      "event": "approval_policy_registered",
+      "result": "draft_auto_publish_delete_requires_approval",
+      "external_call": false
+    },
+    {
+      "audit_id": "audit_runtime_approvals_written_v1",
+      "at": "2026-07-10T04:05:40Z",
+      "actor": "Approval Center V1",
+      "event": "runtime_approvals_written",
+      "result": "completed",
+      "external_call": false
+    }
+  ]
+}

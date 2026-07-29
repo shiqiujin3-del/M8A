@@ -1,0 +1,28 @@
+{
+  "version": "b_class_external_action_standard_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "class": "B_external_action",
+  "default_auto_execution": "prohibited",
+  "external_action_types": [
+    "n8n",
+    "WordPress",
+    "Gmail",
+    "YouTube",
+    "Google API",
+    "Publish",
+    "Delete",
+    "Update Published Content",
+    "Send Email",
+    "Upload Video"
+  ],
+  "rule": "所有 B 类外部动作默认禁止自动执行；必须 CEO 单独授权、Dry-run 通过、Safety Checklist 通过。",
+  "a_class_build_boundary": "A 类 Build 只能做本地代码、文档、Dashboard、数据结构、模拟验证，不触发外部平台。",
+  "safety": {
+    "auto_execute_external_action": false,
+    "publish": false,
+    "delete": false,
+    "update_published_content": false,
+    "send_email": false,
+    "upload_video": false
+  }
+}

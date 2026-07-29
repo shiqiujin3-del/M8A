@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "mission_id": "m2_sprint13_youtube_private_upload_20260710T090000Z",
+  "trace_id": "trace_m2_sprint13_youtube_private_upload_20260710T090000Z",
+  "execution_id": "78",
+  "executor": "youtube",
+  "workflow_id": "yt_private_upload_v1",
+  "workflow_name": "M8A_YOUTUBE_PRIVATE_UPLOAD_EXECUTOR_V1",
+  "action": "private_upload",
+  "status": "completed",
+  "started_at": "2026-07-10T09:26:05.755Z",
+  "finished_at": "2026-07-10T09:26:15.452Z",
+  "duration_ms": 9697,
+  "retry_count": 0,
+  "result": {
+    "type": "youtube_private_video",
+    "video_id": "xJOM_SlrfrE",
+    "title": "M8A YouTube Private Upload Test",
+    "privacy_status": "private",
+    "upload_status": "processed",
+    "channel_title": "SYUTECH Woodworking Machinery",
+    "category_id": "28",
+    "embeddable": false,
+    "public_stats_viewable": false,
+    "video_url": "https://www.youtube.com/watch?v=xJOM_SlrfrE"
+  },
+  "error": null,
+  "requires_execution_lookup": false,
+  "safety": {
+    "private_upload": true,
+    "public_upload": false,
+    "unlisted_upload": false,
+    "delete_video": false,
+    "modify_channel": false,
+    "modify_playlist": false,
+    "notify_subscribers": false
+  },
+  "verification": {
+    "verified_at": "2026-07-10T09:27:06.234Z",
+    "privacy_status": "private",
+    "upload_status": "processed",
+    "source": "YouTube Data API videos.get via n8n credential M8A YouTube Reserved"
+  },
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "requires_execution_lookup": false,
+    "normalization_source": "direct_n8n_cli_execution_response"
+  }
+}

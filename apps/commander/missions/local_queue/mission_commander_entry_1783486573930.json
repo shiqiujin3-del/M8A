@@ -1,0 +1,218 @@
+{
+  "mission": {
+    "mission_id": "mission_commander_entry_1783486573930",
+    "mission_name": "COMMANDER_FIRST_CHAIN_ENTRY_V1",
+    "mission_key": "COMMANDER_FIRST_CHAIN_ENTRY_V1",
+    "title": "打通第一条链路：Website Agent → n8n → QA Agent → Commander",
+    "objective": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+    "command_text": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+    "product": "HK620",
+    "market": "USA",
+    "priority": "P0",
+    "risk_level": "medium",
+    "status": "queued",
+    "created_at": "2026-07-08T04:56:13Z",
+    "updated_at": "2026-07-08T04:56:13Z",
+    "planner_version": "local_json_commander_entry_v1",
+    "input": {
+      "source": "dashboard_createMissionFromConsole",
+      "external_publish_allowed": false,
+      "wordpress_publish_allowed": false,
+      "gmail_send_allowed": false,
+      "youtube_upload_allowed": false
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "mission_commander_entry_1783486573930_task_001",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_order": 1,
+      "worker_name": "Website Agent",
+      "title": "Website Agent 生成客户可看的文章",
+      "action": "generate_customer_article",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T04:56:13Z",
+      "updated_at": "2026-07-08T04:56:13Z",
+      "input": {
+        "command_text": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783486573930_task_002",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_order": 2,
+      "worker_name": "n8n Execution Layer",
+      "title": "n8n 创建 WordPress Draft，不发布",
+      "action": "create_wordpress_draft",
+      "status": "queued",
+      "risk_level": "high",
+      "requires_approval": true,
+      "approval_required": true,
+      "approval_reason": "CEO approval required before WordPress Draft action. Publish remains forbidden.",
+      "retry_count": 0,
+      "created_at": "2026-07-08T04:56:13Z",
+      "updated_at": "2026-07-08T04:56:13Z",
+      "input": {
+        "command_text": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+        "external_platform_write": true,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783486573930_task_003",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_order": 3,
+      "worker_name": "QA Agent",
+      "title": "QA Agent 检查 Draft",
+      "action": "qa_review_wordpress_draft",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T04:56:13Z",
+      "updated_at": "2026-07-08T04:56:13Z",
+      "input": {
+        "command_text": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783486573930_task_004",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_order": 4,
+      "worker_name": "Commander",
+      "title": "Commander 返回验收结果",
+      "action": "return_acceptance_result",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T04:56:13Z",
+      "updated_at": "2026-07-08T04:56:13Z",
+      "input": {
+        "command_text": "打通第一条链路：Website Agent 生成客户可看的文章 → n8n 创建 WordPress Draft → QA Agent 检查 → Commander 返回验收结果。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "approval_id": "approval_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": "mission_commander_entry_1783486573930_task_002",
+      "artifact_id": null,
+      "approval_type": "wordpress_draft_only_approval",
+      "platform": "WordPress via n8n",
+      "action_type": "create_wordpress_draft_only",
+      "risk_level": "medium",
+      "status": "pending",
+      "approver_name": "石总",
+      "request_payload": {
+        "title": "n8n 创建 WordPress Draft",
+        "publish": false,
+        "delete": false,
+        "send": false,
+        "upload": false
+      },
+      "payload_snapshot": {
+        "reason": "Draft only. 禁止自动发布。",
+        "task_id": "mission_commander_entry_1783486573930_task_002"
+      },
+      "created_at": "2026-07-08T04:56:13Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": null,
+      "artifact_type": "mission_entry",
+      "title": "Commander 任务入口已打通",
+      "content_json": {
+        "summary": "总控台任务已写入本地 Commander queue，等待 Website Agent / n8n / QA 后续执行。",
+        "queue_path": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/commander_mission_queue.json",
+        "mission_file": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/mission_commander_entry_1783486573930.json",
+        "publish_allowed": false
+      },
+      "quality_score": 0.8,
+      "simulation_status": "queued_local_only",
+      "created_at": "2026-07-08T04:56:13Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1783486573931",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": null,
+      "event_type": "mission_status_changed",
+      "event_message": "Mission entered local JSON Commander queue.",
+      "created_at": "2026-07-08T04:56:13Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": "mission_commander_entry_1783486573930_task_001",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally.",
+      "created_at": "2026-07-08T04:56:13Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": "mission_commander_entry_1783486573930_task_002",
+      "event_type": "task_status_changed",
+      "event_message": "n8n Execution Layer task queued locally.",
+      "created_at": "2026-07-08T04:56:13Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": "mission_commander_entry_1783486573930_task_003",
+      "event_type": "task_status_changed",
+      "event_message": "QA Agent task queued locally.",
+      "created_at": "2026-07-08T04:56:13Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783486573930",
+      "mission_id": "mission_commander_entry_1783486573930",
+      "task_id": "mission_commander_entry_1783486573930_task_004",
+      "event_type": "task_status_changed",
+      "event_message": "Commander task queued locally.",
+      "created_at": "2026-07-08T04:56:13Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    }
+  ],
+  "updated_at": "2026-07-08T04:56:13Z"
+}

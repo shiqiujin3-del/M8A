@@ -1,0 +1,242 @@
+{
+  "version": "website_agent_knowledge_binding_v1",
+  "binding_id": "knowledge_binding_hk620_us_v1",
+  "product_id": "product_hk620",
+  "product_name": "HK620",
+  "product_category": "骨骼门线条专用封边 / 开槽 / 切断连续加工设备",
+  "target_market": "美国",
+  "buyer_persona": [
+    "美国门厂负责人",
+    "家具厂生产负责人",
+    "装饰线条加工客户",
+    "寻找骨骼门线条连续加工方案的工厂管理者"
+  ],
+  "features": [
+    {
+      "name": "先封边",
+      "status": "approved_internal",
+      "public_use_allowed": false,
+      "source": "knowledge/products/HK620/cards/Engineering/001_why_edge_banding_must_be_first.md"
+    },
+    {
+      "name": "再开槽",
+      "status": "approved_internal",
+      "public_use_allowed": false,
+      "source": "knowledge/products/HK620/cards/Engineering/003_hk620_process_flow.md"
+    },
+    {
+      "name": "最后切断",
+      "status": "approved_internal",
+      "public_use_allowed": false,
+      "source": "knowledge/products/HK620/cards/Engineering/003_hk620_process_flow.md"
+    },
+    {
+      "name": "连续工艺路线",
+      "status": "approved_internal",
+      "public_use_allowed": false,
+      "source": "docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md"
+    }
+  ],
+  "specs": [
+    {
+      "field": "power",
+      "status": "missing",
+      "draft_impact": "不阻止概念草稿；阻止技术参数表"
+    },
+    {
+      "field": "voltage",
+      "status": "missing",
+      "draft_impact": "不阻止概念草稿；降低技术可信度"
+    },
+    {
+      "field": "machine_size",
+      "status": "missing",
+      "draft_impact": "不阻止概念草稿；降低买家评估完整度"
+    },
+    {
+      "field": "workpiece_size_range",
+      "status": "missing",
+      "draft_impact": "阻止规格型草稿和应用边界声明"
+    },
+    {
+      "field": "processing_speed",
+      "status": "missing",
+      "draft_impact": "阻止产能/效率量化声明"
+    }
+  ],
+  "applications": [
+    {
+      "name": "骨骼门线条加工",
+      "status": "approved_internal",
+      "public_use_allowed": false
+    },
+    {
+      "name": "门厂探索新产品工艺",
+      "status": "approved_internal",
+      "public_use_allowed": false
+    },
+    {
+      "name": "需要连续封边、开槽、切断流程的线条类工件",
+      "status": "approved_internal",
+      "public_use_allowed": false
+    }
+  ],
+  "pain_points": [
+    {
+      "name": "短料先切断后封边，送料、夹持、压贴和连续加工稳定性下降",
+      "status": "approved_internal"
+    },
+    {
+      "name": "人工或分段加工效率和一致性不足",
+      "status": "approved_internal"
+    },
+    {
+      "name": "门厂需要差异化骨骼门工艺方案",
+      "status": "approved_internal"
+    }
+  ],
+  "differentiators": [
+    {
+      "name": "工艺顺序本身：先封边、再开槽、最后切断",
+      "status": "approved_internal",
+      "warning": "不得写成行业唯一、绝对第一或量化优势。"
+    },
+    {
+      "name": "聚焦骨骼门线条连续加工问题",
+      "status": "approved_internal",
+      "warning": "不得扩大为所有封边场景通用。"
+    }
+  ],
+  "FAQ": [
+    {
+      "question": "HK620 用于什么？",
+      "answer": "内部资料显示，HK620 与骨骼门线条加工相关。公开使用仍需产品/工程审核。",
+      "status": "approved_internal"
+    },
+    {
+      "question": "HK620 的工艺顺序是什么？",
+      "answer": "内部资料显示为先封边、再开槽、最后切断。公开使用仍需审核。",
+      "status": "approved_internal"
+    },
+    {
+      "question": "HK620 是否适合所有门厂？",
+      "answer": "不能这样声明。适用性取决于材料、线条尺寸、工艺设计和生产要求。",
+      "status": "safe_boundary"
+    }
+  ],
+  "media_requirements": [
+    {
+      "type": "product_image",
+      "status": "missing",
+      "impact": "降低 QA 分；公开页面不应使用未批准图片。"
+    },
+    {
+      "type": "detail_image",
+      "status": "missing",
+      "impact": "降低工艺解释效果。"
+    },
+    {
+      "type": "demo_video",
+      "status": "missing",
+      "impact": "降低可信度；不得虚构视频证据。"
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "HK620 Source Library",
+      "path": "knowledge/products/HK620/INDEX.md",
+      "status": "available"
+    },
+    {
+      "label": "HK620 Golden Knowledge V3",
+      "path": "docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md",
+      "status": "available"
+    },
+    {
+      "label": "HK620 Knowledge Gap Report",
+      "path": "docs/HK620_KNOWLEDGE_GAP_REPORT.md",
+      "status": "available"
+    }
+  ],
+  "external_references": [
+    {
+      "label": "Official product page URL",
+      "url": null,
+      "status": "missing_unverified",
+      "impact": "降低 SEO 外链/证据分，不阻止本地草稿。"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "knowledge/products/HK620/INDEX.md",
+      "role": "统一知识中心产品目录"
+    },
+    {
+      "path": "docs/HK620_GOLDEN_KNOWLEDGE_RECORD_V3_APPROVED_INTERNAL.md",
+      "role": "approved_internal 主知识记录"
+    },
+    {
+      "path": "docs/HK620_KNOWLEDGE_GAP_REPORT.md",
+      "role": "缺失资料来源"
+    },
+    {
+      "path": "knowledge/products/HK620/cards/Engineering/001_why_edge_banding_must_be_first.md",
+      "role": "工艺顺序来源"
+    },
+    {
+      "path": "knowledge/products/HK620/cards/Engineering/003_hk620_process_flow.md",
+      "role": "流程来源"
+    },
+    {
+      "path": "knowledge/products/HK620/cards/Market/003_why_hk620_has_market_demand.md",
+      "role": "市场需求内部逻辑"
+    },
+    {
+      "path": "knowledge/products/HK620/cards/Sales/001_why_customers_buy_hk620.md",
+      "role": "销售逻辑内部来源"
+    }
+  ],
+  "freshness_status": {
+    "knowledge_date": "2026-07-06",
+    "binding_date": "2026-07-09",
+    "status": "fresh_for_internal_draft_only",
+    "public_approval_status": "not_public_approved",
+    "coverage": "55% internal knowledge coverage, 0% public approved coverage"
+  },
+  "public_use_boundary": {
+    "allowed_for_internal_draft": true,
+    "allowed_for_public_claims": false,
+    "forbidden_claims": [
+      "行业唯一",
+      "绝对第一",
+      "量化效率",
+      "ROI / 利润 / 价格",
+      "公开客户名称",
+      "已落地区域",
+      "38°-45° 参数",
+      "伺服升级路线图",
+      "精确短料限制值"
+    ]
+  },
+  "missing_check_result": {
+    "can_generate_local_concept_draft": true,
+    "can_generate_public_technical_page": false,
+    "can_publish_without_review": false,
+    "blocking_gaps": [
+      "公开使用审批缺失",
+      "完整技术规格缺失",
+      "产品图片/视频缺失",
+      "客户案例和外部证据未验证"
+    ],
+    "qa_score_risk": "缺少规格、媒体、外部证据和公开审批时，QA V2 必须扣分，并禁止进入发布流程。"
+  },
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

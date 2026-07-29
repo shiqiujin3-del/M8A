@@ -1,0 +1,117 @@
+{
+  "version": "employee_work_queue_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "employees": {
+    "Knowledge Agent": {
+      "employee_name": "Knowledge Agent",
+      "current_task": "HK620 资料缺口：hk620_gap_001_public_technical_specs",
+      "todo_count": 6,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 6,
+      "mission_ids": [
+        "mission_hk620_gap_001_public_technical_specs",
+        "mission_hk620_gap_002_product_images",
+        "mission_hk620_gap_003_product_videos",
+        "mission_hk620_gap_004_customer_cases",
+        "mission_hk620_gap_007_service_faq",
+        "mission_hk620_gap_008_delivery_warranty_price_policy",
+        "ai_employee_registry_v2"
+      ]
+    },
+    "QA Agent": {
+      "employee_name": "QA Agent",
+      "current_task": "HK620 资料缺口：hk620_gap_009_public_approval_record",
+      "todo_count": 10,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 10,
+      "mission_ids": [
+        "mission_hk620_gap_009_public_approval_record",
+        "mission_hk620_gap_010_public_claim_boundary",
+        "qa_agent_hk620_wordpress_draft_review_v1",
+        "mission_validate_hk620_gap_001_public_technical_specs",
+        "mission_validate_hk620_gap_002_product_images",
+        "mission_validate_hk620_gap_003_product_videos",
+        "mission_validate_hk620_gap_004_customer_cases",
+        "mission_validate_hk620_gap_007_service_faq",
+        "mission_validate_hk620_gap_008_delivery_warranty_price_policy",
+        "ceo_review_list_v1",
+        "mission_validate_hk620_gap_005_external_references",
+        "mission_validate_hk620_gap_006_internal_links"
+      ]
+    },
+    "Automation Agent": {
+      "employee_name": "Automation Agent",
+      "current_task": "今日外部平台授权收尾",
+      "todo_count": 1,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 1,
+      "mission_ids": [
+        "external_platform_authorization_phase_v1",
+        "n8n_workflow_inventory_v1",
+        "worker_runner_local_integration_v1",
+        "m8a_platform_authorization_today_v1",
+        "external_api_connection_readiness_v1",
+        "n8n_local_connection_v1",
+        "n8n_workflow_binding_v1"
+      ]
+    },
+    "Website Agent": {
+      "employee_name": "Website Agent",
+      "current_task": "HK620 资料缺口：hk620_gap_005_external_references",
+      "todo_count": 2,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 2,
+      "mission_ids": [
+        "mission_commander_entry_1783488651135",
+        "website_agent_hk620_first_business_draft_v1",
+        "wordpress_draft_creation_test_v1",
+        "ai_employee_workbench_v1",
+        "m8n_commander_console_runtime_data_v1",
+        "platform_connector_console_v1",
+        "mission_hk620_gap_005_external_references",
+        "mission_hk620_gap_006_internal_links"
+      ]
+    },
+    "Research Agent": {
+      "employee_name": "Research Agent",
+      "current_task": "暂无当前任务",
+      "todo_count": 0,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 0,
+      "mission_ids": [
+        "commander_runtime_v2_bridge_001",
+        "m8n_daily_manager_brief_v1",
+        "machine_readable_task_queue_v1"
+      ]
+    },
+    "Commander Reporting Agent": {
+      "employee_name": "Commander Reporting Agent",
+      "current_task": "暂无当前任务",
+      "todo_count": 0,
+      "today_completed": 0,
+      "average_runtime": "local_static_execution",
+      "failed_count": 0,
+      "average_qa_score": 0,
+      "blocked_count": 0,
+      "mission_ids": [
+        "report_index_runtime_v2_update_v1"
+      ]
+    }
+  },
+  "source": "runtime/global_mission_queue.v1.json"
+}

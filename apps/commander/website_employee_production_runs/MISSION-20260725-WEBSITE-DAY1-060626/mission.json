@@ -1,0 +1,21 @@
+{
+  "mission_id": "MISSION-20260725-WEBSITE-DAY1-060626",
+  "trace_id": "TRACE-20260725-WEBSITE-DAY1-060626",
+  "mission_type": "website_employee_production_day1",
+  "priority": "P0",
+  "employee": "Website Employee",
+  "product": "HK620",
+  "language": "en",
+  "target_market": "US",
+  "target_platform": "WordPress Draft",
+  "expected_output": "Create one new WordPress Draft only and record evidence.",
+  "created_at": "2026-07-25T06:06:26.129173+00:00",
+  "status": "created",
+  "retry_count": 0,
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false
+  }
+}

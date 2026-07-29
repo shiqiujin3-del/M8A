@@ -1,0 +1,475 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://m8a.local/schemas/execution-response-contract-v1.schema.json",
+  "title": "M8A Execution Response Contract V1",
+  "description": "统一外部执行器返回协议。用于 Commander / External Executor / n8n / WordPress Draft-only 及未来外部平台动作的同步结果返回。保持旧 webhook response 向后兼容。",
+  "type": "object",
+  "required": [
+    "success",
+    "mission_id",
+    "executor",
+    "status",
+    "result",
+    "error"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "执行是否成功。true 表示外部执行已完成并产生可验收结果；false 表示失败或被阻断。"
+    },
+    "mission_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "execution_id": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "外部执行系统返回的执行 ID，例如 n8n execution id。"
+    },
+    "executor": {
+      "type": "string",
+      "enum": [
+        "n8n",
+        "wordpress",
+        "gmail",
+        "youtube",
+        "facebook",
+        "linkedin",
+        "aitoearn",
+        "google_api",
+        "local_stub",
+        "other"
+      ]
+    },
+    "workflow_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "workflow_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "action_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "例如 create_wordpress_draft_only、send_gmail_draft、upload_youtube_draft 等。"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "started",
+        "running",
+        "completed",
+        "failed",
+        "blocked",
+        "retry_queued",
+        "cancelled"
+      ]
+    },
+    "started_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "finished_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "duration_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "result": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "wordpress_draft",
+                "gmail_draft",
+                "youtube_upload",
+                "facebook_post",
+                "linkedin_post",
+                "aitoearn_task",
+                "google_api_result",
+                "generic_external_result"
+              ]
+            },
+            "post_id": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "post_status": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "draft",
+                "published",
+                "private",
+                "pending",
+                "failed",
+                null
+              ]
+            },
+            "draft_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "edit_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "slug": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "external_id": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "external_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "platform_status": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "raw_result_ref": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "可选，仅存本地引用，不强制把大响应体塞进主返回。"
+            }
+          }
+        }
+      ]
+    },
+    "error": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "error_code",
+            "error_message",
+            "retryable",
+            "retry_count"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "error_code": {
+              "type": "string"
+            },
+            "error_message": {
+              "type": "string"
+            },
+            "retryable": {
+              "type": "boolean"
+            },
+            "retry_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "http_status": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "failed_node": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "details": {
+              "type": [
+                "object",
+                "array",
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "draft_only": {
+          "type": "boolean"
+        },
+        "publish": {
+          "type": "boolean"
+        },
+        "delete_post": {
+          "type": "boolean"
+        },
+        "update_published_post": {
+          "type": "boolean"
+        },
+        "send_gmail": {
+          "type": "boolean"
+        },
+        "upload_youtube": {
+          "type": "boolean"
+        },
+        "old_workflow_called": {
+          "type": "boolean"
+        },
+        "prohibited_workflow": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "description": "向后兼容区域。旧 workflow 可继续返回 {message: Workflow was started}；External Executor 可把 legacy_webhook_response 存在这里。",
+      "additionalProperties": true,
+      "properties": {
+        "contract_version": {
+          "type": "string",
+          "const": "execution_response_contract_v1"
+        },
+        "legacy_webhook_response": {
+          "type": [
+            "object",
+            "string",
+            "null"
+          ]
+        },
+        "requires_execution_lookup": {
+          "type": "boolean"
+        },
+        "normalization_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "direct_webhook_response",
+            "n8n_execution_lookup",
+            "manual_audit_lookup",
+            null
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "success": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "completed"
+          },
+          "error": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "execution_id",
+          "started_at",
+          "finished_at",
+          "duration_ms"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "success": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "error"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "success": true,
+      "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+      "trace_id": "trace_real_wp_draft_20260710T015825",
+      "execution_id": 33,
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "completed",
+      "started_at": "2026-07-10T02:57:21.037Z",
+      "finished_at": "2026-07-10T02:57:23.610Z",
+      "duration_ms": 2573,
+      "retry_count": 1,
+      "result": {
+        "type": "wordpress_draft",
+        "post_id": 443,
+        "post_status": "draft",
+        "draft_url": "https://woodmachinerynetwork.com/?p=443",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=443&action=edit",
+        "title": "HK620 Draft Test from M8A",
+        "slug": "hk620-draft-test-from-m8a",
+        "external_id": 443,
+        "external_url": "https://woodmachinerynetwork.com/?p=443",
+        "platform_status": "draft"
+      },
+      "error": null,
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": {
+          "message": "Workflow was started"
+        },
+        "requires_execution_lookup": true,
+        "normalization_source": "n8n_execution_lookup"
+      }
+    },
+    {
+      "success": false,
+      "mission_id": "mission_example_failed",
+      "trace_id": "trace_example_failed",
+      "execution_id": null,
+      "executor": "n8n",
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "action_type": "create_wordpress_draft_only",
+      "status": "failed",
+      "started_at": "2026-07-10T00:00:00Z",
+      "finished_at": "2026-07-10T00:00:02Z",
+      "duration_ms": 2000,
+      "retry_count": 1,
+      "result": null,
+      "error": {
+        "error_code": "N8N_WEBHOOK_EXECUTION_FAILED",
+        "error_message": "n8n workflow did not return a WordPress Draft result.",
+        "retryable": true,
+        "retry_count": 1,
+        "http_status": 502,
+        "failed_node": null,
+        "details": null
+      },
+      "safety": {
+        "draft_only": true,
+        "publish": false,
+        "delete_post": false,
+        "update_published_post": false,
+        "send_gmail": false,
+        "upload_youtube": false,
+        "old_workflow_called": false,
+        "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+      },
+      "compatibility": {
+        "contract_version": "execution_response_contract_v1",
+        "legacy_webhook_response": null,
+        "requires_execution_lookup": false,
+        "normalization_source": "direct_webhook_response"
+      }
+    }
+  ]
+}

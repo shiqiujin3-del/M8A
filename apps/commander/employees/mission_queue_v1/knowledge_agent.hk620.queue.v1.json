@@ -1,0 +1,108 @@
+{
+  "version": "employee_mission_queue_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "employee": {
+    "employee_id": "knowledge_agent",
+    "employee_name": "Knowledge Agent",
+    "queue_count": 6,
+    "queued_count": 6,
+    "qa_pending_count": 0,
+    "blocked_public_publish_count": 6,
+    "current_task": "完成 HK620 缺口任务：公开技术规格。补齐可公开使用的 HK620 技术规格，包括 power、voltage、machine_size、weight、processing_speed、edge_band_thickness、workpiece_size_range、control_system、glue_system、cutting_system、grooving_system、air_pressure、packing_size。",
+    "queue_items": [
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_001_public_technical_specs",
+        "mission_id": "mission_hk620_gap_001_public_technical_specs",
+        "source_gap_id": "hk620_gap_001_public_technical_specs",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P0",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：公开技术规格。补齐可公开使用的 HK620 技术规格，包括 power、voltage、machine_size、weight、processing_speed、edge_band_thickness、workpiece_size_range、control_system、glue_system、cutting_system、grooving_system、air_pressure、packing_size。",
+        "acceptance_criteria": "形成可引用规格表；每个参数有来源文件或审核人；标明 public_use_allowed=true；QA Agent 验收无矛盾。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_002_product_images",
+        "mission_id": "mission_hk620_gap_002_product_images",
+        "source_gap_id": "hk620_gap_002_product_images",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P1",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：产品图片。补齐 HK620 产品主图、细节图、应用图，并确认可用于网站草稿和公开页面。",
+        "acceptance_criteria": "至少 1 张主图、2 张细节图、1 张应用图；有文件路径、版权/使用许可、Alt 建议；QA Agent 确认可用。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_003_product_videos",
+        "mission_id": "mission_hk620_gap_003_product_videos",
+        "source_gap_id": "hk620_gap_003_product_videos",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P1",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。",
+        "acceptance_criteria": "至少 1 条 demo 或操作视频；有来源、使用边界、关键画面说明；QA Agent 确认不含未审客户/敏感信息。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_004_customer_cases",
+        "mission_id": "mission_hk620_gap_004_customer_cases",
+        "source_gap_id": "hk620_gap_004_customer_cases",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P1",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：客户案例。补齐可公开或可匿名使用的客户案例、应用场景或验收故事。",
+        "acceptance_criteria": "至少 1 个可公开或匿名案例；包含行业、应用、问题、解决方向；不得包含未经授权客户名称；QA Agent 验收。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_007_service_faq",
+        "mission_id": "mission_hk620_gap_007_service_faq",
+        "source_gap_id": "hk620_gap_007_service_faq",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P1",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：服务 FAQ。补齐 HK620 安装、维护、常见问题、故障排除和使用边界。",
+        "acceptance_criteria": "至少 8 条服务 FAQ；包含问题、回答、适用条件、禁止承诺；QA Agent 确认不虚构保修或技术承诺。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_knowledge_agent_hk620_gap_008_delivery_warranty_price_policy",
+        "mission_id": "mission_hk620_gap_008_delivery_warranty_price_policy",
+        "source_gap_id": "hk620_gap_008_delivery_warranty_price_policy",
+        "assigned_agent": "Knowledge Agent",
+        "priority": "P1",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：交付/保修/价格政策。明确 HK620 交付周期、保修范围、报价表达边界和价格政策。",
+        "acceptance_criteria": "形成可公开表达和不可公开表达两类话术；价格/ROI/利润不得虚构；QA Agent 验收。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      }
+    ]
+  },
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

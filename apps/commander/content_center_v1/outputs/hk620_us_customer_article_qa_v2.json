@@ -1,0 +1,32 @@
+{
+  "qa_report_id": "qa_hk620_us_customer_article_v2",
+  "created_at": "2026-07-12T03:04:53Z",
+  "agent": "QA Agent",
+  "language": "zh-CN",
+  "article": "hk620_us_customer_article_v2.md",
+  "qa_score": 93,
+  "gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+  "checks": {
+    "客户可读性": "通过，文章从美国门厂、家具厂、装饰线条客户的问题出发。",
+    "真实资料使用": "通过，已加入 PUR 胶、380V、20kW、0.6 气压、台达控制、7.5 米、3 吨、30 天交付、3+3 个月验证、已批量生产。",
+    "风险控制": "通过，对 70、18 米、不限最大、不限基材等未确认单位使用谨慎措辞。",
+    "营销可信度": "通过，强调验证周期和批量生产，而不是空泛功能。",
+    "发布准备": "未通过公开发布，仍缺图片视频、公开案例授权、网站链接和最终 CTA。"
+  },
+  "blocking_items_before_public_publish": [
+    "参数单位最终确认",
+    "客户名称是否可公开确认",
+    "图片/视频素材补齐",
+    "产品页/询盘入口补齐"
+  ],
+  "recommendation": "可提交 CEO Review，可作为 WordPress Draft-only 草稿；暂不建议公开发布。",
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

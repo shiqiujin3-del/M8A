@@ -1,0 +1,36 @@
+{
+  "qa_report_id": "qa_hk620_us_customer_article_v3_pre_publish",
+  "created_at": "2026-07-12T03:40:41Z",
+  "agent": "QA Agent",
+  "language": "zh-CN",
+  "qa_score": 94,
+  "gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+  "checks": {
+    "标题": "通过，标题面向门厂、家具厂、装饰线条生产客户。",
+    "Meta Description": "通过，包含 HK620、PUR glue、目标客户和产品定位。",
+    "H1": "通过，清晰表达产品和应用场景。",
+    "结构": "通过，包含 Overview、适用客户、生产问题、参数、验证、FAQ、CTA。",
+    "真实性": "通过，已使用石总填写资料；未编造图片、案例细节或链接。",
+    "风险": "可控，70、18m、0.6、包装尺寸仍需最终单位确认。",
+    "发布状态": "暂不建议公开发布；可进入 WordPress Draft-only 或 CEO Review。"
+  },
+  "blocking_items_before_public_publish": [
+    "70 的单位",
+    "18 米速度单位",
+    "0.6 气压单位",
+    "包装尺寸 7.8 的完整长宽高",
+    "客户案例公开授权",
+    "产品图片/视频",
+    "产品页/询盘链接"
+  ],
+  "recommendation": "建议先作为 WordPress Draft-only 草稿进入内部审核，不公开发布。",
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

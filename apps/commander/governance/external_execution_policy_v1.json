@@ -1,0 +1,46 @@
+{
+  "policy_id": "m8a_external_execution_n8n_only_v1",
+  "policy_name": "M8A 外部平台统一 n8n 执行路线 V1",
+  "effective_date": "2026-07-07",
+  "approved_by": "CEO instruction in Codex thread",
+  "status": "active",
+  "principle": "所有外部平台生产动作统一通过 n8n 执行层，不再走零散脚本、直接 REST API 或员工私有通道。",
+  "official_route": [
+    "CEO / Commander",
+    "AI 员工",
+    "n8n 工作流",
+    "外部平台 API"
+  ],
+  "allowed_external_actions": {
+    "through_n8n_only": true,
+    "direct_rest_api_production_write": false,
+    "direct_script_production_write": false,
+    "browser_manual_action_by_ai": false,
+    "local_mock_or_read_only_diagnostic": true
+  },
+  "exceptions": [
+    {
+      "exception_type": "read_only_diagnostic",
+      "allowed": true,
+      "approval_required": false,
+      "description": "允许只读检查、状态探测、报告生成，不写入外部平台。"
+    },
+    {
+      "exception_type": "emergency_manual_ceo_action",
+      "allowed": true,
+      "approval_required": true,
+      "description": "CEO 亲自手工登录平台处理，不视为 AI 员工自动执行路线。"
+    }
+  ],
+  "platform_requirements": [
+    "每个平台必须在 n8n 中建立凭证或明确标记为暂不可接入。",
+    "公开发布、发送邮件、删除内容、改账号设置仍需 CEO 明确批准。",
+    "AI 员工不得保存、读取或复述真实密码、密钥、令牌。",
+    "旧 wordpress_draft.py 直连路线只保留为备用诊断，不作为正式生产上传路线。"
+  ],
+  "wordpress_current_state": {
+    "route": "n8n WordPress node only",
+    "status": "blocked_until_credential_permission_fixed",
+    "next_action": "重新生成或修正 WordPress Application Password，并确认账号具备创建草稿权限。"
+  }
+}

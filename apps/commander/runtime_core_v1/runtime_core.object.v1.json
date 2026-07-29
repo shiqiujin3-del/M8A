@@ -1,0 +1,88 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Runtime Core Object V1",
+  "purpose": "统一 Mission、Execution、Retry、Progress、Audit、Event 的运行对象，避免不同 Provider 各自维护状态。",
+  "runtime_object": {
+    "mission": {
+      "mission_id": "string",
+      "mission_type": "string",
+      "priority": "P0|P1|P2|P3",
+      "owner": "string",
+      "status": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout",
+      "created_at": "iso_datetime",
+      "updated_at": "iso_datetime"
+    },
+    "execution": {
+      "execution_id": "string",
+      "mission_id": "string",
+      "provider": "wordpress|youtube|gmail|google_search_console|ga4|facebook|linkedin|custom",
+      "action": "string",
+      "status": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout",
+      "started_at": "iso_datetime|null",
+      "finished_at": "iso_datetime|null",
+      "duration_ms": "number|null"
+    },
+    "state": {
+      "current": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout",
+      "previous": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout|null",
+      "reason": "string|null",
+      "changed_at": "iso_datetime"
+    },
+    "provider": {
+      "provider_id": "string",
+      "provider_name": "string",
+      "platform": "string",
+      "capability": "execute|cancel|query|resume",
+      "readonly": "boolean",
+      "external_action": "boolean"
+    },
+    "resource": {
+      "resource_id": "string|null",
+      "resource_url": "string|null",
+      "resource_type": "wordpress_draft|youtube_video|gmail_draft|analytics_report|search_console_report|file|unknown",
+      "resource_status": "draft|private|unlisted|public|created|none|unknown"
+    },
+    "progress": {
+      "percent": "number",
+      "current_step": "string|null",
+      "bytes_total": "number|null",
+      "bytes_done": "number|null",
+      "updated_at": "iso_datetime"
+    },
+    "retry": {
+      "retry_count": "number",
+      "max_retry": "number",
+      "retry_policy": "none|fixed|exponential|manual",
+      "next_retry_at": "iso_datetime|null",
+      "last_retry_reason": "string|null"
+    },
+    "error": {
+      "has_error": "boolean",
+      "error_code": "string|null",
+      "error_message": "string|null",
+      "retryable": "boolean",
+      "failed_at": "iso_datetime|null"
+    },
+    "result": {
+      "success": "boolean",
+      "provider": "string",
+      "resource_id": "string|null",
+      "resource_url": "string|null",
+      "raw_response_ref": "string|null",
+      "summary": "string|null"
+    },
+    "event": {
+      "last_event_id": "string|null",
+      "event_store_required": true,
+      "audit_required": true
+    }
+  },
+  "rules": [
+    "Runtime Object 是 Provider、Mission Queue、Dashboard、Audit 之间唯一共享对象。",
+    "Provider 不允许直接修改 Dashboard。",
+    "Provider 不允许直接修改 Mission 生命周期，只能返回统一 Execution Result。",
+    "Dashboard 与 Audit 只读取 Runtime Core 标准字段，不解析 Provider 私有字段。",
+    "所有外部执行任务必须写入 Event Store 与 Audit。"
+  ]
+}
+

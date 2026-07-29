@@ -1,0 +1,92 @@
+{
+  "version": "website_agent_product_knowledge_missing_checklist_v1",
+  "purpose": "区分哪些产品资料缺失会阻止 Website Agent 草稿，哪些只降低 QA 分。",
+  "blocks_local_draft": [
+    {
+      "field": "product_id / product_name",
+      "reason": "没有明确产品身份会导致草稿对象错误。"
+    },
+    {
+      "field": "product_category",
+      "reason": "没有产品类别无法选择正确文章结构。"
+    },
+    {
+      "field": "target_market",
+      "reason": "没有市场无法选择语言、买家语境和合规边界。"
+    },
+    {
+      "field": "buyer_persona 或 applications",
+      "reason": "没有读者和应用场景会导致内容不可用。"
+    },
+    {
+      "field": "至少一个 approved_internal source_file",
+      "reason": "没有来源文件时 Website Agent 不得猜产品事实。"
+    },
+    {
+      "field": "forbidden_claims / public_use_boundary",
+      "reason": "没有禁区会导致外部传播风险。"
+    }
+  ],
+  "does_not_block_local_draft_but_lowers_qa": [
+    {
+      "field": "完整技术规格",
+      "qa_impact": "降低技术完整度；阻止参数表和规格型页面。"
+    },
+    {
+      "field": "产品图片 / 细节图 / 应用图",
+      "qa_impact": "降低 Media 和 Image Alt 分。"
+    },
+    {
+      "field": "产品 demo 视频",
+      "qa_impact": "降低证据和多媒体完整度。"
+    },
+    {
+      "field": "外部参考链接",
+      "qa_impact": "降低 External Links 分。"
+    },
+    {
+      "field": "内部链接目标",
+      "qa_impact": "降低 Internal Links 分。"
+    },
+    {
+      "field": "客户案例 / 公开证据",
+      "qa_impact": "降低可信度；不得写客户结果。"
+    },
+    {
+      "field": "服务 FAQ / 故障排除",
+      "qa_impact": "降低 FAQ 和售后完整度。"
+    },
+    {
+      "field": "精确交付、保修、价格政策",
+      "qa_impact": "降低销售转化信息；不得虚构。"
+    }
+  ],
+  "blocks_publish_or_external_handoff": [
+    {
+      "field": "CEO approval",
+      "reason": "未审批不得进入发布或外部执行。"
+    },
+    {
+      "field": "QA score >= 90",
+      "reason": "低于 90 禁止发布流程。"
+    },
+    {
+      "field": "public approval status",
+      "reason": "HK620 当前不是 public approved，只能做内部/草稿用途。"
+    },
+    {
+      "field": "Draft-only authorization",
+      "reason": "真实 n8n / WordPress Draft-only 仍需单独授权。"
+    }
+  ],
+  "automatic_check_steps": [
+    "读取 binding JSON",
+    "检查必填字段",
+    "检查 source_files 是否存在",
+    "检查 freshness_status",
+    "检查 public_use_boundary",
+    "生成缺失项摘要",
+    "把缺失项写入 Mission Log"
+  ],
+  "safety": "缺失检查只读取本地文件，不调用 n8n，不调用 WordPress，不发布。"
+}

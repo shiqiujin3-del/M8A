@@ -1,0 +1,83 @@
+{
+  "mission": {
+    "mission_id": "mission_website_contact_1783670767345",
+    "mission_name": "WEBSITE_CONTACT_SALES_INQUIRY",
+    "mission_key": "CONTACT_WEBHOOK_BRIDGE_V1",
+    "title": "Website Contact Form 销售询盘 - M8A Test Buyer / HK620 Edge Banding Machine",
+    "objective": "Create sales_inquiry Mission from Website Contact Form submission. Do not auto reply, quote, or call Gmail Draft.",
+    "command_text": "Production Contact Form Gateway V1 real admin-ajax submission test. Please ignore.",
+    "mission_type": "sales_inquiry",
+    "task_type": "sales_inquiry",
+    "source": "website_contact",
+    "product": "HK620 Edge Banding Machine",
+    "market": "USA",
+    "priority": "normal",
+    "risk_level": "low",
+    "status": "created",
+    "created_at": "2026-07-10T08:06:07Z",
+    "updated_at": "2026-07-10T08:06:07Z",
+    "planner_version": "contact_webhook_bridge_v1_existing_commander_api",
+    "input": {
+      "inquiry_id": "WMN-INQ-3",
+      "submission_id": "3",
+      "submitted_time": "2026-07-10T08:06:07+00:00",
+      "name": "M8A Test Buyer",
+      "company": "M8A Test Company",
+      "country": "USA",
+      "email": "m8a.test@example.com",
+      "whatsapp": "+1 555 0100",
+      "interested_machine": "HK620 Edge Banding Machine",
+      "message": "Production Contact Form Gateway V1 real admin-ajax submission test. Please ignore.",
+      "source": "website_contact",
+      "external_actions_executed": false,
+      "auto_reply_executed": false,
+      "quotation_generated": false,
+      "gmail_draft_created": false
+    }
+  },
+  "tasks": [],
+  "approvals": [],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_contact_payload_1783670767345",
+      "mission_id": "mission_website_contact_1783670767345",
+      "task_id": null,
+      "artifact_type": "website_contact_payload",
+      "title": "Website Contact Form Payload",
+      "content_json": {
+        "inquiry_id": "WMN-INQ-3",
+        "submission_id": "3",
+        "submitted_time": "2026-07-10T08:06:07+00:00",
+        "name": "M8A Test Buyer",
+        "company": "M8A Test Company",
+        "country": "USA",
+        "email": "m8a.test@example.com",
+        "whatsapp": "+1 555 0100",
+        "interested_machine": "HK620 Edge Banding Machine",
+        "message": "Production Contact Form Gateway V1 real admin-ajax submission test. Please ignore.",
+        "source": "Website Contact Form"
+      },
+      "quality_score": 1.0,
+      "simulation_status": "real_contact_submission_received",
+      "created_at": "2026-07-10T08:06:07Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1783670767345",
+      "mission_id": "mission_website_contact_1783670767345",
+      "task_id": null,
+      "event_type": "mission_created_from_website_contact",
+      "event_message": "Website Contact Form submission created sales_inquiry Mission. No downstream workflow executed.",
+      "created_at": "2026-07-10T08:06:07Z",
+      "metadata": {
+        "inquiry_id": "WMN-INQ-3",
+        "submission_id": "3",
+        "source": "website_contact",
+        "auto_reply_executed": false,
+        "gmail_draft_created": false
+      }
+    }
+  ],
+  "updated_at": "2026-07-10T08:06:07Z"
+}

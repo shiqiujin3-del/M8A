@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CEO External Action Authorization Protocol V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mission_id",
+    "action_id",
+    "platform",
+    "action_type",
+    "risk_level",
+    "payload_summary",
+    "safety_checklist",
+    "rollback_plan",
+    "requested_by",
+    "approved_by",
+    "approval_time",
+    "expiration",
+    "one_time_token",
+    "idempotency_key"
+  ],
+  "properties": {
+    "mission_id": {
+      "type": "string"
+    },
+    "action_id": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "action_type": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "prohibited"
+      ]
+    },
+    "payload_summary": {
+      "type": "string"
+    },
+    "safety_checklist": {
+      "type": "object"
+    },
+    "rollback_plan": {
+      "type": "object"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approval_time": {
+      "type": "string"
+    },
+    "expiration": {
+      "type": "string"
+    },
+    "one_time_token": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    }
+  }
+}

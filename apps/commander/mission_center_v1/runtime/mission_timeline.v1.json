@@ -1,0 +1,776 @@
+{
+  "version": "mission_timeline_v1",
+  "generated_at": "2026-07-10T04:14:10Z",
+  "events": [
+    {
+      "mission_id": "mission_hk620_gap_001_public_technical_specs",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_001_public_technical_specs",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_009_public_approval_record",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_009_public_approval_record",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "QA Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_010_public_claim_boundary",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_010_public_claim_boundary",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "QA Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "external_platform_authorization_phase_v1",
+      "at": "2026-07-07T03:29:51Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "external_platform_authorization_phase_v1",
+      "at": "2026-07-07T03:48:10Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "mission_commander_entry_1783488651135",
+      "at": "2026-07-08T05:30:51Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_commander_entry_1783488651135",
+      "at": "2026-07-08T08:25:00Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "n8n_workflow_inventory_v1",
+      "at": "2026-07-07T03:48:10Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "n8n_workflow_inventory_v1",
+      "at": "2026-07-07T03:48:24Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "qa_agent_hk620_wordpress_draft_review_v1",
+      "at": "2026-07-07T08:30:00Z",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "qa_agent_hk620_wordpress_draft_review_v1",
+      "at": "2026-07-07T08:30:00Z",
+      "event": "Completed",
+      "agent": "QA Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "website_agent_hk620_first_business_draft_v1",
+      "at": "2026-07-07T08:30:00Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "website_agent_hk620_first_business_draft_v1",
+      "at": "2026-07-07T08:30:00Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "wordpress_draft_creation_test_v1",
+      "at": "2026-07-07T07:15:00Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "wordpress_draft_creation_test_v1",
+      "at": "2026-07-07T07:15:00Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "worker_runner_local_integration_v1",
+      "at": "2026-07-07T03:20:28Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "worker_runner_local_integration_v1",
+      "at": "2026-07-07T03:20:36Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "m8a_platform_authorization_today_v1",
+      "at": "2026-07-07T05:42:34Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "m8a_platform_authorization_today_v1",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "CEO Review",
+      "agent": "Automation Agent",
+      "message": "Waiting CEO"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_hk620_gap_002_product_images",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_002_product_images",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_003_product_videos",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_003_product_videos",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_004_customer_cases",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_004_customer_cases",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_007_service_faq",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_007_service_faq",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_hk620_gap_008_delivery_warranty_price_policy",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_008_delivery_warranty_price_policy",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Blocked",
+      "agent": "Knowledge Agent",
+      "message": "Blocked"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_002_product_images",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_002_product_images",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_003_product_videos",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_003_product_videos",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_004_customer_cases",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_004_customer_cases",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_007_service_faq",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_007_service_faq",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_008_delivery_warranty_price_policy",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_008_delivery_warranty_price_policy",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "ai_employee_registry_v2",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Knowledge Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "ai_employee_registry_v2",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Knowledge Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "ai_employee_workbench_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "ai_employee_workbench_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "ceo_review_list_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "ceo_review_list_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "QA Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "commander_runtime_v2_bridge_001",
+      "at": "2026-07-07T01:21:12Z",
+      "event": "Created",
+      "agent": "Research Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "commander_runtime_v2_bridge_001",
+      "at": "2026-07-07T01:21:12Z",
+      "event": "Completed",
+      "agent": "Research Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "external_api_connection_readiness_v1",
+      "at": "2026-07-07T03:54:18Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "external_api_connection_readiness_v1",
+      "at": "2026-07-07T03:54:18Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "m8n_commander_console_runtime_data_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "m8n_commander_console_runtime_data_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "m8n_daily_manager_brief_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Research Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "m8n_daily_manager_brief_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Research Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "machine_readable_task_queue_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Research Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "machine_readable_task_queue_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Research Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "n8n_local_connection_v1",
+      "at": "2026-07-07T03:41:53Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "n8n_local_connection_v1",
+      "at": "2026-07-07T03:41:53Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "n8n_workflow_binding_v1",
+      "at": "2026-07-07T03:54:18Z",
+      "event": "Created",
+      "agent": "Automation Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "n8n_workflow_binding_v1",
+      "at": "2026-07-07T03:54:18Z",
+      "event": "Completed",
+      "agent": "Automation Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "platform_connector_console_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "platform_connector_console_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Website Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "report_index_runtime_v2_update_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Created",
+      "agent": "Commander Reporting Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "report_index_runtime_v2_update_v1",
+      "at": "2026-07-07T02:02:48Z",
+      "event": "Completed",
+      "agent": "Commander Reporting Agent",
+      "message": "Completed"
+    },
+    {
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Assigned",
+      "agent": "Website Agent",
+      "message": "Waiting"
+    },
+    {
+      "mission_id": "mission_hk620_gap_006_internal_links",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "Website Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_hk620_gap_006_internal_links",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Assigned",
+      "agent": "Website Agent",
+      "message": "Waiting"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_005_external_references",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_005_external_references",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_006_internal_links",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "Created",
+      "agent": "QA Agent",
+      "message": "Mission created/imported"
+    },
+    {
+      "mission_id": "mission_validate_hk620_gap_006_internal_links",
+      "at": "2026-07-09T00:00:00+01:00",
+      "event": "QA",
+      "agent": "QA Agent",
+      "message": "Waiting QA"
+    },
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Created",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Created"
+    },
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Queued",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Queued"
+    },
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Running",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Running"
+    },
+    {
+      "mission_id": "m2_sprint2_draft_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Completed",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Completed"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Created",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Created"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Queued",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Queued"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Pending Approval",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Pending Approval"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Approved",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Approved"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Running",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Running"
+    },
+    {
+      "mission_id": "m2_sprint2_publish_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Completed",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Completed"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Created",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Created"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Queued",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Queued"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Pending Approval",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Pending Approval"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Rejected",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Rejected"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Stopped",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Stopped"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Cancelled",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 simulation: Cancelled"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Rejected",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 re-approve validation: Rejected"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Pending Approval",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 re-approve validation: Pending Approval"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Approved",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 re-approve validation: Approved"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Running",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 re-approve validation: Running"
+    },
+    {
+      "mission_id": "m2_sprint2_delete_mission_simulation_v1",
+      "at": "2026-07-10T04:08:45Z",
+      "event": "Cancelled",
+      "agent": "Approval Center V1 + Mission Center V1",
+      "message": "M2 Sprint 2 re-approve validation: Cancelled"
+    },
+    {
+      "mission_id": "m2_sprint3_draft_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Created",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Created"
+    },
+    {
+      "mission_id": "m2_sprint3_draft_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Queued",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Queued"
+    },
+    {
+      "mission_id": "m2_sprint3_draft_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Running",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Running"
+    },
+    {
+      "mission_id": "m2_sprint3_draft_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Completed",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Completed"
+    },
+    {
+      "mission_id": "m2_sprint3_publish_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Created",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Created"
+    },
+    {
+      "mission_id": "m2_sprint3_publish_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Queued",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Queued"
+    },
+    {
+      "mission_id": "m2_sprint3_publish_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Pending Approval",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Pending Approval"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Created",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Created"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Queued",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Queued"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Pending Approval",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Pending Approval"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Rejected",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Rejected"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Stopped",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Stopped"
+    },
+    {
+      "mission_id": "m2_sprint3_delete_queue_live_1783656848",
+      "at": "2026-07-10T04:14:10Z",
+      "event": "Cancelled",
+      "agent": "Mission Queue Live Integration V1",
+      "message": "Real queue-driven transition: Cancelled"
+    }
+  ]
+}

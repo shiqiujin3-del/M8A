@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "mission_id": "m2_sprint6_gmail_draft_20260710T050654Z",
+  "trace_id": "trace_m2_sprint6_gmail_draft_20260710T050654Z",
+  "execution_id": "44",
+  "executor": "gmail",
+  "workflow_id": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+  "workflow_name": "M8A_GMAIL_DRAFT_EXECUTOR_V1",
+  "action": "create_draft",
+  "action_type": "create_draft",
+  "status": "completed",
+  "started_at": null,
+  "finished_at": "2026-07-10T05:06:59.993Z",
+  "duration_ms": 5332,
+  "retry_count": 0,
+  "result": {
+    "type": "gmail_draft",
+    "draft_id": "r-8341857569389463338",
+    "thread_id": "19f4a6bff37cc648",
+    "message_id": "19f4a6bff37cc648",
+    "subject": "M8A Gmail Draft Test"
+  },
+  "error": null,
+  "safety": {
+    "create_draft": true,
+    "send_email": false,
+    "delete_email": false,
+    "modify_inbox": false,
+    "archive": false,
+    "trash": false,
+    "label": false,
+    "reply": false,
+    "forward": false
+  },
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "legacy_webhook_response": null,
+    "requires_execution_lookup": false,
+    "normalization_source": "direct_webhook_response"
+  }
+}

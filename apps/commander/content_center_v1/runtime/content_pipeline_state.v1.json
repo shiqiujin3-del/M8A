@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-12T01:17:54Z",
+  "center_id": "content_center_v1",
+  "overall_status": "online_build_ready",
+  "active_content_packages": 1,
+  "waiting_ceo_review": 1,
+  "ready_for_external_execution": 0,
+  "pipeline": [
+    {
+      "step": "Mission Intake",
+      "owner": "Commander",
+      "status": "completed"
+    },
+    {
+      "step": "Knowledge Pack",
+      "owner": "Knowledge Agent",
+      "status": "completed_internal"
+    },
+    {
+      "step": "Topic Map",
+      "owner": "GEO Agent",
+      "status": "ready"
+    },
+    {
+      "step": "SEO Plan",
+      "owner": "SEO Agent",
+      "status": "ready"
+    },
+    {
+      "step": "Customer Draft",
+      "owner": "Website Agent",
+      "status": "ready"
+    },
+    {
+      "step": "Platform Variants",
+      "owner": "Publishing Agent",
+      "status": "planned"
+    },
+    {
+      "step": "QA Gate",
+      "owner": "QA Agent",
+      "status": "passed_internal_score_92"
+    },
+    {
+      "step": "CEO Approval",
+      "owner": "CEO",
+      "status": "waiting"
+    },
+    {
+      "step": "Draft-only Execution Handoff",
+      "owner": "Automation Agent",
+      "status": "locked_until_ceo_approval"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "directive_id": "external_platform_authorization_phase_v1",
+  "issued_by": "M8N 总经理",
+  "issued_at": "2026-07-07T03:29:51Z",
+  "language": "中文",
+  "status": "已批准进入授权接入阶段",
+  "objective": "允许 AI 员工开始外部平台授权接入准备，并在需要账号授权时等待 CEO 在浏览器中确认。",
+  "approved_scope": {
+    "allowed": [
+      "读取平台连接状态",
+      "检查本地配置项是否存在",
+      "发起需要 CEO 确认的授权流程",
+      "保存授权完成后的连接状态",
+      "生成中文报告",
+      "把连接结果回写总控页面"
+    ],
+    "not_allowed_without_next_approval": [
+      "发送邮件",
+      "公开发布内容",
+      "上传公开视频",
+      "删除内容或数据",
+      "修改账号安全设置",
+      "读取或展示真实密钥原文",
+      "把任何数据推送到外部平台"
+    ]
+  },
+  "platform_priority": [
+    {
+      "platform": "WordPress",
+      "first_step": "检查草稿/发布权限配置，只允许草稿准备"
+    },
+    {
+      "platform": "Google Search Console",
+      "first_step": "只读数据授权"
+    },
+    {
+      "platform": "GA4",
+      "first_step": "只读数据授权"
+    },
+    {
+      "platform": "Gmail",
+      "first_step": "只允许草稿和读取授权，不允许自动发送"
+    },
+    {
+      "platform": "YouTube",
+      "first_step": "只允许私密/草稿能力准备，不允许公开视频发布"
+    },
+    {
+      "platform": "n8n",
+      "first_step": "只允许本地工作流连接检查"
+    }
+  ],
+  "assigned_employees": [
+    {
+      "employee_id": "automation_agent",
+      "responsibility": "授权流程检查与本地连接状态回写"
+    },
+    {
+      "employee_id": "commander_reporting_agent",
+      "responsibility": "中文报告与总控同步"
+    },
+    {
+      "employee_id": "qa_agent",
+      "responsibility": "检查是否越权、是否触碰真实外部动作"
+    }
+  ],
+  "requires_human_action": true,
+  "human_action_note": "当浏览器出现登录、授权、允许访问页面时，必须由 CEO 本人确认。AI 员工不能代替 CEO 输入密码或批准敏感权限。",
+  "next_state": "等待平台授权窗口或凭证配置"
+}

@@ -1,0 +1,50 @@
+{
+  "version": "live_work_mode_v1",
+  "mode": "local_build_only",
+  "generated_at": "2026-07-10",
+  "purpose": "让已有 AI 员工从静态档案进入可重复领取本地任务、产出结果、写入审计的工作模式。",
+  "employees_enabled": [
+    "knowledge_agent",
+    "website_agent",
+    "qa_agent",
+    "publishing_agent"
+  ],
+  "input_queue": "apps/commander/employees/mission_queue_v1/hk620_employee_mission_queue.v1.json",
+  "output_files": {
+    "run_result": "apps/commander/employees/live_work_mode_v1/live_work_run_result.v1.json",
+    "audit_log": "apps/commander/employees/live_work_mode_v1/live_work_audit_log.v1.json",
+    "employee_status": "apps/commander/employees/live_work_mode_v1/live_employee_status.v1.json"
+  },
+  "safety": {
+    "external_calls_allowed": false,
+    "n8n_allowed": false,
+    "wordpress_allowed": false,
+    "youtube_allowed": false,
+    "gmail_allowed": false,
+    "publish_allowed": false,
+    "delete_allowed": false,
+    "update_published_content_allowed": false
+  },
+  "auto_advance_rules": [
+    {
+      "employee": "website_agent",
+      "can_auto_complete": true,
+      "condition": "任务只要求内容结构、内部链接建议或发布准备，不要求虚构产品事实。"
+    },
+    {
+      "employee": "qa_agent",
+      "can_auto_complete": true,
+      "condition": "存在本地输出，且仅做本地 QA，不允许外部发布。"
+    },
+    {
+      "employee": "publishing_agent",
+      "can_auto_complete": true,
+      "condition": "只做发布准备和安全门检查，输出 waiting_ceo_authorization，不调用外部平台。"
+    },
+    {
+      "employee": "knowledge_agent",
+      "can_auto_complete": false,
+      "condition": "涉及公开规格、图片、视频、客户案例、价格/保修等真实资料，缺来源时必须等待资料。"
+    }
+  ]
+}

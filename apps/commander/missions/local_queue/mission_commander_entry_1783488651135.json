@@ -1,0 +1,334 @@
+{
+  "mission": {
+    "mission_id": "mission_commander_entry_1783488651135",
+    "mission_name": "COMMANDER_FIRST_CHAIN_ENTRY_V1",
+    "mission_key": "COMMANDER_FIRST_CHAIN_ENTRY_V1",
+    "title": "打通第一条链路：Website Agent → n8n → QA Agent → Commander",
+    "objective": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+    "command_text": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+    "product": "HK620",
+    "market": "USA",
+    "priority": "P0",
+    "risk_level": "medium",
+    "status": "completed_with_warning_waiting_ceo_review",
+    "created_at": "2026-07-08T05:30:51Z",
+    "updated_at": "2026-07-08T08:25:00Z",
+    "planner_version": "local_json_commander_entry_v1",
+    "input": {
+      "source": "dashboard_createMissionFromConsole",
+      "external_publish_allowed": false,
+      "wordpress_publish_allowed": false,
+      "gmail_send_allowed": false,
+      "youtube_upload_allowed": false
+    },
+    "completed_at": "2026-07-08T08:25:00Z",
+    "wordpress_draft_post_id": 437,
+    "qa_status": "passed_for_draft / needs_ceo_review",
+    "artifacts": [
+      {
+        "artifact_id": "artifact_article_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_001",
+        "artifact_type": "content_draft",
+        "title": "HK620 Skeleton Door Strip Edge Banding Solution",
+        "content_uri": "/Users/shiqiujing/Documents/M8A/docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_ARTICLE_DRAFT_V1.md",
+        "quality_score": 0.86,
+        "created_at": "2026-07-08T08:25:00Z"
+      },
+      {
+        "artifact_id": "artifact_wp_draft_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_002",
+        "artifact_type": "wordpress_draft",
+        "title": "HK620 Skeleton Door Strip Edge Banding Solution",
+        "content_json": {
+          "post_id": 437,
+          "title": "HK620 Skeleton Door Strip Edge Banding Solution",
+          "slug": "hk620-skeleton-door-strip-edge-banding-solution-draft",
+          "status": "draft",
+          "draft_link": "https://woodmachinerynetwork.com/?p=437",
+          "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=437&action=edit",
+          "rest_url": "https://woodmachinerynetwork.com/wp-json/wp/v2/posts/437",
+          "publish": false
+        },
+        "quality_score": 0.86,
+        "created_at": "2026-07-08T08:25:00Z"
+      },
+      {
+        "artifact_id": "artifact_qa_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_003",
+        "artifact_type": "qa_report",
+        "title": "QA 中文检查报告",
+        "content_uri": "/Users/shiqiujing/Documents/M8A/docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_QA_REPORT_V1.md",
+        "quality_score": 0.9,
+        "created_at": "2026-07-08T08:25:00Z"
+      },
+      {
+        "artifact_id": "artifact_commander_acceptance_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_004",
+        "artifact_type": "commander_acceptance_report",
+        "title": "Commander 中文验收结果",
+        "content_uri": "/Users/shiqiujing/Documents/M8A/docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_COMMANDER_ACCEPTANCE_V1.md",
+        "quality_score": 0.9,
+        "created_at": "2026-07-08T08:25:00Z"
+      }
+    ],
+    "events": [
+      {
+        "event_id": "evt_website_article_created_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_001",
+        "event_type": "task_completed",
+        "event_message": "Website Agent generated customer-readable HK620 article.",
+        "created_at": "2026-07-08T08:25:00Z",
+        "metadata": {
+          "wordpress_post_id": 437,
+          "n8n_execution_id": 26
+        }
+      },
+      {
+        "event_id": "evt_wordpress_draft_created_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_002",
+        "event_type": "task_completed",
+        "event_message": "n8n created WordPress Draft post 437 with status=draft.",
+        "created_at": "2026-07-08T08:25:00Z",
+        "metadata": {
+          "wordpress_post_id": 437,
+          "n8n_execution_id": 26
+        }
+      },
+      {
+        "event_id": "evt_qa_report_completed_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_003",
+        "event_type": "task_completed",
+        "event_message": "QA Agent completed Chinese draft review.",
+        "created_at": "2026-07-08T08:25:00Z",
+        "metadata": {
+          "wordpress_post_id": 437,
+          "n8n_execution_id": 26
+        }
+      },
+      {
+        "event_id": "evt_commander_acceptance_completed_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": "mission_commander_entry_1783488651135_task_004",
+        "event_type": "task_completed",
+        "event_message": "Commander wrote Chinese acceptance result and dashboard sync.",
+        "created_at": "2026-07-08T08:25:00Z",
+        "metadata": {
+          "wordpress_post_id": 437,
+          "n8n_execution_id": 26
+        }
+      },
+      {
+        "event_id": "evt_mission_completed_437",
+        "mission_id": "mission_commander_entry_1783488651135",
+        "task_id": null,
+        "event_type": "mission_status_changed",
+        "event_message": "Mission completed with warning and waiting CEO review.",
+        "created_at": "2026-07-08T08:25:00Z",
+        "metadata": {
+          "wordpress_post_id": 437,
+          "n8n_execution_id": 26
+        }
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": "mission_commander_entry_1783488651135_task_001",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_order": 1,
+      "worker_name": "Website Agent",
+      "title": "Website Agent 生成客户可看的文章",
+      "action": "generate_customer_article",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T05:30:51Z",
+      "updated_at": "2026-07-08T05:30:51Z",
+      "input": {
+        "command_text": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783488651135_task_002",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_order": 2,
+      "worker_name": "n8n Execution Layer",
+      "title": "n8n 创建 WordPress Draft，不发布",
+      "action": "create_wordpress_draft",
+      "status": "queued",
+      "risk_level": "high",
+      "requires_approval": true,
+      "approval_required": true,
+      "approval_reason": "CEO approval required before WordPress Draft action. Publish remains forbidden.",
+      "retry_count": 0,
+      "created_at": "2026-07-08T05:30:51Z",
+      "updated_at": "2026-07-08T05:30:51Z",
+      "input": {
+        "command_text": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+        "external_platform_write": true,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783488651135_task_003",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_order": 3,
+      "worker_name": "QA Agent",
+      "title": "QA Agent 检查 Draft",
+      "action": "qa_review_wordpress_draft",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T05:30:51Z",
+      "updated_at": "2026-07-08T05:30:51Z",
+      "input": {
+        "command_text": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_commander_entry_1783488651135_task_004",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_order": 4,
+      "worker_name": "Commander",
+      "title": "Commander 返回验收结果",
+      "action": "return_acceptance_result",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-08T05:30:51Z",
+      "updated_at": "2026-07-08T05:30:51Z",
+      "input": {
+        "command_text": "让 Website Agent 生成一篇客户可看的真实业务文章，并通过 n8n 创建 WordPress Draft，提交 QA Agent 中文检查，最后由 Commander 回写总控台。禁止自动发布。",
+        "external_platform_write": false,
+        "publish_allowed": false
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "approval_id": "approval_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": "mission_commander_entry_1783488651135_task_002",
+      "artifact_id": null,
+      "approval_type": "wordpress_draft_only_approval",
+      "platform": "WordPress via n8n",
+      "action_type": "create_wordpress_draft_only",
+      "risk_level": "medium",
+      "status": "pending",
+      "approver_name": "石总",
+      "request_payload": {
+        "title": "n8n 创建 WordPress Draft",
+        "publish": false,
+        "delete": false,
+        "send": false,
+        "upload": false
+      },
+      "payload_snapshot": {
+        "reason": "Draft only. 禁止自动发布。",
+        "task_id": "mission_commander_entry_1783488651135_task_002"
+      },
+      "created_at": "2026-07-08T05:30:51Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": null,
+      "artifact_type": "mission_entry",
+      "title": "Commander 任务入口已打通",
+      "content_json": {
+        "summary": "总控台任务已写入本地 Commander queue，等待 Website Agent / n8n / QA 后续执行。",
+        "queue_path": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/commander_mission_queue.json",
+        "mission_file": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/mission_commander_entry_1783488651135.json",
+        "publish_allowed": false
+      },
+      "quality_score": 0.8,
+      "simulation_status": "queued_local_only",
+      "created_at": "2026-07-08T05:30:51Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": null,
+      "event_type": "mission_status_changed",
+      "event_message": "Mission entered local JSON Commander queue.",
+      "created_at": "2026-07-08T05:30:51Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": "mission_commander_entry_1783488651135_task_001",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally.",
+      "created_at": "2026-07-08T05:30:51Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": "mission_commander_entry_1783488651135_task_002",
+      "event_type": "task_status_changed",
+      "event_message": "n8n Execution Layer task queued locally.",
+      "created_at": "2026-07-08T05:30:51Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": "mission_commander_entry_1783488651135_task_003",
+      "event_type": "task_status_changed",
+      "event_message": "QA Agent task queued locally.",
+      "created_at": "2026-07-08T05:30:51Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    },
+    {
+      "event_id": "evt_1783488651135",
+      "mission_id": "mission_commander_entry_1783488651135",
+      "task_id": "mission_commander_entry_1783488651135_task_004",
+      "event_type": "task_status_changed",
+      "event_message": "Commander task queued locally.",
+      "created_at": "2026-07-08T05:30:51Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued"
+      }
+    }
+  ],
+  "updated_at": "2026-07-08T05:30:51Z"
+}

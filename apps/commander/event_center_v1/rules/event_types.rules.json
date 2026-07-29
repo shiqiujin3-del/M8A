@@ -1,0 +1,24 @@
+{
+  "version": "global_event_types_v1",
+  "event_types": [
+    "Mission Created",
+    "Mission Assigned",
+    "Mission Started",
+    "Mission Completed",
+    "Mission Failed",
+    "Knowledge Updated",
+    "Knowledge Approved",
+    "QA Started",
+    "QA Passed",
+    "QA Failed",
+    "CEO Approval Requested",
+    "CEO Approved",
+    "Draft Ready",
+    "Ready To Publish",
+    "Published"
+  ],
+  "reserved_events": [
+    "Published"
+  ],
+  "safety": "Published 仅预留事件类型，不会触发真实发布。"
+}

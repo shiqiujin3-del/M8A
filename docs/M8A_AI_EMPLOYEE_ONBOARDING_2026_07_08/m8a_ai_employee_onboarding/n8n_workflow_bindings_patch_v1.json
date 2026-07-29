@@ -1,0 +1,52 @@
+{
+  "binding_version": "1.1",
+  "generated_at": "2026-07-08T00:00:00+01:00",
+  "purpose": "把已验收通过的平台能力绑定到第一批正式上岗 AI 员工",
+  "new_workflow_bindings": [
+    {
+      "workflow_name": "M8A_GSC_READONLY_VALIDATION_V1",
+      "owner_employee_id": "seo_agent",
+      "owner_employee_name": "SEO Agent",
+      "backup_employee_id": "website_agent",
+      "purpose_cn": "读取 Google Search Console 状态和搜索表现，为 SEO 报告提供数据。",
+      "current_permission": "只读；禁止修改 Search Console 设置。",
+      "status": "待同步到 Commander"
+    },
+    {
+      "workflow_name": "M8A_GA4_READONLY_VALIDATION_V1",
+      "owner_employee_id": "data_agent",
+      "owner_employee_name": "Data Agent",
+      "backup_employee_id": "commander_reporting_agent",
+      "purpose_cn": "读取 GA4 状态和基础数据，为日报提供数据。",
+      "current_permission": "只读；禁止修改 GA4 设置。",
+      "status": "待同步到 Commander"
+    },
+    {
+      "workflow_name": "M8A_GMAIL_READONLY_VALIDATION_V1",
+      "owner_employee_id": "publishing_agent",
+      "owner_employee_name": "Publishing Agent",
+      "backup_employee_id": "automation_agent",
+      "purpose_cn": "验证 Gmail 连接健康状态，为后续 Draft Only 工作流做准备。",
+      "current_permission": "只读；禁止发送、删除、读取正文和修改邮箱。",
+      "status": "待同步到 Commander"
+    },
+    {
+      "workflow_name": "M8A_YOUTUBE_READONLY_VALIDATION_V1",
+      "owner_employee_id": "video_agent",
+      "owner_employee_name": "Video Agent",
+      "backup_employee_id": "automation_agent",
+      "purpose_cn": "验证 YouTube 连接健康状态，为后续 Private/Draft Only 工作流做准备。",
+      "current_permission": "只读；禁止上传、发布、删除和修改频道。",
+      "status": "待同步到 Commander"
+    },
+    {
+      "workflow_name": "CWbGujhdNKFpa5JZ",
+      "owner_employee_id": "website_agent",
+      "owner_employee_name": "Website Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "WordPress 内容 Draft/发布前流程。已用于 HK620 页面闭环。",
+      "current_permission": "Draft Only；正式发布必须 CEO 单独审批。",
+      "status": "待同步到 Commander"
+    }
+  ]
+}

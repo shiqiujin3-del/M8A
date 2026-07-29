@@ -1,0 +1,58 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Runtime Core Migration Plan V1",
+  "migration_principle": "不推翻已有 Commander、Mission Queue、Runtime Persistence、Event Center、External Executor、Audit；先建立统一运行标准，再逐步接入。",
+  "phase_1": {
+    "name": "标准冻结",
+    "actions": [
+      "冻结 Runtime Core Object",
+      "冻结统一状态机",
+      "冻结 Provider Interface",
+      "冻结 Execution Contract",
+      "冻结 Runtime Event"
+    ],
+    "risk": "low"
+  },
+  "phase_2": {
+    "name": "已验证 Provider 适配",
+    "actions": [
+      "WordPress Draft Executor 映射到 Runtime Core",
+      "Gmail Draft Executor 映射到 Runtime Core",
+      "Google Search Console 与 GA4 Read-only Executor 映射到 Runtime Core"
+    ],
+    "risk": "medium"
+  },
+  "phase_3": {
+    "name": "大文件上传 Provider 适配",
+    "actions": [
+      "YouTube Upload Executor 接入 Progress、Retry、Resume 字段",
+      "未来 Vimeo、Google Drive、Dropbox、S3、OSS 使用同一上传状态"
+    ],
+    "risk": "medium"
+  },
+  "phase_4": {
+    "name": "Dashboard 与 Audit 收敛",
+    "actions": [
+      "Dashboard 只读取 Runtime Core 标准字段",
+      "Audit 只记录 Runtime Event 与 Execution Contract",
+      "禁止 Dashboard 解析 Provider 私有响应"
+    ],
+    "risk": "medium"
+  },
+  "do_not_do_now": [
+    "不继续上传 HK680",
+    "不调试 YouTube ECONNRESET",
+    "不修改 WordPress",
+    "不修改 Gmail",
+    "不开发 Facebook",
+    "不新增 Dashboard"
+  ],
+  "success_criteria": [
+    "新增平台只实现 Provider Interface",
+    "Commander 不需要为新平台改代码",
+    "Dashboard 不需要为新平台改解析逻辑",
+    "Audit 不需要为新平台改字段",
+    "Event Store 统一记录 Mission 与 Execution 生命周期"
+  ]
+}
+

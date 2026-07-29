@@ -1,0 +1,98 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Runtime Events V1",
+  "event_store_required": true,
+  "events": [
+    {
+      "event_type": "Mission Created",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "timestamp",
+        "source"
+      ]
+    },
+    {
+      "event_type": "Mission Started",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "timestamp",
+        "owner"
+      ]
+    },
+    {
+      "event_type": "Execution Started",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "provider",
+        "timestamp"
+      ]
+    },
+    {
+      "event_type": "Execution Progress",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "provider",
+        "progress",
+        "timestamp"
+      ]
+    },
+    {
+      "event_type": "Execution Retry",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "provider",
+        "retry_count",
+        "reason",
+        "timestamp"
+      ]
+    },
+    {
+      "event_type": "Execution Failed",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "provider",
+        "error",
+        "timestamp"
+      ]
+    },
+    {
+      "event_type": "Execution Completed",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "provider",
+        "resource_id",
+        "resource_url",
+        "timestamp"
+      ]
+    },
+    {
+      "event_type": "Mission Completed",
+      "required_fields": [
+        "event_id",
+        "mission_id",
+        "execution_id",
+        "timestamp"
+      ]
+    }
+  ],
+  "rules": [
+    "所有 Runtime Event 必须进入 Event Store。",
+    "Execution Progress 必须支持大文件上传、长任务、API 异步任务。",
+    "Execution Retry 必须记录 retry_count、reason、next_retry_at。",
+    "Execution Failed 必须记录 retryable 与 raw_error_ref。",
+    "Event Store 是审计与 Dashboard 的统一来源，Provider 不允许绕过 Runtime Core 单独写事件。"
+  ]
+}
+

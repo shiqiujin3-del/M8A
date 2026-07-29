@@ -1,0 +1,33 @@
+{
+  "contract": "m8a_upload_reliability_state_v1",
+  "purpose": "Reusable upload state object for YouTube, Vimeo, Google Drive, Dropbox, OSS, S3 and future upload platforms.",
+  "status_values": ["queued", "uploading", "retrying", "completed", "failed"],
+  "fields": {
+    "upload_id": "string",
+    "mission_id": "string",
+    "execution_id": "string|null",
+    "platform": "youtube|vimeo|google_drive|dropbox|oss|s3|other",
+    "object_type": "video|image|document|attachment|other",
+    "source_path": "string",
+    "file_size_bytes": "integer",
+    "status": "queued|uploading|retrying|completed|failed",
+    "progress_percent": "number",
+    "bytes_uploaded": "integer",
+    "retry_count": "integer",
+    "max_retry": "integer",
+    "failure_reason": "string|null",
+    "session_url_ref": "string|null",
+    "external_id": "string|null",
+    "external_url": "string|null",
+    "started_at": "date-time|null",
+    "updated_at": "date-time|null",
+    "finished_at": "date-time|null"
+  },
+  "retryable_errors": ["ECONNRESET", "ETIMEDOUT", "EAI_AGAIN", "HTTP_500", "HTTP_502", "HTTP_503", "HTTP_504"],
+  "non_retryable_errors": ["HTTP_400", "HTTP_401", "HTTP_403", "HTTP_404", "quotaExceeded", "invalidCredentials"],
+  "safety": {
+    "public_upload_requires_ceo_approval": true,
+    "delete_remote_object_allowed": false,
+    "modify_channel_or_account_allowed": false
+  }
+}

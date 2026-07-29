@@ -1,0 +1,23 @@
+{
+  "version": "approval_center_runtime_mapping_v1",
+  "generated_at": "2026-07-10T04:05:40Z",
+  "runtime_db": "apps/commander/runtime_persistence_v1/db/m8a_runtime_v1.sqlite",
+  "tables_used": [
+    "approvals",
+    "runtime_logs",
+    "mission_events",
+    "event_history"
+  ],
+  "schema_changes": false,
+  "status_mapping": {
+    "Pending": "approval_status=pending",
+    "Approve": "approval_status=approved",
+    "Reject": "approval_status=rejected",
+    "Re-Approve": "approval_status=re_approved"
+  },
+  "mission_safety_rules": {
+    "Draft": "auto_execution_allowed_after_safety_gate",
+    "Publish": "requires_ceo_approval",
+    "Delete": "requires_ceo_approval"
+  }
+}

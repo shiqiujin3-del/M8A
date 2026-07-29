@@ -1,0 +1,39 @@
+{
+  "version": "approval_history_v1",
+  "generated_at": "2026-07-10T04:05:40Z",
+  "history": [
+    {
+      "history_id": "approval_history_sprint1_validation_chain_v1",
+      "approval_id": "approval_publish_guard_example_pending_v1",
+      "mission_id": "mission_publish_guard_example_v1",
+      "events": [
+        {
+          "at": "2026-07-10T04:05:40Z",
+          "actor": "Approval Center V1",
+          "event": "pending_created",
+          "from_status": null,
+          "to_status": "pending",
+          "reason": "Publish requires CEO approval."
+        },
+        {
+          "at": "2026-07-10T04:05:40Z",
+          "actor": "CEO Review Placeholder",
+          "event": "reject_supported",
+          "from_status": "pending",
+          "to_status": "rejected",
+          "reason": "Reject action supported by Approval Center V1 validation; no external action executed."
+        },
+        {
+          "at": "2026-07-10T04:05:40Z",
+          "actor": "CEO Review Placeholder",
+          "event": "re_approve_supported",
+          "from_status": "rejected",
+          "to_status": "re_approved",
+          "reason": "Re-Approve action supported after rejection; no external action executed."
+        }
+      ],
+      "current_status": "pending",
+      "note_cn": "此文件证明 Approval History 支持 Pending / Reject / Re-Approve 链路；不代表已真实批准发布。"
+    }
+  ]
+}

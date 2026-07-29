@@ -1,0 +1,18 @@
+{
+  "version": "n8n_draft_only_executor_v1",
+  "executor_id": "executor_n8n_wordpress_draft_only_v1",
+  "platform": "n8n",
+  "allowed_action_type": "create_wordpress_draft_only",
+  "workflow_path": "m8a-hk620-draft-only",
+  "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+  "forbidden_actions": [
+    "publish",
+    "update_published_post",
+    "delete_post",
+    "send_gmail",
+    "upload_youtube"
+  ],
+  "current_mode": "dry_run_only",
+  "network_call_allowed": false,
+  "notes_cn": "本规格只定义未来真实执行器入口；当前不调用 n8n，也不调用 WordPress。"
+}

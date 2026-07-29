@@ -1,0 +1,32 @@
+{
+  "version": "event_driven_runner_rules_v1",
+  "event_schema": "apps/commander/event_center_v1/schemas/global_event.schema.json",
+  "mode": "config_driven",
+  "rules": [
+    {
+      "when": "Mission Created",
+      "emit": "Mission Assigned",
+      "target": "Owner Agent"
+    },
+    {
+      "when": "Mission Assigned",
+      "emit": "Mission Started",
+      "target": "assigned employee if dependencies clear"
+    },
+    {
+      "when": "Knowledge Approved",
+      "emit": "Mission Started",
+      "target": "Website Agent"
+    },
+    {
+      "when": "Draft Ready",
+      "emit": "QA Started",
+      "target": "QA Agent"
+    },
+    {
+      "when": "QA Passed",
+      "emit": "CEO Approval Requested",
+      "target": "Commander/CEO"
+    }
+  ]
+}

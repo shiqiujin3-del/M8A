@@ -1,0 +1,35 @@
+{
+  "asset_id": "seo_hk620_us_article_v3",
+  "created_at": "2026-07-12T03:40:41Z",
+  "agent": "SEO Agent",
+  "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+  "slug": "hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip",
+  "meta_title": "HK620 Skeleton Line Edge Banding Machine | SYUTECH",
+  "meta_description": "HK620 is a PUR glue skeleton-line and decorative-strip edge banding machine for door factories, furniture factories, and decorative moulding producers.",
+  "primary_keyword": "skeleton line edge banding machine",
+  "secondary_keywords": [
+    "decorative strip edge banding machine",
+    "door line edge banding machine",
+    "PUR edge banding machine",
+    "HK620 edge banding machine",
+    "profile strip edge banding"
+  ],
+  "faq_count": 5,
+  "cta": "Send SYUTECH workpiece photos, dimensions, materials, and production requirements for sample review and quotation confirmation.",
+  "status": "seo_ready_for_ceo_review_not_public_publish",
+  "open_gaps": [
+    "parameter units final confirmation",
+    "approved images and videos",
+    "public customer case authorization",
+    "product page and quote link"
+  ],
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

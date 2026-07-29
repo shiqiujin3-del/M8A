@@ -1,0 +1,596 @@
+{
+  "generated_at": "2026-07-12T01:48:34Z",
+  "console_version": "1.0",
+  "external_api_connected": true,
+  "production_platform_connected": true,
+  "approval_required_for_public_actions": true,
+  "platforms": [
+    {
+      "platform": "WordPress",
+      "status": "Website Agent 第一条正式内容生产线 Draft 已创建",
+      "priority": "P0",
+      "mode": "Human approved draft/publish",
+      "notes": "WordPress n8n Draft Only 路线已创建新 Draft。Post ID 437，status=draft，未发布。",
+      "credential_names": [
+        "M8A_WORDPRESS_BASE_URL",
+        "M8A_WORDPRESS_USERNAME",
+        "M8A_WORDPRESS_APP_PASSWORD"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "CEO 审核 Draft，发布必须另行审批。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "internal_authorization": "已批准",
+      "credential_status": "M8A WordPress Reserved 已更新并测试成功",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "connected_at": "2026-07-07T06:05:04Z",
+      "last_draft_test": {
+        "tested_at": "2026-07-07T08:07:13Z",
+        "action": "create_wordpress_post_as_draft_via_n8n",
+        "requested_status": "draft",
+        "result": "success",
+        "n8n_execution_id": 7,
+        "wordpress_title": "【M8A Draft Test - 请勿发布】",
+        "wordpress_status": "draft",
+        "external_publication": false,
+        "secret_values_recorded": false,
+        "application_password_last_used_updated": true,
+        "report_path": "docs/M8A_WORDPRESS_DRAFT_VERIFICATION_REPORT_V1.md"
+      },
+      "official_execution_route": "n8n_only",
+      "last_business_draft": {
+        "created_at": "2026-07-08T08:25:00Z",
+        "post_id": 437,
+        "title": "HK620 Skeleton Door Strip Edge Banding Solution",
+        "status": "draft",
+        "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=437&action=edit",
+        "preview_url": "https://woodmachinerynetwork.com/?p=437",
+        "n8n_workflow_id": "m8a_hk620_draft_20260708",
+        "n8n_execution_id": 26,
+        "qa_status": "passed_for_draft / needs_ceo_review",
+        "publish_allowed": false,
+        "report_path": "docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_V1_ACCEPTANCE_REPORT.md"
+      },
+      "responsible_agent": "Website Agent",
+      "supporting_agent": "Publishing Agent",
+      "general_manager_status": "可创建 Draft",
+      "external_action_rule": "Draft-only 可执行；Publish 必须 CEO 单独审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Coze",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P1",
+      "mode": "Mock / staging check only",
+      "notes": "已有 mock provider 与 staging config check；未接生产 token。",
+      "credential_names": [
+        "M8A_COZE_BASE_URL",
+        "M8A_COZE_API_TOKEN",
+        "M8A_COZE_WORKFLOW_ID",
+        "M8A_COZE_WORKSPACE_ID"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only"
+    },
+    {
+      "platform": "Google Search Console",
+      "status": "Search Analytics 只读 API 已真实连接并返回最近 7 天数据",
+      "priority": "P1",
+      "mode": "Read-only Search Analytics",
+      "notes": "M2 Sprint 5 已完成 Google Search Console Search Analytics Executor V1。Single Responsibility：仅 Search Analytics，不包含 Sites、Coverage、Sitemap、Index Inspection。",
+      "credential_names": [
+        "M8A Google Search Console"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "等待 CEO Review；不得继续 Sprint 6。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "internal_authorization": "已批准只读读取",
+      "credential_status": "n8n Google OAuth 凭据可用",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "External Executor -> n8n -> Google Search Console Search Analytics API",
+      "last_search_analytics": {
+        "checked_at": "2026-07-10T04:40:33Z",
+        "workflow_id": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+        "workflow_name": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+        "n8n_execution_id": "38",
+        "property": "https://woodmachinerynetwork.com/",
+        "date_range": {
+          "label": "last_7_days",
+          "start_date": "2026-07-03",
+          "end_date": "2026-07-09"
+        },
+        "clicks": 1,
+        "impressions": 47,
+        "ctr": 0.02127659574468085,
+        "average_position": 40.680851063829785,
+        "top_queries_count": 13,
+        "top_pages_count": 20,
+        "countries_count": 14,
+        "devices_count": 2,
+        "duration_ms": 7454,
+        "execution_response_contract": "success",
+        "requires_execution_lookup": false,
+        "safety": {
+          "readonly": true,
+          "submit_sitemap": false,
+          "delete_property": false,
+          "modify_property": false,
+          "modify_settings": false,
+          "modify_google_data": false
+        }
+      },
+      "responsible_agent": "SEO Agent",
+      "supporting_agent": "Data Agent",
+      "general_manager_status": "可读数据",
+      "external_action_rule": "只读",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "GA4",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P1",
+      "mode": "Read-only analytics",
+      "notes": "规划中，先做只读分析。",
+      "credential_names": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Data Agent",
+      "supporting_agent": "SEO Agent",
+      "general_manager_status": "可读数据",
+      "external_action_rule": "只读",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Gmail",
+      "status": "已打开凭证页，等待 Google OAuth 客户端信息",
+      "priority": "P2",
+      "mode": "Draft reply / approved send",
+      "notes": "规划中，回复必须人工审核。",
+      "credential_names": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "CEO 准备好 Google OAuth Client ID / Client Secret 后再继续；当前跳过。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 Google Cloud Client ID 和 Client Secret",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Automation Agent",
+      "general_manager_status": "可 Draft",
+      "external_action_rule": "只允许草稿；禁止自动发送",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "YouTube",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P3",
+      "mode": "Draft/private upload first",
+      "notes": "规划中，公开发布需 CEO 审批。",
+      "credential_names": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Video Agent",
+      "supporting_agent": "Publishing Agent",
+      "general_manager_status": "可上传视频",
+      "external_action_rule": "Private/Draft/指定状态；公开发布必须 CEO 审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "LinkedIn",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P4",
+      "mode": "Human approved publishing",
+      "notes": "需要 app 权限和审核。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Marketing Employee",
+      "general_manager_status": "可发 / 发布前审批",
+      "external_action_rule": "发布前必须走 QA 与 CEO 审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Facebook",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P5",
+      "mode": "Human approved publishing",
+      "notes": "未连接，需要权限和 app review。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Marketing Employee",
+      "general_manager_status": "待 Meta 权限",
+      "external_action_rule": "授权前冻结",
+      "dashboard_connection_state": "waiting_authorization_or_frozen"
+    },
+    {
+      "platform": "WhatsApp",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P6",
+      "mode": "Human approved replies",
+      "notes": "未连接，销售/客服回复必须审批。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only"
+    },
+    {
+      "platform": "TikTok",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P7",
+      "mode": "Semi-automatic first",
+      "notes": "未连接，需要评估官方 API 与审核。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only",
+      "responsible_agent": "Video Agent",
+      "supporting_agent": "Automation Agent",
+      "general_manager_status": "待 Developer App / Content Posting API 授权",
+      "external_action_rule": "授权前冻结",
+      "dashboard_connection_state": "waiting_authorization_or_frozen"
+    },
+    {
+      "platform": "微信公众号",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P8",
+      "mode": "Semi-automatic first",
+      "notes": "未连接，需要认证账号权限。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only"
+    },
+    {
+      "platform": "视频号",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P9",
+      "mode": "Evaluation first",
+      "notes": "未连接，需要账号级能力确认。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only"
+    },
+    {
+      "platform": "CRM",
+      "status": "M8A 内部授权已批准，等待 CEO 账号授权",
+      "priority": "P10",
+      "mode": "Reserved",
+      "notes": "未选型，预留。",
+      "credential_names": [],
+      "raw_secret_values_stored": false,
+      "next_action": "今天完成账号授权或明确标记为暂不具备账号/API 条件；授权前不执行外部动作。",
+      "internal_authorization": "已批准",
+      "credential_status": "等待 CEO 在 n8n 或平台页面授权/配置凭证",
+      "approved_at": "2026-07-07T05:42:34Z",
+      "official_execution_route": "n8n_only"
+    },
+    {
+      "platform": "n8n",
+      "status": "唯一正式外部执行层",
+      "priority": "P2",
+      "mode": "M8A 自动化执行引擎",
+      "notes": "CEO 已指示以后所有外部平台动作统一走 n8n，不再走零散脚本或直连 REST 作为正式生产路线。",
+      "credential_names": [
+        "N8N_ENCRYPTION_KEY"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "按平台逐个修复/配置 n8n 凭证，并只运行 CEO 批准范围内的草稿或只读验证。",
+      "authorization_allowed_at": "2026-07-07T03:29:51Z",
+      "local_url": "http://localhost:5678",
+      "container_name": "m8a-n8n",
+      "connected_at": "2026-07-07T03:40:31Z",
+      "internal_authorization": "已批准",
+      "credential_status": "本地已运行，等待后续工作流凭证逐项授权",
+      "responsible_agent": "Automation Agent",
+      "supporting_agent": "Commander Reporting Agent",
+      "general_manager_status": "唯一正式外部执行层 / 可执行 Draft-only",
+      "external_action_rule": "所有外部动作统一走 n8n；执行前仍需安全门",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "GitHub",
+      "status": "已创建私有仓库并推送 main",
+      "priority": "P1",
+      "mode": "Private repo connected; future changes via branches and PR after CEO approval",
+      "notes": "GitHub CLI 已登录 shiqiujin3-del；私有仓库 M8A 已创建；本地 main 已推送到 origin/main。GitHub 是执行工具，不是组织中心。",
+      "credential_names": [
+        "GITHUB_TOKEN 或 gh auth login 本地授权"
+      ],
+      "raw_secret_values_stored": false,
+      "next_action": "以后 AI 改代码必须走分支和 PR；未经 CEO 单独批准不得直接 push main。",
+      "authorization_allowed_at": "2026-07-07",
+      "cli_status": "gh logged in as shiqiujin3-del",
+      "remote_status": "origin_configured",
+      "external_action_allowed": false,
+      "public_action_allowed": false,
+      "identity_check": "passed",
+      "github_login": "shiqiujin3-del",
+      "push_allowed": false,
+      "pr_create_allowed": false,
+      "connected_at": "2026-07-07T08:48:21Z",
+      "repository": {
+        "name": "M8A",
+        "url": "https://github.com/shiqiujin3-del/M8A",
+        "visibility": "PRIVATE",
+        "default_branch": "main",
+        "main_pushed": true,
+        "direct_push_to_main_allowed_after_initial_push": false
+      }
+    },
+    {
+      "platform": "Medium",
+      "priority": "P3",
+      "mode": "Managed by M8A / n8n where applicable",
+      "raw_secret_values_stored": false,
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Website Agent",
+      "general_manager_status": "可发布 / 可草稿",
+      "external_action_rule": "发布前必须走 QA 与 CEO 审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Quora",
+      "priority": "P3",
+      "mode": "Managed by M8A / n8n where applicable",
+      "raw_secret_values_stored": false,
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "GEO Agent",
+      "general_manager_status": "可发 / 发布前审批",
+      "external_action_rule": "发布前必须走 QA 与 CEO 审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Substack",
+      "priority": "P3",
+      "mode": "Managed by M8A / n8n where applicable",
+      "raw_secret_values_stored": false,
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Website Agent",
+      "general_manager_status": "可草稿",
+      "external_action_rule": "只允许草稿；公开发送需审批",
+      "dashboard_connection_state": "connected_or_ready"
+    },
+    {
+      "platform": "Google Business Profile",
+      "priority": "P3",
+      "mode": "Managed by M8A / n8n where applicable",
+      "raw_secret_values_stored": false,
+      "responsible_agent": "Automation Agent",
+      "supporting_agent": "Publishing Agent",
+      "general_manager_status": "待授权",
+      "external_action_rule": "授权前冻结",
+      "dashboard_connection_state": "waiting_authorization_or_frozen"
+    },
+    {
+      "platform": "Instagram",
+      "priority": "P3",
+      "mode": "Managed by M8A / n8n where applicable",
+      "raw_secret_values_stored": false,
+      "responsible_agent": "Publishing Agent",
+      "supporting_agent": "Marketing Employee",
+      "general_manager_status": "待 Meta 权限",
+      "external_action_rule": "授权前冻结",
+      "dashboard_connection_state": "waiting_authorization_or_frozen"
+    }
+  ],
+  "authorization_phase": "CEO 已批准：今天所有 M8A 内部授权项进入下一阶段",
+  "public_action_lock": "仍然锁定：未获下一次明确批准前，不允许发送、发布、删除或改账号设置",
+  "n8n_local_connection": {
+    "status": "已接入本地 n8n",
+    "url": "http://localhost:5678",
+    "container": "m8a-n8n",
+    "image": "n8nio/n8n:latest",
+    "checked_at": "2026-07-07T03:40:31Z",
+    "external_action_allowed": false,
+    "note": "n8n 已在本机运行并可打开；是否创建/启用工作流仍需 CEO 确认。"
+  },
+  "n8n_execution_layer": "已接入，且已设为外部平台唯一正式执行路线",
+  "external_api_readiness": "M8A 内部批准完成；真实平台仍等待 CEO 在 n8n/平台授权页完成账号授权",
+  "internal_authorization_status": "全部已批准",
+  "today_authorization_batch": {
+    "batch_id": "m8a_platform_authorization_2026_07_07",
+    "approved_by": "CEO",
+    "recorded_by": "M8N 总经理",
+    "approved_at": "2026-07-07T05:42:34Z",
+    "internal_authorization_complete": true,
+    "requires_ceo_browser_login": true,
+    "external_actions_allowed": false,
+    "public_publish_allowed": false,
+    "email_send_allowed": false,
+    "delete_or_account_setting_allowed": false
+  },
+  "current_authorization_page": {
+    "platform": "Gmail",
+    "credential_type": "Gmail OAuth2 API",
+    "url": "http://localhost:5678/projects/PIovCBtZcF7519a2/credentials",
+    "opened_at": "2026-07-07T05:44:48Z",
+    "status": "已打开凭证配置页，等待 CEO 填写 Client ID 和 Client Secret 后保存并授权",
+    "secret_value_handled_by_ai": false
+  },
+  "credential_pages_opened_today": [
+    {
+      "platform": "Gmail",
+      "status": "已打开，因缺少 Google OAuth Client ID/Secret 暂停",
+      "updated_at": "2026-07-07T05:53:22Z"
+    },
+    {
+      "platform": "WordPress",
+      "status": "已打开，因缺少 WordPress URL/用户名/Application Password 暂停",
+      "updated_at": "2026-07-07T05:53:22Z"
+    }
+  ],
+  "wordpress_connection": {
+    "status": "connected",
+    "checked_at": "2026-07-08T08:25:00Z",
+    "credential_name": "M8A WordPress Reserved",
+    "allowed_action": "draft_only",
+    "publish_allowed": false,
+    "secret_value_stored_in_report": false,
+    "last_wordpress_post_id": 437
+  },
+  "external_execution_policy": {
+    "policy_id": "m8a_external_execution_n8n_only_v1",
+    "status": "active",
+    "official_route": "CEO / Commander -> AI employees -> n8n workflows -> external platform APIs",
+    "production_write_rule": "n8n_only",
+    "direct_script_or_rest_write_allowed": false,
+    "report_path": "docs/M8A_EXTERNAL_EXECUTION_N8N_ONLY_POLICY_V1.md"
+  },
+  "google_search_console_executor_v1": {
+    "status": "connected_read_verified",
+    "executor": "google_search_console",
+    "workflow_id": "M8A_GSC_READONLY_VALIDATION_V1",
+    "capability": "gsc_sites_list",
+    "property_count": 2,
+    "woodmachinerynetwork_property": "https://woodmachinerynetwork.com/",
+    "last_execution_id": "37",
+    "last_checked_at": "2026-07-10T04:24:39Z",
+    "safety": "read_only; no sitemap submit; no property delete; no settings modification"
+  },
+  "platform_owner_matrix_v1": {
+    "synced_at": "2026-07-12T01:05:43Z",
+    "summary": "外部平台负责人已明确；可执行平台与待授权平台分开管理。",
+    "platforms": [
+      {
+        "platform": "WordPress",
+        "status": "可创建 Draft",
+        "owner_agent": "Website Agent",
+        "supporting_agent": "Publishing Agent",
+        "external_action_rule": "Draft-only 可执行；Publish 必须 CEO 单独审批"
+      },
+      {
+        "platform": "Gmail",
+        "status": "可 Draft",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "Automation Agent",
+        "external_action_rule": "只允许草稿；禁止自动发送"
+      },
+      {
+        "platform": "YouTube",
+        "status": "可上传视频",
+        "owner_agent": "Video Agent",
+        "supporting_agent": "Publishing Agent",
+        "external_action_rule": "Private/Draft/指定状态；公开发布必须 CEO 审批"
+      },
+      {
+        "platform": "Medium",
+        "status": "可发布/可草稿",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "Content Employee / Website Agent",
+        "external_action_rule": "发布前必须走 QA 与 CEO 审批"
+      },
+      {
+        "platform": "LinkedIn",
+        "status": "可发",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "Marketing Employee",
+        "external_action_rule": "发布前必须走 QA 与 CEO 审批"
+      },
+      {
+        "platform": "Quora",
+        "status": "可发",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "GEO Agent",
+        "external_action_rule": "发布前必须走 QA 与 CEO 审批"
+      },
+      {
+        "platform": "Substack",
+        "status": "可草稿",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "Content Employee",
+        "external_action_rule": "只允许草稿；发送/发布必须 CEO 审批"
+      },
+      {
+        "platform": "Google Search Console",
+        "status": "可读数据",
+        "owner_agent": "SEO Agent",
+        "supporting_agent": "Data Agent",
+        "external_action_rule": "只读"
+      },
+      {
+        "platform": "GA4",
+        "status": "可读数据",
+        "owner_agent": "Data Agent",
+        "supporting_agent": "SEO Agent",
+        "external_action_rule": "只读"
+      },
+      {
+        "platform": "Google Business Profile",
+        "status": "待授权",
+        "owner_agent": "Automation Agent",
+        "supporting_agent": "Publishing Agent",
+        "external_action_rule": "授权前冻结"
+      },
+      {
+        "platform": "Facebook / Instagram",
+        "status": "待 Meta 权限与账号绑定",
+        "owner_agent": "Publishing Agent",
+        "supporting_agent": "Marketing Employee",
+        "external_action_rule": "授权前冻结"
+      },
+      {
+        "platform": "TikTok",
+        "status": "待 Developer App / Content Posting API 授权",
+        "owner_agent": "Video Agent",
+        "supporting_agent": "Automation Agent",
+        "external_action_rule": "授权前冻结"
+      }
+    ],
+    "rule": "n8n 是执行引擎，不是总控；AI 员工负责业务判断，外部动作必须走 CEO 授权。"
+  },
+  "dashboard_sync_v1": {
+    "status": "synced",
+    "synced_at": "2026-07-12T01:48:34Z",
+    "summary": "平台/API 状态已同步到员工工作台：WordPress、n8n、Gmail、YouTube、GSC、GA4 等不再显示为未连接。",
+    "safe_display": "可用不等于自动公开发布；公开动作仍需 CEO 审批。"
+  }
+}

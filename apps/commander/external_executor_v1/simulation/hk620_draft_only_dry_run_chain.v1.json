@@ -1,0 +1,40 @@
+{
+  "version": "external_executor_simulation_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "flow_cn": "Website Agent Draft JSON + QA Score 92 + Safety Gate Approved -> n8n Draft-only Dry-run Passed -> Ready For Real Execution",
+  "events": [
+    {
+      "step": 1,
+      "name": "Website Agent Draft JSON",
+      "status": "completed_local",
+      "external_call": false
+    },
+    {
+      "step": 2,
+      "name": "QA Agent Score",
+      "status": "completed_local",
+      "qa_score": 92,
+      "external_call": false
+    },
+    {
+      "step": 3,
+      "name": "Production Safety Gate",
+      "status": "approved_for_dry_run",
+      "external_call": false
+    },
+    {
+      "step": 4,
+      "name": "n8n Draft-only Dry-run Validator",
+      "status": "dry_run_passed",
+      "external_call": false
+    },
+    {
+      "step": 5,
+      "name": "Execution Readiness",
+      "status": "ready_for_real_execution",
+      "external_call": false
+    }
+  ],
+  "result": "ready_for_real_execution",
+  "real_execution_ready_condition_cn": "下一步仍需 CEO 单独授权后，才能允许真实调用 n8n Draft-only。"
+}

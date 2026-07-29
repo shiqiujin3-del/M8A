@@ -1,0 +1,574 @@
+{
+  "version": "ai_employee_center_v2",
+  "name": "M8A AI Employee Organization V2",
+  "principle": "以后 M8A 建设以 AI Employee 为核心，不再以 Runtime、JSON、Contract、Provider 为主要目标。",
+  "governance": {
+    "ceo": {
+      "role": "最终决策人",
+      "responsibilities": [
+        "设定业务目标",
+        "审批高风险外部动作",
+        "确认平台授权",
+        "验收员工产出"
+      ]
+    },
+    "commander": {
+      "role": "总调度",
+      "responsibilities": [
+        "接收 CEO Mission",
+        "拆分任务",
+        "分配 AI Employee",
+        "检查依赖",
+        "调度 Runtime Core 与 Provider Interface",
+        "汇总结果给 CEO"
+      ],
+      "rule": "所有员工最终由 Commander 调度；员工不得绕过 Commander 自行接生产平台。"
+    }
+  },
+  "departments": [
+    {
+      "department_id": "content_growth",
+      "name": "内容增长部",
+      "employees": [
+        "content_employee",
+        "seo_employee",
+        "geo_employee",
+        "website_employee",
+        "video_employee",
+        "publishing_employee",
+        "marketing_employee"
+      ]
+    },
+    {
+      "department_id": "knowledge_data",
+      "name": "知识与数据部",
+      "employees": [
+        "knowledge_employee",
+        "knowledge_qa_employee",
+        "analytics_employee",
+        "data_employee",
+        "documentation_employee"
+      ]
+    },
+    {
+      "department_id": "customer_revenue",
+      "name": "客户与营收部",
+      "employees": [
+        "sales_employee",
+        "crm_employee",
+        "customer_success_employee"
+      ]
+    },
+    {
+      "department_id": "operations_control",
+      "name": "运营与控制部",
+      "employees": [
+        "automation_employee",
+        "system_maintenance_employee",
+        "security_employee",
+        "finance_employee",
+        "recruiting_employee"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "employee_id": "publishing_employee",
+      "name": "Publishing Employee",
+      "reports_to": "commander",
+      "responsibility": "统一接收发布类 Mission，协调内容、审批、Publishing Center 与 Provider，确保只在授权范围内发布或创建草稿。",
+      "when_to_work": "当 Mission 类型为 publish_article、publish_product、publish_video、publish_social_post、draft_only_handoff 时启动。",
+      "mission_types": [
+        "publish_article",
+        "publish_product",
+        "publish_video",
+        "publish_social_post",
+        "draft_only_handoff"
+      ],
+      "providers": [
+        "Publishing Center",
+        "WordPress Provider",
+        "YouTube Provider",
+        "Gmail Draft Provider"
+      ],
+      "outputs": [
+        "Publishing Plan",
+        "Draft-only Handoff",
+        "Publishing Result",
+        "Approval Request",
+        "Execution Summary"
+      ],
+      "status": "next_recommended_employee"
+    },
+    {
+      "employee_id": "content_employee",
+      "name": "Content Employee",
+      "reports_to": "commander",
+      "responsibility": "生成客户可读内容、产品文章、博客、社媒文案、邮件正文草稿。",
+      "when_to_work": "当 Mission 需要文字内容、销售回复、产品介绍、脚本草稿时启动。",
+      "mission_types": [
+        "content_draft",
+        "product_article",
+        "blog_article",
+        "sales_reply",
+        "video_script"
+      ],
+      "providers": [
+        "Knowledge Center",
+        "Prompt System",
+        "Local Draft Generator"
+      ],
+      "outputs": [
+        "English Draft",
+        "Chinese Draft",
+        "Content Brief",
+        "CTA",
+        "Revision Notes"
+      ],
+      "status": "partially_available_via_website_agent"
+    },
+    {
+      "employee_id": "knowledge_employee",
+      "name": "Knowledge Employee",
+      "reports_to": "commander",
+      "responsibility": "整理产品资料、FAQ、案例、规格、资料缺口，维护 Knowledge Binding。",
+      "when_to_work": "当 Mission 需要产品事实、公开资料边界、知识补全或资料缺口验收前准备时启动。",
+      "mission_types": [
+        "knowledge_binding",
+        "product_gap_task",
+        "faq_update",
+        "case整理",
+        "source_file_review"
+      ],
+      "providers": [
+        "Knowledge Center",
+        "Local File Store"
+      ],
+      "outputs": [
+        "Knowledge Card",
+        "Product Binding",
+        "Missing Checklist",
+        "Source File Index"
+      ],
+      "status": "working_with_hk620_gap_tasks"
+    },
+    {
+      "employee_id": "geo_employee",
+      "name": "GEO Employee",
+      "reports_to": "commander",
+      "responsibility": "面向 AI 搜索、生成式搜索、买家问题场景优化内容结构。",
+      "when_to_work": "当 Mission 目标是 AI Search Visibility、FAQ、实体覆盖、买家问题矩阵时启动。",
+      "mission_types": [
+        "geo_optimization",
+        "ai_search_visibility",
+        "entity_coverage",
+        "question_answer_matrix"
+      ],
+      "providers": [
+        "Knowledge Center",
+        "Search Console Read-only",
+        "Content Employee"
+      ],
+      "outputs": [
+        "GEO Brief",
+        "Entity Map",
+        "Question Matrix",
+        "Answer Blocks"
+      ],
+      "status": "profile_exists"
+    },
+    {
+      "employee_id": "seo_employee",
+      "name": "SEO Employee",
+      "reports_to": "commander",
+      "responsibility": "负责关键词、标题、Meta、Slug、内链、外链、Search Console 数据分析。",
+      "when_to_work": "当 Mission 涉及 SEO、页面优化、GSC 数据、文章发布前 SEO 检查时启动。",
+      "mission_types": [
+        "seo_review",
+        "keyword_mapping",
+        "metadata_optimization",
+        "internal_link_plan"
+      ],
+      "providers": [
+        "Google Search Console Executor",
+        "Knowledge Center"
+      ],
+      "outputs": [
+        "SEO Checklist",
+        "Keyword Map",
+        "Meta Suggestions",
+        "Internal Link Plan"
+      ],
+      "status": "read_only_ready"
+    },
+    {
+      "employee_id": "video_employee",
+      "name": "Video Employee",
+      "reports_to": "commander",
+      "responsibility": "负责视频素材整理、标题描述、脚本、上传准备和视频平台交接。",
+      "when_to_work": "当 Mission 涉及 YouTube、短视频、视频脚本、素材选择、字幕文案时启动。",
+      "mission_types": [
+        "video_script",
+        "video_metadata",
+        "video_upload_prepare",
+        "youtube_private_validation"
+      ],
+      "providers": [
+        "M8A Media Storage",
+        "YouTube Provider"
+      ],
+      "outputs": [
+        "Video Brief",
+        "Title Description Tags",
+        "Upload Payload",
+        "Video QA Notes"
+      ],
+      "status": "youtube_small_private_upload_passed_large_upload_known_issue"
+    },
+    {
+      "employee_id": "website_employee",
+      "name": "Website Employee",
+      "reports_to": "commander",
+      "responsibility": "负责网站内容结构、页面草稿、WordPress Draft-only 交接、页面 QA。",
+      "when_to_work": "当 Mission 涉及网站页面、产品页、文章草稿、WordPress Draft 结构时启动。",
+      "mission_types": [
+        "website_draft",
+        "wordpress_draft_prepare",
+        "product_page_structure",
+        "website_qa"
+      ],
+      "providers": [
+        "Website Agent V1",
+        "WordPress Draft Provider",
+        "QA Agent"
+      ],
+      "outputs": [
+        "Website Draft",
+        "WordPress Draft Payload",
+        "QA Result",
+        "Page Structure"
+      ],
+      "status": "working"
+    },
+    {
+      "employee_id": "sales_employee",
+      "name": "Sales Employee",
+      "reports_to": "commander",
+      "responsibility": "处理销售询盘、客户回复草稿、报价前信息收集，不自动报价、不自动发送。",
+      "when_to_work": "当 Mission 来源为询盘、客户邮件、Contact Form、报价准备时启动。",
+      "mission_types": [
+        "sales_inquiry",
+        "inquiry_reply",
+        "quotation_preparation",
+        "customer_follow_up"
+      ],
+      "providers": [
+        "Gmail Draft Provider",
+        "Customer Intelligence Center",
+        "Product Knowledge"
+      ],
+      "outputs": [
+        "Sales Reply Draft",
+        "Missing Information List",
+        "Quotation Preparation Checklist",
+        "Customer Summary"
+      ],
+      "status": "workflow_exists_not_full_employee"
+    },
+    {
+      "employee_id": "crm_employee",
+      "name": "CRM Employee",
+      "reports_to": "commander",
+      "responsibility": "维护客户卡片、询盘历史、跟进状态、下一步动作。",
+      "when_to_work": "当客户有新询盘、二次询盘、跟进记录、客户状态变化时启动。",
+      "mission_types": [
+        "customer_card_update",
+        "lead_score_update",
+        "follow_up_schedule",
+        "customer_history_link"
+      ],
+      "providers": [
+        "Customer Intelligence Center",
+        "Runtime Store"
+      ],
+      "outputs": [
+        "Customer Card",
+        "Lead Score",
+        "Next Action",
+        "Customer History"
+      ],
+      "status": "concept_built"
+    },
+    {
+      "employee_id": "customer_success_employee",
+      "name": "Customer Success Employee",
+      "reports_to": "commander",
+      "responsibility": "负责售后问题、交付跟进、安装培训资料、客户满意度跟进。",
+      "when_to_work": "当 Mission 来源为售后、安装、培训、客户成功跟进时启动。",
+      "mission_types": [
+        "support_reply",
+        "delivery_follow_up",
+        "installation_guidance",
+        "training_material"
+      ],
+      "providers": [
+        "Knowledge Center",
+        "Gmail Draft Provider",
+        "CRM Employee"
+      ],
+      "outputs": [
+        "Support Draft",
+        "Training Checklist",
+        "Follow-up Plan"
+      ],
+      "status": "planned"
+    },
+    {
+      "employee_id": "marketing_employee",
+      "name": "Marketing Employee",
+      "reports_to": "commander",
+      "responsibility": "负责营销活动、内容日历、渠道策略、Campaign 复盘。",
+      "when_to_work": "当 Mission 涉及营销计划、节日活动、渠道内容组合、Campaign 时启动。",
+      "mission_types": [
+        "campaign_plan",
+        "content_calendar",
+        "channel_strategy",
+        "marketing_report"
+      ],
+      "providers": [
+        "Publishing Employee",
+        "Analytics Employee",
+        "Content Employee"
+      ],
+      "outputs": [
+        "Marketing Plan",
+        "Campaign Brief",
+        "Content Calendar",
+        "Performance Notes"
+      ],
+      "status": "planned"
+    },
+    {
+      "employee_id": "analytics_employee",
+      "name": "Analytics Employee",
+      "reports_to": "commander",
+      "responsibility": "读取 GA4、GSC、平台表现数据，生成经营分析和内容效果报告。",
+      "when_to_work": "当 Mission 涉及数据读取、日报、周报、渠道表现、转化分析时启动。",
+      "mission_types": [
+        "daily_metrics",
+        "weekly_report",
+        "channel_performance",
+        "content_performance"
+      ],
+      "providers": [
+        "GA4 Executor",
+        "Google Search Console Executor",
+        "Runtime Store"
+      ],
+      "outputs": [
+        "Analytics Report",
+        "Metric Summary",
+        "Risk Signal",
+        "Next Action Recommendation"
+      ],
+      "status": "read_only_ready"
+    },
+    {
+      "employee_id": "data_employee",
+      "name": "Data Employee",
+      "reports_to": "commander",
+      "responsibility": "维护运行数据、Mission History、Event Store、数据质量和迁移。",
+      "when_to_work": "当 Mission 涉及数据持久化、统计口径、数据清洗、运行记录时启动。",
+      "mission_types": [
+        "runtime_data_maintenance",
+        "data_quality_check",
+        "history_query",
+        "migration_plan"
+      ],
+      "providers": [
+        "Runtime Persistence",
+        "Event Store",
+        "Audit"
+      ],
+      "outputs": [
+        "Data Health Report",
+        "Runtime Query Result",
+        "Migration Plan"
+      ],
+      "status": "read_only_ready"
+    },
+    {
+      "employee_id": "recruiting_employee",
+      "name": "Recruiting Employee",
+      "reports_to": "commander",
+      "responsibility": "规划新 AI 员工岗位、能力标准、招聘/创建任务。",
+      "when_to_work": "当需要新增 AI Employee、扩展岗位、定义岗位职责时启动。",
+      "mission_types": [
+        "employee_role_design",
+        "capability_gap_analysis",
+        "new_employee_onboarding"
+      ],
+      "providers": [
+        "AI Employee Center",
+        "Documentation Employee"
+      ],
+      "outputs": [
+        "Role Spec",
+        "Onboarding Checklist",
+        "Capability Gap Report"
+      ],
+      "status": "planned"
+    },
+    {
+      "employee_id": "finance_employee",
+      "name": "Finance Employee",
+      "reports_to": "commander",
+      "responsibility": "跟踪成本、Token、API、广告预算、报价前财务边界，不自动报价。",
+      "when_to_work": "当 Mission 涉及成本、预算、报价边界、利润分析时启动。",
+      "mission_types": [
+        "cost_tracking",
+        "budget_review",
+        "quotation_boundary",
+        "roi_report"
+      ],
+      "providers": [
+        "Runtime Store",
+        "Analytics Employee"
+      ],
+      "outputs": [
+        "Cost Report",
+        "Budget Warning",
+        "Quotation Boundary Note"
+      ],
+      "status": "planned"
+    },
+    {
+      "employee_id": "system_maintenance_employee",
+      "name": "System Maintenance Employee",
+      "reports_to": "commander",
+      "responsibility": "维护本地服务、Docker、n8n、日志、健康检查、备份策略。",
+      "when_to_work": "当 Mission 涉及运行稳定性、服务恢复、健康检查、日志归档时启动。",
+      "mission_types": [
+        "health_check",
+        "incident_response",
+        "backup_plan",
+        "service_recovery"
+      ],
+      "providers": [
+        "Docker",
+        "n8n Local",
+        "Runtime Logs",
+        "Health Check"
+      ],
+      "outputs": [
+        "Health Report",
+        "Incident Report",
+        "Recovery Steps",
+        "Backup Checklist"
+      ],
+      "status": "partially_working"
+    },
+    {
+      "employee_id": "security_employee",
+      "name": "Security Employee",
+      "reports_to": "commander",
+      "responsibility": "负责权限、密钥、OAuth、风险等级、安全门、外部动作禁止项。",
+      "when_to_work": "当 Mission 涉及外部平台授权、权限审计、密钥轮换、风险审批时启动。",
+      "mission_types": [
+        "security_review",
+        "oauth_audit",
+        "permission_boundary",
+        "risk_gate_review"
+      ],
+      "providers": [
+        "Production Safety Gate",
+        "Approval Center",
+        "Credential Registry"
+      ],
+      "outputs": [
+        "Security Checklist",
+        "Permission Boundary",
+        "Risk Decision",
+        "Credential Rotation Plan"
+      ],
+      "status": "planned"
+    },
+    {
+      "employee_id": "knowledge_qa_employee",
+      "name": "Knowledge QA Employee",
+      "reports_to": "commander",
+      "responsibility": "验收知识库质量、公开边界、资料来源、是否允许进入公开发布。",
+      "when_to_work": "当 Knowledge Employee 完成资料补全、产品绑定或资料缺口任务时启动。",
+      "mission_types": [
+        "knowledge_qa",
+        "source_verification",
+        "public_boundary_review",
+        "gap_task_acceptance"
+      ],
+      "providers": [
+        "Knowledge Center",
+        "QA Checklist",
+        "Runtime Store"
+      ],
+      "outputs": [
+        "Knowledge QA Result",
+        "Public Approval Status",
+        "Blocked Reason",
+        "Fix List"
+      ],
+      "status": "partially_available_via_qa_agent"
+    },
+    {
+      "employee_id": "automation_employee",
+      "name": "Automation Employee",
+      "reports_to": "commander",
+      "responsibility": "设计自动化流程、n8n Workflow 方案、任务触发规则，但不绕过审批执行外部动作。",
+      "when_to_work": "当 Mission 涉及自动化流程、Webhook、任务触发、Runner、调度规则时启动。",
+      "mission_types": [
+        "automation_design",
+        "workflow_mapping",
+        "trigger_rule",
+        "local_runner"
+      ],
+      "providers": [
+        "n8n",
+        "Event Center",
+        "Runtime Core"
+      ],
+      "outputs": [
+        "Automation Plan",
+        "Workflow Mapping",
+        "Trigger Rules",
+        "Dry-run Result"
+      ],
+      "status": "working_for_build_tasks"
+    },
+    {
+      "employee_id": "documentation_employee",
+      "name": "Documentation Employee",
+      "reports_to": "commander",
+      "responsibility": "维护 SOP、报告、验收记录、员工手册、CEO Review 文档。",
+      "when_to_work": "当 Mission 完成后需要中文报告、流程文档、复盘、操作手册时启动。",
+      "mission_types": [
+        "sprint_report",
+        "sop",
+        "acceptance_report",
+        "employee_handbook"
+      ],
+      "providers": [
+        "Docs",
+        "Runtime Store",
+        "Audit"
+      ],
+      "outputs": [
+        "Chinese Report",
+        "SOP",
+        "Review Checklist",
+        "Handbook"
+      ],
+      "status": "working_via_commander_reporting_agent"
+    }
+  ],
+  "updated_at": "2026-07-10"
+}
+

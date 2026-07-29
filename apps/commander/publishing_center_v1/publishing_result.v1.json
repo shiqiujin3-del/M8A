@@ -1,0 +1,47 @@
+{
+  "version": "publishing_center_v1",
+  "name": "Publishing Result V1",
+  "compatible_with": "runtime_core_v1/execution_contract.v1.json",
+  "required_fields": [
+    "mission_id",
+    "execution_id",
+    "provider",
+    "resource_type",
+    "status",
+    "resource_id",
+    "resource_url",
+    "started_at",
+    "finished_at",
+    "error"
+  ],
+  "result_object": {
+    "success": "boolean",
+    "publishing_mission_id": "string",
+    "mission_id": "string",
+    "execution_id": "string",
+    "provider": "wordpress|youtube|facebook|linkedin|tiktok|custom",
+    "resource_type": "wordpress_post|wordpress_page|youtube_video|social_post|short_video|unknown",
+    "status": "queued|running|completed|failed",
+    "resource_id": "string|null",
+    "resource_url": "string|null",
+    "started_at": "iso_datetime|null",
+    "finished_at": "iso_datetime|null",
+    "retry_count": "number",
+    "error": {
+      "error_code": "string|null",
+      "error_message": "string|null",
+      "retryable": "boolean"
+    },
+    "runtime_core": {
+      "execution_contract_compatible": true,
+      "runtime_status": "created|queued|running|waiting|retrying|completed|failed|cancelled|timeout"
+    }
+  },
+  "rules": [
+    "Publishing Result 必须兼容 Runtime Core Execution Contract。",
+    "Dashboard 未来只读取 Publishing Result 与 Runtime Core 标准字段。",
+    "失败时 resource_id 与 resource_url 可以为空，但 error 必须完整。",
+    "Publishing Center 不解析 Provider 私有响应，Provider 私有响应只能作为 raw_response_ref 存放在 Runtime Core。"
+  ]
+}
+

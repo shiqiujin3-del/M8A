@@ -1,0 +1,14 @@
+{
+  "version": "product_knowledge_gap_task_center_index_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "task_centers": [
+    {
+      "product_id": "product_hk620",
+      "product_name": "HK620",
+      "file": "apps/commander/product_knowledge_gap_task_center/hk620_product_knowledge_gap_tasks.v1.json",
+      "knowledge_center_copy": "knowledge/products/HK620/gap_tasks/hk620_product_knowledge_gap_tasks.v1.json",
+      "status": "active",
+      "public_publish_status": "blocked_until_p0_and_p1_gaps_accepted"
+    }
+  ]
+}

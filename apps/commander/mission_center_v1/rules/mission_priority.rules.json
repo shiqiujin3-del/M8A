@@ -1,0 +1,29 @@
+{
+  "version": "mission_priority_v1",
+  "priorities": {
+    "P0": {
+      "label": "P0 Critical",
+      "cn": "P0 严重",
+      "dashboard_order": 1,
+      "meaning": "阻断公开发布、外部风险、核心链路阻断。"
+    },
+    "P1": {
+      "label": "P1 High",
+      "cn": "P1 高",
+      "dashboard_order": 2,
+      "meaning": "影响业务质量或关键资料完整度。"
+    },
+    "P2": {
+      "label": "P2 Normal",
+      "cn": "P2 普通",
+      "dashboard_order": 3,
+      "meaning": "常规优化、链接、结构、补充资料。"
+    },
+    "P3": {
+      "label": "P3 Low",
+      "cn": "P3 低",
+      "dashboard_order": 4,
+      "meaning": "低风险归档、整理、非阻断优化。"
+    }
+  }
+}

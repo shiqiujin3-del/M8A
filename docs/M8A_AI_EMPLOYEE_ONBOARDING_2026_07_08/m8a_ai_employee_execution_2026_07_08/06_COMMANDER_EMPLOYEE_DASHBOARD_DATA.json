@@ -1,0 +1,74 @@
+{
+  "dashboard_name": "M8A AI Employee Workbench Data",
+  "generated_at": "2026-07-08T00:30:00+01:00",
+  "language": "zh-CN",
+  "summary": {
+    "total_onboarded_today": 5,
+    "ready_for_assignment": 5,
+    "running_external_public_actions": 0,
+    "waiting_for_ceo_authorization": 4,
+    "completed_deliverables": 5
+  },
+  "employees": [
+    {
+      "employee_id": "website_agent",
+      "employee_name": "Website Agent",
+      "department": "网站部门",
+      "status": "已上岗",
+      "current_task": "下一篇 WordPress Draft 准备包",
+      "deliverable": "01_WEBSITE_AGENT_NEXT_DRAFT_PACKAGE.md",
+      "platforms": ["WordPress", "n8n"],
+      "permission_level": "Draft Only",
+      "needs_ceo_authorization": true,
+      "authorization_reason": "创建真实 WordPress Draft 前建议 CEO 确认主题。"
+    },
+    {
+      "employee_id": "seo_agent",
+      "employee_name": "SEO Agent",
+      "department": "网站部门",
+      "status": "已上岗",
+      "current_task": "HK620 页面 SEO 检查",
+      "deliverable": "02_SEO_AGENT_HK620_REVIEW_REPORT.md",
+      "platforms": ["Google Search Console"],
+      "permission_level": "Read Only",
+      "needs_ceo_authorization": false,
+      "authorization_reason": null
+    },
+    {
+      "employee_id": "data_agent",
+      "employee_name": "Data Agent",
+      "department": "数据部门",
+      "status": "已上岗",
+      "current_task": "M8A 数据日报模板",
+      "deliverable": "03_DATA_AGENT_DAILY_REPORT_TEMPLATE.md",
+      "platforms": ["GA4"],
+      "permission_level": "Read Only",
+      "needs_ceo_authorization": false,
+      "authorization_reason": null
+    },
+    {
+      "employee_id": "publishing_agent",
+      "employee_name": "Publishing Agent",
+      "department": "营销部门",
+      "status": "已上岗",
+      "current_task": "Gmail Draft Only 工作流设计",
+      "deliverable": "04_PUBLISHING_AGENT_GMAIL_DRAFT_ONLY_DESIGN.md",
+      "platforms": ["Gmail"],
+      "permission_level": "Design Only / Read Only",
+      "needs_ceo_authorization": true,
+      "authorization_reason": "创建真实 Gmail Draft 或发送邮件前必须审批。"
+    },
+    {
+      "employee_id": "video_agent",
+      "employee_name": "Video Agent",
+      "department": "视频部门",
+      "status": "已上岗",
+      "current_task": "YouTube Private/Draft Only 工作流设计",
+      "deliverable": "05_VIDEO_AGENT_YOUTUBE_PRIVATE_DRAFT_DESIGN.md",
+      "platforms": ["YouTube"],
+      "permission_level": "Design Only / Read Only",
+      "needs_ceo_authorization": true,
+      "authorization_reason": "上传或发布视频前必须审批。"
+    }
+  ]
+}

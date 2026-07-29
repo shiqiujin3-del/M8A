@@ -1,0 +1,150 @@
+{
+  "binding_version": "1.1",
+  "generated_at": "2026-07-08T08:25:00Z",
+  "source": "M8N 总经理本地接入",
+  "n8n": {
+    "local_url": "http://localhost:5678",
+    "workflow_page": "http://localhost:5678/home/workflows",
+    "container_name": "m8a-n8n",
+    "status": "本地已接入"
+  },
+  "rules": {
+    "m8n_is_control_layer": true,
+    "ai_employee_calls_n8n_workflow": true,
+    "n8n_is_execution_layer": true,
+    "external_public_action_requires_ceo_confirmation": true,
+    "auto_send_email_allowed": false,
+    "auto_publish_allowed": false,
+    "auto_delete_allowed": false
+  },
+  "workflow_bindings": [
+    {
+      "workflow_name": "PRODUCT_KNOWLEDGE_ACQUISITION_WORKFLOW",
+      "owner_employee_id": "research_agent",
+      "owner_employee_name": "Research Agent",
+      "backup_employee_id": "knowledge_agent",
+      "purpose_cn": "采集产品知识资料",
+      "current_permission": "允许本地读取和准备，不允许自动发布到外部平台",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "PRODUCT_KNOWLEDGE_REVIEW_WORKFLOW",
+      "owner_employee_id": "knowledge_agent",
+      "owner_employee_name": "Knowledge Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "审核产品知识内容",
+      "current_permission": "允许本地审核和生成报告",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "HK620_KNOWLEDGE_COLLECTOR_WORKFLOW",
+      "owner_employee_id": "research_agent",
+      "owner_employee_name": "Research Agent",
+      "backup_employee_id": "knowledge_agent",
+      "purpose_cn": "采集 HK620 产品知识",
+      "current_permission": "允许本地采集和整理，不允许外部发布",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "HK620_KNOWLEDGE_RETRIEVAL_TEST",
+      "owner_employee_id": "knowledge_agent",
+      "owner_employee_name": "Knowledge Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "测试 HK620 知识检索结果",
+      "current_permission": "允许本地测试",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "M8A_P3B_OPENAI_EMBEDDING_TEST",
+      "owner_employee_id": "automation_agent",
+      "owner_employee_name": "Automation Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "测试向量化/嵌入流程",
+      "current_permission": "允许本地测试；真实模型调用需按已配置权限执行",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "M8A_P3_RAG_TEST_WORKFLOW",
+      "owner_employee_id": "knowledge_agent",
+      "owner_employee_name": "Knowledge Agent",
+      "backup_employee_id": "research_agent",
+      "purpose_cn": "测试知识库问答流程",
+      "current_permission": "允许本地测试和生成内部答案",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "M8A_P2_HEALTHCHECK_WORKFLOW",
+      "owner_employee_id": "qa_agent",
+      "owner_employee_name": "QA Agent",
+      "backup_employee_id": "automation_agent",
+      "purpose_cn": "检查 M8A / n8n 基础健康状态",
+      "current_permission": "允许健康检查",
+      "status": "已绑定"
+    },
+    {
+      "workflow_name": "M8A_GSC_READONLY_VALIDATION_V1",
+      "owner_employee_id": "seo_agent",
+      "owner_employee_name": "SEO Agent",
+      "backup_employee_id": "website_agent",
+      "purpose_cn": "读取 Google Search Console 状态和搜索表现，为 SEO 报告提供数据。",
+      "current_permission": "只读；禁止修改 Search Console 设置。",
+      "status": "已同步到 Commander",
+      "synced_at": "2026-07-08T05:05:00+01:00"
+    },
+    {
+      "workflow_name": "M8A_GA4_READONLY_VALIDATION_V1",
+      "owner_employee_id": "data_agent",
+      "owner_employee_name": "Data Agent",
+      "backup_employee_id": "commander_reporting_agent",
+      "purpose_cn": "读取 GA4 状态和基础数据，为日报提供数据。",
+      "current_permission": "只读；禁止修改 GA4 设置。",
+      "status": "已同步到 Commander",
+      "synced_at": "2026-07-08T05:05:00+01:00"
+    },
+    {
+      "workflow_name": "M8A_GMAIL_READONLY_VALIDATION_V1",
+      "owner_employee_id": "publishing_agent",
+      "owner_employee_name": "Publishing Agent",
+      "backup_employee_id": "automation_agent",
+      "purpose_cn": "验证 Gmail 连接健康状态，为后续 Draft Only 工作流做准备。",
+      "current_permission": "只读；禁止发送、删除、读取正文和修改邮箱。",
+      "status": "已同步到 Commander",
+      "synced_at": "2026-07-08T05:05:00+01:00"
+    },
+    {
+      "workflow_name": "M8A_YOUTUBE_READONLY_VALIDATION_V1",
+      "owner_employee_id": "video_agent",
+      "owner_employee_name": "Video Agent",
+      "backup_employee_id": "automation_agent",
+      "purpose_cn": "验证 YouTube 连接健康状态，为后续 Private/Draft Only 工作流做准备。",
+      "current_permission": "只读；禁止上传、发布、删除和修改频道。",
+      "status": "已同步到 Commander",
+      "synced_at": "2026-07-08T05:05:00+01:00"
+    },
+    {
+      "workflow_name": "CWbGujhdNKFpa5JZ",
+      "owner_employee_id": "website_agent",
+      "owner_employee_name": "Website Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "WordPress 内容 Draft/发布前流程。已用于 HK620 页面闭环。",
+      "current_permission": "Draft Only；正式发布必须 CEO 单独审批。",
+      "status": "legacy_risk_do_not_run_for_draft",
+      "synced_at": "2026-07-08T08:25:00Z",
+      "notes_cn": "数据库中该 ID 已变成更新已发布 Post 434 的节点，禁止作为 Draft 创建入口。"
+    },
+    {
+      "workflow_name": "m8a_hk620_draft_20260708",
+      "workflow_display_name": "M8A_TEMP_HK620_CUSTOMER_DRAFT_ONLY_20260708",
+      "owner_employee_id": "website_agent",
+      "owner_employee_name": "Website Agent",
+      "backup_employee_id": "qa_agent",
+      "purpose_cn": "创建 HK620 客户可读英文 WordPress Draft，禁止发布。",
+      "current_permission": "Draft Only；workflow inactive；只允许 CEO/Commander 批准后执行。",
+      "status": "executed_successfully_draft_only",
+      "last_execution_id": 26,
+      "last_wordpress_post_id": 437,
+      "synced_at": "2026-07-08T08:25:00Z"
+    }
+  ],
+  "purpose": "已验收平台能力绑定到 AI 员工"
+}

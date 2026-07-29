@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+  "trace_id": "trace_real_wp_draft_20260710T015825",
+  "execution_id": 33,
+  "executor": "n8n",
+  "workflow_id": "aTVbw0a7MId3NCBH",
+  "workflow_name": "m8a_hk620_draft_20260708",
+  "action_type": "create_wordpress_draft_only",
+  "status": "completed",
+  "started_at": "2026-07-10T02:57:21.037Z",
+  "finished_at": "2026-07-10T02:57:23.610Z",
+  "duration_ms": 2573,
+  "retry_count": 1,
+  "result": {
+    "type": "wordpress_draft",
+    "post_id": 443,
+    "post_status": "draft",
+    "draft_url": "https://woodmachinerynetwork.com/?p=443",
+    "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=443&action=edit",
+    "title": "HK620 Draft Test from M8A",
+    "slug": "hk620-draft-test-from-m8a",
+    "external_id": 443,
+    "external_url": "https://woodmachinerynetwork.com/?p=443",
+    "platform_status": "draft"
+  },
+  "error": null,
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "old_workflow_called": false,
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+  },
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "legacy_webhook_response": {
+      "message": "Workflow was started"
+    },
+    "requires_execution_lookup": true,
+    "normalization_source": "n8n_execution_lookup"
+  }
+}

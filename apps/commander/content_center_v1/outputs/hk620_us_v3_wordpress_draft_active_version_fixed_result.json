@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-07-12T04:19:12Z",
+  "mission_id": "mission_hk620_us_v3_active_version_fixed_20260712041912",
+  "trace_id": "trace_hk620_us_v3_active_version_fixed_31ad26e03d",
+  "http_status": 200,
+  "expected_title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+  "response": {
+    "success": true,
+    "mission_id": "mission_hk620_us_v3_active_version_fixed_20260712041912",
+    "trace_id": "trace_hk620_us_v3_active_version_fixed_31ad26e03d",
+    "execution_id": "213",
+    "executor": "n8n",
+    "workflow_id": "aTVbw0a7MId3NCBH",
+    "workflow_name": "m8a_hk620_draft_20260708",
+    "action_type": "create_wordpress_draft_only",
+    "status": "completed",
+    "started_at": null,
+    "finished_at": "2026-07-12T04:19:16.533Z",
+    "duration_ms": null,
+    "retry_count": 0,
+    "result": {
+      "type": "wordpress_draft",
+      "post_id": 452,
+      "post_status": "draft",
+      "draft_url": "https://woodmachinerynetwork.com/?p=452",
+      "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=452&action=edit",
+      "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
+      "slug": "hk620-skeleton-line-edge-banding-machine-for-door-furniture-and-decorative-strip-production",
+      "external_id": 452,
+      "external_url": "https://woodmachinerynetwork.com/?p=452",
+      "platform_status": "draft"
+    },
+    "error": null,
+    "safety": {
+      "draft_only": true,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "old_workflow_called": false,
+      "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+    },
+    "compatibility": {
+      "contract_version": "execution_response_contract_v1",
+      "legacy_webhook_response": null,
+      "requires_execution_lookup": false,
+      "normalization_source": "direct_webhook_response"
+    }
+  },
+  "pass_title_mapping": true,
+  "safety_confirmation": {
+    "draft_only": true,
+    "publish": true,
+    "delete_post": true,
+    "update_published_post": true,
+    "send_gmail": true,
+    "upload_youtube": true,
+    "old_workflow_called": true
+  }
+}

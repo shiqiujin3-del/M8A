@@ -1,0 +1,47 @@
+{
+  "article_id": "hk620_us_customer_article_v4_final",
+  "version": "V4 Final",
+  "wp_post_id": 481,
+  "published_url": "https://woodmachinerynetwork.com/hk620-skeleton-door-profile-edge-banding-machine/",
+  "published_date": "2026-07-29T21:03:50",
+  "title": "HK620 Skeleton Door Profile Edge Banding Machine for Door and Furniture Profile Production",
+  "slug": "hk620-skeleton-door-profile-edge-banding-machine",
+  "meta_title": "HK620 Skeleton Door Profile Edge Banding Machine | Stable Production for Door & Furniture Profiles",
+  "meta_description": "HK620 skeleton door profile edge banding machine for door and furniture profile production. PUR glue, 18 m/min, suitable for decorative strips, door casing, and skeleton door components. Batch production ready.",
+  "yoast_meta_fix_note": "Yoast SEO meta (_yoast_wpseo_title, _yoast_wpseo_metadesc) does NOT persist via WordPress REST API. After draft creation and after publish, must set via server-side PHP: update_post_meta(post_id, '_yoast_wpseo_title', value). SSH: admin@47.236.185.172, deploy key: SYUTECH_WEBSITE_MIGRATION_PACKAGE/deploy_keys/woodmachinerynetwork_deploy",
+  "focus_keywords": [
+    "skeleton door profile edge banding machine",
+    "door profile edge banding",
+    "furniture profile production",
+    "decorative strip edge banding",
+    "profile edge banding machine",
+    "skeleton line edge banding",
+    "PUR glue edge banding machine"
+  ],
+  "categories": [1],
+  "tags": [],
+  "product_url": "https://woodmachinerynetwork.com/machines/edge-banding-machines/hk620/",
+  "contact_url": "https://woodmachinerynetwork.com/contact/",
+  "images": [
+    {
+      "wp_media_id": 479,
+      "file": "hk620-profile-cross-section-samples.png",
+      "alt": "Skeleton door profile and decorative strip core samples",
+      "position": "after_overview"
+    },
+    {
+      "wp_media_id": 480,
+      "file": "hk620-finished-profile-strips.jpg",
+      "alt": "Finished decorative profile strips for door and furniture applications",
+      "position": "after_validation"
+    }
+  ],
+  "publish_status": "published",
+  "safety": {
+    "no_auto_publish": true,
+    "require_ceo_approval": true,
+    "no_delete": true,
+    "no_modify_published": true,
+    "customer_names_anonymized": true
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": "ai_employee_center_v2",
+  "name": "Employee Collaboration V2",
+  "collaboration_principle": "员工之间不直接抢任务；所有协作由 Commander 基于 Mission 依赖和 Runtime 状态调度。",
+  "flows": [
+    {
+      "flow_id": "content_to_publishing",
+      "name": "内容发布协作流",
+      "steps": [
+        "Knowledge Employee 准备产品事实",
+        "Content Employee 生成内容草稿",
+        "SEO Employee 检查 SEO",
+        "Knowledge QA Employee 验证事实和公开边界",
+        "Publishing Employee 检查审批和目标平台",
+        "Provider 执行 Draft-only 或经 CEO 审批后发布",
+        "Analytics Employee 读取结果",
+        "Documentation Employee 写验收报告"
+      ],
+      "approval_gate": "Publish/Public Upload 必须 CEO 审批"
+    },
+    {
+      "flow_id": "video_to_publishing",
+      "name": "视频发布协作流",
+      "steps": [
+        "Knowledge Employee 提供产品资料",
+        "Content Employee 生成视频脚本和标题说明",
+        "Video Employee 选择素材并准备上传 payload",
+        "Security Employee 确认隐私级别和授权",
+        "Publishing Employee 调度 YouTube Provider",
+        "Analytics Employee 后续读取表现"
+      ],
+      "approval_gate": "Public Upload 必须 CEO 审批；Private validation 可按单次授权执行"
+    },
+    {
+      "flow_id": "inquiry_to_sales",
+      "name": "询盘到销售协作流",
+      "steps": [
+        "CRM Employee 建立或关联 Customer Card",
+        "Knowledge Employee 提供产品事实",
+        "Sales Employee 生成英文回复草稿",
+        "Finance Employee 标记报价边界",
+        "Gmail Draft Provider 创建草稿",
+        "CEO 或人工销售确认是否发送"
+      ],
+      "approval_gate": "Send Email 和正式报价必须人工确认"
+    },
+    {
+      "flow_id": "data_to_decision",
+      "name": "数据到决策协作流",
+      "steps": [
+        "Analytics Employee 读取 GA4/GSC",
+        "Data Employee 校验数据口径",
+        "Marketing Employee 形成策略建议",
+        "Commander 汇总给 CEO",
+        "Documentation Employee 生成日报/周报"
+      ],
+      "approval_gate": "只读数据不需要审批；更改配置或广告动作需要审批"
+    }
+  ],
+  "dependency_graph": {
+    "publishing_employee": [
+      "content_employee",
+      "video_employee",
+      "seo_employee",
+      "knowledge_qa_employee",
+      "security_employee",
+      "provider"
+    ],
+    "content_employee": ["knowledge_employee", "geo_employee", "seo_employee"],
+    "sales_employee": ["crm_employee", "knowledge_employee", "finance_employee"],
+    "marketing_employee": ["analytics_employee", "content_employee", "publishing_employee"],
+    "system_maintenance_employee": ["security_employee", "data_employee"],
+    "documentation_employee": ["all_employees"]
+  }
+}
+

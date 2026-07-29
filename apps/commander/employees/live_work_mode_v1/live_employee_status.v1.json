@@ -1,0 +1,36 @@
+{
+  "version": "live_employee_status_v1",
+  "generated_at": "2026-07-10T14:19:42+00:00",
+  "employees": [
+    {
+      "employee_id": "knowledge_agent",
+      "live_work_state": "waiting_source_material",
+      "current_mission": "mission_hk620_gap_001_public_technical_specs",
+      "can_continue_without_ceo_material": false
+    },
+    {
+      "employee_id": "website_agent",
+      "live_work_state": "completed_local_work",
+      "completed_missions": [
+        "mission_hk620_gap_005_external_references",
+        "mission_hk620_gap_006_internal_links"
+      ],
+      "can_continue_without_external_action": true
+    },
+    {
+      "employee_id": "qa_agent",
+      "live_work_state": "completed_local_qa",
+      "completed_missions": [
+        "mission_validate_hk620_gap_005_external_references",
+        "mission_validate_hk620_gap_006_internal_links"
+      ],
+      "average_qa_score": 89.5
+    },
+    {
+      "employee_id": "publishing_agent",
+      "live_work_state": "waiting_ceo_authorization",
+      "current_mission": "publishing_readiness_hk620_local_content_package_v1",
+      "external_action_allowed": false
+    }
+  ]
+}

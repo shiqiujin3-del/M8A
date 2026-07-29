@@ -1,0 +1,37 @@
+{
+  "version": "publishing_center_v1",
+  "name": "Publishing Queue V1",
+  "states": [
+    "queued",
+    "running",
+    "completed",
+    "failed"
+  ],
+  "queue_item": {
+    "queue_item_id": "string",
+    "publishing_mission_id": "string",
+    "mission_id": "string",
+    "publishing_type": "publish_product|publish_article|publish_video|publish_social_post",
+    "target_platform": "wordpress|youtube|facebook|linkedin|tiktok|multi_platform",
+    "selected_provider": "string|null",
+    "status": "queued|running|completed|failed",
+    "priority": "P0|P1|P2|P3",
+    "approval_status": "not_required|waiting_approval|approved|rejected",
+    "runtime_execution_id": "string|null",
+    "created_at": "iso_datetime",
+    "started_at": "iso_datetime|null",
+    "finished_at": "iso_datetime|null",
+    "error": {
+      "error_code": "string|null",
+      "error_message": "string|null"
+    }
+  },
+  "queue_rules": [
+    "queued 是 Publishing Center 的默认入口状态。",
+    "running 表示已交给 Runtime Core 或 External Executor。",
+    "completed 表示 Provider 返回 Runtime Core 兼容结果。",
+    "failed 表示调度失败、审批失败或 Provider 执行失败。",
+    "V1 只定义队列结构，不真实执行外部平台。"
+  ]
+}
+

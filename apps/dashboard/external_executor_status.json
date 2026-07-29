@@ -1,0 +1,102 @@
+{
+  "version": "external_executor_dashboard_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "title": "外部执行器 V1",
+  "mode_cn": "Real execution completed",
+  "allowed_action_cn": "WordPress Draft-only",
+  "forbidden_actions_cn": [
+    "publish",
+    "update_published_post",
+    "delete_post",
+    "send_gmail",
+    "upload_youtube",
+    "旧 workflow CWbGujhdNKFpa5JZ"
+  ],
+  "waiting_authorization_count": 1,
+  "dry_run_passed_count": 1,
+  "ready_for_real_execution_count": 1,
+  "recent_executor_event_cn": "Retry 成功：n8n execution #33 已创建 WordPress Draft，状态 Draft，未发布。",
+  "external_call_performed": true,
+  "cards": [
+    {
+      "label": "当前模式",
+      "value": "Dry-run only",
+      "status": "safe"
+    },
+    {
+      "label": "可执行动作",
+      "value": "WordPress Draft-only",
+      "status": "guarded"
+    },
+    {
+      "label": "Dry-run 通过",
+      "value": "1",
+      "status": "ready"
+    },
+    {
+      "label": "待真实执行",
+      "value": "1",
+      "status": "waiting_ceo"
+    },
+    {
+      "label": "外部调用",
+      "value": "0",
+      "status": "blocked"
+    }
+  ],
+  "last_real_execution": {
+    "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+    "trace_id": "trace_real_wp_draft_20260710T015825",
+    "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
+    "workflow_path": "m8a-hk620-draft-only",
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+    "http_status": 200,
+    "ok": true,
+    "execution_id": "33",
+    "post_id": 443,
+    "draft_url": "https://woodmachinerynetwork.com/?p=443",
+    "title": "HK620 Draft Test from M8A",
+    "status": "draft",
+    "execution_status": "executed_draft_only",
+    "started_at": "2026-07-10T02:57:20Z",
+    "finished_at": "2026-07-10T02:59:21Z",
+    "duration_ms": 1000,
+    "retry_count": 1,
+    "error": null,
+    "raw_response": {
+      "webhook_response": {
+        "message": "Workflow was started"
+      },
+      "n8n_execution_id": 33,
+      "wordpress_result": {
+        "id": 443,
+        "link": "https://woodmachinerynetwork.com/?p=443",
+        "status": "draft",
+        "title": "HK620 Draft Test from M8A",
+        "rest_url": "https://woodmachinerynetwork.com/wp-json/wp/v2/posts/443"
+      }
+    },
+    "safety_result": {
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false,
+      "draft_only": true,
+      "old_workflow_called": false,
+      "workflow_id": "aTVbw0a7MId3NCBH",
+      "old_workflow_id": "CWbGujhdNKFpa5JZ"
+    },
+    "n8n_execution_id": 33
+  },
+  "mission_status": "executed_draft_only",
+  "execution_status": "executed_draft_only",
+  "wordpress_draft_id": 443,
+  "wordpress_draft_url": "https://woodmachinerynetwork.com/?p=443",
+  "started_time": "2026-07-10T02:57:20Z",
+  "finished_time": "2026-07-10T02:59:21Z",
+  "duration_ms": 1000,
+  "retry_count": 1,
+  "updated_at": "2026-07-10T02:59:21Z",
+  "n8n_execution_id": 33
+}

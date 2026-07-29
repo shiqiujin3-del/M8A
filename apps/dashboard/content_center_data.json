@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-07-13T07:38:15Z",
+  "dashboard": "Content Center V1",
+  "language": "zh-CN",
+  "status": "HK620 英文图文客户文章包已完成；等待按平台发布或创建 Draft",
+  "summary": {
+    "product": "HK620",
+    "market": "美国",
+    "customer_facing_language": "English",
+    "internal_review_language": "Chinese",
+    "article_package_ready": true,
+    "images_ready": 2,
+    "external_actions_in_this_sync": 0
+  },
+  "current_focus": "HK620 美国市场英文图文客户文章发布包",
+  "agents": {
+    "content_owner": "Website Agent",
+    "knowledge_owner": "Knowledge Agent",
+    "research_support": "Research Agent",
+    "geo_support": "GEO Agent",
+    "seo_support": "SEO Agent",
+    "publishing_support": "Publishing Agent",
+    "video_support": "Video Agent",
+    "qa_reviewer": "QA Agent",
+    "dashboard_owner": "Commander Reporting Agent"
+  },
+  "package": {
+    "content_package_id": "content_pkg_hk620_us_v1",
+    "mission_id": "mission_content_center_hk620_us_package_v1",
+    "product": "HK620",
+    "target_market": "美国",
+    "language": "English for customer content, Chinese for internal QA",
+    "buyer_persona": [
+      "美国门厂",
+      "家具厂",
+      "装饰线条加工客户",
+      "木工车间采购经理"
+    ],
+    "status": "ready_for_multiplatform_distribution",
+    "owner_agents": {
+      "content_owner": "Website Agent",
+      "knowledge_owner": "Knowledge Agent",
+      "research_support": "Research Agent",
+      "geo_support": "GEO Agent",
+      "seo_support": "SEO Agent",
+      "publishing_support": "Publishing Agent",
+      "video_support": "Video Agent",
+      "qa_reviewer": "QA Agent",
+      "dashboard_owner": "Commander Reporting Agent"
+    },
+    "knowledge": {
+      "source_status": "CEO_input_integrated_public_evidence_still_needed",
+      "approved_claims": [
+        "HK620 是骨骼线条专用封边机，面向线条、装饰条等工件。",
+        "已确认 PUR 胶、380V、20kW、0.6 气压、台达控制、7.5 米、3 吨、30 天交付周期。",
+        "已具备 3 个月研发 + 3 个月测试验证经历，并已批量生产。"
+      ],
+      "open_gaps": [
+        "参数单位最终确认",
+        "图片/视频素材",
+        "客户案例公开授权",
+        "网站内链与询盘入口",
+        "最终英文术语与 CTA"
+      ]
+    },
+    "content_assets": [
+      {
+        "type": "image",
+        "path": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/assets/hk620-profile-cross-section-samples.png",
+        "usage": "型材截面/骨骼门线条结构说明"
+      },
+      {
+        "type": "image",
+        "path": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/assets/hk620-finished-profile-strips.jpg",
+        "usage": "封边后成品线条展示"
+      }
+    ],
+    "platform_variants": {
+      "wordpress": "ready_for_english_image_draft",
+      "medium": "ready_for_english_image_publish",
+      "linkedin": "ready_for_english_summary_post",
+      "quora": "ready_for_english_answer",
+      "substack": "ready_for_english_draft_or_publish",
+      "youtube": "ready_for_video_description_if_video_asset_exists"
+    },
+    "qa_result": {
+      "status": "passed_for_customer_facing_article",
+      "score": 92,
+      "notes": "客户可见正文为英文；中文只作为内部验收说明；已去除草稿状态、目标客户、建议标题等内部字段。"
+    },
+    "approval_status": "waiting_ceo_content_review",
+    "publish_status": "not_published",
+    "timeline": [
+      {
+        "status": "intake",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Commander"
+      },
+      {
+        "status": "knowledge_ready",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Knowledge Agent"
+      },
+      {
+        "status": "qa_passed",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "QA Agent"
+      }
+    ],
+    "safety": {
+      "draft_only": true,
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false
+    },
+    "latest_outputs": {
+      "english_customer_article": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/HK620_customer_facing_article_en_20260713.md",
+      "chinese_internal_review": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/HK620_中文内部验收说明_20260713.md",
+      "platform_publish_plan": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/platform_publish_plan_20260713.md",
+      "package_json": "/Users/shiqiujing/Documents/n8n/m8a_hk620_publish_ready_package_20260713/hk620_publish_ready_package_20260713.json"
+    },
+    "knowledge_gap_pack_v1": {
+      "status": "ready_for_knowledge_collection",
+      "total_gaps": 5,
+      "p0_gaps": 3,
+      "p1_gaps": 2,
+      "owner_agent": "Knowledge Agent",
+      "blocks_public_publish": true,
+      "blocks_wordpress_draft_only": false,
+      "file": "apps/commander/content_center_v1/outputs/hk620_us_customer_article_knowledge_gap_pack_v1.json"
+    },
+    "latest_version": "v3_pre_publish"
+  },
+  "next_action": "按平台执行英文图文文章发布；所有公开发布仍需保留平台证据。",
+  "safety_notice": "本次同步只写本地总控台数据，不调用 n8n、WordPress 或外部平台。"
+}

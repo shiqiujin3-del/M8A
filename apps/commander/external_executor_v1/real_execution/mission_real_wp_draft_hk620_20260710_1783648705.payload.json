@@ -1,0 +1,56 @@
+{
+  "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
+  "source_mission_id": "mission_hk620_gap_005_external_references",
+  "trace_id": "trace_real_wp_draft_20260710T015825",
+  "action_id": "action_create_wp_draft_only_mission_real_wp_draft_hk620_20260710_1783648705",
+  "authorization_id": "ceo_authorized_draft_only_20260710",
+  "employee": "External Executor V1",
+  "priority": "P0 Critical",
+  "retry": {
+    "retry_count": 1,
+    "max_retry": 2
+  },
+  "product": "HK620",
+  "market": "美国",
+  "language": "English",
+  "title": "HK620 Skeleton Door Strip Process Overview",
+  "article_draft": {
+    "title": "HK620 Skeleton Door Strip Process Overview",
+    "summary": "Local draft explaining HK620 process direction using approved internal knowledge only.",
+    "sections": [
+      "Buyer problem",
+      "Process logic",
+      "Safe application boundary",
+      "Questions for review"
+    ],
+    "cta": "Contact Saiyu for reviewed technical confirmation.",
+    "source_note": "Created by M8A Website Agent local runner; CEO authorized this single WordPress Draft-only external execution."
+  },
+  "qa_report": {
+    "qa_standard": "Website Agent QA V2",
+    "qa_score": 92,
+    "qa_status": "passed",
+    "reason": "本地 QA 通过但仍不允许发布；任何外部动作需要 CEO 单独授权。",
+    "publish_allowed": false
+  },
+  "qa_score": 92,
+  "action": "create_wordpress_draft_only",
+  "dry_run": false,
+  "publish": false,
+  "update_published_post": false,
+  "delete_post": false,
+  "send_gmail": false,
+  "upload_youtube": false,
+  "workflow_path": "m8a-hk620-draft-only",
+  "prohibited_workflow": "CWbGujhdNKFpa5JZ",
+  "safety": {
+    "draft_only": true,
+    "publish": false,
+    "update_published_post": false,
+    "delete_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "prohibited_workflow": "CWbGujhdNKFpa5JZ"
+  },
+  "retry_attempted_at": "2026-07-10T02:57:20Z"
+}

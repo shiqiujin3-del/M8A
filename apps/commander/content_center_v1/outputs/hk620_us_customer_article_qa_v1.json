@@ -1,0 +1,97 @@
+{
+  "mission_id": "mission_hk620_us_customer_article_v1",
+  "agent": "QA Agent",
+  "checked_at": "2026-07-12T03:12:00Z",
+  "language": "zh-CN",
+  "qa_score": 91,
+  "gate": "PASS_FOR_CEO_REVIEW_NOT_READY_FOR_PUBLIC_PUBLISH",
+  "checks": {
+    "title": {
+      "score": 9,
+      "status": "pass",
+      "note": "标题清楚，客户能理解用途。"
+    },
+    "meta_description": {
+      "score": 8,
+      "status": "pass",
+      "note": "可用于 SEO 初稿，后续可加入品牌词。"
+    },
+    "slug": {
+      "score": 9,
+      "status": "pass",
+      "note": "英文 slug 清晰。"
+    },
+    "h1": {
+      "score": 9,
+      "status": "pass",
+      "note": "H1 与主题一致。"
+    },
+    "heading_structure": {
+      "score": 9,
+      "status": "pass",
+      "note": "结构适合客户阅读，从问题到场景再到采购确认。"
+    },
+    "internal_links": {
+      "score": 6,
+      "status": "needs_input",
+      "note": "需要网站现有 HK620 / edge banding / contact 页面链接。"
+    },
+    "external_links": {
+      "score": 7,
+      "status": "optional",
+      "note": "当前未加入外链，避免引用未核实资料。"
+    },
+    "image_alt": {
+      "score": 6,
+      "status": "needs_input",
+      "note": "需要正式产品图后补 alt。"
+    },
+    "faq": {
+      "score": 9,
+      "status": "pass",
+      "note": "FAQ 能解释是否普通封边机、是否需要样品确认。"
+    },
+    "schema": {
+      "score": 7,
+      "status": "needs_later",
+      "note": "发布前再生成 Article/FAQ schema。"
+    },
+    "cta": {
+      "score": 8,
+      "status": "pass",
+      "note": "CTA 方向正确，需补最终询盘入口。"
+    },
+    "grammar": {
+      "score": 9,
+      "status": "pass",
+      "note": "英文表达清楚。"
+    },
+    "length": {
+      "score": 9,
+      "status": "pass",
+      "note": "长度适合网站初稿。"
+    },
+    "brand_consistency": {
+      "score": 8,
+      "status": "pass",
+      "note": "避免夸大，符合 SYUTECH 稳健口径。"
+    }
+  },
+  "decision": "可以进入 CEO 内容审阅；不建议直接公开发布。",
+  "required_before_public_publish": [
+    "补真实参数",
+    "补产品图片/视频",
+    "补客户案例或样品证据",
+    "补网站内部链接",
+    "补最终询盘入口"
+  ],
+  "safety": {
+    "called_n8n": false,
+    "called_wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "version": "runtime_core_v1",
+  "name": "M8A Runtime State Machine V1",
+  "states": [
+    "created",
+    "queued",
+    "running",
+    "waiting",
+    "retrying",
+    "completed",
+    "failed",
+    "cancelled",
+    "timeout"
+  ],
+  "terminal_states": [
+    "completed",
+    "failed",
+    "cancelled",
+    "timeout"
+  ],
+  "transitions": [
+    {
+      "from": "created",
+      "to": "queued",
+      "trigger": "mission_accepted"
+    },
+    {
+      "from": "queued",
+      "to": "running",
+      "trigger": "execution_started"
+    },
+    {
+      "from": "queued",
+      "to": "waiting",
+      "trigger": "dependency_or_approval_required"
+    },
+    {
+      "from": "waiting",
+      "to": "queued",
+      "trigger": "dependency_or_approval_resolved"
+    },
+    {
+      "from": "running",
+      "to": "completed",
+      "trigger": "execution_completed"
+    },
+    {
+      "from": "running",
+      "to": "failed",
+      "trigger": "execution_failed_no_retry"
+    },
+    {
+      "from": "running",
+      "to": "retrying",
+      "trigger": "execution_failed_retryable"
+    },
+    {
+      "from": "running",
+      "to": "timeout",
+      "trigger": "execution_timeout"
+    },
+    {
+      "from": "retrying",
+      "to": "queued",
+      "trigger": "retry_scheduled"
+    },
+    {
+      "from": "retrying",
+      "to": "failed",
+      "trigger": "max_retry_reached"
+    },
+    {
+      "from": "created",
+      "to": "cancelled",
+      "trigger": "cancel_requested"
+    },
+    {
+      "from": "queued",
+      "to": "cancelled",
+      "trigger": "cancel_requested"
+    },
+    {
+      "from": "waiting",
+      "to": "cancelled",
+      "trigger": "cancel_requested"
+    }
+  ],
+  "rules": [
+    "所有 Provider 必须使用本状态机。",
+    "Provider 私有状态只能写入 result.summary 或 raw_response_ref，不得成为 Dashboard 主状态。",
+    "Dashboard、Audit、Mission Queue 只能消费本状态集合。",
+    "Publish、Delete、Update Published Content 等 B 类动作必须先进入 waiting，等待 CEO 授权后才能回到 queued。",
+    "Draft-only、Read-only 等已授权 A 类或低风险动作可以从 queued 自动进入 running。"
+  ]
+}
+

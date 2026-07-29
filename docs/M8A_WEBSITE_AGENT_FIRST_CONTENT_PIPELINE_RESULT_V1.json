@@ -1,0 +1,37 @@
+{
+  "mission_id": "mission_commander_entry_1783488651135",
+  "status": "completed_with_warning_waiting_ceo_review",
+  "wordpress_draft": {
+    "post_id": 437,
+    "title": "HK620 Skeleton Door Strip Edge Banding Solution",
+    "slug": "hk620-skeleton-door-strip-edge-banding-solution-draft",
+    "status": "draft",
+    "draft_link": "https://woodmachinerynetwork.com/?p=437",
+    "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=437&action=edit",
+    "rest_url": "https://woodmachinerynetwork.com/wp-json/wp/v2/posts/437",
+    "publish": false
+  },
+  "n8n": {
+    "workflow_id": "m8a_hk620_draft_20260708",
+    "workflow_name": "M8A_TEMP_HK620_CUSTOMER_DRAFT_ONLY_20260708",
+    "execution_id": 26,
+    "execution_status": "success",
+    "active": false
+  },
+  "qa": {
+    "status": "passed_for_draft / needs_ceo_review",
+    "report_path": "docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_QA_REPORT_V1.md"
+  },
+  "commander_acceptance": {
+    "report_path": "docs/M8A_WEBSITE_AGENT_FIRST_CONTENT_PIPELINE_COMMANDER_ACCEPTANCE_V1.md",
+    "recommendation": "CEO review before any publish approval"
+  },
+  "safety": {
+    "published": false,
+    "gmail_sent": false,
+    "youtube_uploaded": false,
+    "deleted_content": false,
+    "secrets_written": false,
+    "legacy_workflow_warning": "CWbGujhdNKFpa5JZ no longer draft-only; do not reuse for draft creation."
+  }
+}

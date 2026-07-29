@@ -1,0 +1,66 @@
+{
+  "version": "customer_intelligence_center_v1",
+  "generated_at": "2026-07-10T12:00:00Z",
+  "mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+  "runtime_status": "completed",
+  "operation": "upsert_customer_card_by_email",
+  "customer_id": "customer_john_smith_john_smith_email_unknown_v1",
+  "deduplication": {
+    "input_email": "john.smith@example.com",
+    "normalized_email": "john.smith@example.com",
+    "matched_existing_customer": true,
+    "duplicate_customer_created": false,
+    "match_reason": "same_email"
+  },
+  "counts": {
+    "customers_created": 0,
+    "customers_updated": 1,
+    "inquiries_linked": 2,
+    "draft_history_items": 2,
+    "quotation_preparation_history_items": 2,
+    "mission_history_items": 3
+  },
+  "runtime_records": [
+    {
+      "at": "2026-07-10T12:00:00Z",
+      "event": "second_inquiry_received",
+      "status": "completed"
+    },
+    {
+      "at": "2026-07-10T12:00:00Z",
+      "event": "customer_lookup_by_email",
+      "status": "matched_existing_customer"
+    },
+    {
+      "at": "2026-07-10T12:00:00Z",
+      "event": "customer_card_updated",
+      "status": "completed"
+    },
+    {
+      "at": "2026-07-10T12:00:00Z",
+      "event": "mission_history_linked",
+      "status": "completed"
+    }
+  ],
+  "external_actions": {
+    "gmail_draft_created_this_sprint": false,
+    "wordpress_modified": false,
+    "website_modified": false,
+    "n8n_called": false
+  },
+  "field_check": {
+    "customer_name": "present",
+    "company": "present",
+    "country": "present",
+    "email": "present",
+    "interested_product": "present",
+    "lead_score": "present",
+    "inquiry_history": "present",
+    "draft_history": "present",
+    "quotation_history": "present",
+    "mission_history": "present",
+    "last_contact_time": "present",
+    "next_action": "present",
+    "owner": "present"
+  }
+}

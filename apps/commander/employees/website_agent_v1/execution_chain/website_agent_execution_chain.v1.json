@@ -1,0 +1,131 @@
+{
+  "version": "website_agent_execution_chain_v1",
+  "name": "Website Agent V1 可复用执行链",
+  "purpose": "让 HK690、HK680、六面钻、CNC、Factory Solution、Blog、Knowledge 只替换产品资料，不重做流程。",
+  "safety_boundary": {
+    "external_platform_calls": false,
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_external_content": false,
+    "update_published_post": false
+  },
+  "steps": [
+    {
+      "order": 1,
+      "key": "mission_intake",
+      "name": "Mission Intake",
+      "description": "接收 Mission Protocol，校验产品、市场、语言、平台、期望输出和安全边界。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "intake_received"
+    },
+    {
+      "order": 2,
+      "key": "knowledge_fetch",
+      "name": "Knowledge Fetch",
+      "description": "从统一 Knowledge Center 读取产品 Knowledge Binding；检查必填字段、来源文件、freshness_status 和 public_use_boundary；不访问外部平台。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "knowledge_loaded",
+      "knowledge_binding_required": true,
+      "binding_schema": "apps/commander/employees/website_agent_v1/knowledge_binding/website_agent_knowledge_binding.schema.json",
+      "missing_checklist": "apps/commander/employees/website_agent_v1/knowledge_binding/product_knowledge_missing_checklist.v1.json"
+    },
+    {
+      "order": 3,
+      "key": "draft_generation",
+      "name": "Draft Generation",
+      "description": "根据 Mission Prompt 生成客户可读草稿。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "draft_generated"
+    },
+    {
+      "order": 4,
+      "key": "seo_enrichment",
+      "name": "SEO Enrichment",
+      "description": "补齐 Title、Meta Description、Slug、H1、Heading、FAQ、Schema、CTA 等 SEO 元素。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "draft_generated"
+    },
+    {
+      "order": 5,
+      "key": "qa_v2_scoring",
+      "name": "QA V2 Scoring",
+      "description": "按 Website Agent QA V2 打分，低于 90 禁止进入发布流程。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "qa_completed"
+    },
+    {
+      "order": 6,
+      "key": "approval_gate",
+      "name": "Approval Gate",
+      "description": "草稿和 QA 结果提交 CEO 审批；未通过不得进入 Draft-only 交接。",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "next_state": "approved_for_draft"
+    },
+    {
+      "order": 7,
+      "key": "draft_only_handoff",
+      "name": "Draft-only Handoff",
+      "description": "只生成 Draft-only 交接包；真实 n8n / WordPress 调用必须另行授权。",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "next_state": "handed_off_to_n8n"
+    },
+    {
+      "order": 8,
+      "key": "mission_log_writeback",
+      "name": "Mission Log Writeback",
+      "description": "把开始时间、结束时间、Agent、耗时、状态、错误、QA 分数和最终结果写回 Mission Log。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "completed"
+    }
+  ],
+  "auto_progress_steps": [
+    "mission_intake",
+    "knowledge_fetch",
+    "draft_generation",
+    "seo_enrichment",
+    "qa_v2_scoring",
+    "mission_log_writeback"
+  ],
+  "ceo_approval_required_steps": [
+    "approval_gate",
+    "draft_only_handoff"
+  ],
+  "reuse_rule": "新增产品或内容类型时，只替换 product_profile / content_brief / market_profile，不重做 Mission Intake 到 Mission Log Writeback 的执行链。",
+  "knowledge_binding_v1": {
+    "status": "已具备 Knowledge Binding 能力",
+    "schema": "apps/commander/employees/website_agent_v1/knowledge_binding/website_agent_knowledge_binding.schema.json",
+    "hk620_binding": "apps/commander/employees/website_agent_v1/knowledge_binding/hk620.knowledge_binding.v1.json",
+    "knowledge_center_copy": "knowledge/products/HK620/bindings/website_agent_hk620.knowledge_binding.v1.json",
+    "missing_checklist": "apps/commander/employees/website_agent_v1/knowledge_binding/product_knowledge_missing_checklist.v1.json",
+    "source_center": "knowledge/products/HK620",
+    "binding_fields": [
+      "product_id",
+      "product_name",
+      "product_category",
+      "target_market",
+      "buyer_persona",
+      "features",
+      "specs",
+      "applications",
+      "pain_points",
+      "differentiators",
+      "FAQ",
+      "media_requirements",
+      "internal_links",
+      "external_references",
+      "source_files",
+      "freshness_status"
+    ],
+    "hk620_freshness": "fresh_for_internal_draft_only / not_public_approved",
+    "draft_rule": "可生成本地概念草稿；不能无审批发布；不能虚构缺失规格、媒体、客户案例。"
+  }
+}

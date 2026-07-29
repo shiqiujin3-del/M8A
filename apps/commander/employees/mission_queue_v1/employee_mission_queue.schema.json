@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Employee Mission Queue V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "generated_at",
+    "source_task_center",
+    "queue_status_enum",
+    "employees",
+    "summary"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_task_center": {
+      "type": "string"
+    },
+    "queue_status_enum": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "employees": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}

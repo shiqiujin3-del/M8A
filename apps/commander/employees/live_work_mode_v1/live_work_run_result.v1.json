@@ -1,0 +1,164 @@
+{
+  "version": "ai_employee_live_work_mode_v1",
+  "generated_at": "2026-07-10T14:19:42+00:00",
+  "mode": "local_build_only",
+  "input_queue": "/Users/shiqiujing/Documents/M8A/apps/commander/employees/mission_queue_v1/hk620_employee_mission_queue.v1.json",
+  "chain": "Knowledge Agent -> Website Agent -> QA Agent -> Publishing Agent",
+  "summary": {
+    "employees_touched": 4,
+    "work_items_processed": 6,
+    "website_completed": 2,
+    "qa_checked": 2,
+    "qa_passed": 1,
+    "waiting_source_material": 1,
+    "waiting_ceo_authorization": 1,
+    "external_calls": false
+  },
+  "results": {
+    "knowledge_agent": {
+      "employee_id": "knowledge_agent",
+      "employee_name": "Knowledge Agent",
+      "mission_id": "mission_hk620_gap_001_public_technical_specs",
+      "queue_item_id": "queue_knowledge_agent_hk620_gap_001_public_technical_specs",
+      "source_gap_id": "hk620_gap_001_public_technical_specs",
+      "status": "waiting_source_material",
+      "completed": false,
+      "reason": "该任务需要真实公开资料来源；AI 员工不能虚构技术规格、图片、视频、客户案例、价格或保修承诺。",
+      "next_action": "CEO 或 Knowledge Agent 补充来源文件后重新进入队列。",
+      "started_at": "2026-07-10T14:19:42+00:00",
+      "finished_at": "2026-07-10T14:19:42+00:00",
+      "external_calls": false
+    },
+    "website_agent": [
+      {
+        "employee_id": "website_agent",
+        "employee_name": "Website Agent",
+        "mission_id": "mission_hk620_gap_005_external_references",
+        "queue_item_id": "queue_website_agent_hk620_gap_005_external_references",
+        "source_gap_id": "hk620_gap_005_external_references",
+        "status": "completed",
+        "completed": true,
+        "started_at": "2026-07-10T14:19:42+00:00",
+        "finished_at": "2026-07-10T14:19:42+00:00",
+        "output": {
+          "type": "external_reference_plan",
+          "product": "HK620",
+          "market": "美国",
+          "reference_policy": "只登记可人工审核的候选来源；不自动访问外部链接，不伪造引用。",
+          "candidate_reference_slots": [
+            "官方产品资料页",
+            "已审核产品手册",
+            "可公开的工厂/客户应用资料"
+          ],
+          "requires_human_url_confirmation": true,
+          "publish_allowed": false
+        },
+        "external_calls": false
+      },
+      {
+        "employee_id": "website_agent",
+        "employee_name": "Website Agent",
+        "mission_id": "mission_hk620_gap_006_internal_links",
+        "queue_item_id": "queue_website_agent_hk620_gap_006_internal_links",
+        "source_gap_id": "hk620_gap_006_internal_links",
+        "status": "completed",
+        "completed": true,
+        "started_at": "2026-07-10T14:19:42+00:00",
+        "finished_at": "2026-07-10T14:19:42+00:00",
+        "output": {
+          "type": "internal_link_plan",
+          "product": "HK620",
+          "market": "美国",
+          "link_targets": [
+            {
+              "title": "HK620 product page",
+              "path": "/machines/edge-banding-machines/hk620/",
+              "anchor_text": "HK620 edge banding machine"
+            },
+            {
+              "title": "Edge banding machines category",
+              "path": "/machines/edge-banding-machines/",
+              "anchor_text": "edge banding machines"
+            },
+            {
+              "title": "Factory solution page",
+              "path": "/solutions/",
+              "anchor_text": "woodworking factory solution"
+            }
+          ],
+          "publish_allowed": false
+        },
+        "external_calls": false
+      }
+    ],
+    "qa_agent": [
+      {
+        "employee_id": "qa_agent",
+        "employee_name": "QA Agent",
+        "mission_id": "mission_validate_hk620_gap_005_external_references",
+        "source_mission_id": "mission_hk620_gap_005_external_references",
+        "source_gap_id": "hk620_gap_005_external_references",
+        "status": "waiting_review",
+        "qa_score": 88,
+        "qa_status": "needs_human_confirmation",
+        "publish_allowed": false,
+        "reason": "本地 QA 只验证结构和安全边界；任何外部发布仍需 CEO 单独授权。",
+        "checks": {
+          "has_structured_output": true,
+          "no_external_call": true,
+          "no_publish": true,
+          "no_fake_claims": true,
+          "requires_human_url_check": true
+        },
+        "started_at": "2026-07-10T14:19:42+00:00",
+        "finished_at": "2026-07-10T14:19:42+00:00",
+        "external_calls": false
+      },
+      {
+        "employee_id": "qa_agent",
+        "employee_name": "QA Agent",
+        "mission_id": "mission_validate_hk620_gap_006_internal_links",
+        "source_mission_id": "mission_hk620_gap_006_internal_links",
+        "source_gap_id": "hk620_gap_006_internal_links",
+        "status": "completed",
+        "qa_score": 91,
+        "qa_status": "passed",
+        "publish_allowed": false,
+        "reason": "本地 QA 只验证结构和安全边界；任何外部发布仍需 CEO 单独授权。",
+        "checks": {
+          "has_structured_output": true,
+          "no_external_call": true,
+          "no_publish": true,
+          "no_fake_claims": true,
+          "requires_human_url_check": false
+        },
+        "started_at": "2026-07-10T14:19:42+00:00",
+        "finished_at": "2026-07-10T14:19:42+00:00",
+        "external_calls": false
+      }
+    ],
+    "publishing_agent": {
+      "employee_id": "publishing_agent",
+      "employee_name": "Publishing Agent",
+      "mission_id": "publishing_readiness_hk620_local_content_package_v1",
+      "status": "waiting_ceo_authorization",
+      "completed": true,
+      "ready_items": 1,
+      "blocked_items": 1,
+      "decision": "只完成发布准备，不调用外部平台。",
+      "next_action": "如 CEO 后续授权，可由 Publishing Center 接收已通过 QA 的内容包；当前不发布。",
+      "safety_gate": {
+        "n8n_called": false,
+        "wordpress_called": false,
+        "youtube_called": false,
+        "gmail_called": false,
+        "public_publish": false,
+        "delete": false,
+        "update_published_content": false
+      },
+      "started_at": "2026-07-10T14:19:42+00:00",
+      "finished_at": "2026-07-10T14:19:42+00:00",
+      "external_calls": false
+    }
+  }
+}

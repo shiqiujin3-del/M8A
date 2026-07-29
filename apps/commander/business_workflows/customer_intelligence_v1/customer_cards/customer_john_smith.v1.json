@@ -1,0 +1,180 @@
+{
+  "version": "customer_intelligence_center_v1",
+  "customer_id": "customer_john_smith_john_smith_email_unknown_v1",
+  "customer_name": "John Smith",
+  "company": null,
+  "country": "USA",
+  "email": "john.smith@example.com",
+  "interested_product": "HK620 Edge Banding Machine",
+  "lead_score": 78,
+  "lead_score_reason": [
+    "客户明确询问 HK620 规格、价格范围、交期和可选配置",
+    "第二次询盘仍围绕 HK620 报价准备信息，具备持续采购意向",
+    "价格和交付信息仍缺失，需要人工确认后才能正式报价"
+  ],
+  "inquiry_history": [
+    {
+      "inquiry_id": "inquiry_hk620_john_smith_20260710T051651Z",
+      "received_at": "2026-07-10T05:16:51Z",
+      "source": "test_inquiry_json",
+      "customer": "John Smith",
+      "country": "USA",
+      "email": "john.smith@example.com",
+      "interested_product": "HK620 Edge Banding Machine",
+      "content": "Please send me machine specifications, price range, delivery time and available options.",
+      "classification": "sales_inquiry",
+      "linked_mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z"
+    },
+    {
+      "inquiry_id": "inquiry_hk620_john_smith_second_20260710T120000Z",
+      "received_at": "2026-07-10T12:00:00Z",
+      "source": "local_simulation",
+      "customer": "John Smith",
+      "country": "USA",
+      "email": "john.smith@example.com",
+      "interested_product": "HK620 Edge Banding Machine",
+      "content": "Thanks. Please help me prepare the information needed for quotation of the HK620 machine.",
+      "classification": "sales_inquiry_followup",
+      "linked_mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+      "deduplication_result": "matched_existing_customer_by_email"
+    }
+  ],
+  "draft_history": [
+    {
+      "workflow": "Inquiry Reply Workflow",
+      "mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z",
+      "execution_id": "45",
+      "draft_id": "r-4315455221144547087",
+      "thread_id": "19f4a750ee63f0c2",
+      "subject": "Re: HK620 Edge Banding Machine Specifications and Quotation Request",
+      "created_at": "2026-07-10T05:16:53.995Z",
+      "status": "gmail_draft_created"
+    },
+    {
+      "workflow": "Quotation Preparation Workflow",
+      "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+      "execution_id": "46",
+      "draft_id": "r-41102193991796805",
+      "thread_id": "19f4a7c05f487011",
+      "subject": "Quotation Preparation for HK620 Edge Banding Machine",
+      "created_at": "2026-07-10T05:24:29Z",
+      "status": "gmail_draft_created"
+    }
+  ],
+  "quotation_preparation_history": [
+    {
+      "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+      "execution_id": "46",
+      "machine": "HK620",
+      "missing_information": [
+        "Voltage",
+        "Board Thickness",
+        "Glue Type",
+        "Working Size",
+        "Automation Level",
+        "Optional Units",
+        "Packing Requirement",
+        "Delivery Port",
+        "Payment Terms"
+      ],
+      "status": "completed",
+      "created_at": "2026-07-10T05:24:29Z"
+    },
+    {
+      "mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+      "machine": "HK620",
+      "missing_information": [
+        "Voltage",
+        "Board Thickness",
+        "Glue Type",
+        "Working Size",
+        "Automation Level",
+        "Optional Units",
+        "Packing Requirement",
+        "Delivery Port",
+        "Payment Terms"
+      ],
+      "status": "prepared_for_existing_customer",
+      "created_at": "2026-07-10T12:00:00Z"
+    }
+  ],
+  "mission_history": [
+    {
+      "mission_id": "m2_sprint7_inquiry_reply_20260710T051651Z",
+      "mission_type": "inquiry_reply",
+      "status": "completed",
+      "owner": "Gmail Draft Executor",
+      "created_at": "2026-07-10T05:16:51Z"
+    },
+    {
+      "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+      "mission_type": "quotation_preparation",
+      "status": "completed",
+      "owner": "Gmail Draft Executor",
+      "created_at": "2026-07-10T05:24:27Z"
+    },
+    {
+      "mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+      "mission_type": "customer_intelligence_followup_linking",
+      "status": "completed",
+      "owner": "Customer Intelligence Center",
+      "created_at": "2026-07-10T12:00:00Z",
+      "result": "Second inquiry linked to existing Customer Card by email; no duplicate customer created."
+    }
+  ],
+  "last_contact_time": "2026-07-10T12:00:00Z",
+  "next_action": "由销售负责人确认 HK620 报价前缺失信息；如需邮件跟进，继续复用 Quotation Preparation Workflow 创建 Draft，禁止自动发送。",
+  "owner": "Sales Employee",
+  "deduplication_key": {
+    "type": "email",
+    "value": "john.smith@example.com",
+    "rule": "same normalized email must update existing Customer Card instead of creating a new Customer"
+  },
+  "safety": {
+    "send_email": false,
+    "modify_gmail_inbox": false,
+    "modify_wordpress": false,
+    "create_new_executor_framework": false,
+    "create_new_dashboard": false,
+    "external_action_executed": false
+  },
+  "updated_at": "2026-07-10T12:00:00Z",
+  "quotation_history": [
+    {
+      "mission_id": "m2_sprint8_quotation_preparation_20260710T052427Z",
+      "execution_id": "46",
+      "machine": "HK620",
+      "missing_information": [
+        "Voltage",
+        "Board Thickness",
+        "Glue Type",
+        "Working Size",
+        "Automation Level",
+        "Optional Units",
+        "Packing Requirement",
+        "Delivery Port",
+        "Payment Terms"
+      ],
+      "status": "completed",
+      "created_at": "2026-07-10T05:24:29Z"
+    },
+    {
+      "mission_id": "m2_sprint9_customer_intelligence_john_smith_second_inquiry_20260710T120000Z",
+      "machine": "HK620",
+      "missing_information": [
+        "Voltage",
+        "Board Thickness",
+        "Glue Type",
+        "Working Size",
+        "Automation Level",
+        "Optional Units",
+        "Packing Requirement",
+        "Delivery Port",
+        "Payment Terms"
+      ],
+      "status": "prepared_for_existing_customer",
+      "created_at": "2026-07-10T12:00:00Z"
+    }
+  ],
+  "field_compatibility_note": "quotation_history 与 quotation_preparation_history 使用同一组历史记录；未新增 Schema，仅补齐 Customer Card 展示字段。"
+}

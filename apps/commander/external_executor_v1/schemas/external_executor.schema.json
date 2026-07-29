@@ -1,0 +1,22 @@
+{
+  "version": "external_executor_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "scope": "真实外部执行器 V1 规格；当前仅 Dry-run，不真实调用外部平台",
+  "executor_fields": {
+    "executor_id": "string, required, unique",
+    "platform": "n8n | wordpress | gmail | youtube | google_api | reserved_external_platform",
+    "action_type": "create_wordpress_draft_only | reserved_external_action",
+    "mission_id": "string, required",
+    "authorization_id": "string, required, from Production Safety Gate",
+    "payload": "object, follows external_action_payload_contract.v1",
+    "dry_run_result": "object, required before real execution",
+    "execution_status": "waiting_safety_gate | waiting_ceo_authorization | ready_for_dry_run | dry_run_passed | ready_for_real_execution | executed_draft_only | execution_failed | blocked",
+    "audit_log_id": "string, required"
+  },
+  "hard_rules": [
+    "外部执行器只接受 Production Safety Gate 已批准的 action",
+    "CEO 未单独授权时禁止真实执行",
+    "Dry-run 不允许网络调用",
+    "默认禁止 publish/delete/update_published_post/send_gmail/upload_youtube"
+  ]
+}

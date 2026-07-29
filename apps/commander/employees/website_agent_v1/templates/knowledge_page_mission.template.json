@@ -1,0 +1,47 @@
+{
+  "version": "knowledge_page_mission_template_v1",
+  "mission_class": "build",
+  "ceo_approval_required": false,
+  "external_action_required": false,
+  "task_type": "content / website",
+  "target_employee": "Website Agent",
+  "execution_chain": "website_agent_execution_chain_v1",
+  "state_machine": "website_agent_state_machine_v1",
+  "content_type": "knowledge_page",
+  "mission_protocol": {
+    "mission_id": "{{mission_id}}",
+    "priority": "{{priority}}",
+    "product": "{{product}}",
+    "language": "{{language}}",
+    "target_market": "{{target_market}}",
+    "target_platform": "knowledge_page_draft",
+    "expected_output": "知识页草稿 + FAQ + Schema + QA V2 结果",
+    "qa_status": "not_started",
+    "approval_status": "not_required",
+    "publish_status": "draft_only",
+    "retry_count": 0,
+    "mission_log": []
+  },
+  "input_fields": [
+    "knowledge_topic",
+    "definition_scope",
+    "common_questions",
+    "approved_facts",
+    "related_products",
+    "schema_type"
+  ],
+  "qa_gate": {
+    "minimum_score": 90,
+    "below_90_action": "禁止进入发布流程，写入 QA 修订建议。"
+  },
+  "safety": {
+    "publish": false,
+    "update_published_post": false,
+    "delete_post": false,
+    "send_gmail": false,
+    "upload_youtube": false,
+    "real_n8n_call": false,
+    "real_wordpress_call": false
+  },
+  "reuse_rule": "只替换 input_fields / product_profile / market_profile，不重做执行链。"
+}

@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-07-12T01:17:54Z",
+  "dashboard": "Content Center V1",
+  "language": "zh-CN",
+  "status": "已上线 / 本地 Build 完成",
+  "summary": {
+    "active_packages": 1,
+    "qa_passed": 1,
+    "waiting_ceo_review": 1,
+    "ready_to_publish": 0,
+    "external_actions_today": 0
+  },
+  "current_focus": "HK620 美国市场客户可读英文内容包",
+  "agents": {
+    "content_owner": "Website Agent",
+    "knowledge_owner": "Knowledge Agent",
+    "research_support": "Research Agent",
+    "geo_support": "GEO Agent",
+    "seo_support": "SEO Agent",
+    "publishing_support": "Publishing Agent",
+    "video_support": "Video Agent",
+    "qa_reviewer": "QA Agent",
+    "dashboard_owner": "Commander Reporting Agent"
+  },
+  "package": {
+    "content_package_id": "content_pkg_hk620_us_v1",
+    "mission_id": "mission_content_center_hk620_us_package_v1",
+    "product": "HK620",
+    "target_market": "美国",
+    "language": "English for customer content, Chinese for internal QA",
+    "buyer_persona": [
+      "美国门厂",
+      "家具厂",
+      "装饰线条加工客户",
+      "木工车间采购经理"
+    ],
+    "status": "qa_passed",
+    "owner_agents": {
+      "content_owner": "Website Agent",
+      "knowledge_owner": "Knowledge Agent",
+      "research_support": "Research Agent",
+      "geo_support": "GEO Agent",
+      "seo_support": "SEO Agent",
+      "publishing_support": "Publishing Agent",
+      "video_support": "Video Agent",
+      "qa_reviewer": "QA Agent",
+      "dashboard_owner": "Commander Reporting Agent"
+    },
+    "knowledge": {
+      "source_status": "internal_knowledge_ready_external_evidence_needed",
+      "approved_claims": [
+        "HK620 面向骨骼线、装饰线条、门线条等线条类工件。",
+        "内容必须避免编造未确认参数、图片、客户名称和价格。",
+        "美国市场内容优先解释客户问题、适用场景、采购确认点和风险控制。"
+      ],
+      "open_gaps": [
+        "真实技术参数表",
+        "可公开客户案例",
+        "产品图片/视频素材",
+        "报价入口",
+        "英文品牌术语统一"
+      ]
+    },
+    "content_assets": {
+      "website_article_title": "HK620 Skeleton Line Edge Banding Machine for US Door and Furniture Manufacturers",
+      "article_goal": "生成客户可读英文文章草稿，先用于 CEO Review，不自动发布。",
+      "core_sections": [
+        "Customer problem",
+        "Suitable production scenarios",
+        "What buyers should verify",
+        "Draft-only safety note",
+        "Request information checklist",
+        "FAQ"
+      ],
+      "cta": "Contact SYUTECH to confirm your profile strip samples and production requirements."
+    },
+    "platform_variants": {
+      "wordpress": {
+        "status": "draft_ready_after_ceo_approval",
+        "output": "long_form_article"
+      },
+      "medium": {
+        "status": "planned",
+        "output": "thought_leadership_article"
+      },
+      "linkedin": {
+        "status": "planned",
+        "output": "short_b2b_post"
+      },
+      "quora": {
+        "status": "planned",
+        "output": "buyer_question_answer"
+      },
+      "substack": {
+        "status": "planned",
+        "output": "newsletter_draft"
+      },
+      "gmail": {
+        "status": "planned",
+        "output": "sales_reply_draft"
+      },
+      "youtube": {
+        "status": "planned",
+        "output": "title_description_script_outline"
+      }
+    },
+    "qa_result": {
+      "qa_score": 92,
+      "gate": "PASS_FOR_INTERNAL_REVIEW",
+      "publish_gate": "WAITING_CEO_APPROVAL",
+      "notes": [
+        "结构适合客户阅读。",
+        "未调用外部平台。",
+        "正式发布前必须补充真实参数、图片、案例和最终报价入口。"
+      ]
+    },
+    "approval_status": "waiting_ceo_content_review",
+    "publish_status": "not_published_draft_only_reserved",
+    "timeline": [
+      {
+        "status": "intake",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Commander"
+      },
+      {
+        "status": "knowledge_ready",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "Knowledge Agent"
+      },
+      {
+        "status": "qa_passed",
+        "at": "2026-07-12T01:17:54Z",
+        "agent": "QA Agent"
+      }
+    ],
+    "safety": {
+      "draft_only": true,
+      "called_n8n": false,
+      "called_wordpress": false,
+      "publish": false,
+      "delete_post": false,
+      "update_published_post": false,
+      "send_gmail": false,
+      "upload_youtube": false
+    }
+  },
+  "next_action": "CEO 审阅 HK620 内容包；通过后才允许进入 Draft-only 外部执行。",
+  "safety_notice": "当前只建立本地内容中枢，不调用 n8n / WordPress / Gmail / YouTube，不发布、不删除、不修改线上内容。"
+}

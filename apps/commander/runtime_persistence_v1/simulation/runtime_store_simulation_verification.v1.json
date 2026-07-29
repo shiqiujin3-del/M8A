@@ -1,0 +1,15 @@
+{
+  "version": "runtime_store_simulation_verification_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "scenario": "Knowledge Agent -> Website Agent -> QA Agent -> CEO Approval",
+  "database": "apps/commander/runtime_persistence_v1/db/m8a_runtime_v1.sqlite",
+  "inserted_events": 11,
+  "queries_verified": {
+    "by_mission": 11,
+    "by_agent": 3,
+    "by_event_type": 1,
+    "by_date": 11
+  },
+  "result": "passed_local_runtime_store_only",
+  "external_calls": false
+}

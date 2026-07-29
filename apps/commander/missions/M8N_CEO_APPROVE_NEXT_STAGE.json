@@ -1,0 +1,39 @@
+{
+  "directive_id": "m8n_ceo_approve_next_stage_2026_07_07",
+  "issued_by": "CEO",
+  "recorded_by": "M8N 总经理",
+  "issued_at": "2026-07-07T03:48:10Z",
+  "language": "中文",
+  "status": "已批准进入下一阶段",
+  "approval_scope": {
+    "approved": [
+      "n8n 本地平台接入",
+      "读取 n8n 现有工作流清单",
+      "盘点工作流用途",
+      "生成中文接入计划",
+      "把结果回写 M8N 控制台",
+      "准备下一步平台授权连接"
+    ],
+    "still_requires_explicit_confirmation": [
+      "发送 Gmail 邮件",
+      "公开视频发布到 YouTube",
+      "公开发布 WordPress 文章",
+      "删除或修改外部平台数据",
+      "启用会自动对外执行的 n8n 工作流"
+    ]
+  },
+  "n8n_visible_workflows": [
+    "PRODUCT_KNOWLEDGE_ACQUISITION_WORKFLOW",
+    "PRODUCT_KNOWLEDGE_REVIEW_WORKFLOW",
+    "HK620_KNOWLEDGE_COLLECTOR_WORKFLOW",
+    "HK620_KNOWLEDGE_RETRIEVAL_TEST",
+    "M8A_P3B_OPENAI_EMBEDDING_TEST",
+    "M8A_P3_RAG_TEST_WORKFLOW",
+    "M8A_P2_HEALTHCHECK_WORKFLOW"
+  ],
+  "assigned_next_step": {
+    "employee_id": "automation_agent",
+    "mission_id": "n8n_workflow_inventory_v1",
+    "mission_name": "n8n 工作流盘点与接入计划"
+  }
+}

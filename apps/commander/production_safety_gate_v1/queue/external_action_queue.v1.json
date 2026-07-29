@@ -1,0 +1,67 @@
+{
+  "version": "external_action_queue_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "status_enum": [
+    "waiting_approval",
+    "approved",
+    "rejected",
+    "expired",
+    "ready_for_dry_run",
+    "dry_run_passed",
+    "ready_for_execution",
+    "executed",
+    "failed",
+    "archived"
+  ],
+  "actions": [
+    {
+      "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+      "mission_id": "mission_hk620_gap_safe_draft_preview",
+      "platform": "WordPress via n8n",
+      "action_type": "create_wordpress_draft_only",
+      "risk_level": "medium",
+      "payload_summary": "HK620 Draft-only payload preview; no external call; draft_url/post_id must remain null in dry-run.",
+      "requested_by": "AI Employee Auto Runner V1",
+      "approved_by": "pending_ceo",
+      "approval_time": null,
+      "expiration": "2026-07-10T00:00:00+01:00",
+      "one_time_token": "not_issued_until_ceo_approval",
+      "idempotency_key": "dryrun_hk620_wp_draft_only_preview_v1",
+      "status": "ready_for_dry_run",
+      "safety_checklist": {
+        "draft_only": true,
+        "publish_forbidden": true,
+        "delete_forbidden": true,
+        "update_published_content_forbidden": true,
+        "send_email_upload_video_forbidden": true,
+        "qa_score_exists": true,
+        "qa_score_gte_90": true,
+        "rollback_plan_exists": true,
+        "mission_log_exists": true
+      },
+      "rollback_plan": {
+        "steps": [
+          "撤销授权",
+          "标记失败",
+          "保留证据",
+          "人工检查草稿",
+          "禁止自动删除"
+        ]
+      },
+      "created_at": "2026-07-09T00:00:00+01:00",
+      "updated_at": "2026-07-09T00:00:00+01:00"
+    }
+  ],
+  "summary": {
+    "waiting_approval": 0,
+    "approved": 0,
+    "rejected": 0,
+    "expired": 0,
+    "ready_for_dry_run": 1,
+    "dry_run_passed": 0,
+    "ready_for_execution": 0,
+    "executed": 0,
+    "failed": 0,
+    "archived": 0
+  }
+}

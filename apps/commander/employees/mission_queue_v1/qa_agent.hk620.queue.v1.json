@@ -1,0 +1,180 @@
+{
+  "version": "employee_mission_queue_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "employee": {
+    "employee_id": "qa_agent",
+    "employee_name": "QA Agent",
+    "queue_count": 10,
+    "queued_count": 2,
+    "qa_pending_count": 8,
+    "blocked_public_publish_count": 8,
+    "current_task": "验收 HK620 缺口任务：公开技术规格，确认 QA Score、公开边界和是否仍阻断发布。",
+    "queue_items": [
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_001_public_technical_specs",
+        "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
+        "source_gap_id": "hk620_gap_001_public_technical_specs",
+        "assigned_agent": "QA Agent",
+        "priority": "P0",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：公开技术规格，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：形成可引用规格表；每个参数有来源文件或审核人；标明 public_use_allowed=true；QA Agent 验收无矛盾。",
+        "depends_on": [
+          "mission_hk620_gap_001_public_technical_specs"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_002_product_images",
+        "mission_id": "mission_validate_hk620_gap_002_product_images",
+        "source_gap_id": "hk620_gap_002_product_images",
+        "assigned_agent": "QA Agent",
+        "priority": "P1",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：产品图片，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：至少 1 张主图、2 张细节图、1 张应用图；有文件路径、版权/使用许可、Alt 建议；QA Agent 确认可用。",
+        "depends_on": [
+          "mission_hk620_gap_002_product_images"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_003_product_videos",
+        "mission_id": "mission_validate_hk620_gap_003_product_videos",
+        "source_gap_id": "hk620_gap_003_product_videos",
+        "assigned_agent": "QA Agent",
+        "priority": "P1",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：至少 1 条 demo 或操作视频；有来源、使用边界、关键画面说明；QA Agent 确认不含未审客户/敏感信息。",
+        "depends_on": [
+          "mission_hk620_gap_003_product_videos"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_004_customer_cases",
+        "mission_id": "mission_validate_hk620_gap_004_customer_cases",
+        "source_gap_id": "hk620_gap_004_customer_cases",
+        "assigned_agent": "QA Agent",
+        "priority": "P1",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：客户案例，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：至少 1 个可公开或匿名案例；包含行业、应用、问题、解决方向；不得包含未经授权客户名称；QA Agent 验收。",
+        "depends_on": [
+          "mission_hk620_gap_004_customer_cases"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_005_external_references",
+        "mission_id": "mission_validate_hk620_gap_005_external_references",
+        "source_gap_id": "hk620_gap_005_external_references",
+        "assigned_agent": "QA Agent",
+        "priority": "P2",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：外部参考链接，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Website Agent 输出；随后按标准验收：至少 1 个官方或可信外部链接；URL 可访问状态由人工或后续授权工具确认；不得引用未审核页面。",
+        "depends_on": [
+          "mission_hk620_gap_005_external_references"
+        ],
+        "blocks_public_publish": false,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_006_internal_links",
+        "mission_id": "mission_validate_hk620_gap_006_internal_links",
+        "source_gap_id": "hk620_gap_006_internal_links",
+        "assigned_agent": "QA Agent",
+        "priority": "P2",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：内部链接，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Website Agent 输出；随后按标准验收：至少 3 个内部链接目标；每个目标有标题、路径、锚文本建议；QA Agent 检查不重复、不误导。",
+        "depends_on": [
+          "mission_hk620_gap_006_internal_links"
+        ],
+        "blocks_public_publish": false,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_007_service_faq",
+        "mission_id": "mission_validate_hk620_gap_007_service_faq",
+        "source_gap_id": "hk620_gap_007_service_faq",
+        "assigned_agent": "QA Agent",
+        "priority": "P1",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：服务 FAQ，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：至少 8 条服务 FAQ；包含问题、回答、适用条件、禁止承诺；QA Agent 确认不虚构保修或技术承诺。",
+        "depends_on": [
+          "mission_hk620_gap_007_service_faq"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_validate_hk620_gap_008_delivery_warranty_price_policy",
+        "mission_id": "mission_validate_hk620_gap_008_delivery_warranty_price_policy",
+        "source_gap_id": "hk620_gap_008_delivery_warranty_price_policy",
+        "assigned_agent": "QA Agent",
+        "priority": "P1",
+        "status": "qa_pending",
+        "expected_output": "验收 HK620 缺口任务：交付/保修/价格政策，确认 QA Score、公开边界和是否仍阻断发布。",
+        "acceptance_criteria": "先等待 Knowledge Agent 输出；随后按标准验收：形成可公开表达和不可公开表达两类话术；价格/ROI/利润不得虚构；QA Agent 验收。",
+        "depends_on": [
+          "mission_hk620_gap_008_delivery_warranty_price_policy"
+        ],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_hk620_gap_009_public_approval_record",
+        "mission_id": "mission_hk620_gap_009_public_approval_record",
+        "source_gap_id": "hk620_gap_009_public_approval_record",
+        "assigned_agent": "QA Agent",
+        "priority": "P0",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：公开使用审批记录。建立 HK620 从 approved_internal 到 future public approved 的审批记录。",
+        "acceptance_criteria": "审批记录写明审核人、日期、允许公开字段、禁止字段；没有该记录不得公开发布。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      },
+      {
+        "queue_item_id": "queue_qa_agent_hk620_gap_010_public_claim_boundary",
+        "mission_id": "mission_hk620_gap_010_public_claim_boundary",
+        "source_gap_id": "hk620_gap_010_public_claim_boundary",
+        "assigned_agent": "QA Agent",
+        "priority": "P0",
+        "status": "queued",
+        "expected_output": "完成 HK620 缺口任务：公开宣传边界。把 HK620 禁止声明整理成 Website Agent 可执行的 public claim boundary。",
+        "acceptance_criteria": "明确禁止行业唯一、绝对第一、量化效率、ROI、客户名称、38°-45° 参数、伺服路线图等；QA Agent 可用于拦截。",
+        "depends_on": [],
+        "blocks_public_publish": true,
+        "created_at": "2026-07-09T00:00:00+01:00",
+        "updated_at": "2026-07-09T00:00:00+01:00"
+      }
+    ]
+  },
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}

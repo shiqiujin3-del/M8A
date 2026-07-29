@@ -1,0 +1,73 @@
+{
+  "version": "production_safety_gate_dashboard_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "title": "生产安全闸门",
+  "status_cards": {
+    "等待授权": 0,
+    "已授权": 0,
+    "已拒绝": 0,
+    "已过期": 0,
+    "Dry-run 通过": 1,
+    "待执行": 0,
+    "已执行": 0,
+    "失败": 0
+  },
+  "risk_cn": {
+    "low": {
+      "cn": "低",
+      "meaning": "本地或 Draft-only，且可人工检查。"
+    },
+    "medium": {
+      "cn": "中",
+      "meaning": "创建外部草稿或修改非公开对象，需要 CEO 授权。"
+    },
+    "high": {
+      "cn": "高",
+      "meaning": "可能影响公开内容、客户沟通或生产数据。"
+    },
+    "prohibited": {
+      "cn": "禁止",
+      "meaning": "自动发布、自动删除、自动修改已发布内容、自动发送邮件、自动上传视频。"
+    }
+  },
+  "latest_action": {
+    "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+    "mission_id": "mission_hk620_gap_safe_draft_preview",
+    "platform": "WordPress via n8n",
+    "action_type": "create_wordpress_draft_only",
+    "risk_level": "medium",
+    "payload_summary": "HK620 Draft-only payload preview; no external call; draft_url/post_id must remain null in dry-run.",
+    "requested_by": "AI Employee Auto Runner V1",
+    "approved_by": "pending_ceo",
+    "approval_time": null,
+    "expiration": "2026-07-10T00:00:00+01:00",
+    "one_time_token": "not_issued_until_ceo_approval",
+    "idempotency_key": "dryrun_hk620_wp_draft_only_preview_v1",
+    "status": "dry_run_passed",
+    "safety_checklist": {
+      "draft_only": true,
+      "publish_forbidden": true,
+      "delete_forbidden": true,
+      "update_published_content_forbidden": true,
+      "send_email_upload_video_forbidden": true,
+      "qa_score_exists": true,
+      "qa_score_gte_90": true,
+      "rollback_plan_exists": true,
+      "mission_log_exists": true
+    },
+    "rollback_plan": {
+      "steps": [
+        "撤销授权",
+        "标记失败",
+        "保留证据",
+        "人工检查草稿",
+        "禁止自动删除"
+      ]
+    },
+    "created_at": "2026-07-09T00:00:00+01:00",
+    "updated_at": "2026-07-09T00:00:00+01:00",
+    "dry_run_result": "apps/commander/production_safety_gate_v1/dry_run/hk620_wp_draft_only.dry_run_result.v1.json"
+  },
+  "health": "healthy_local_build_only",
+  "external_calls": false
+}

@@ -1,0 +1,61 @@
+{
+  "version": "publishing_center_v1",
+  "name": "Publishing Dashboard Model V1",
+  "purpose": "定义未来 Dashboard 展示 Publishing Center 的数据结构；V1 不开发前端页面。",
+  "dashboard_metrics": {
+    "today_pending_publish": "number",
+    "running": "number",
+    "completed": "number",
+    "failed": "number",
+    "waiting_approval": "number",
+    "by_platform": {
+      "wordpress": "number",
+      "youtube": "number",
+      "facebook": "number",
+      "linkedin": "number",
+      "tiktok": "number"
+    },
+    "last_completed": {
+      "publishing_mission_id": "string|null",
+      "mission_id": "string|null",
+      "provider": "string|null",
+      "resource_url": "string|null",
+      "finished_at": "iso_datetime|null"
+    },
+    "last_failed": {
+      "publishing_mission_id": "string|null",
+      "mission_id": "string|null",
+      "provider": "string|null",
+      "error_message": "string|null",
+      "finished_at": "iso_datetime|null"
+    }
+  },
+  "dashboard_sections": [
+    {
+      "section": "今天待发布",
+      "source": "Publishing Queue status=queued"
+    },
+    {
+      "section": "发布中",
+      "source": "Publishing Queue status=running"
+    },
+    {
+      "section": "成功",
+      "source": "Publishing Result status=completed"
+    },
+    {
+      "section": "失败",
+      "source": "Publishing Result status=failed"
+    },
+    {
+      "section": "等待审批",
+      "source": "Publishing Mission approval_status=waiting_approval"
+    }
+  ],
+  "rules": [
+    "V1 只定义 Dashboard 数据模型，不开发前端页面。",
+    "Dashboard 不直接读取 Provider 私有响应。",
+    "Dashboard 只读取 Publishing Center 与 Runtime Core 标准字段。"
+  ]
+}
+

@@ -1,0 +1,15 @@
+{
+  "version": "ai_employee_auto_runner_simulation_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "scenario": "Website Agent local draft -> QA Agent local check -> Runtime log",
+  "selected_website_mission": "mission_hk620_gap_005_external_references",
+  "selected_knowledge_mission": "mission_hk620_gap_001_public_technical_specs",
+  "outputs": [
+    "apps/commander/ai_employee_runner_v1/outputs/website_agent_local_draft_output.v1.json",
+    "apps/commander/ai_employee_runner_v1/outputs/qa_agent_auto_check_result.v1.json"
+  ],
+  "runtime_logs": 3,
+  "events": 4,
+  "result": "passed_local_build_only",
+  "external_calls": false
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./styles.css">
+  <title>M8A 全局 Mission Center</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div><p class="eyebrow">M8A 全局任务中枢</p><h1>Employee Mission Center V1</h1></div>
+      <div class="status-pill" id="generated-at">读取中</div>
+    </header>
+    <nav class="link-row"><a href="./index.html">总控</a><a href="./employee_workbench.html">AI 员工工作台</a><a href="./platform_console.html">平台/API 连接控制台</a></nav>
+
+    <section class="section">
+      <h2>全局概览</h2>
+      <div class="metric-strip" id="global-metrics"></div>
+      <p class="helper-text">本页只读取本地 Mission Center 数据，不调用 n8n，不调用 WordPress，不执行外部动作。</p>
+    </section>
+
+    <section class="section"><h2>Mission Queue</h2><div class="card-list" id="mission-queue"></div></section>
+    <section class="section"><h2>Mission Priority</h2><div class="metric-strip" id="priority-strip"></div></section>
+    <section class="section"><h2>Employee Queue</h2><div class="mission-card-grid" id="employee-queue"></div></section>
+    <section class="section"><h2>Blocked Mission</h2><div class="card-list" id="blocked-list"></div></section>
+    <section class="section"><h2>Knowledge Gap</h2><div class="card-list" id="knowledge-gap-list"></div></section>
+    <section class="section"><h2>Ready To Publish</h2><div class="card-list" id="ready-publish-list"></div></section>
+    <section class="section"><h2>CEO Waiting Approval</h2><div class="card-list" id="ceo-waiting-list"></div></section>
+    <section class="section"><h2>Mission Timeline</h2><div class="card-list" id="timeline-list"></div></section>
+  </main>
+  <script>
+    const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const cnStatus = (data, v) => (data.cn_labels || {})[v] || v || '-';
+    const card = (m, data) => `<article class="business-card ${m.dependencies?.length ? 'warning' : ''}"><span>${esc(m.priority)} · ${esc(cnStatus(data, m.runtime?.status))}</span><strong>${esc(m.title || m.mission_id)}</strong><p>负责人：${esc(m.owner)} · Reviewer：${esc(m.reviewer)} · Approver：${esc(m.approver)}</p><p>${esc(m.expected_output || '')}</p><small>依赖：${esc((m.dependencies || []).map(d=>d.type).join('、') || '无')}</small></article>`;
+    async function load(){
+      const data = await fetch('./global_mission_center_data.json?t=' + Date.now(), {cache:'no-store'}).then(r=>r.json());
+      document.getElementById('generated-at').textContent = data.generated_at || '-';
+      const s=data.summary||{};
+      document.getElementById('global-metrics').innerHTML = [
+        ['总 Mission', s.total_missions], ['Blocked', s.blocked_missions], ['Waiting CEO', s.waiting_ceo], ['Knowledge Gap', s.knowledge_gap_missions], ['Ready To Publish', s.ready_to_publish], ['20 名员工支持', s.supports_20_ai_employees]
+      ].map(([k,v])=>`<article><span>${esc(k)}</span><strong>${esc(v)}</strong></article>`).join('');
+      const sections=data.sections||{};
+      document.getElementById('mission-queue').innerHTML = (sections.mission_queue?.items||[]).slice(0,30).map(m=>card(m,data)).join('') || '<article class="business-card"><strong>暂无 Mission</strong></article>';
+      document.getElementById('priority-strip').innerHTML = Object.entries(sections.mission_priority?.counts||{}).map(([k,v])=>`<article><span>${esc(k)}</span><strong>${esc(v)}</strong></article>`).join('');
+      document.getElementById('employee-queue').innerHTML = Object.values(sections.employee_queue?.employees||{}).map(e=>`<article class="mission-card"><span>${esc(e.employee_name)}</span><strong>${esc(e.current_task)}</strong><p>待办：${esc(e.todo_count)} · 今日完成：${esc(e.today_completed)} · Blocked：${esc(e.blocked_count)}</p><small>平均耗时：${esc(e.average_runtime)} · 失败次数：${esc(e.failed_count)} · QA 平均分：${esc(e.average_qa_score)}</small></article>`).join('');
+      document.getElementById('blocked-list').innerHTML = (sections.blocked_mission?.items||[]).map(m=>card(m,data)).join('') || '<article class="business-card"><strong>暂无阻断 Mission</strong></article>';
+      document.getElementById('knowledge-gap-list').innerHTML = (sections.knowledge_gap?.items||[]).map(m=>card(m,data)).join('') || '<article class="business-card"><strong>暂无知识缺口</strong></article>';
+      document.getElementById('ready-publish-list').innerHTML = (sections.ready_to_publish?.items||[]).map(m=>card(m,data)).join('') || '<article class="business-card"><strong>暂无可发布 Mission</strong><p>未通过 CEO 授权前不会进入发布。</p></article>';
+      document.getElementById('ceo-waiting-list').innerHTML = (sections.ceo_waiting_approval?.items||[]).map(m=>card(m,data)).join('') || '<article class="business-card"><strong>暂无等待 CEO 审批</strong></article>';
+      document.getElementById('timeline-list').innerHTML = (sections.mission_timeline?.events||[]).slice(-40).reverse().map(e=>`<article class="business-card"><span>${esc(e.at)} · ${esc(e.event)}</span><strong>${esc(e.mission_id)}</strong><p>${esc(e.message)}</p><small>${esc(e.agent)}</small></article>`).join('');
+    }
+    load().catch(err => document.body.insertAdjacentHTML('beforeend', `<pre>${esc(err.message)}</pre>`));
+  </script>
+</body>
+</html>

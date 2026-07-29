@@ -1,0 +1,114 @@
+{
+  "version": "event_timeline_v1",
+  "generated_at": "2026-07-09T00:00:00+01:00",
+  "events": [
+    {
+      "event_id": "event_sim_001",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:00:00+01:00",
+      "event_type": "Mission Created",
+      "status": "Created",
+      "source_agent": "Commander",
+      "target_agent": "Knowledge Agent"
+    },
+    {
+      "event_id": "event_sim_002",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:01:00+01:00",
+      "event_type": "Mission Assigned",
+      "status": "Received",
+      "source_agent": "Commander",
+      "target_agent": "Knowledge Agent"
+    },
+    {
+      "event_id": "event_sim_003",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:03:00+01:00",
+      "event_type": "Knowledge Updated",
+      "status": "Finished",
+      "source_agent": "Knowledge Agent",
+      "target_agent": "Website Agent"
+    },
+    {
+      "event_id": "event_sim_004",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:05:00+01:00",
+      "event_type": "Knowledge Approved",
+      "status": "Finished",
+      "source_agent": "Knowledge Agent",
+      "target_agent": "Website Agent"
+    },
+    {
+      "event_id": "event_sim_005",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:06:00+01:00",
+      "event_type": "Mission Started",
+      "status": "Started",
+      "source_agent": "Website Agent",
+      "target_agent": "Website Agent"
+    },
+    {
+      "event_id": "event_sim_006",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:08:00+01:00",
+      "event_type": "Draft Ready",
+      "status": "Finished",
+      "source_agent": "Website Agent",
+      "target_agent": "QA Agent"
+    },
+    {
+      "event_id": "event_sim_007",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:09:00+01:00",
+      "event_type": "QA Started",
+      "status": "Started",
+      "source_agent": "QA Agent",
+      "target_agent": "QA Agent"
+    },
+    {
+      "event_id": "event_sim_008",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:12:00+01:00",
+      "event_type": "QA Passed",
+      "status": "Finished",
+      "source_agent": "QA Agent",
+      "target_agent": "Commander"
+    },
+    {
+      "event_id": "event_sim_009",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:13:00+01:00",
+      "event_type": "CEO Approval Requested",
+      "status": "Waiting",
+      "source_agent": "Commander",
+      "target_agent": "CEO"
+    },
+    {
+      "event_id": "event_sim_010",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:15:00+01:00",
+      "event_type": "CEO Approved",
+      "status": "Finished",
+      "source_agent": "CEO",
+      "target_agent": "Commander"
+    },
+    {
+      "event_id": "event_sim_011",
+      "mission_id": "sim_hk620_content_chain",
+      "at": "2026-07-09T11:16:00+01:00",
+      "event_type": "Ready To Publish",
+      "status": "Blocked",
+      "source_agent": "Commander",
+      "target_agent": "Publishing Agent"
+    }
+  ],
+  "supported_status": [
+    "Created",
+    "Received",
+    "Started",
+    "Finished",
+    "Failed",
+    "Blocked",
+    "Retry"
+  ]
+}

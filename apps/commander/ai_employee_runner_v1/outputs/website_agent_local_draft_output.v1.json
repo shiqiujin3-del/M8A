@@ -1,0 +1,30 @@
+{
+  "version": "website_agent_standard_json_draft_output_v1",
+  "mission_id": "mission_hk620_gap_005_external_references",
+  "agent": "Website Agent",
+  "product": "HK620",
+  "market": "美国",
+  "language": "English",
+  "expected_output": "Local draft-first content structure, no publish",
+  "content": {
+    "title": "HK620 Skeleton Door Strip Process Overview",
+    "summary": "Local draft explaining HK620 process direction using approved internal knowledge only.",
+    "sections": [
+      "Buyer problem",
+      "Process logic",
+      "Safe application boundary",
+      "Questions for review"
+    ],
+    "cta": "Contact Saiyu for reviewed technical confirmation."
+  },
+  "seo": {
+    "meta_title": "HK620 Skeleton Door Strip Process | Local Draft",
+    "meta_description": "Local draft only. Requires QA and CEO approval before any external use."
+  },
+  "publish_info": {
+    "publish": false,
+    "wordpress": false,
+    "n8n": false
+  },
+  "safety": "Draft First only; no external execution."
+}

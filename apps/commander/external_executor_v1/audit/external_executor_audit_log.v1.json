@@ -1,0 +1,38 @@
+{
+  "version": "external_executor_audit_log_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "entries": [
+    {
+      "audit_log_id": "audit_external_executor_spec_created_v1",
+      "timestamp": "2026-07-10T01:40:29Z",
+      "event": "executor_spec_created",
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "status": "completed",
+      "external_call": false
+    },
+    {
+      "audit_log_id": "audit_payload_contract_validated_v1",
+      "timestamp": "2026-07-10T01:40:29Z",
+      "event": "payload_contract_validated",
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "status": "completed",
+      "external_call": false
+    },
+    {
+      "audit_log_id": "audit_dry_run_validator_passed_v1",
+      "timestamp": "2026-07-10T01:40:29Z",
+      "event": "dry_run_passed",
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "status": "dry_run_passed",
+      "external_call": false
+    },
+    {
+      "audit_log_id": "audit_readiness_ready_for_real_execution_v1",
+      "timestamp": "2026-07-10T01:40:29Z",
+      "event": "readiness_state_updated",
+      "mission_id": "mission_hk620_gap_005_external_references",
+      "status": "ready_for_real_execution",
+      "external_call": false
+    }
+  ]
+}

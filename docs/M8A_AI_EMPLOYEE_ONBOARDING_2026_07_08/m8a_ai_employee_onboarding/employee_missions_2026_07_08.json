@@ -1,0 +1,160 @@
+{
+  "mission_package": "M8A AI Employee First Missions",
+  "date": "2026-07-08",
+  "language": "zh-CN",
+  "status": "ready_for_commander_sync",
+  "commander_decision": "第一批 AI 员工进入正式任务阶段",
+  "global_rules": [
+    "所有报告必须使用中文。",
+    "n8n 是执行引擎，不是总控，不是 AI 员工。",
+    "所有外部平台公开动作必须 CEO 单独审批。",
+    "禁止自动发送邮件。",
+    "禁止自动发布 YouTube 视频。",
+    "禁止未经 CEO 审批发布 WordPress 内容。",
+    "禁止删除外部平台内容。",
+    "禁止在报告中保存密钥、Token、密码。"
+  ],
+  "missions": [
+    {
+      "mission_id": "website_agent_next_business_draft_v1",
+      "owner_employee_id": "website_agent",
+      "owner_employee_name": "Website Agent",
+      "priority": "P1",
+      "mission_type": "WordPress Draft",
+      "objective": "准备下一篇真实业务文章 Draft，不发布。",
+      "allowed_tools": [
+        "WordPress Draft Only",
+        "n8n approved website workflow",
+        "approved product knowledge"
+      ],
+      "forbidden_actions": [
+        "publish",
+        "delete post",
+        "modify published post",
+        "change WordPress settings"
+      ],
+      "deliverables": [
+        "WordPress Draft 链接",
+        "Website Agent 执行报告",
+        "提交 QA Agent 检查清单"
+      ],
+      "acceptance_criteria": [
+        "文章必须面向客户阅读，不写内部流程口吻。",
+        "内容必须围绕真实产品和真实业务价值。",
+        "状态必须保持 Draft。",
+        "完成后等待 CEO 审批是否发布。"
+      ]
+    },
+    {
+      "mission_id": "seo_agent_hk620_gsc_review_v1",
+      "owner_employee_id": "seo_agent",
+      "owner_employee_name": "SEO Agent",
+      "priority": "P1",
+      "mission_type": "SEO Read-only Review",
+      "objective": "基于 GSC 只读能力准备 HK620 页面 SEO 检查报告。",
+      "allowed_tools": [
+        "Google Search Console read-only",
+        "n8n M8A_GSC_READONLY_VALIDATION_V1",
+        "published HK620 page"
+      ],
+      "forbidden_actions": [
+        "change Search Console settings",
+        "change site ownership",
+        "submit destructive removals"
+      ],
+      "deliverables": [
+        "HK620 页面 SEO 检查报告 V1",
+        "关键词与页面标题建议",
+        "Website Agent 可执行优化清单"
+      ],
+      "acceptance_criteria": [
+        "报告必须中文。",
+        "只读，不修改任何外部设置。",
+        "建议必须可执行，不写空泛建议。"
+      ]
+    },
+    {
+      "mission_id": "data_agent_daily_metrics_template_v1",
+      "owner_employee_id": "data_agent",
+      "owner_employee_name": "Data Agent",
+      "priority": "P1",
+      "mission_type": "GA4 Read-only Data Template",
+      "objective": "建立 M8A 网站数据日报模板。",
+      "allowed_tools": [
+        "GA4 read-only",
+        "n8n M8A_GA4_READONLY_VALIDATION_V1"
+      ],
+      "forbidden_actions": [
+        "delete analytics data",
+        "change GA4 property settings",
+        "export private data without approval"
+      ],
+      "deliverables": [
+        "M8A 数据日报模板 V1",
+        "每日核心指标字段清单",
+        "Commander 可读摘要格式"
+      ],
+      "acceptance_criteria": [
+        "指标字段要少而关键。",
+        "CEO 能一眼看懂。",
+        "不包含敏感用户数据。"
+      ]
+    },
+    {
+      "mission_id": "publishing_agent_gmail_draft_only_design_v1",
+      "owner_employee_id": "publishing_agent",
+      "owner_employee_name": "Publishing Agent",
+      "priority": "P2",
+      "mission_type": "Gmail Draft-only Design",
+      "objective": "设计 Gmail Draft Only 工作流，不发送邮件。",
+      "allowed_tools": [
+        "Gmail read-only validation",
+        "n8n Gmail credential health check"
+      ],
+      "forbidden_actions": [
+        "send email",
+        "delete email",
+        "read mailbox contents",
+        "modify mailbox"
+      ],
+      "deliverables": [
+        "Gmail Draft Only 工作流设计报告 V1",
+        "CEO 审批点清单",
+        "安全边界说明"
+      ],
+      "acceptance_criteria": [
+        "必须明确不会发送邮件。",
+        "必须列出 CEO 点击审批的位置。",
+        "必须说明未来从 Draft 到 Send 的审批流程。"
+      ]
+    },
+    {
+      "mission_id": "video_agent_youtube_private_draft_design_v1",
+      "owner_employee_id": "video_agent",
+      "owner_employee_name": "Video Agent",
+      "priority": "P2",
+      "mission_type": "YouTube Private/Draft Design",
+      "objective": "设计 YouTube Private/Draft Only 视频工作流，不公开发布。",
+      "allowed_tools": [
+        "YouTube read-only validation",
+        "n8n YouTube credential health check"
+      ],
+      "forbidden_actions": [
+        "public upload",
+        "publish video",
+        "delete video",
+        "change channel settings"
+      ],
+      "deliverables": [
+        "YouTube Private/Draft Only 工作流设计报告 V1",
+        "视频发布审批链路",
+        "视频工具接入边界说明"
+      ],
+      "acceptance_criteria": [
+        "必须明确不公开发布。",
+        "必须说明私有/草稿阶段怎么验收。",
+        "必须列出 CEO 发布审批点。"
+      ]
+    }
+  ]
+}

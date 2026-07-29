@@ -1,0 +1,47 @@
+{
+  "version": "external_executor_dashboard_v1",
+  "generated_at": "2026-07-10T01:40:29Z",
+  "title": "外部执行器 V1",
+  "mode_cn": "Dry-run only",
+  "allowed_action_cn": "WordPress Draft-only",
+  "forbidden_actions_cn": [
+    "publish",
+    "update_published_post",
+    "delete_post",
+    "send_gmail",
+    "upload_youtube",
+    "旧 workflow CWbGujhdNKFpa5JZ"
+  ],
+  "waiting_authorization_count": 1,
+  "dry_run_passed_count": 1,
+  "ready_for_real_execution_count": 1,
+  "recent_executor_event_cn": "HK620 Draft-only Dry-run 已通过，等待 CEO 单独授权真实调用 n8n。",
+  "external_call_performed": false,
+  "cards": [
+    {
+      "label": "当前模式",
+      "value": "Dry-run only",
+      "status": "safe"
+    },
+    {
+      "label": "可执行动作",
+      "value": "WordPress Draft-only",
+      "status": "guarded"
+    },
+    {
+      "label": "Dry-run 通过",
+      "value": "1",
+      "status": "ready"
+    },
+    {
+      "label": "待真实执行",
+      "value": "1",
+      "status": "waiting_ceo"
+    },
+    {
+      "label": "外部调用",
+      "value": "0",
+      "status": "blocked"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "global_event_bus_v1",
+  "name": "M8A Global AI Event Bus",
+  "purpose": "M8A 唯一事件协同中心，所有 AI 员工通过统一事件模型协作。",
+  "schema": "apps/commander/event_center_v1/schemas/global_event.schema.json",
+  "event_types": "apps/commander/event_center_v1/rules/event_types.rules.json",
+  "modules": {
+    "subscriptions": "apps/commander/event_center_v1/subscriptions/agent_subscriptions.v1.json",
+    "trigger_engine": "apps/commander/event_center_v1/triggers/trigger_engine.v1.json",
+    "timeline": "apps/commander/event_center_v1/runtime/event_timeline.v1.json",
+    "history": "apps/commander/event_center_v1/history/event_history.v1.json",
+    "retry": "apps/commander/event_center_v1/retry/event_retry_engine.v1.json"
+  },
+  "status": "local_build_ready",
+  "external_io": false,
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "gmail": false,
+    "youtube": false,
+    "external_api": false,
+    "publish": false,
+    "production_modify": false
+  }
+}

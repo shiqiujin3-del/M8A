@@ -1,0 +1,241 @@
+{
+  "mission": {
+    "mission_id": "mission_standard_input_1785245137437",
+    "mission_name": "MISSION_STANDARD_INPUT_V1_OPERATION",
+    "mission_key": "MISSION_STANDARD_INPUT_WINDOW_V1",
+    "title": "让 Website Agent 先生成 2 条 HK620 短视频脚本，面向门厂客户，突出骨骼门线条封边、开槽、裁断一体化。只生成脚本和标题，不上传视频，不发布",
+    "objective": "让 Website Agent 先生成 2 条 HK620 短视频脚本，面向门厂客户，突出骨骼门线条封边、开槽、裁断一体化。只生成脚本和标题，不上传视频，不发布平台，完成后提交 QA 中文检查。",
+    "command_text": "让 Website Agent 先生成 2 条 HK620 短视频脚本，面向门厂客户，突出骨骼门线条封边、开槽、裁断一体化。只生成脚本和标题，不上传视频，不发布平台，完成后提交 QA 中文检查。",
+    "task_type": "operation",
+    "target_employee": "Website Agent",
+    "assigned_employee": "Website Agent",
+    "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+    "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+    "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+    "requires_ceo_approval": true,
+    "product": "",
+    "market": "",
+    "priority": "P1",
+    "risk_level": "medium",
+    "status": "ready",
+    "created_at": "2026-07-28T13:25:37Z",
+    "updated_at": "2026-07-28T13:25:37Z",
+    "planner_version": "mission_standard_input_window_v1_local_json",
+    "input": {
+      "source": "mission_standard_input_window_v1",
+      "task_type": "operation",
+      "target_employee": "Website Agent",
+      "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+      "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+      "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+      "requires_ceo_approval": true,
+      "external_api_calls_allowed": false,
+      "n8n_execution_allowed": false,
+      "wordpress_publish_allowed": false,
+      "wordpress_published_article_edit_allowed": false,
+      "gmail_send_allowed": false,
+      "youtube_upload_allowed": false
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "mission_standard_input_1785245137437_task_001",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_order": 1,
+      "worker_name": "Website Agent",
+      "title": "接收 Mission 标准输入",
+      "action": "accept_mission_standard_input",
+      "status": "queued",
+      "risk_level": "low",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:25:37Z",
+      "updated_at": "2026-07-28T13:25:37Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "operation",
+        "target_employee": "Website Agent",
+        "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+        "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+        "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_standard_input_1785245137437_task_002",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_order": 2,
+      "worker_name": "Website Agent",
+      "title": "准备员工执行计划",
+      "action": "prepare_employee_execution_plan",
+      "status": "queued",
+      "risk_level": "low",
+      "requires_approval": false,
+      "approval_required": false,
+      "approval_reason": null,
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:25:37Z",
+      "updated_at": "2026-07-28T13:25:37Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "operation",
+        "target_employee": "Website Agent",
+        "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+        "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+        "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    },
+    {
+      "task_id": "mission_standard_input_1785245137437_task_003",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_order": 3,
+      "worker_name": "CEO",
+      "title": "等待 CEO 审批后再进入执行动作",
+      "action": "wait_for_ceo_execution_approval",
+      "status": "queued",
+      "risk_level": "medium",
+      "requires_approval": true,
+      "approval_required": true,
+      "approval_reason": "CEO approval required before any execution action. No n8n, WordPress publish, or published article edit is allowed.",
+      "retry_count": 0,
+      "created_at": "2026-07-28T13:25:37Z",
+      "updated_at": "2026-07-28T13:25:37Z",
+      "input": {
+        "source": "mission_standard_input_window_v1",
+        "task_type": "operation",
+        "target_employee": "Website Agent",
+        "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+        "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+        "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+        "requires_ceo_approval": true,
+        "external_api_calls_allowed": false,
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false,
+        "gmail_send_allowed": false,
+        "youtube_upload_allowed": false
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "approval_id": "approval_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": "mission_standard_input_1785245137437_task_003",
+      "artifact_id": null,
+      "approval_type": "mission_execution_approval",
+      "platform": "M8A Local Commander",
+      "action_type": "approve_mission_execution_scope",
+      "risk_level": "medium",
+      "status": "pending",
+      "approver_name": "石总",
+      "request_payload": {
+        "title": "让 Website Agent 先生成 2 条 HK620 短视频脚本，面向门厂客户，突出骨骼门线条封边、开槽、裁断一体化。只生成脚本和标题，不上传视频，不发布平台，完成后提交 QA 中文检查。",
+        "task_type": "operation",
+        "target_employee": "Website Agent",
+        "priority": "P1",
+        "input_materials": "总控台当前本地 Mission 队列、员工状态、任务状态",
+        "output_requirements": "中文状态回报：当前 Mission 数、最新 Mission、是否存在外部执行风险、下一步建议",
+        "safety_boundaries": "禁止执行 n8n；禁止发布 WordPress；禁止修改已发布文章；禁止发送 Gmail；禁止上传 YouTube；只允许写入本地任务队列",
+        "n8n_execution_allowed": false,
+        "wordpress_publish_allowed": false,
+        "wordpress_published_article_edit_allowed": false
+      },
+      "payload_snapshot": {
+        "reason": "CEO approval gate for Mission scope only. No external action is executed by this local queue write.",
+        "task_id": "mission_standard_input_1785245137437_task_003"
+      },
+      "created_at": "2026-07-28T13:25:37Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "artifact_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": null,
+      "artifact_type": "mission_standard_input",
+      "title": "Mission 标准输入已写入本地任务队列",
+      "content_json": {
+        "summary": "总控台 Mission 标准输入窗口 V1 已生成 Mission ID，并写入本地 Commander queue。",
+        "queue_path": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/commander_mission_queue.json",
+        "mission_file": "/Users/shiqiujing/Documents/M8A/apps/commander/missions/local_queue/mission_standard_input_1785245137437.json",
+        "n8n_executed": false,
+        "wordpress_published": false,
+        "published_article_modified": false
+      },
+      "quality_score": 1.0,
+      "simulation_status": "queued_local_only",
+      "created_at": "2026-07-28T13:25:37Z"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": null,
+      "event_type": "mission_status_changed",
+      "event_message": "Mission Standard Input Window V1 wrote mission to local JSON queue only.",
+      "created_at": "2026-07-28T13:25:37Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "ready",
+        "external_actions_executed": false
+      }
+    },
+    {
+      "event_id": "evt_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": "mission_standard_input_1785245137437_task_001",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:25:37Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "accept_mission_standard_input"
+      }
+    },
+    {
+      "event_id": "evt_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": "mission_standard_input_1785245137437_task_002",
+      "event_type": "task_status_changed",
+      "event_message": "Website Agent task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:25:37Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "prepare_employee_execution_plan"
+      }
+    },
+    {
+      "event_id": "evt_1785245137437",
+      "mission_id": "mission_standard_input_1785245137437",
+      "task_id": "mission_standard_input_1785245137437_task_003",
+      "event_type": "task_status_changed",
+      "event_message": "CEO task queued locally from Mission Standard Input Window V1.",
+      "created_at": "2026-07-28T13:25:37Z",
+      "metadata": {
+        "from_status": "created",
+        "to_status": "queued",
+        "action": "wait_for_ceo_execution_approval"
+      }
+    }
+  ],
+  "updated_at": "2026-07-28T13:25:37Z"
+}

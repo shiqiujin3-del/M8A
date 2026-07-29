@@ -1,0 +1,393 @@
+{
+  "success": true,
+  "mission_id": "m2_sprint5_gsc_search_analytics_20260710T043822Z",
+  "trace_id": "trace_m2_sprint5_gsc_search_analytics_20260710T043822Z",
+  "execution_id": "38",
+  "executor": "google_search_console",
+  "workflow_id": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+  "workflow_name": "M8A_GSC_SEARCH_ANALYTICS_EXECUTOR_V1",
+  "action": "search_analytics",
+  "action_type": "search_analytics",
+  "status": "completed",
+  "started_at": null,
+  "finished_at": "2026-07-10T04:38:29.631Z",
+  "duration_ms": 7454,
+  "retry_count": 0,
+  "result": {
+    "type": "google_search_console_search_analytics",
+    "property": "https://woodmachinerynetwork.com/",
+    "date_range": "last_7_days",
+    "start_date": "2026-07-03",
+    "end_date": "2026-07-09",
+    "clicks": 1,
+    "impressions": 47,
+    "ctr": 0.02127659574468085,
+    "average_position": 40.680851063829785,
+    "top_queries": [
+      {
+        "query": "cnc nesting",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 68.5
+      },
+      {
+        "query": "edgebander maintenance",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 82
+      },
+      {
+        "query": "edgebander repair",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 81
+      },
+      {
+        "query": "glue line treated",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 53
+      },
+      {
+        "query": "glue pot rebuild",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 46
+      },
+      {
+        "query": "glue pot repair",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 50.666666666666664
+      },
+      {
+        "query": "gluepot repair",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "hub-banding",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 8.666666666666668
+      },
+      {
+        "query": "nested based manufacturing",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "query": "nesting machining centres",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 70
+      },
+      {
+        "query": "pur edging",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 90.5
+      },
+      {
+        "query": "pur vs eva",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 26
+      },
+      {
+        "query": "sizing edge banders",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 68
+      }
+    ],
+    "top_pages": [
+      {
+        "page": "https://woodmachinerynetwork.com/edge-bander-feeding-instability-sensor-guide-clearance/",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 6
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/category/blog/edge-banding-knowledge/maintenance/",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 67.4
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/category/glue-technology/glue-line-quality/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 53
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/category/glue-technology/glue-pot/",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 37.285714285714285
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/clean-free-glue-pot-coating-edge-banding-maintenance/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/cnc-nesting-hub/",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 66.5
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/diagnose-corner-chipping-end-cutting-edge-banding-machine/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/distributor-network/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/edge-banding-hub/",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 18.833333333333332
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/feed-guide-misalignment-corner-chipping/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/glue-roller-alignment-corner-damage-edge-banding/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/how-to-choose-a-softforming-edge-bander/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/panel-edge-chipping-after-pre-milling/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/panel-squareness-before-edge-banding/",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/pressing-roller-pressure-corner-chipping/",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 14.666666666666666
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/pur-vs-eva-edge-banding-glue-system/",
+        "clicks": 0,
+        "impressions": 13,
+        "ctr": 0,
+        "position": 55.07692307692308
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/six-sided-drilling-hub/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/soft-osb-panels-edge-banding-quality-problems/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 2
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/softforming-handle-free-cabinet-doors/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "page": "https://woodmachinerynetwork.com/woodworking-machines/",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 3
+      }
+    ],
+    "countries": [
+      {
+        "country": "nzl",
+        "clicks": 1,
+        "impressions": 2,
+        "ctr": 0.5,
+        "position": 9
+      },
+      {
+        "country": "are",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "country": "aus",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "country": "bgd",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "country": "bra",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "country": "dza",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 53
+      },
+      {
+        "country": "gbr",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 55
+      },
+      {
+        "country": "ind",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 20.5
+      },
+      {
+        "country": "irn",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "country": "mys",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "country": "pak",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "country": "per",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 14
+      },
+      {
+        "country": "usa",
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 54.65384615384615
+      },
+      {
+        "country": "vnm",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 29
+      }
+    ],
+    "devices": [
+      {
+        "device": "MOBILE",
+        "clicks": 1,
+        "impressions": 4,
+        "ctr": 0.25,
+        "position": 6.5
+      },
+      {
+        "device": "DESKTOP",
+        "clicks": 0,
+        "impressions": 43,
+        "ctr": 0,
+        "position": 43.86046511627907
+      }
+    ]
+  },
+  "error": null,
+  "safety": {
+    "readonly": true,
+    "submit_sitemap": false,
+    "delete_property": false,
+    "modify_property": false,
+    "modify_settings": false,
+    "modify_google_data": false
+  },
+  "compatibility": {
+    "contract_version": "execution_response_contract_v1",
+    "legacy_webhook_response": null,
+    "requires_execution_lookup": false,
+    "normalization_source": "direct_webhook_response"
+  }
+}

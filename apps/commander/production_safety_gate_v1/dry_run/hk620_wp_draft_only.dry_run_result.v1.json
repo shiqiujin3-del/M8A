@@ -1,0 +1,25 @@
+{
+  "mission_id": "mission_hk620_gap_safe_draft_preview",
+  "action_id": "ext_action_hk620_wp_draft_only_preview_v1",
+  "platform": "WordPress via n8n",
+  "action_type": "create_wordpress_draft_only",
+  "payload_preview": {
+    "title": "HK620 Draft-only Preview",
+    "content_source": "local_draft_output",
+    "draft_url": null,
+    "post_id": null,
+    "publish": false,
+    "delete": false,
+    "update_published_content": false,
+    "send_email": false,
+    "upload_video": false
+  },
+  "validation": {
+    "payload_fields_valid": true,
+    "target_platform_valid": true,
+    "forbidden_actions_absent": true,
+    "safety_boundary_valid": true
+  },
+  "external_call_executed": false,
+  "result": "dry_run_passed"
+}

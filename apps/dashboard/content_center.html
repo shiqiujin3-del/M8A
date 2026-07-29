@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M8A 内容中心 V1</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#f6f8fb; color:#14202b; margin:0; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    .top { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; border-bottom:1px solid #d8e0ea; padding-bottom:20px; }
+    h1 { font-size:48px; margin:8px 0; letter-spacing:0; }
+    .pill { border:1px solid #cfd8e3; border-radius:999px; padding:12px 18px; background:#fff; font-weight:700; }
+    .grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:16px; margin-top:24px; }
+    .card { background:#fff; border:1px solid #d8e0ea; border-radius:8px; padding:22px; }
+    .metric { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:14px; margin-top:18px; }
+    .metric .card strong { font-size:34px; display:block; margin-top:8px; }
+    .list { display:grid; gap:10px; }
+    .row { display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid #edf1f5; }
+    .button { display:inline-block; background:#137a68; color:#fff; padding:14px 18px; border-radius:8px; text-decoration:none; font-weight:800; }
+    @media (max-width: 780px) { .grid, .metric { grid-template-columns:1fr; } h1 { font-size:36px; } }
+  </style>
+</head>
+<body>
+<main>
+  <section class="top">
+    <div>
+      <div style="color:#137a68;font-weight:800">M8A Content Center V1</div>
+      <h1>内容中心</h1>
+      <p id="status">读取中...</p>
+    </div>
+    <a class="pill" href="./index.html">返回总控台</a>
+  </section>
+
+  <section class="metric" id="metrics"></section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>当前内容包</h2>
+      <div id="package"></div>
+    </article>
+    <article class="card">
+      <h2>AI 员工分工</h2>
+      <div class="list" id="agents"></div>
+    </article>
+    <article class="card">
+      <h2>平台内容形态</h2>
+      <div class="list" id="platforms"></div>
+    </article>
+    <article class="card">
+      <h2>安全边界</h2>
+      <p id="safety"></p>
+      <p><strong>下一步：</strong><span id="next"></span></p>
+    </article>
+  </section>
+</main>
+<script>
+async function loadData(){
+  const res = await fetch('./content_center_data.json', {cache:'no-store'});
+  const data = await res.json();
+  document.getElementById('status').textContent = data.status + ' · ' + data.current_focus;
+  const s = data.summary;
+  document.getElementById('metrics').innerHTML = [
+    ['内容包', s.active_packages], ['QA 通过', s.qa_passed], ['等待老板审阅', s.waiting_ceo_review], ['外部动作', s.external_actions_today]
+  ].map(([k,v]) => `<article class="card"><span>${k}</span><strong>${v}</strong></article>`).join('');
+  const p = data.package;
+  document.getElementById('package').innerHTML = `<h3>${p.content_assets.website_article_title}</h3><p>产品：${p.product} · 市场：${p.target_market} · 状态：${p.status}</p><p>QA 分数：${p.qa_result.qa_score} · ${p.qa_result.gate}</p>`;
+  document.getElementById('agents').innerHTML = Object.entries(data.agents).map(([k,v]) => `<div class="row"><span>${k}</span><strong>${v}</strong></div>`).join('');
+  document.getElementById('platforms').innerHTML = Object.entries(p.platform_variants).map(([k,v]) => `<div class="row"><span>${k}</span><strong>${v.status}</strong></div>`).join('');
+  document.getElementById('safety').textContent = data.safety_notice;
+  document.getElementById('next').textContent = data.next_action;
+}
+loadData().catch(() => { document.getElementById('status').textContent = '内容中心数据读取失败'; });
+</script>
+</body>
+</html>

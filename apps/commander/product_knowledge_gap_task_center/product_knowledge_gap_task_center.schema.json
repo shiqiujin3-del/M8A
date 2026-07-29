@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product Knowledge Gap Task Center V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "task_center_id",
+    "product_id",
+    "product_name",
+    "current_public_status",
+    "target_public_status",
+    "source_binding",
+    "tasks",
+    "ownership_rules",
+    "status_summary"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "task_center_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "current_public_status": {
+      "type": "string"
+    },
+    "target_public_status": {
+      "type": "string"
+    },
+    "source_binding": {
+      "type": "string"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gap_id",
+          "product_id",
+          "gap_type",
+          "description",
+          "required_for",
+          "severity",
+          "owner_agent",
+          "suggested_source",
+          "acceptance_criteria",
+          "status",
+          "blocks_public_publish",
+          "blocks_draft_generation"
+        ]
+      }
+    },
+    "ownership_rules": {
+      "type": "object"
+    },
+    "status_summary": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object"
+    }
+  }
+}

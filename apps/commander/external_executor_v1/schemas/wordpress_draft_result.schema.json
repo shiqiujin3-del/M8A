@@ -1,0 +1,15 @@
+{
+  "version": "wordpress_draft_result_standard_v1",
+  "required_fields": {
+    "ok": "boolean",
+    "execution_id": "string",
+    "post_id": "string or number, required only after real WordPress Draft created",
+    "draft_url": "string, required only after real WordPress Draft created",
+    "title": "string",
+    "status": "draft",
+    "created_at": "ISO-8601 timestamp",
+    "source_mission_id": "string",
+    "safety_gate_result": "object"
+  },
+  "stub_policy": "Dry-run 或本地模拟时 post_id/draft_url 必须为空，避免误导。"
+}

@@ -1,0 +1,17 @@
+{
+  "version": "global_employee_assignment_v1",
+  "roles": [
+    "Owner Agent",
+    "Supporting Agent",
+    "Reviewer",
+    "Approver"
+  ],
+  "role_meaning": {
+    "Owner Agent": "主负责人，推动 Mission 输出。",
+    "Supporting Agent": "协作员工，提供资料、结构、检查或执行准备。",
+    "Reviewer": "验收员工，通常为 QA Agent 或领域负责人。",
+    "Approver": "审批人，涉及发布、外部平台或高风险内容时为 CEO。"
+  },
+  "multi_agent_supported": true,
+  "default_approver": "CEO，仅外部动作或公开发布需要。"
+}
