@@ -1,0 +1,38 @@
+{
+  "employee_id": "commander_reporting_agent",
+  "employee_name": "Commander Reporting Agent",
+  "role": "Report index, CEO review ledger, and daily manager brief AI Employee",
+  "provider": "local_rule_handler_or_approved_provider",
+  "model": "not_configured",
+  "owner": "Commander",
+  "status": "registered",
+  "skills": [
+    "reporting",
+    "governance"
+  ],
+  "available_tools": [
+    "local_markdown_json",
+    "report_index",
+    "commander_dashboard_data"
+  ],
+  "knowledge_sources": [
+    "docs/M8A_REPORT_INDEX.json",
+    "Commander Runtime Reports"
+  ],
+  "mission_queue": [],
+  "daily_report": {},
+  "memory": {
+    "enabled": false,
+    "scope": "none"
+  },
+  "cost_tracking": {
+    "enabled": false,
+    "estimated_token_cost": null
+  },
+  "kpi": {
+    "mission_success_rate": null,
+    "average_completion_time": null
+  },
+  "created_at": "2026-07-07",
+  "updated_at": "2026-07-07"
+}

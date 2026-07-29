@@ -1,0 +1,16 @@
+{
+  "registry_version": "1.0",
+  "status": "registered_registry_v2",
+  "employees": [
+    "research_agent",
+    "knowledge_agent",
+    "geo_agent",
+    "seo_agent",
+    "website_agent",
+    "publishing_agent",
+    "qa_agent",
+    "automation_agent",
+    "commander_reporting_agent"
+  ],
+  "updated_at": "2026-07-07T02:02:48Z"
+}

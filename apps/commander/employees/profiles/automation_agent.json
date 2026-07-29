@@ -1,0 +1,37 @@
+{
+  "employee_id": "automation_agent",
+  "employee_name": "Automation Agent",
+  "role": "Local workflow automation and runner integration AI Employee",
+  "provider": "local_rule_handler_or_approved_provider",
+  "model": "not_configured",
+  "owner": "Commander",
+  "status": "registered",
+  "skills": [
+    "automation"
+  ],
+  "available_tools": [
+    "local_runtime_json",
+    "worker_runner_plan",
+    "mission_queue_projection"
+  ],
+  "knowledge_sources": [
+    "Mission Control",
+    "Worker Runner Foundation"
+  ],
+  "mission_queue": [],
+  "daily_report": {},
+  "memory": {
+    "enabled": false,
+    "scope": "none"
+  },
+  "cost_tracking": {
+    "enabled": false,
+    "estimated_token_cost": null
+  },
+  "kpi": {
+    "mission_success_rate": null,
+    "average_completion_time": null
+  },
+  "created_at": "2026-07-07",
+  "updated_at": "2026-07-07"
+}
