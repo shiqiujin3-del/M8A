@@ -1,0 +1,175 @@
+{
+  "version": "website_agent_state_machine_v2",
+  "states": [
+    "idle",
+    "intake_received",
+    "knowledge_loaded",
+    "topic_planned",
+    "draft_generated",
+    "images_attached",
+    "qa_completed",
+    "waiting_approval",
+    "approved_for_draft",
+    "handed_off_to_n8n",
+    "completed",
+    "failed"
+  ],
+  "initial_state": "idle",
+  "terminal_states": [
+    "completed",
+    "failed"
+  ],
+  "transitions": [
+    {
+      "from": "idle",
+      "to": "intake_received",
+      "trigger": "mission_intake_validated",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 1: Mission Intake"
+    },
+    {
+      "from": "intake_received",
+      "to": "knowledge_loaded",
+      "trigger": "v2_knowledge_binding_loaded",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 2: Knowledge Fetch (V2 Binding)",
+      "guard": "V2 binding 必须存在且 public_approved 覆盖 ≥ 85%"
+    },
+    {
+      "from": "knowledge_loaded",
+      "to": "topic_planned",
+      "trigger": "content_plan_generated",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 3: Topic Map & Content Planning [V2 NEW]",
+      "guard": "Content Plan 必须包含 H1 / H2 outline / image placement / target ≥ 800 words"
+    },
+    {
+      "from": "topic_planned",
+      "to": "draft_generated",
+      "trigger": "draft_generated_locally",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 4-5: Draft Generation + SEO Enrichment",
+      "guard": "草稿必须包含 Overview / Specs Table / Applications / FAQ / CTA 五个核心部分"
+    },
+    {
+      "from": "draft_generated",
+      "to": "images_attached",
+      "trigger": "product_images_attached",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 6: Image & Media Attachment [V2 NEW]",
+      "guard": "≥ 2 张图片已附加，每张 alt text ≥ 10 chars"
+    },
+    {
+      "from": "images_attached",
+      "to": "qa_completed",
+      "trigger": "qa_v2_1_scored",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 7: QA V2.1 Scoring",
+      "guard": {
+        "draft_ready": "qa_score >= 90 且 pending ≤ 3 → 可进入审批",
+        "publish_ready": "qa_score >= 95 且 pending = 0 → 建议直接发布",
+        "below_threshold": "qa_score < 90 → 进入 failed，需修订"
+      }
+    },
+    {
+      "from": "qa_completed",
+      "to": "waiting_approval",
+      "trigger": "submit_to_ceo_approval",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 8: Approval Gate (提交审批)",
+      "note": "提交审批是本地状态推进，不执行外部动作。"
+    },
+    {
+      "from": "waiting_approval",
+      "to": "approved_for_draft",
+      "trigger": "ceo_approves_draft_only",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "step": "Step 8: CEO 审批通过",
+      "note": "QA ≥ 95 时建议 Publish-Ready；QA 90-94 时仅限 Draft-only"
+    },
+    {
+      "from": "waiting_approval",
+      "to": "failed",
+      "trigger": "ceo_rejects_or_blocks",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "step": "CEO 驳回"
+    },
+    {
+      "from": "approved_for_draft",
+      "to": "handed_off_to_n8n",
+      "trigger": "ceo_separate_authorization_for_draft_only_handoff",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "step": "Step 9: Draft-only Handoff (含 Schema)",
+      "note": "交接包包含 HTML 草稿 + SEO meta + 图片引用 + FAQ/Product Schema"
+    },
+    {
+      "from": "handed_off_to_n8n",
+      "to": "completed",
+      "trigger": "mission_log_writeback_done",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "Step 10: Mission Log Writeback"
+    },
+    {
+      "from": "*",
+      "to": "failed",
+      "trigger": "validation_error_or_runtime_error",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "step": "异常处理"
+    }
+  ],
+  "automatic_states": [
+    "idle",
+    "intake_received",
+    "knowledge_loaded",
+    "topic_planned",
+    "draft_generated",
+    "images_attached",
+    "qa_completed",
+    "completed",
+    "failed"
+  ],
+  "ceo_gate_states": [
+    "waiting_approval",
+    "approved_for_draft",
+    "handed_off_to_n8n"
+  ],
+  "v2_new_states": [
+    {
+      "state": "topic_planned",
+      "reason": "V2 新增 Topic Map & Content Planning 步骤的输出状态，确保草稿生成前结构已锁定"
+    },
+    {
+      "state": "images_attached",
+      "reason": "V2 新增 Image & Media Attachment 步骤的输出状态，确保 ≥ 2 张图片已绑定到草稿"
+    }
+  ],
+  "v2_upgraded_guards": [
+    {
+      "transition": "knowledge_loaded → topic_planned",
+      "v1_guard": "无 (V1 无此步骤)",
+      "v2_guard": "V2 binding public_approved ≥ 85%，包含 Post 481 黄金标准引用"
+    },
+    {
+      "transition": "images_attached → qa_completed",
+      "v1_guard": "qa_score >= 90 (V1 单级)",
+      "v2_guard": "qa_score >= 90 → Draft-Ready (≤ 3 pending); qa_score >= 95 → Publish-Ready (零 pending)"
+    }
+  ],
+  "external_action_rule": "任何真实 n8n / WordPress / 发布 / 删除 / 修改已发布文章动作，都不由本状态机自动执行，必须另行 CEO 授权。",
+  "verification": {
+    "first_full_run": "2026-07-30, HK620 Cabinet Factory Article",
+    "result": "completed (100/100 QA, zero pending, publish-ready)"
+  }
+}

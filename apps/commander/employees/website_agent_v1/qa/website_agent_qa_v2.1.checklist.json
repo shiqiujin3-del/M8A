@@ -1,0 +1,168 @@
+{
+  "version": "website_agent_qa_v2.1",
+  "upgrade_from": "website_agent_qa_v2",
+  "upgrade_date": "2026-07-30",
+  "upgrade_reason": "V1 QA allowed 3 pending items to pass at 92. V2.1 introduces two-tier QA: Draft-Ready (90+) and Publish-Ready (95+ with zero pending).",
+  "qa_tiers": {
+    "draft_ready": {
+      "threshold": 90,
+      "description": "Minimum score for draft creation. Pending items allowed but capped.",
+      "max_pending_allowed": 3,
+      "can_create_wordpress_draft": true,
+      "can_publish": false
+    },
+    "publish_ready": {
+      "threshold": 95,
+      "description": "Required score for publishing. Zero pending on P0 checks.",
+      "max_pending_allowed": 0,
+      "p0_pending_allowed": 0,
+      "can_create_wordpress_draft": true,
+      "can_publish": true,
+      "requires_ceo_approval": true
+    }
+  },
+  "checks": [
+    {
+      "item": "Title",
+      "weight": 7,
+      "tier": "P0",
+      "pass_criteria": "English buyer-facing title, 50-90 chars, includes product name and key application",
+      "fail_note": "Title missing, too short, too long, or not buyer-facing"
+    },
+    {
+      "item": "Meta Description",
+      "weight": 7,
+      "tier": "P0",
+      "pass_criteria": "Present, buyer-facing, 120-160 chars, includes focus keyword",
+      "fail_note": "Missing, too short/long, or keyword missing"
+    },
+    {
+      "item": "Slug",
+      "weight": 5,
+      "tier": "P0",
+      "pass_criteria": "Kebab-case, includes product name, no stop words",
+      "fail_note": "Missing or malformed"
+    },
+    {
+      "item": "H1",
+      "weight": 5,
+      "tier": "P0",
+      "pass_criteria": "Exactly one H1, matches title intent",
+      "fail_note": "Zero or multiple H1s"
+    },
+    {
+      "item": "Heading Structure",
+      "weight": 7,
+      "tier": "P0",
+      "pass_criteria": "H2 sections cover: buyer problem, product fit, specifications, applications, FAQ, CTA",
+      "fail_note": "Missing required sections",
+      "required_sections_for_publish": [
+        "Overview / Introduction",
+        "Specifications (with table)",
+        "Applications",
+        "FAQ",
+        "Call to Action"
+      ]
+    },
+    {
+      "item": "Internal Links",
+      "weight": 6,
+      "tier": "P1",
+      "pass_criteria": "At least 2 internal links (product page + contact page for product content)",
+      "pending_allowed_in_draft": true,
+      "fail_note": "No internal links for publish-ready content"
+    },
+    {
+      "item": "External Links",
+      "weight": 4,
+      "tier": "P2",
+      "pass_criteria": "External links present if required by content type; no broken links",
+      "pending_allowed_in_draft": true,
+      "fail_note": "Required external link missing"
+    },
+    {
+      "item": "Image Alt",
+      "weight": 5,
+      "tier": "P1",
+      "pass_criteria": "At least 1 image with descriptive alt text for publish-ready; pending allowed for draft-only",
+      "pending_allowed_in_draft": true,
+      "fail_note": "Publish-ready content has no images or missing alt text"
+    },
+    {
+      "item": "FAQ",
+      "weight": 6,
+      "tier": "P0",
+      "pass_criteria": "At least 3 buyer Q&A pairs with substantive answers",
+      "fail_note": "Fewer than 3 Q&A pairs or answers too short",
+      "minimum_for_publish": 3
+    },
+    {
+      "item": "Schema",
+      "weight": 6,
+      "tier": "P1",
+      "pass_criteria": "Schema.org markup injected for publish-ready; pending for draft-only",
+      "pending_allowed_in_draft": true,
+      "fail_note": "Publish-ready content missing Schema markup"
+    },
+    {
+      "item": "CTA",
+      "weight": 6,
+      "tier": "P0",
+      "pass_criteria": "At least 1 CTA (product page link or contact link) with clear action text",
+      "fail_note": "No CTA present"
+    },
+    {
+      "item": "Grammar",
+      "weight": 7,
+      "tier": "P0",
+      "pass_criteria": "No grammar errors, consistent tense, professional tone",
+      "fail_note": "Grammar errors detected"
+    },
+    {
+      "item": "Length",
+      "weight": 5,
+      "tier": "P0",
+      "pass_criteria": "Draft-ready: 300+ words. Publish-ready: 800+ words.",
+      "draft_threshold": 300,
+      "publish_threshold": 800,
+      "fail_note": "Below word count threshold"
+    },
+    {
+      "item": "Brand Consistency",
+      "weight": 10,
+      "tier": "P0",
+      "pass_criteria": "No forbidden claims. Uses approved product positioning. No unsupported claims. Follows public_claim_boundary.",
+      "fail_note": "Forbidden claim detected or unsupported claim made",
+      "blocking": true
+    },
+    {
+      "item": "Specifications Table",
+      "weight": 7,
+      "tier": "P0",
+      "pass_criteria": "For product content: complete specs table with at least 5 parameters from knowledge binding",
+      "fail_note": "Specs table missing or incomplete for product content type",
+      "applies_to_content_types": ["product_content"],
+      "minimum_parameters": 5
+    },
+    {
+      "item": "Customer Evidence",
+      "weight": 7,
+      "tier": "P1",
+      "pass_criteria": "At least 1 anonymized customer case or application scenario for publish-ready product content",
+      "pending_allowed_in_draft": true,
+      "applies_to_content_types": ["product_content"]
+    }
+  ],
+  "total_weight": 100,
+  "scoring_rules": {
+    "pass": "Full weight awarded",
+    "pending": "Half weight awarded (new in V2.1 - previously zero deduction)",
+    "fail": "Zero weight awarded",
+    "blocking_fail": "Zero weight + QA status set to blocked regardless of total score"
+  },
+  "golden_standard_reference": {
+    "post_id": 481,
+    "qa_score_equivalent": 97,
+    "description": "Post 481 is the benchmark. It passes all P0 checks with full weight, has images, specs table, 6 FAQ, dual CTA, and 6 customer cases."
+  }
+}

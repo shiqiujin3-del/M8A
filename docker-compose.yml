@@ -65,6 +65,7 @@ services:
       DB_POSTGRESDB_USER: m8a
       DB_POSTGRESDB_PASSWORD: m8a_bootstrap_password
       N8N_ENCRYPTION_KEY: m8a_bootstrap_local_encryption_key_32
+      N8N_SECURE_COOKIE: false
       N8N_HOST: localhost
       N8N_PORT: 5678
       N8N_PROTOCOL: http

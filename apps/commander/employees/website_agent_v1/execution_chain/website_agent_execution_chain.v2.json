@@ -1,0 +1,232 @@
+{
+  "version": "website_agent_execution_chain_v2",
+  "name": "Website Agent V2 可复用执行链 (10 Steps)",
+  "purpose": "在 V1 8 步基础上新增 Topic Map & Content Planning (Step 3) 和 Image & Media Attachment (Step 6)，对标 Post 481 黄金标��，产出 800+ 词、QA 95+、可直接发布的文章。让 HK690、HK680、六面钻、CNC、Factory Solution、Blog、Knowledge 只替换产品资料，不重做流程。",
+  "safety_boundary": {
+    "external_platform_calls": false,
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_external_content": false,
+    "update_published_post": false
+  },
+  "steps": [
+    {
+      "order": 1,
+      "key": "mission_intake",
+      "name": "Mission Intake",
+      "description": "接收 Mission Protocol，校验产品、市场、语言、平台、期望输出和安全边界。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "intake_received"
+    },
+    {
+      "order": 2,
+      "key": "knowledge_fetch",
+      "name": "Knowledge Fetch (V2 Binding)",
+      "description": "从统一 Knowledge Center 读取产品 V2 Knowledge Binding；检查 specs (8+)、FAQ (6+)、customer_cases (3+)、images (2+)、internal_links (4+)；校验 public_claim_boundary 和 freshness_status。V2 要求 public_approved 覆盖 ≥ 85%。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "knowledge_loaded",
+      "knowledge_binding_required": true,
+      "binding_schema": "apps/commander/employees/website_agent_v1/knowledge_binding/website_agent_knowledge_binding.schema.json",
+      "binding_v2": "apps/commander/employees/website_agent_v1/knowledge_binding/hk620.knowledge_binding.v2.json",
+      "missing_checklist": "apps/commander/employees/website_agent_v1/knowledge_binding/product_knowledge_missing_checklist.v1.json",
+      "golden_standard_post": 481,
+      "golden_standard_url": "https://woodmachinerynetwork.com/hk620-skeleton-door-profile-edge-banding-machine/"
+    },
+    {
+      "order": 3,
+      "key": "topic_planning",
+      "name": "Topic Map & Content Planning",
+      "description": "V2 新增步骤。根据知识绑定数据规划文章结构：确定 H1 标题、H2 分节 (Overview / Specifications / Applications / FAQ / Next Steps)、选配图片、输出结构大纲。对齐 Content Center 10-step 管线的 Content Planning 阶段，确保草稿生成前结构已锁定。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "topic_planned",
+      "output": "content_plan (H1, H2 outline, image placement, target word count ≥ 800, key sections)"
+    },
+    {
+      "order": 4,
+      "key": "draft_generation",
+      "name": "Draft Generation (Post 481 Template)",
+      "description": "基于 Content Plan 和 Post 481 黄金标准模板生成客户可读草稿。必须包含：Overview (100-150词) + Specifications Table (8+ 参数) + Applications (4+ 场景) + FAQ (6 Q&A) + Next Steps (2 CTA 按钮)。目标字数 ≥ 800。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "draft_generated",
+      "template_reference": "Post 481 (https://woodmachinerynetwork.com/hk620-skeleton-door-profile-edge-banding-machine/)",
+      "min_word_count": 800,
+      "required_sections": [
+        "Overview (buyer problem + product solution)",
+        "Specifications Table (8+ parameters from knowledge binding)",
+        "Applications (4+ scenarios)",
+        "FAQ (6 Q&A from knowledge binding)",
+        "Next Steps / CTA (2 buttons: product page + contact)"
+      ]
+    },
+    {
+      "order": 5,
+      "key": "seo_enrichment",
+      "name": "SEO Enrichment",
+      "description": "补齐 Title (50-90 chars)、Meta Description (120-160 chars)、Slug (kebab-case, includes product name)、H1、Heading Structure、FAQ 语义化标记、Internal Links (≥ 2 URLs)、External Links。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "draft_generated"
+    },
+    {
+      "order": 6,
+      "key": "image_attachment",
+      "name": "Image & Media Attachment",
+      "description": "V2 新增步骤。从知识绑定中附加产品图片 (≥ 2张)，每张带描述性 alt text (≥ 10 chars)。图片引用 WordPress Media Library ID 或本地路径。标注图片插入位置 (Overview 后 1 张、Applications 后 1 张)。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "images_attached",
+      "min_images": 2,
+      "alt_text_min_length": 10,
+      "image_sources": "knowledge_binding.images (WP Media IDs or local paths)"
+    },
+    {
+      "order": 7,
+      "key": "qa_v2_1_scoring",
+      "name": "QA V2.1 Scoring (Two-Tier)",
+      "description": "按 Website Agent QA V2.1 16 项打分。Draft-Ready: ≥ 90 (≤ 3 pending)。Publish-Ready: ≥ 95 (零 pending)。低于 90 禁止进入审批。P0 项 (Brand Consistency / Specs Table / FAQ) 必须全部通过。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "qa_completed",
+      "qa_checklist": "apps/commander/employees/website_agent_v1/qa/website_agent_qa_v2.1.checklist.json",
+      "draft_threshold": 90,
+      "publish_threshold": 95,
+      "max_pending_draft": 3,
+      "max_pending_publish": 0,
+      "p0_must_pass": [
+        "Brand Consistency (weight 10)",
+        "Specifications Table (weight 7)",
+        "FAQ (weight 6)",
+        "CTA (weight 6)",
+        "Grammar (weight 7)",
+        "Length (weight 5)"
+      ]
+    },
+    {
+      "order": 8,
+      "key": "approval_gate",
+      "name": "Approval Gate",
+      "description": "草稿和 QA V2.1 结果提交 CEO 审批。QA ≥ 95 且零 pending 时建议直接发布；QA 90-94 时仅限 Draft-only。未通过不得进入 Draft-only 交接。",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "next_state": "approved_for_draft",
+      "approval_levels": {
+        "qa_95_plus": "建议 Publish-Ready (需 CEO 确认发布)",
+        "qa_90_to_94": "仅限 Draft-only (待完善后重新审批)",
+        "qa_below_90": "禁止进入审批 (退回修订)"
+      }
+    },
+    {
+      "order": 9,
+      "key": "draft_only_handoff",
+      "name": "Draft-only Handoff (with Schema Injection)",
+      "description": "生成 Draft-only 交接包，包含完整 HTML 草稿、SEO meta、图片引用、FAQ + Product Schema。真实 n8n / WordPress 调用必须另行授权。V2 新增 Schema 注入 (FAQ + Product JSON-LD)。",
+      "auto_progress": false,
+      "ceo_approval_required": true,
+      "next_state": "handed_off_to_n8n",
+      "handoff_package": {
+        "html_draft": "完整 800+ 词 HTML 草稿",
+        "seo_meta": "Title / Meta Description / Slug / Focus Keyphrase",
+        "images": "2 张产品图片 (WP Media IDs)",
+        "schema": "FAQ + Product JSON-LD",
+        "qa_report": "V2.1 16 项评分明细",
+        "approval_status": "CEO 审批结果"
+      }
+    },
+    {
+      "order": 10,
+      "key": "mission_log_writeback",
+      "name": "Mission Log Writeback",
+      "description": "把开始时间、结束时间、Agent、耗时、状态、错误、QA V2.1 分数 (draft-ready 或 publish-ready)、Schema 状态和最终结果写回 Mission Log。",
+      "auto_progress": true,
+      "ceo_approval_required": false,
+      "next_state": "completed"
+    }
+  ],
+  "auto_progress_steps": [
+    "mission_intake",
+    "knowledge_fetch",
+    "topic_planning",
+    "draft_generation",
+    "seo_enrichment",
+    "image_attachment",
+    "qa_v2_1_scoring",
+    "mission_log_writeback"
+  ],
+  "ceo_approval_required_steps": [
+    "approval_gate",
+    "draft_only_handoff"
+  ],
+  "v2_new_features": {
+    "topic_planning": {
+      "order": 3,
+      "reason": "对齐 Content Center 10-step 管线的 Content Planning 阶段，确保草稿生成前结构已锁定，避免 V1 的 329 词短板"
+    },
+    "image_attachment": {
+      "order": 6,
+      "reason": "V1 输出 0 张图片，V2 从知识绑定附加 ≥ 2 张产品图片到草稿"
+    },
+    "qa_v2_1_two_tier": {
+      "order": 7,
+      "reason": "V1 只有 Draft-Ready (90)，V2 增加 Publish-Ready (95)，零 pending 才能发布"
+    },
+    "schema_injection": {
+      "order": 9,
+      "reason": "Draft-only handoff 时自动注入 FAQ + Product JSON-LD Schema"
+    },
+    "golden_standard": {
+      "order": "all",
+      "reason": "Post 481 作为模板参考，确保 V2 输出质量对标已发布最佳文章"
+    }
+  },
+  "reuse_rule": "新增产品或内容类型时，只替换 product_profile / content_brief / market_profile / knowledge_binding，不重做 Mission Intake 到 Mission Log Writeback 的执行链。",
+  "knowledge_binding_v2": {
+    "status": "已具备 V2 Knowledge Binding 能力 (85% public approved)",
+    "schema": "apps/commander/employees/website_agent_v1/knowledge_binding/website_agent_knowledge_binding.schema.json",
+    "hk620_binding_v2": "apps/commander/employees/website_agent_v1/knowledge_binding/hk620.knowledge_binding.v2.json",
+    "knowledge_center_copy": "knowledge/products/HK620/bindings/website_agent_hk620.knowledge_binding.v1.json",
+    "missing_checklist": "apps/commander/employees/website_agent_v1/knowledge_binding/product_knowledge_missing_checklist.v1.json",
+    "source_center": "knowledge/products/HK620",
+    "public_claim_boundary": "knowledge/products/HK620/10_Review/hk620_public_claim_boundary_v1.md",
+    "binding_fields": [
+      "product_id",
+      "product_name",
+      "product_category",
+      "target_market",
+      "buyer_persona",
+      "features",
+      "specs",
+      "applications",
+      "pain_points",
+      "differentiators",
+      "FAQ",
+      "customer_cases",
+      "images",
+      "media_requirements",
+      "internal_links",
+      "external_references",
+      "source_files",
+      "freshness_status",
+      "public_approval_status",
+      "golden_standard_post_id"
+    ],
+    "hk620_v2_coverage": "85% public approved (8/8 specs + 6/6 FAQ + 3/3 cases + 2/2 images + 4/4 internal links)",
+    "draft_rule": "可生成本地概念草稿；不能无审批发布；不能虚构缺失规格、媒体、客户案例。"
+  },
+  "verification": {
+    "verified_with": "HK620 Cabinet Factory Article (V2 Pipeline Test, 2026-07-30)",
+    "word_count": 1378,
+    "qa_score": "100/100 (V2.1, zero pending)",
+    "images": 2,
+    "specs_params": 12,
+    "faq_pairs": 6,
+    "schema": "FAQ + Product JSON-LD",
+    "cta_buttons": 2,
+    "forbidden_claims": 0,
+    "golden_standard_comparison": "Post 481 = 97/100 → V2 Pipeline = 100/100"
+  }
+}

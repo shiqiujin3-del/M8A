@@ -1,0 +1,355 @@
+{
+  "version": "website_agent_knowledge_binding_v2",
+  "binding_id": "knowledge_binding_hk620_us_v2",
+  "upgrade_from": "knowledge_binding_hk620_us_v1",
+  "upgrade_date": "2026-07-30",
+  "upgrade_reason": "Post 481 published 2026-07-29 with CEO approval. Knowledge base expanded with 7 files. All P0 gaps resolved. Binding V1 was stale (specs/images/approval all marked missing).",
+  "product_id": "product_hk620",
+  "product_name": "HK620",
+  "product_category": "Skeleton door profile edge banding / grooving / cutting continuous processing machine",
+  "target_market": "US",
+  "buyer_persona": [
+    "Door factory owners evaluating skeleton door profile production",
+    "Furniture manufacturers needing decorative profile edge banding",
+    "Decorative strip producers seeking continuous processing solutions",
+    "Factory managers looking for stable line production equipment"
+  ],
+  "features": [
+    {
+      "name": "Edge banding first, then grooving, then cutting (continuous process)",
+      "status": "public_approved",
+      "public_use_allowed": true,
+      "source": "knowledge/products/HK620/cards/Engineering/003_hk620_process_flow.md"
+    },
+    {
+      "name": "PUR glue system for strong adhesion on profile surfaces",
+      "status": "public_approved",
+      "public_use_allowed": true,
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "name": "Continuous feeding for stable batch production",
+      "status": "public_approved",
+      "public_use_allowed": true,
+      "source": "knowledge/products/HK620/cards/Engineering/004_hk620_workstation_structure.md"
+    },
+    {
+      "name": "Suitable for skeleton door profiles, decorative strips, door casing, and furniture moulding",
+      "status": "public_approved",
+      "public_use_allowed": true,
+      "source": "knowledge/products/HK620/08_Customer_Cases/hk620_customer_cases_v1.md"
+    }
+  ],
+  "specs": [
+    {
+      "field": "processing_speed",
+      "value": "18 m/min",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "power",
+      "value": "20 kW",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "voltage",
+      "value": "380V / 50Hz (customizable)",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "machine_size",
+      "value": "8.3m x 0.9m x 1.6m (L x W x H)",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "workpiece_width_range",
+      "value": "70mm minimum",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "air_pressure",
+      "value": "0.6 MPa",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "glue_system",
+      "value": "PUR glue",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    },
+    {
+      "field": "packing_size",
+      "value": "8.3m x 0.9m x 1.6m",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md"
+    }
+  ],
+  "applications": [
+    {
+      "name": "Skeleton door profile edge banding",
+      "status": "public_approved",
+      "public_use_allowed": true
+    },
+    {
+      "name": "Decorative strip edge banding",
+      "status": "public_approved",
+      "public_use_allowed": true
+    },
+    {
+      "name": "Door casing line production",
+      "status": "public_approved",
+      "public_use_allowed": true
+    },
+    {
+      "name": "Furniture moulding edge banding",
+      "status": "public_approved",
+      "public_use_allowed": true
+    }
+  ],
+  "pain_points": [
+    {
+      "name": "Short workpieces cause feeding and clamping instability when cut first",
+      "status": "public_approved"
+    },
+    {
+      "name": "Manual or staged processing lacks consistency for batch production",
+      "status": "public_approved"
+    },
+    {
+      "name": "Door factories need differentiated skeleton door process solutions",
+      "status": "public_approved"
+    }
+  ],
+  "differentiators": [
+    {
+      "name": "Process sequence: edge banding first, then grooving, then cutting",
+      "status": "public_approved",
+      "warning": "Do NOT claim industry-unique, absolute first, or quantified advantage."
+    },
+    {
+      "name": "Focused on skeleton door profile continuous processing",
+      "status": "public_approved",
+      "warning": "Do NOT generalize to all edge banding scenarios."
+    }
+  ],
+  "FAQ": [
+    {
+      "question": "Is HK620 a normal panel edge banding machine?",
+      "answer": "No. HK620 is designed specifically for skeleton door profiles and decorative strips, not flat panels. The process sequence (edge banding -> grooving -> cutting) is optimized for profile workpieces.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    },
+    {
+      "question": "What glue system does HK620 use?",
+      "answer": "HK620 uses PUR glue, which provides strong adhesion for profile surfaces and supports stable production.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    },
+    {
+      "question": "What is the minimum workpiece width?",
+      "answer": "The minimum workpiece width is 70mm. Workpieces narrower than this may not feed stably.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    },
+    {
+      "question": "What is the processing speed?",
+      "answer": "The feeding speed is 18 m/min, suitable for continuous batch production.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    },
+    {
+      "question": "Can HK620 handle decorative strips and door casing?",
+      "answer": "Yes. HK620 is suitable for skeleton door profiles, decorative strips, door casing lines, and furniture moulding applications.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    },
+    {
+      "question": "What are the packing dimensions?",
+      "answer": "The machine packing size is 8.3m x 0.9m x 1.6m (L x W x H). Please confirm container compatibility before shipping.",
+      "status": "public_approved",
+      "source": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md"
+    }
+  ],
+  "media_requirements": [
+    {
+      "type": "product_image",
+      "status": "available",
+      "wordpress_media_id": 479,
+      "alt": "Skeleton door profile and decorative strip core samples",
+      "source": "knowledge/products/HK620/03_Product_Images/hk620_product_images_v1.md"
+    },
+    {
+      "type": "detail_image",
+      "status": "available",
+      "wordpress_media_id": 480,
+      "alt": "Finished decorative profile strips for door and furniture applications",
+      "source": "knowledge/products/HK620/03_Product_Images/hk620_product_images_v1.md"
+    },
+    {
+      "type": "product_main_photo",
+      "status": "missing",
+      "impact": "Need a dedicated main product photo for featured image and product page."
+    },
+    {
+      "type": "demo_video",
+      "status": "missing",
+      "impact": "Still awaiting source material. Do NOT fabricate video evidence."
+    }
+  ],
+  "internal_links": [
+    {
+      "label": "HK620 Product Page",
+      "url": "https://woodmachinerynetwork.com/machines/edge-banding-machines/hk620/",
+      "status": "available",
+      "anchor_text": "HK620 Edge Banding Machine"
+    },
+    {
+      "label": "Contact Page",
+      "url": "https://woodmachinerynetwork.com/contact/",
+      "status": "available",
+      "anchor_text": "Contact us"
+    },
+    {
+      "label": "HK620 Published Article (Post 481)",
+      "url": "https://woodmachinerynetwork.com/hk620-skeleton-door-profile-edge-banding-machine/",
+      "status": "available",
+      "anchor_text": "HK620 Skeleton Door Profile Edge Banding Machine"
+    },
+    {
+      "label": "HK620 Source Library",
+      "path": "knowledge/products/HK620/INDEX.md",
+      "status": "available"
+    }
+  ],
+  "external_references": [
+    {
+      "label": "Official product page",
+      "url": "https://woodmachinerynetwork.com/machines/edge-banding-machines/hk620/",
+      "status": "verified"
+    }
+  ],
+  "customer_cases": [
+    {
+      "name": "Door factory customer A (anonymized)",
+      "use_case": "Skeleton door profile production",
+      "status": "public_approved_anonymized",
+      "source": "knowledge/products/HK620/08_Customer_Cases/hk620_customer_cases_v1.md"
+    },
+    {
+      "name": "Furniture manufacturer B (anonymized)",
+      "use_case": "Decorative strip edge banding",
+      "status": "public_approved_anonymized",
+      "source": "knowledge/products/HK620/08_Customer_Cases/hk620_customer_cases_v1.md"
+    },
+    {
+      "name": "Door casing producer C (anonymized)",
+      "use_case": "Door casing line production",
+      "status": "public_approved_anonymized",
+      "source": "knowledge/products/HK620/08_Customer_Cases/hk620_customer_cases_v1.md"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "knowledge/products/HK620/INDEX.md",
+      "role": "Product knowledge index"
+    },
+    {
+      "path": "knowledge/products/HK620/02_Technical_Specifications/hk620_technical_specifications_v1.md",
+      "role": "Complete technical specifications (public_approved)"
+    },
+    {
+      "path": "knowledge/products/HK620/03_Product_Images/hk620_product_images_v1.md",
+      "role": "Product image registry (2 images registered)"
+    },
+    {
+      "path": "knowledge/products/HK620/06_Sales_FAQ/hk620_buyer_faq_v1.md",
+      "role": "Buyer FAQ (6 questions, public_approved)"
+    },
+    {
+      "path": "knowledge/products/HK620/07_Service_FAQ/hk620_service_faq_v1.md",
+      "role": "Service FAQ (4 public + 2 internal)"
+    },
+    {
+      "path": "knowledge/products/HK620/08_Customer_Cases/hk620_customer_cases_v1.md",
+      "role": "Customer cases (3 anonymized, public_approved)"
+    },
+    {
+      "path": "knowledge/products/HK620/10_Review/hk620_public_approval_record_2026-07-29.md",
+      "role": "Public approval record (CEO approved via Post 481)"
+    },
+    {
+      "path": "knowledge/products/HK620/10_Review/hk620_public_claim_boundary_v1.md",
+      "role": "Public claim boundary (forbidden claims list)"
+    }
+  ],
+  "freshness_status": {
+    "knowledge_date": "2026-07-30",
+    "binding_date": "2026-07-30",
+    "status": "fresh_for_public_use",
+    "public_approval_status": "public_approved",
+    "approval_date": "2026-07-29",
+    "approval_reference": "Post 481 published on woodmachinerynetwork.com",
+    "coverage": "85% public approved coverage. Remaining gaps: product video, main product photo, warranty policy details."
+  },
+  "public_use_boundary": {
+    "allowed_for_internal_draft": true,
+    "allowed_for_public_claims": true,
+    "approval_reference": "CEO approved Post 481 publication on 2026-07-29",
+    "forbidden_claims": [
+      "Industry unique / 行业唯一",
+      "Absolute first / 绝对第一",
+      "Quantified efficiency gains / 量化效率",
+      "ROI / profit / pricing / ROI / 利润 / 价格",
+      "Customer names (must anonymize) / 公开客户名称",
+      "Landed regions / 已落地区域",
+      "38-45 degree parameters / 38°-45° 参数",
+      "Servo upgrade roadmap / 伺服升级路线图",
+      "Precise short material limit values / 精确短料限制值"
+    ],
+    "claim_boundary_source": "knowledge/products/HK620/10_Review/hk620_public_claim_boundary_v1.md"
+  },
+  "content_standard_reference": {
+    "description": "Post 481 is the golden standard for HK620 product content. All new content should match its structure and quality.",
+    "post_id": 481,
+    "url": "https://woodmachinerynetwork.com/hk620-skeleton-door-profile-edge-banding-machine/",
+    "structure": [
+      "H1 Title",
+      "Overview paragraph (buyer problem + HK620 solution)",
+      "Product image (wp-image-479)",
+      "H2: Specifications (table with all 8 parameters)",
+      "H2: Applications (skeleton door / decorative strip / door casing / furniture)",
+      "Product image (wp-image-480)",
+      "H2: FAQ (6 Q&A)",
+      "H2: Next Steps / CTA (product page button + contact button)"
+    ],
+    "word_count_minimum": 800,
+    "seo_meta_required": true
+  },
+  "missing_check_result": {
+    "can_generate_local_concept_draft": true,
+    "can_generate_public_technical_page": true,
+    "can_generate_publish_ready_article": true,
+    "can_publish_without_review": false,
+    "blocking_gaps": [
+      "Product video (gap_003) - not blocking for text content",
+      "Main product photo - using existing images as fallback",
+      "Warranty/delivery/price policy details (gap_008) - partial"
+    ],
+    "qa_score_risk": "With V2 binding, QA score should reach 95+ for text content. Video and warranty gaps prevent 100."
+  },
+  "safety": {
+    "n8n": false,
+    "wordpress": false,
+    "publish": false,
+    "delete_post": false,
+    "update_published_post": false,
+    "send_gmail": false,
+    "upload_youtube": false
+  }
+}
