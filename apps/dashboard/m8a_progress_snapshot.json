@@ -1,23 +1,25 @@
 {
-  "generated_at": "2026-07-29T14:43:00+01:00",
-  "title": "M8A/M8N 总控台大局进度快照 — Commander 自动化上线",
-  "overall_progress_percent": 85,
-  "manager_status": "阿锟（WorkBuddy 本地实例）。Commander 自动调度每 2 小时运行。",
+  "generated_at": "2026-07-30T08:52:00+01:00",
+  "title": "M8A/M8N 总控台大局进度快照 — Publishing 管线打通",
+  "overall_progress_percent": 88,
+  "manager_status": "阿锟（WorkBuddy 本地实例）。Commander 自动调度每 2 小时运行（2026-07-30 重建）。",
   "employees": {
     "registered": 11,
     "active": "Commander 自动调度中（每2小时巡检派发）",
-    "note": "PR #3 已合并，AI Employee Registry + Access Manager 就位。11 位员工登记完备，等待 Commander 派发任务。"
+    "note": "PR #3 已合并，AI Employee Registry + Access Manager 就位。11 位员工登记完备。"
   },
   "automations": {
     "commander_scheduler": {
-      "id": "automation-1785332834824",
+      "id": "automation-1785394211155",
       "frequency": "每 2 小时",
-      "role": "巡检系统状态、派发就绪任务、生成状态报告、标记风险"
+      "role": "巡检系统状态、派发就绪任务、生成状态报告、标记风险",
+      "status": "rebuilt_2026-07-30"
     },
     "morning_briefing": {
       "id": "automation-1785332851920",
       "frequency": "每天 9:00 AM",
-      "role": "生成 CEO 早间简报：系统健康、昨日回顾、今日待办、风险仪表盘、决策清单"
+      "role": "生成 CEO 早间简报：系统健康、昨日回顾、今日待办、风险仪表盘、决策清单",
+      "status": "fixed_2026-07-30"
     }
   },
   "completed": [
@@ -38,10 +40,18 @@
     "PR #3 审核合并（17文件/1694行，AI Employee 治理记录进 main）",
     "Cloudflare WAF 修复（浏览器级请求头，绕过 1010 拦截）",
     "Yoast SEO 元数据持久化方案（服务端插件 + CLI 工具）",
-    "M8A Commander 自动调度上线（每小时巡检派发）",
-    "M8A 每日总经理早间简报上线（每天 9:00 AM）"
+    "M8A Commander 自动调度上线（每2小时巡检派发）",
+    "M8A 每日总经理早间简报上线（每天 9:00 AM）",
+    "Publishing 管线打通 ✅（Content Center → pipeline_bridge → n8n Draft → CEO Approval Gate → Publish）",
+    "Publishing Agent 正式激活（档案 + 桥接脚本 + 审批闸门）"
   ],
   "milestones": [
+    {
+      "date": "2026-07-30",
+      "event": "Publishing 管线全链路打通",
+      "detail": "Content Center V3 → pipeline_bridge.py → n8n Draft webhook → ceo_approval_gate.py → n8n Publish webhook。端到端测试通过：Draft Post 484 创建成功。",
+      "significance": "解决了最大的痛点：文章产出后能自动发到 WordPress。从内容产出到发布只需 CEO 点一次审批。"
+    },
     {
       "date": "2026-07-29",
       "event": "发布链路正式打通",
@@ -55,17 +65,19 @@
       "significance": "总经理通道永久恢复，不受单一 AI 会话影响"
     }
   ],
-  "blocked": [
-    "Google OAuth Client Secret 轮换未执行（P0，需要 CEO 在 Google Cloud Console 操作）"
-  ],
+  "blocked": [],
   "open_issues": [],
   "todays_actions": [
-    "PR #3 审核合并 ✅",
-    "WAF 修复提交推送 ✅",
-    "Commander 自动调度上线 ✅",
-    "每日早间简报上线 ✅",
-    "Yoast SEO 元数据持久化方案就位 ✅"
+    "Commander 调度器重建 ✅",
+    "早间简报修复 ✅",
+    "Git 17 文件提交推送 ✅",
+    "Google OAuth 密钥轮换 + 重新授权 ✅（Gmail/GSC/GA4/YouTube）",
+    "Publishing Agent 档案创建 ✅",
+    "pipeline_bridge.py 桥接脚本 ✅（Content Center → Publishing Center）",
+    "ceo_approval_gate.py 审批闸门 ✅（Draft → 审批 → Publish）",
+    "Commander 调度规则更新 ✅（加入 Publishing 管线）",
+    "端到端测试 ✅（Draft Post 484 创建成功）"
   ],
-  "next_action": "OAuth 密钥轮换（需要 CEO 操作 Google Cloud Console）→ 轮换完成后重启 Gmail/GSC/GA4/YouTube 验证",
+  "next_action": "CEO 审阅 Post 484 → python3 ceo_approval_gate.py --approve 484",
   "safety": "本快照只写本地总控数据；不调用外部 API；不发布、不删除、不修改外部内容。"
 }
