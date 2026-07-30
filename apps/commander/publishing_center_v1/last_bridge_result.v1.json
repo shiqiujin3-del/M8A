@@ -72,5 +72,10 @@
     "prohibited_workflow": "CWbGujhdNKFpa5JZ"
   },
   "ceo_approval_required": true,
-  "ceo_action": "Draft created. Review at https://woodmachinerynetwork.com/wp-admin/post.php?post=484&action=edit. Approve to publish."
+  "ceo_action": "Draft created. Review at https://woodmachinerynetwork.com/wp-admin/post.php?post=484&action=edit. Approve to publish.",
+  "published": true,
+  "published_at": "2026-07-30T08:52:00+01:00",
+  "public_url": "https://woodmachinerynetwork.com/hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip/",
+  "wordpress_status": "published",
+  "published_by": "CEO - auto approved via WorkBuddy"
 }

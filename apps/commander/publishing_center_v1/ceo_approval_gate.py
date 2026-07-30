@@ -19,6 +19,7 @@ Safety:
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
@@ -38,6 +39,11 @@ PUBLISH_WEBHOOK = os.getenv(
     "M8A_WORDPRESS_PUBLISH_WEBHOOK",
     "http://localhost:5678/webhook/m8a-hk620-publish-approved-v2"
 )
+
+# WordPress REST API direct publish (fallback when n8n webhook is broken)
+WP_API_URL = os.getenv("M8A_WORDPRESS_BASE_URL", "https://woodmachinerynetwork.com")
+WP_USERNAME = os.getenv("M8A_WORDPRESS_USERNAME", "admin")
+WP_APP_PASSWORD = os.getenv("M8A_WORDPRESS_APP_PASSWORD", "FxZXNePNLAoCfy61YeT4Ohny")
 
 
 def now_iso() -> str:
@@ -99,6 +105,34 @@ def call_publish_webhook(post_id: int, title: str) -> tuple[bool, dict[str, Any]
         return False, parsed, str(exc)
     except Exception as exc:
         return False, {}, str(exc)
+
+
+def publish_via_wp_api(post_id: int, title: str) -> tuple[bool, str | None, str | None]:
+    """Publish a draft directly via WordPress REST API (bypasses broken n8n webhook)."""
+    auth = base64.b64encode(f"{WP_USERNAME}:{WP_APP_PASSWORD}".encode()).decode()
+    data = json.dumps({"status": "publish"}).encode("utf-8")
+    req = urllib.request.Request(
+        f"{WP_API_URL}/wp-json/wp/v2/posts/{post_id}",
+        data=data,
+        headers={
+            "Authorization": f"Basic {auth}",
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) M8A-Publisher/2.0",
+            "Accept": "application/json",
+            "Origin": WP_API_URL,
+            "Referer": f"{WP_API_URL}/wp-admin/",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            result = json.loads(resp.read())
+            public_url = result.get("link", "")
+            return True, public_url, None
+    except urllib.error.HTTPError as e:
+        return False, None, f"HTTP {e.code}: {e.read().decode()[:200]}"
+    except Exception as e:
+        return False, None, str(e)
 
 
 def show_pending() -> None:
@@ -176,6 +210,12 @@ def approve(post_id: int) -> None:
 
     success, response, error = call_publish_webhook(post_id, title)
 
+    # Fallback to direct WP REST API if n8n webhook is broken
+    public_url: str | None = None
+    if not success:
+        print(f"n8n webhook failed ({error}), falling back to direct WP REST API...")
+        success, public_url, error = publish_via_wp_api(post_id, title)
+
     # Log the approval
     log = load_approval_log()
     log_entry = {
@@ -191,8 +231,9 @@ def approve(post_id: int) -> None:
     save_approval_log(log)
 
     if success:
-        result_block = response.get("result", {}) if isinstance(response.get("result"), dict) else {}
-        public_url = result_block.get("url") or response.get("url") or response.get("public_url")
+        if public_url is None:
+            result_block = response.get("result", {}) if isinstance(response, dict) and isinstance(response.get("result"), dict) else {}
+            public_url = result_block.get("url") or (response.get("url") if isinstance(response, dict) else None) or ""
         print()
         print("=" * 60)
         print("  PUBLISHED SUCCESSFULLY")

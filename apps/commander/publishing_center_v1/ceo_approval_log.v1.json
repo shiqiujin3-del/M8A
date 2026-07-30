@@ -1,0 +1,15 @@
+{
+  "version": "ceo_approval_v1",
+  "log": [
+    {
+      "timestamp": "2026-07-30T08:52:00+01:00",
+      "action": "approve_and_publish",
+      "post_id": 484,
+      "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture",
+      "success": true,
+      "method": "wp_rest_api_direct",
+      "public_url": "https://woodmachinerynetwork.com/hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip/"
+    }
+  ],
+  "updated_at": "2026-07-30T07:55:14Z"
+}

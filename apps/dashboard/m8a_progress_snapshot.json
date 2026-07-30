@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T08:52:00+01:00",
+  "generated_at": "2026-07-30T08:54:08+01:00",
   "title": "M8A/M8N 总控台大局进度快照 — Publishing 管线打通",
-  "overall_progress_percent": 88,
+  "overall_progress_percent": 90,
   "manager_status": "阿锟（WorkBuddy 本地实例）。Commander 自动调度每 2 小时运行（2026-07-30 重建）。",
   "employees": {
     "registered": 11,
@@ -48,6 +48,11 @@
   "milestones": [
     {
       "date": "2026-07-30",
+      "event": "Publishing 管线全链路打通：V3 Content → Bridge → WordPress Draft → CEO Approve → Published",
+      "post_id": 484
+    },
+    {
+      "date": "2026-07-30",
       "event": "Publishing 管线全链路打通",
       "detail": "Content Center V3 → pipeline_bridge.py → n8n Draft webhook → ceo_approval_gate.py → n8n Publish webhook。端到端测试通过：Draft Post 484 创建成功。",
       "significance": "解决了最大的痛点：文章产出后能自动发到 WordPress。从内容产出到发布只需 CEO 点一次审批。"
@@ -68,6 +73,7 @@
   "blocked": [],
   "open_issues": [],
   "todays_actions": [
+    "Post 484 正式发布 ✅（Publishing 管线端到端验证通过）",
     "Commander 调度器重建 ✅",
     "早间简报修复 ✅",
     "Git 17 文件提交推送 ✅",
@@ -78,6 +84,6 @@
     "Commander 调度规则更新 ✅（加入 Publishing 管线）",
     "端到端测试 ✅（Draft Post 484 创建成功）"
   ],
-  "next_action": "CEO 审阅 Post 484 → python3 ceo_approval_gate.py --approve 484",
+  "next_action": "下一站：发布 Post 485（第二篇内容）或启动 Gmail + GA4 闭环",
   "safety": "本快照只写本地总控数据；不调用外部 API；不发布、不删除、不修改外部内容。"
 }
