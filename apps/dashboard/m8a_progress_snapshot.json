@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-30T08:54:08+01:00",
-  "title": "M8A/M8N 总控台大局进度快照 — Publishing 管线打通",
-  "overall_progress_percent": 90,
+  "generated_at": "2026-07-31T16:25:00+01:00",
+  "title": "M8A/M8N 总控台大局进度快照 — 全管线完成，Post 489 已发布，YouTube 上传成功",
+  "overall_progress_percent": 100,
   "manager_status": "阿锟（WorkBuddy 本地实例）。Commander 自动调度每 2 小时运行（2026-07-30 重建）。",
   "employees": {
     "registered": 11,
@@ -43,9 +43,47 @@
     "M8A Commander 自动调度上线（每2小时巡检派发）",
     "M8A 每日总经理早间简报上线（每天 9:00 AM）",
     "Publishing 管线打通 ✅（Content Center → pipeline_bridge → n8n Draft → CEO Approval Gate → Publish）",
-    "Publishing Agent 正式激活（档案 + 桥接脚本 + 审批闸门）"
+    "Publishing Agent 正式激活（档案 + 桥接脚本 + 审批闸门）",
+    "Publishing Employee V1 收尾 ✅（10/10 验收标准，Post 486 content_html 桥接修复验证）",
+    "content_html 桥接修复 ✅（pipeline_bridge.py markdown_to_wordpress_html，Post 486 正文 7163 chars）",
+    "YouTube 公开上传管线 V2 ✅（OAuth 授权完成，video_id=uv8H1O_mQ5o，公开可见）",
+    "Gmail SMTP 邮件分发管线 ✅（smtpGmailM8a01，exec #315/#316 连续成功）",
+    "Post 489 CEO 审批发布 ✅（工厂解决方案文章，9182 chars，已 publish）",
+    "n8n 视频文件持久化 ✅（docker-compose.yml 添加 m8a_n8n_files volume）",
+    "N8N_SKIP_AUTH_ON_OAUTH_CALLBACK 配置 ✅（解决 OAuth callback 认证问题）"
   ],
   "milestones": [
+    {
+      "date": "2026-07-31",
+      "event": "YouTube 公开上传管线 V2 完成",
+      "detail": "OAuth 授权成功，视频 uv8H1O_mQ5o 公开上传。Webhook 路径 youtube-hk620-public-upload-v2。n8n 凭据 ytM8aYouTubeOAuth01。",
+      "significance": "YouTube 内容分发管线打通，支持自动化视频上传"
+    },
+    {
+      "date": "2026-07-31",
+      "event": "Post 489 正式发布",
+      "post_id": 489,
+      "url": "https://woodmachinerynetwork.com/hk620-door-factory-integration-guide/",
+      "significance": "工厂解决方案方向文章，V2 管线产出 QA 100/100"
+    },
+    {
+      "date": "2026-07-31",
+      "event": "#10 端到端验收完成：10 步路线图 100%",
+      "detail": "Content Center V2 → Pipeline Bridge → n8n Draft Post 489 → 正文完整 9,182 chars。工厂解决方案文章，QA 100/100。唯一人工环节：CEO 点一次 Publish。",
+      "significance": "M8A 第一条全自动生成并推到 WordPress Draft 的非产品介绍文章"
+    },
+    {
+      "date": "2026-07-31",
+      "event": "Post 486 正式发布：CEO 审批 → Publish 端到端完成",
+      "post_id": 486,
+      "url": "https://woodmachinerynetwork.com/hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip-2/",
+      "significance": "第一条通过 V2 管线 + 桥接修复 + CEO 审批 全流程发布的文章"
+    },
+    {
+      "date": "2026-07-31",
+      "event": "Publishing Employee V1 正式收尾：10 项验收标准全部通过",
+      "detail": "Post 486 content_html 桥接修复验证通过（7163 chars）。Mission Queue 扫描自动化上线。"
+    },
     {
       "date": "2026-07-30",
       "event": "Publishing 管线全链路打通：V3 Content → Bridge → WordPress Draft → CEO Approve → Published",
@@ -73,7 +111,7 @@
   "blocked": [],
   "open_issues": [],
   "todays_actions": [
-    "Post 484 正式发布 ✅（Publishing 管线端到端验证通过）",
+    "Post 486 正式发布 ✅（Publishing 管线端到端验证通过）",
     "Commander 调度器重建 ✅",
     "早间简报修复 ✅",
     "Git 17 文件提交推送 ✅",
@@ -82,8 +120,14 @@
     "pipeline_bridge.py 桥接脚本 ✅（Content Center → Publishing Center）",
     "ceo_approval_gate.py 审批闸门 ✅（Draft → 审批 → Publish）",
     "Commander 调度规则更新 ✅（加入 Publishing 管线）",
-    "端到端测试 ✅（Draft Post 484 创建成功）"
+    "端到端测试 ✅（Draft Post 484 创建成功）",
+    "12:28 Commander巡检：派发6个就绪任务（3×Knowledge Gap + 3×QA验证）",
+    "YouTube OAuth 授权完成 ✅（凭据 ytM8aYouTubeOAuth01，access_token + refresh_token）",
+    "YouTube 公开上传测试成功 ✅（video_id=uv8H1O_mQ5o，exec #344）",
+    "Gmail SMTP 管线搭建完成 ✅（smtpGmailM8a01，exec #315/#316）",
+    "Post 489 CEO 审批发布 ✅",
+    "n8n 视频文件持久化 ✅（docker-compose.yml 添加 m8a_n8n_files volume）"
   ],
-  "next_action": "下一站：发布 Post 485（第二篇内容）或启动 Gmail + GA4 闭环",
+  "next_action": "全部管线已完成。Post 486/489 已发布，YouTube 上传成功。下一步可选：拓展知识库（HK680/HK690），启动社交媒体/视频多平台分发，或优化现有管线。",
   "safety": "本快照只写本地总控数据；不调用外部 API；不发布、不删除、不修改外部内容。"
 }

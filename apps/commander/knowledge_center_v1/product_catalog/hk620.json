@@ -1,0 +1,144 @@
+{
+  "product_id": "HK620",
+  "product_name": "HK620",
+  "record_type": "product_catalog",
+  "created_at": "2026-07-31T06:26:57Z",
+  "updated_at": "2026-07-31T06:26:57Z",
+  "video_gap_status": "completed",
+  "videos": {
+    "inventory_path": "apps/commander/content_center_v1/assets/videos/hk620/hk620_video_inventory_v1.json",
+    "selection_path": "apps/commander/content_center_v1/assets/videos/hk620/hk620_video_selection_v1.json",
+    "asset_root": "apps/commander/content_center_v1/assets/videos/hk620",
+    "total_source_videos_scanned": 85,
+    "selected_count": 12,
+    "categories": [
+      {
+        "category": "工厂操作",
+        "available_source_count": 6,
+        "selected": [
+          {
+            "file_name": "01_打样一根不难_稳定加工看现场.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/工厂操作/01_打样一根不难_稳定加工看现场.mp4",
+            "duration_seconds": 16.36,
+            "size_mb": 16.64,
+            "usage": "展示真实加工、稳定进料、现场操作过程"
+          },
+          {
+            "file_name": "02_完整加工_机器到成品_竖屏_FINAL_v1.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/工厂操作/02_完整加工_机器到成品_竖屏_FINAL_v1.mp4",
+            "duration_seconds": 22.73,
+            "size_mb": 8.29,
+            "usage": "展示真实加工、稳定进料、现场操作过程"
+          }
+        ]
+      },
+      {
+        "category": "产品演示",
+        "available_source_count": 27,
+        "selected": [
+          {
+            "file_name": "05_余料到骨骼门线条_中文26秒完整版_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/产品演示/05_余料到骨骼门线条_中文26秒完整版_FINAL.mp4",
+            "duration_seconds": 26.0,
+            "size_mb": 30.39,
+            "usage": "展示 HK620 卖点、余料价值、骨骼门线条成品效果"
+          },
+          {
+            "file_name": "HK620_第三条_中文95分_28秒_完整成品_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/产品演示/HK620_第三条_中文95分_28秒_完整成品_FINAL.mp4",
+            "duration_seconds": 28.0,
+            "size_mb": 12.84,
+            "usage": "展示 HK620 卖点、余料价值、骨骼门线条成品效果"
+          }
+        ]
+      },
+      {
+        "category": "客户现场",
+        "available_source_count": 9,
+        "selected": [
+          {
+            "file_name": "HK620_客户现场_两段拼接_带字幕_无音乐无人声_1080P_21秒_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/客户现场/HK620_客户现场_两段拼接_带字幕_无音乐无人声_1080P_21秒_FINAL.mp4",
+            "duration_seconds": 20.73,
+            "size_mb": 31.8,
+            "usage": "用于客户现场证据、实拍可信度、销售佐证"
+          },
+          {
+            "file_name": "HK620_Customer_Site_English_Subtitles_No_Audio_1080P_21s_FINAL_v1.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/客户现场/HK620_Customer_Site_English_Subtitles_No_Audio_1080P_21s_FINAL_v1.mp4",
+            "duration_seconds": 20.73,
+            "size_mb": 33.03,
+            "usage": "用于客户现场证据、实拍可信度、销售佐证"
+          }
+        ]
+      },
+      {
+        "category": "技术讲解",
+        "available_source_count": 2,
+        "selected": [
+          {
+            "file_name": "HK620_技术销售讨论_20秒最终版.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/技术讲解/HK620_技术销售讨论_20秒最终版.mp4",
+            "duration_seconds": 20.0,
+            "size_mb": 20.2,
+            "usage": "用于销售解释、工艺价值、技术沟通"
+          },
+          {
+            "file_name": "04_一台机器完成_中文21秒销售版_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/技术讲解/04_一台机器完成_中文21秒销售版_FINAL.mp4",
+            "duration_seconds": 21.0,
+            "size_mb": 25.79,
+            "usage": "用于销售解释、工艺价值、技术沟通"
+          }
+        ]
+      },
+      {
+        "category": "社交媒体短版",
+        "available_source_count": 7,
+        "selected": [
+          {
+            "file_name": "03_余料不是废料_中文15秒价值版_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/社交媒体短版/03_余料不是废料_中文15秒价值版_FINAL.mp4",
+            "duration_seconds": 15.0,
+            "size_mb": 16.75,
+            "usage": "用于抖音、视频号、Reels、短视频钩子素材"
+          },
+          {
+            "file_name": "HK620_8s_fast_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/社交媒体短版/HK620_8s_fast_FINAL.mp4",
+            "duration_seconds": 8.0,
+            "size_mb": 3.24,
+            "usage": "用于抖音、视频号、Reels、短视频钩子素材"
+          }
+        ]
+      },
+      {
+        "category": "英文版",
+        "available_source_count": 34,
+        "selected": [
+          {
+            "file_name": "HK620_English_95_With_Website_Final.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/英文版/HK620_English_95_With_Website_Final.mp4",
+            "duration_seconds": 30.0,
+            "size_mb": 12.61,
+            "usage": "用于 WMN、YouTube、LinkedIn、海外客户介绍"
+          },
+          {
+            "file_name": "HK620_English_30s_Dynamic_Master_FINAL.mp4",
+            "path": "apps/commander/content_center_v1/assets/videos/hk620/英文版/HK620_English_30s_Dynamic_Master_FINAL.mp4",
+            "duration_seconds": 30.0,
+            "size_mb": 10.72,
+            "usage": "用于 WMN、YouTube、LinkedIn、海外客户介绍"
+          }
+        ]
+      }
+    ],
+    "safety": {
+      "source_files_deleted": false,
+      "source_files_modified": false,
+      "external_platform_called": false,
+      "n8n_called": false,
+      "wordpress_called": false
+    }
+  }
+}

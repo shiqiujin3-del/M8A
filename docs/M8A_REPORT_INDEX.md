@@ -101,3 +101,8 @@ Connect Commander Runtime so every future run appends or updates a record automa
 - website_agent_hk620_first_business_draft_v1：Website Agent 首次真实业务 WordPress Draft，状态 completed，报告 docs/M8A_HK620_WEBSITE_AGENT_EXECUTION_REPORT_V1.md。
 - qa_agent_hk620_wordpress_draft_review_v1：QA Agent HK620 Draft 检查，状态 completed，报告 docs/M8A_HK620_QA_CHECK_REPORT_V1.md。
 | M8A Pending Work Audit V1 | Commander Reporting Agent | Completed | `docs/M8A_PENDING_WORK_AUDIT_V1_REPORT.md` |
+| WordPress Draft 正文桥接修复 V1 | Website Agent / Publishing Center | Completed Local Bridge Fix | `docs/M8A_WORDPRESS_DRAFT_CONTENT_HTML_BRIDGE_FIX_V1_REPORT.md` |
+| 平台授权收尾任务关闭 V1 | Automation Agent / Mission Center | Completed | `docs/M8A_PLATFORM_AUTHORIZATION_CLOSURE_V1_REPORT.md` |
+| Publishing Employee 设计 V1 | Publishing Agent / Publishing Center | Completed Design | `docs/M8A_PUBLISHING_EMPLOYEE_DESIGN_V1.md` |
+| WordPress Draft 正文完整性验证 V1 | Website Agent / Publishing Center | Completed | `docs/M8A_WORDPRESS_DRAFT_BODY_COMPLETENESS_VERIFICATION_V1_REPORT.md` |
+| HK620 产品视频缺口 gap_003 补齐 V1 | Content Center / Knowledge Center | Completed | `docs/M8A_HK620_PRODUCT_VIDEO_GAP_003_COMPLETION_REPORT.md` |

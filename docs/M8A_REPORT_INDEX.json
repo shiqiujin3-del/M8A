@@ -2,7 +2,7 @@
   "index_name": "M8A Report Index",
   "index_version": "1.0",
   "purpose": "Provide Commander-readable mission completion records, report paths, branch status, test status, and CEO review state.",
-  "last_updated": "2026-07-07",
+  "last_updated": "2026-07-31",
   "update_policy": {
     "required_after_each_mission": true,
     "required_fields": [
@@ -461,6 +461,78 @@
       "tests": "git status inspected; report index JSON validated before update; pending files categorized; sensitive keyword scan reviewed for placeholders and policy-only matches.",
       "ceo_review_status": "waiting",
       "next_action": "Create focused PR for Reporting / Governance Index Cleanup before merging other pending work."
+    },
+    {
+      "mission_id": "wordpress_draft_content_html_bridge_fix_v1",
+      "mission_name": "WordPress Draft Content HTML Bridge Fix V1",
+      "module": "Publishing Center / Website Agent",
+      "branch": "working_tree_pending_review",
+      "commit": "working_tree_pending_review",
+      "report_path": "docs/M8A_WORDPRESS_DRAFT_CONTENT_HTML_BRIDGE_FIX_V1_REPORT.md",
+      "status": "completed_local_bridge_fix",
+      "tests": "pipeline_bridge.py dry-run passed; payload contains top-level content_html/content and article_draft.content_html; content_html_length=7070; no n8n or WordPress external call executed.",
+      "ceo_review_status": "waiting_for_draft_only_verification",
+      "next_action": "Create a new WordPress Draft-only test to verify body content; do not modify published Post 484 without separate CEO authorization."
+    },
+    {
+      "mission_id": "platform_authorization_closure_v1",
+      "mission_name": "M8A Platform Authorization Closure V1",
+      "module": "Mission Center / Automation Agent",
+      "branch": "working_tree_pending_review",
+      "commit": "working_tree_pending_review",
+      "report_path": "docs/M8A_PLATFORM_AUTHORIZATION_CLOSURE_V1_REPORT.md",
+      "status": "completed",
+      "tests": "global mission queue and dashboard data updated locally; mission m8a_platform_authorization_today_v1 marked Completed; no external platform call executed.",
+      "ceo_review_status": "approved_by_user",
+      "next_action": "Keep future platform actions as separate Draft-only or read-only Missions with CEO approval."
+    },
+    {
+      "mission_id": "publishing_employee_design_v1",
+      "mission_name": "M8A Publishing Employee Design V1",
+      "module": "AI Employee Center / Publishing Center",
+      "branch": "working_tree_pending_review",
+      "commit": "working_tree_pending_review",
+      "report_path": "docs/M8A_PUBLISHING_EMPLOYEE_DESIGN_V1.md",
+      "status": "completed_verified",
+      "tests": "Design validated via Post 486 content_html bridge fix. 10/10 acceptance criteria met.",
+      "ceo_review_status": "completed",
+      "next_action": "CEO approve Post 486 to publish (#10 end-to-end verification run)."
+    },
+    {
+      "mission_id": "publishing_employee_v1_completion_report",
+      "mission_name": "M8A Publishing Employee V1 Completion Report",
+      "module": "AI Employee Center / Publishing Center",
+      "branch": "working_tree",
+      "commit": "working_tree",
+      "report_path": "docs/M8A_PUBLISHING_EMPLOYEE_V1_COMPLETION_REPORT.md",
+      "status": "completed",
+      "tests": "10 acceptance criteria verified: Post 486 full-body Draft (7163 chars), QA 94, safety locked, no auto-publish, dashboard synced.",
+      "ceo_review_status": "waiting_for_draft_review",
+      "next_action": "CEO review Post 486 Draft and approve publish."
+    },
+    {
+      "mission_id": "wordpress_draft_body_completeness_verification_v1",
+      "mission_name": "WordPress Draft Body Completeness Verification V1",
+      "module": "Publishing Center / Website Agent",
+      "branch": "working_tree_pending_review",
+      "commit": "working_tree_pending_review",
+      "report_path": "docs/M8A_WORDPRESS_DRAFT_BODY_COMPLETENESS_VERIFICATION_V1_REPORT.md",
+      "status": "completed",
+      "tests": "Created new WordPress Draft Post 486 via safe n8n workflow m8a_hk620_draft_20260708; REST read-only verification passed: status=draft, content_length=7070, contains HK620/Overview/FAQ; no publish and no Post 484 modification.",
+      "ceo_review_status": "waiting_for_draft_review",
+      "next_action": "CEO review Draft 486 in WordPress; only after separate approval may publish be considered."
+    },
+    {
+      "mission_id": "hk620_product_video_gap_003_completion_v1",
+      "mission_name": "HK620 Product Video Gap 003 Completion V1",
+      "module": "Content Center / Knowledge Center",
+      "branch": "working_tree_pending_review",
+      "commit": "working_tree_pending_review",
+      "report_path": "docs/M8A_HK620_PRODUCT_VIDEO_GAP_003_COMPLETION_REPORT.md",
+      "status": "completed",
+      "tests": "Scanned 85 desktop HK620 video files with ffprobe durations; selected and copied 12 videos into assets/videos/hk620; hk620 product catalog JSON validated; gap_003 missions marked Completed.",
+      "ceo_review_status": "completed_by_direct_instruction",
+      "next_action": "Use selected HK620 videos for Website Agent, Video Agent, and sales content packages; keep desktop originals unchanged."
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "version": "external_executor_dashboard_v1",
-  "generated_at": "2026-07-10T01:40:29Z",
+  "generated_at": "2026-07-31T06:19:11Z",
   "title": "外部执行器 V1",
-  "mode_cn": "Real execution completed",
+  "mode_cn": "WordPress Draft-only 正文完整性验证完成",
   "allowed_action_cn": "WordPress Draft-only",
   "forbidden_actions_cn": [
     "publish",
@@ -12,15 +12,15 @@
     "upload_youtube",
     "旧 workflow CWbGujhdNKFpa5JZ"
   ],
-  "waiting_authorization_count": 1,
+  "waiting_authorization_count": 0,
   "dry_run_passed_count": 1,
-  "ready_for_real_execution_count": 1,
-  "recent_executor_event_cn": "Retry 成功：n8n execution #33 已创建 WordPress Draft，状态 Draft，未发布。",
+  "ready_for_real_execution_count": 0,
+  "recent_executor_event_cn": "正文完整性验证成功：n8n execution #291 创建 WordPress Draft Post 486，状态 Draft，正文长度 7070，未发布。",
   "external_call_performed": true,
   "cards": [
     {
       "label": "当前模式",
-      "value": "Dry-run only",
+      "value": "Draft-only verified",
       "status": "safe"
     },
     {
@@ -35,47 +35,33 @@
     },
     {
       "label": "待真实执行",
-      "value": "1",
-      "status": "waiting_ceo"
+      "value": "0",
+      "status": "completed"
     },
     {
       "label": "外部调用",
-      "value": "0",
-      "status": "blocked"
+      "value": "Draft 486",
+      "status": "safe"
     }
   ],
   "last_real_execution": {
-    "mission_id": "mission_real_wp_draft_hk620_20260710_1783648705",
-    "trace_id": "trace_real_wp_draft_20260710T015825",
+    "mission_id": "mission_hk620_us_customer_article_v3_pre_publish",
+    "trace_id": "trace_bridge_1785478614230",
     "endpoint": "http://localhost:5678/webhook/m8a-hk620-draft-only",
     "workflow_path": "m8a-hk620-draft-only",
     "prohibited_workflow": "CWbGujhdNKFpa5JZ",
     "http_status": 200,
     "ok": true,
-    "execution_id": "33",
-    "post_id": 443,
-    "draft_url": "https://woodmachinerynetwork.com/?p=443",
-    "title": "HK620 Draft Test from M8A",
+    "execution_id": "291",
+    "post_id": 486,
+    "draft_url": "https://woodmachinerynetwork.com/?p=486",
+    "edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=486&action=edit",
+    "title": "HK620 Skeleton Line Edge Banding Machine for Door, Furniture, and Decorative Strip Production",
     "status": "draft",
-    "execution_status": "executed_draft_only",
-    "started_at": "2026-07-10T02:57:20Z",
-    "finished_at": "2026-07-10T02:59:21Z",
-    "duration_ms": 1000,
-    "retry_count": 1,
+    "execution_status": "executed_draft_only_body_verified",
+    "started_at": "2026-07-31T06:16:54Z",
+    "finished_at": "2026-07-31T06:16:57Z",
     "error": null,
-    "raw_response": {
-      "webhook_response": {
-        "message": "Workflow was started"
-      },
-      "n8n_execution_id": 33,
-      "wordpress_result": {
-        "id": 443,
-        "link": "https://woodmachinerynetwork.com/?p=443",
-        "status": "draft",
-        "title": "HK620 Draft Test from M8A",
-        "rest_url": "https://woodmachinerynetwork.com/wp-json/wp/v2/posts/443"
-      }
-    },
     "safety_result": {
       "publish": false,
       "delete_post": false,
@@ -87,16 +73,48 @@
       "workflow_id": "aTVbw0a7MId3NCBH",
       "old_workflow_id": "CWbGujhdNKFpa5JZ"
     },
-    "n8n_execution_id": 33
+    "body_verification": {
+      "post_id": 486,
+      "status": "draft",
+      "content_length": 7070,
+      "has_h1_or_h2": true,
+      "has_hk620": true,
+      "has_overview": true,
+      "has_faq": true,
+      "verified_at": "2026-07-31T06:19:11Z",
+      "report_path": "docs/M8A_WORDPRESS_DRAFT_BODY_COMPLETENESS_VERIFICATION_V1_REPORT.md"
+    }
   },
-  "mission_status": "executed_draft_only",
-  "execution_status": "executed_draft_only",
-  "wordpress_draft_id": 443,
-  "wordpress_draft_url": "https://woodmachinerynetwork.com/?p=443",
+  "mission_status": "published_ceo_approved",
+  "execution_status": "executed_and_published",
+  "wordpress_draft_id": 486,
+  "wordpress_published_url": "https://woodmachinerynetwork.com/hk620-skeleton-line-edge-banding-machine-door-furniture-decorative-strip-2/",
+  "wordpress_draft_url": "https://woodmachinerynetwork.com/?p=486",
+  "ceo_approved": true,
+  "ceo_approved_at": "2026-07-31T14:36:27+01:00",
+  "published_at": "2026-07-31T14:36:27Z",
   "started_time": "2026-07-10T02:57:20Z",
   "finished_time": "2026-07-10T02:59:21Z",
   "duration_ms": 1000,
   "retry_count": 1,
-  "updated_at": "2026-07-10T02:59:21Z",
-  "n8n_execution_id": 33
+  "updated_at": "2026-07-31T06:19:11Z",
+  "n8n_execution_id": 291,
+  "platform_authorization_closure": {
+    "mission_id": "m8a_platform_authorization_today_v1",
+    "status": "Completed",
+    "closed_at": "2026-07-31T05:43:12Z",
+    "note": "No external call executed during closure writeback."
+  },
+  "wordpress_edit_url": "https://woodmachinerynetwork.com/wp-admin/post.php?post=486&action=edit",
+  "body_verification": {
+    "post_id": 486,
+    "status": "draft",
+    "content_length": 7070,
+    "has_h1_or_h2": true,
+    "has_hk620": true,
+    "has_overview": true,
+    "has_faq": true,
+    "verified_at": "2026-07-31T06:19:11Z",
+    "report_path": "docs/M8A_WORDPRESS_DRAFT_BODY_COMPLETENESS_VERIFICATION_V1_REPORT.md"
+  }
 }

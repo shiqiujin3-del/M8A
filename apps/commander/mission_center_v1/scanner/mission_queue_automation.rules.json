@@ -1,0 +1,73 @@
+{
+  "version": "mission_queue_automation_v1",
+  "description": "Mission Queue 自动扫描和处理规则。由 mission_queue_scanner.py 执行。",
+  "schedule": {
+    "frequency": "daily",
+    "time": "09:00",
+    "timezone": "Asia/Shanghai",
+    "description": "每天早上 9 点自动扫描队列"
+  },
+  "rules": [
+    {
+      "id": "auto_archive_completed",
+      "name": "自动归档已完成任务",
+      "trigger": "status = Completed 且 updated_at 超过 7 天",
+      "action": "status → Archived",
+      "auto_execute": true,
+      "ceo_approval": false
+    },
+    {
+      "id": "auto_unblock_deps_closed",
+      "name": "自动解除依赖已关闭的 Blocked 任务",
+      "trigger": "status = Blocked 且所有 dependencies status = closed",
+      "action": "status → Waiting",
+      "auto_execute": true,
+      "ceo_approval": false
+    },
+    {
+      "id": "escalate_waiting_ceo",
+      "name": "升级等待 CEO 超期的任务",
+      "trigger": "status = Waiting CEO 且 updated_at 超过 7 天",
+      "action": "添加 escalated 标记 + 写入 CEO 日报",
+      "auto_execute": true,
+      "ceo_approval": false,
+      "note": "不改变状态，只标记升级"
+    },
+    {
+      "id": "flag_stale_dispatch",
+      "name": "标记僵尸 dispatched 任务",
+      "trigger": "status = dispatched 且 updated_at 超过 3 天",
+      "action": "标记 stale_dispatch，建议重新分派或关闭",
+      "auto_execute": false,
+      "ceo_approval": true,
+      "note": "需要 CEO 确认是重新分派还是关闭"
+    },
+    {
+      "id": "close_completed_gap_missions",
+      "name": "关闭 gap task 已完成但 mission 未关闭的任务",
+      "trigger": "mission 关联的 gap task 状态 = done/partial 且 mission status = dispatched",
+      "action": "status → Completed，knowledge_status → 对应 gap task 状态",
+      "auto_execute": false,
+      "ceo_approval": true,
+      "note": "需要确认 gap task 确实已完成"
+    },
+    {
+      "id": "stale_warning",
+      "name": "过期任务预警",
+      "trigger": "任何 active mission 且 updated_at 超过 7 天",
+      "action": "写入预警日志 + 包含在每日报告中",
+      "auto_execute": true,
+      "ceo_approval": false
+    }
+  ],
+  "escalation_path": {
+    "level_1": "Scanner 自动处理（归档/解除阻塞）",
+    "level_2": "CEO 日报中标记（升级/预警）",
+    "level_3": "CEO 手动决策（关闭/重新分派/优先级调整）"
+  },
+  "integration": {
+    "ceo_daily_report": "扫描结果自动写入 CEO 日报的 Mission Queue 部分",
+    "workbuddy_automation": "可通过 WorkBuddy Automation 设置每日定时执行",
+    "manual_command": "python3 apps/commander/mission_center_v1/scanner/mission_queue_scanner.py scan --fix"
+  }
+}

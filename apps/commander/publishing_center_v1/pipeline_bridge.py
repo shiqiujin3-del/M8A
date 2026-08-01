@@ -17,8 +17,10 @@ Safety:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -89,6 +91,102 @@ def split_markdown_to_sections(md: str) -> list[str]:
     return sections if sections else [md]
 
 
+def inline_markdown_to_html(text: str) -> str:
+    """Convert a small safe subset of inline markdown to HTML."""
+    escaped = html.escape(text.strip())
+    escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = re.sub(r"\*(.+?)\*", r"<em>\1</em>", escaped)
+    return escaped
+
+
+def markdown_to_wordpress_html(md: str) -> str:
+    """Convert the customer article markdown into WordPress-friendly HTML.
+
+    This intentionally avoids external dependencies so the bridge always sends
+    a complete body to n8n even when Python markdown packages are unavailable.
+    """
+    blocks: list[str] = []
+    paragraph: list[str] = []
+    list_items: list[str] = []
+    ordered_items: list[str] = []
+    table_lines: list[str] = []
+
+    def flush_paragraph() -> None:
+        nonlocal paragraph
+        if paragraph:
+            blocks.append(f"<p>{inline_markdown_to_html(' '.join(paragraph))}</p>")
+            paragraph = []
+
+    def flush_lists() -> None:
+        nonlocal list_items, ordered_items
+        if list_items:
+            blocks.append("<ul>" + "".join(f"<li>{inline_markdown_to_html(item)}</li>" for item in list_items) + "</ul>")
+            list_items = []
+        if ordered_items:
+            blocks.append("<ol>" + "".join(f"<li>{inline_markdown_to_html(item)}</li>" for item in ordered_items) + "</ol>")
+            ordered_items = []
+
+    def flush_table() -> None:
+        nonlocal table_lines
+        if not table_lines:
+            return
+        rows = []
+        for line in table_lines:
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if cells and all(set(cell) <= {"-", ":", " "} for cell in cells):
+                continue
+            rows.append(cells)
+        if rows:
+            body = []
+            for row_index, cells in enumerate(rows):
+                tag = "th" if row_index == 0 else "td"
+                body.append("<tr>" + "".join(f"<{tag}>{inline_markdown_to_html(cell)}</{tag}>" for cell in cells) + "</tr>")
+            blocks.append("<table>" + "".join(body) + "</table>")
+        table_lines = []
+
+    for raw_line in md.splitlines():
+        line = raw_line.strip()
+        if not line:
+            flush_paragraph()
+            flush_lists()
+            flush_table()
+            continue
+        if line.startswith("|") and line.endswith("|"):
+            flush_paragraph()
+            flush_lists()
+            table_lines.append(line)
+            continue
+        flush_table()
+        if line.startswith("### "):
+            flush_paragraph()
+            flush_lists()
+            blocks.append(f"<h3>{inline_markdown_to_html(line[4:])}</h3>")
+        elif line.startswith("## "):
+            flush_paragraph()
+            flush_lists()
+            blocks.append(f"<h2>{inline_markdown_to_html(line[3:])}</h2>")
+        elif line.startswith("# "):
+            flush_paragraph()
+            flush_lists()
+            blocks.append(f"<h1>{inline_markdown_to_html(line[2:])}</h1>")
+        elif line.startswith("- "):
+            flush_paragraph()
+            ordered_items = []
+            list_items.append(line[2:])
+        elif re.match(r"^\d+\.\s+", line):
+            flush_paragraph()
+            list_items = []
+            ordered_items.append(re.sub(r"^\d+\.\s+", "", line))
+        else:
+            flush_lists()
+            paragraph.append(line)
+
+    flush_paragraph()
+    flush_lists()
+    flush_table()
+    return "\n".join(blocks)
+
+
 def extract_summary(md: str) -> str:
     """Extract the first meaningful paragraph after any heading as summary."""
     lines = md.strip().split("\n")
@@ -127,6 +225,7 @@ def build_publishing_payload(content: dict[str, Any]) -> dict[str, Any]:
 
     summary = extract_summary(md)
     sections = split_markdown_to_sections(md)
+    content_html = markdown_to_wordpress_html(md)
 
     return {
         "mission_id": ids["mission_id"],
@@ -140,6 +239,9 @@ def build_publishing_payload(content: dict[str, Any]) -> dict[str, Any]:
         "market": content.get("target_market", "US"),
         "language": content.get("language", "en-US"),
         "title": title,
+        "content_markdown": md,
+        "content_html": content_html,
+        "content": content_html,
         "article_draft": {
             "title": title,
             "slug": content.get("slug", ""),
@@ -149,6 +251,10 @@ def build_publishing_payload(content: dict[str, Any]) -> dict[str, Any]:
             "secondary_keywords": seo.get("secondary_keywords", []),
             "summary": summary,
             "sections": sections,
+            "content_markdown": md,
+            "content_html": content_html,
+            "content": content_html,
+            "content_html_length": len(content_html),
             "cta": seo.get("cta", "Contact SYUTECH for quotation and sample review."),
             "source_note": f"Generated by Content Center V3. Bridge at {now_iso()}.",
         },

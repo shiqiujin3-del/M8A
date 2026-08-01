@@ -72,6 +72,7 @@ services:
       WEBHOOK_URL: http://localhost:5678/
       GENERIC_TIMEZONE: Asia/Shanghai
       TZ: Asia/Shanghai
+      N8N_SKIP_AUTH_ON_OAUTH_CALLBACK: true
     depends_on:
       postgres:
         condition: service_healthy
@@ -79,6 +80,7 @@ services:
         condition: service_healthy
     volumes:
       - m8a_n8n_data:/home/node/.n8n
+      - m8a_n8n_files:/home/node/.n8n-files
     networks:
       - m8a_bootstrap
 
@@ -90,4 +92,5 @@ volumes:
   m8a_postgres_data:
   m8a_redis_data:
   m8a_n8n_data:
+  m8a_n8n_files:
   m8a_qdrant_data:

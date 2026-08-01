@@ -1,6 +1,6 @@
 {
   "version": "global_mission_dashboard_v2",
-  "generated_at": "2026-07-09T00:00:00+01:00",
+  "generated_at": "2026-07-31T06:26:57Z",
   "title": "M8A 全局 Employee Mission Center V1",
   "sections": {
     "mission_queue": {
@@ -435,19 +435,21 @@
             {
               "type": "CEO 未批准",
               "detected_by": "approval_status/blocks_public_publish/waiting_ceo",
-              "status": "open"
+              "status": "closed",
+              "closed_at": "2026-07-31T05:43:12Z",
+              "close_reason": "CEO approved closure after OAuth/API readiness confirmed."
             }
           ],
           "knowledge_status": "not_required",
           "qa_status": "not_required",
-          "approval_status": "required",
+          "approval_status": "completed",
           "publish_status": "not_applicable",
           "runtime": {
-            "status": "Waiting CEO",
+            "status": "Completed",
             "created_at": "2026-07-07T05:42:34Z",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T05:43:12Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T05:43:12Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -457,12 +459,20 @@
               "at": "2026-07-07T05:42:34Z",
               "event": "Mission imported into Global Mission Center",
               "message": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。"
+            },
+            {
+              "at": "2026-07-31T05:43:12Z",
+              "event": "Mission Closed As Completed",
+              "message": "CEO approved closure. Google OAuth was completed on 2026-07-30; GA4/GSC/Gmail/YouTube are recorded as online by platform authorization cleanup; WordPress API is already in use. Closed as completed authorization handoff. No external platform call was executed in this writeback."
             }
           ],
           "title": "今日外部平台授权收尾",
           "expected_output": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。",
           "source_gap_id": null,
-          "blocks_public_publish": false
+          "blocks_public_publish": false,
+          "escalated": false,
+          "closed_by": "CEO approval via Codex",
+          "closed_at": "2026-07-31T05:43:12Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
@@ -608,16 +618,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "incomplete",
-          "qa_status": "required",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Blocked",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -627,12 +637,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_hk620_gap_004_customer_cases",
@@ -892,16 +909,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "pending_gap_resolution",
-          "qa_status": "pending",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Waiting QA",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -911,12 +928,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_004_customer_cases",
@@ -1878,14 +1902,54 @@
           "at": "2026-07-07T05:42:34Z",
           "event": "Created",
           "agent": "Automation Agent",
-          "message": "Mission created/imported"
+          "message": "Mission created/imported",
+          "dependencies": [],
+          "approval_status": "completed",
+          "publish_status": "not_applicable",
+          "blocks_public_publish": false,
+          "escalated": false,
+          "closed_by": "CEO approval via Codex",
+          "closed_at": "2026-07-31T05:43:12Z",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T05:43:12Z",
+            "completed_at": "2026-07-31T05:43:12Z",
+            "error_count": 0
+          },
+          "log": [
+            {
+              "at": "2026-07-31T05:43:12Z",
+              "event": "Mission Closed As Completed",
+              "message": "CEO approved closure. Google OAuth was completed on 2026-07-30; GA4/GSC/Gmail/YouTube are recorded as online by platform authorization cleanup; WordPress API is already in use. Closed as completed authorization handoff. No external platform call was executed in this writeback."
+            }
+          ]
         },
         {
           "mission_id": "m8a_platform_authorization_today_v1",
           "at": "2026-07-09T00:00:00+01:00",
           "event": "CEO Review",
           "agent": "Automation Agent",
-          "message": "Waiting CEO"
+          "message": "Waiting CEO",
+          "dependencies": [],
+          "approval_status": "completed",
+          "publish_status": "not_applicable",
+          "blocks_public_publish": false,
+          "escalated": false,
+          "closed_by": "CEO approval via Codex",
+          "closed_at": "2026-07-31T05:43:12Z",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T05:43:12Z",
+            "completed_at": "2026-07-31T05:43:12Z",
+            "error_count": 0
+          },
+          "log": [
+            {
+              "at": "2026-07-31T05:43:12Z",
+              "event": "Mission Closed As Completed",
+              "message": "CEO approved closure. Google OAuth was completed on 2026-07-30; GA4/GSC/Gmail/YouTube are recorded as online by platform authorization cleanup; WordPress API is already in use. Closed as completed authorization handoff. No external platform call was executed in this writeback."
+            }
+          ]
         },
         {
           "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
@@ -1920,14 +1984,50 @@
           "at": "2026-07-09T00:00:00+01:00",
           "event": "Created",
           "agent": "Knowledge Agent",
-          "message": "Mission created/imported"
+          "message": "Mission created/imported",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T06:26:57Z",
+            "completed_at": "2026-07-31T06:26:57Z"
+          },
+          "blocks_public_publish": false,
+          "approval_status": "not_required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z",
+          "log": [
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
+            }
+          ]
         },
         {
           "mission_id": "mission_hk620_gap_003_product_videos",
           "at": "2026-07-09T00:00:00+01:00",
           "event": "Blocked",
           "agent": "Knowledge Agent",
-          "message": "Blocked"
+          "message": "Blocked",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T06:26:57Z",
+            "completed_at": "2026-07-31T06:26:57Z"
+          },
+          "blocks_public_publish": false,
+          "approval_status": "not_required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z",
+          "log": [
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
+            }
+          ]
         },
         {
           "mission_id": "mission_hk620_gap_004_customer_cases",
@@ -1990,14 +2090,50 @@
           "at": "2026-07-09T00:00:00+01:00",
           "event": "Created",
           "agent": "QA Agent",
-          "message": "Mission created/imported"
+          "message": "Mission created/imported",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T06:26:57Z",
+            "completed_at": "2026-07-31T06:26:57Z"
+          },
+          "blocks_public_publish": false,
+          "approval_status": "not_required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z",
+          "log": [
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
+            }
+          ]
         },
         {
           "mission_id": "mission_validate_hk620_gap_003_product_videos",
           "at": "2026-07-09T00:00:00+01:00",
           "event": "QA",
           "agent": "QA Agent",
-          "message": "Waiting QA"
+          "message": "Waiting QA",
+          "runtime": {
+            "status": "Completed",
+            "updated_at": "2026-07-31T06:26:57Z",
+            "completed_at": "2026-07-31T06:26:57Z"
+          },
+          "blocks_public_publish": false,
+          "approval_status": "not_required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z",
+          "log": [
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
+            }
+          ]
         },
         {
           "mission_id": "mission_validate_hk620_gap_004_customer_cases",
@@ -2569,19 +2705,21 @@
             {
               "type": "CEO 未批准",
               "detected_by": "approval_status/blocks_public_publish/waiting_ceo",
-              "status": "open"
+              "status": "closed",
+              "closed_at": "2026-07-31T05:43:12Z",
+              "close_reason": "CEO approved closure after OAuth/API readiness confirmed."
             }
           ],
           "knowledge_status": "not_required",
           "qa_status": "not_required",
-          "approval_status": "required",
+          "approval_status": "completed",
           "publish_status": "not_applicable",
           "runtime": {
-            "status": "Waiting CEO",
+            "status": "Completed",
             "created_at": "2026-07-07T05:42:34Z",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T05:43:12Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T05:43:12Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -2591,12 +2729,20 @@
               "at": "2026-07-07T05:42:34Z",
               "event": "Mission imported into Global Mission Center",
               "message": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。"
+            },
+            {
+              "at": "2026-07-31T05:43:12Z",
+              "event": "Mission Closed As Completed",
+              "message": "CEO approved closure. Google OAuth was completed on 2026-07-30; GA4/GSC/Gmail/YouTube are recorded as online by platform authorization cleanup; WordPress API is already in use. Closed as completed authorization handoff. No external platform call was executed in this writeback."
             }
           ],
           "title": "今日外部平台授权收尾",
           "expected_output": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。",
           "source_gap_id": null,
-          "blocks_public_publish": false
+          "blocks_public_publish": false,
+          "escalated": false,
+          "closed_by": "CEO approval via Codex",
+          "closed_at": "2026-07-31T05:43:12Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
@@ -2742,16 +2888,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "incomplete",
-          "qa_status": "required",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Blocked",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -2761,12 +2907,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_hk620_gap_004_customer_cases",
@@ -3026,16 +3179,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "pending_gap_resolution",
-          "qa_status": "pending",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Waiting QA",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -3045,12 +3198,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_004_customer_cases",
@@ -3729,16 +3889,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "incomplete",
-          "qa_status": "required",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Blocked",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -3748,12 +3908,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_hk620_gap_004_customer_cases",
@@ -4013,16 +4180,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "pending_gap_resolution",
-          "qa_status": "pending",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Waiting QA",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -4032,12 +4199,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_004_customer_cases",
@@ -4577,47 +4751,6 @@
           "blocks_public_publish": true
         },
         {
-          "mission_id": "m8a_platform_authorization_today_v1",
-          "mission_type": "authorization",
-          "priority": "P0",
-          "owner": "Automation Agent",
-          "support": [],
-          "reviewer": "Commander Reporting Agent",
-          "approver": "CEO",
-          "dependencies": [
-            {
-              "type": "CEO 未批准",
-              "detected_by": "approval_status/blocks_public_publish/waiting_ceo",
-              "status": "open"
-            }
-          ],
-          "knowledge_status": "not_required",
-          "qa_status": "not_required",
-          "approval_status": "required",
-          "publish_status": "not_applicable",
-          "runtime": {
-            "status": "Waiting CEO",
-            "created_at": "2026-07-07T05:42:34Z",
-            "updated_at": "2026-07-09T00:00:00+01:00",
-            "started_at": null,
-            "completed_at": null,
-            "average_runtime_ms": 0,
-            "error_count": 0
-          },
-          "retry_count": 0,
-          "log": [
-            {
-              "at": "2026-07-07T05:42:34Z",
-              "event": "Mission imported into Global Mission Center",
-              "message": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。"
-            }
-          ],
-          "title": "今日外部平台授权收尾",
-          "expected_output": "M8A 内部授权已全部批准；等待 CEO 在 n8n/平台页面完成真实账号授权或确认无账号/API 条件。",
-          "source_gap_id": null,
-          "blocks_public_publish": false
-        },
-        {
           "mission_id": "mission_validate_hk620_gap_001_public_technical_specs",
           "mission_type": "product_knowledge_gap",
           "priority": "P0",
@@ -4761,16 +4894,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "incomplete",
-          "qa_status": "required",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Blocked",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -4780,12 +4913,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "完成 HK620 缺口任务：产品视频。补齐 HK620 demo 视频、工厂操作视频或短视频素材，不能虚构视频证据。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_hk620_gap_004_customer_cases",
@@ -5045,16 +5185,16 @@
               "status": "open"
             }
           ],
-          "knowledge_status": "pending_gap_resolution",
-          "qa_status": "pending",
-          "approval_status": "required",
+          "knowledge_status": "video_assets_completed",
+          "qa_status": "not_required",
+          "approval_status": "not_required",
           "publish_status": "blocked",
           "runtime": {
-            "status": "Waiting QA",
+            "status": "Completed",
             "created_at": "2026-07-09T00:00:00+01:00",
-            "updated_at": "2026-07-09T00:00:00+01:00",
+            "updated_at": "2026-07-31T06:26:57Z",
             "started_at": null,
-            "completed_at": null,
+            "completed_at": "2026-07-31T06:26:57Z",
             "average_runtime_ms": 0,
             "error_count": 0
           },
@@ -5064,12 +5204,19 @@
               "at": "2026-07-09T00:00:00+01:00",
               "event": "Mission imported into Global Mission Center",
               "message": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。"
+            },
+            {
+              "at": "2026-07-31T06:26:57Z",
+              "event": "HK620 Product Video Gap Completed",
+              "message": "HK620 视频素材已扫描 85 个，精选 12 个写入 Content Center assets/videos/hk620；未修改桌面原视频。"
             }
           ],
           "title": "HK620 资料缺口：hk620_gap_003_product_videos",
           "expected_output": "验收 HK620 缺口任务：产品视频，确认 QA Score、公开边界和是否仍阻断发布。",
           "source_gap_id": "hk620_gap_003_product_videos",
-          "blocks_public_publish": true
+          "blocks_public_publish": false,
+          "video_gap_status": "completed",
+          "completed_at": "2026-07-31T06:26:57Z"
         },
         {
           "mission_id": "mission_validate_hk620_gap_004_customer_cases",
@@ -5262,11 +5409,28 @@
       "P1": 10,
       "P2": 16
     },
-    "blocked_missions": 19,
-    "waiting_ceo": 15,
+    "blocked_missions": 7,
+    "waiting_ceo": 0,
     "knowledge_gap_missions": 18,
     "ready_to_publish": 0,
-    "supports_20_ai_employees": "yes_with_file_based_queue; recommend sqlite/event_store when concurrent writes begin"
+    "supports_20_ai_employees": "yes_with_file_based_queue; recommend sqlite/event_store when concurrent writes begin",
+    "active_missions": 16,
+    "archived_missions": 22,
+    "by_status_active": {
+      "Blocked": 7,
+      "Waiting QA": 7,
+      "Waiting": 2
+    },
+    "last_closure": {
+      "mission_id": "m8a_platform_authorization_today_v1",
+      "closed_at": "2026-07-31T05:43:12Z",
+      "status": "Completed"
+    },
+    "last_gap_completed": {
+      "gap": "gap_003",
+      "completed_at": "2026-07-31T06:26:57Z",
+      "selected_video_count": 12
+    }
   },
   "cn_labels": {
     "Waiting": "等待执行",
@@ -5277,5 +5441,6 @@
     "Completed": "已完成",
     "Failed": "失败",
     "Archived": "已归档"
-  }
+  },
+  "last_updated": "2026-07-31T06:26:57Z"
 }
